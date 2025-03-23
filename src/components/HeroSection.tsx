@@ -188,7 +188,7 @@ const HeroSection: React.FC = () => {
           <div className="relative animate-scale-in">
             <div className="w-full h-full max-w-lg mx-auto relative">
               {/* Animated particle network */}
-              <div className="absolute inset-0 z-0">
+              <div className="">
                 <AnimatedBall />
               </div>
               
