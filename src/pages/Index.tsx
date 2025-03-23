@@ -76,7 +76,7 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-up">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="mb-4">{t('services.title')}</h2>
             <p className="text-lg text-text/80">
               {t('services.subtitle')}
@@ -101,13 +101,13 @@ const Index = () => {
       <section className="py-24">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
-            <div className="max-w-2xl animate-fade-up">
+            <div className="max-w-2xl">
               <h2 className="mb-4">{t('projects.title')}</h2>
               <p className="text-lg text-text/80">
                 {t('projects.subtitle')}
               </p>
             </div>
-            <Button asChild variant="ghost" className="mt-4 md:mt-0 animate-fade-up group">
+            <Button asChild variant="ghost" className="mt-4 md:mt-0 group">
               <Link to="/projects" className="flex items-center font-medium">
                 {t('projects.viewall')}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -140,7 +140,7 @@ const Index = () => {
       <section className="py-24 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-fade-up order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1">
               <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
                 <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform rotate-2 animate-float" style={{ animationDelay: '0.7s' }}>
                   <div className="h-full w-full bg-gradient-to-br from-primary/20 to-purple-50"></div>
@@ -156,7 +156,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="space-y-6 animate-fade-up order-1 lg:order-2">
+            <div className="space-y-6 order-1 lg:order-2">
               <div>
                 <h2 className="mb-4">{t('about.title')}</h2>
                 <p className="text-lg text-text/80 mb-6">
@@ -200,7 +200,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-24">
         <div className="container">
-          <div className="bg-gradient-to-br from-primary/90 to-purple-700 rounded-3xl p-12 text-white text-center relative overflow-hidden animate-scale-in">
+          <div className="bg-gradient-to-br from-primary/90 to-purple-700 rounded-3xl p-12 text-white text-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-white/10 blur-2xl"></div>

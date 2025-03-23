@@ -1,0 +1,29 @@
+
+.process-step {
+  position: relative;
+  z-index: 10;
+}
+
+.process-line {
+  position: absolute;
+  height: 2px;
+  background-color: #e2e8f0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure the line is behind the steps */
+}
+
+.process-step:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover .step-circle {
+  background-color: #7c1cd4;
+  transition: background-color 0.3s ease;
+}
+
+.process-step:hover .step-title {
+  color: #7c1cd4;
+  transition: color 0.3s ease;
+}
