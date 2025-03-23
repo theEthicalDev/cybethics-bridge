@@ -155,8 +155,8 @@ const Services = () => {
       <section className="py-12">
         <div className="container">
           <Tabs defaultValue="software" className="w-full">
-            <div className="overflow-x-auto pb-4">
-              <TabsList className="w-max flex flex-nowrap mb-8 p-1 bg-gray-100/50 rounded-lg animate-fade-up">
+            <div className="mb-8 overflow-visible">
+              <TabsList className="w-max flex flex-nowrap mb-8 p-1 bg-gray-100/50 rounded-lg animate-fade-up overflow-visible">
                 {services.map((service) => (
                   <TabsTrigger
                     key={service.id}
@@ -215,7 +215,7 @@ const Services = () => {
                   </Card>
                 </div>
 
-                {/* Process Section */}
+                {/* Process Section - Fixed to show lines behind circles and add hover effects */}
                 <div className="mt-16">
                   <h3 className="text-2xl font-medium mb-8">{t('dev.process.title')}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -226,18 +226,22 @@ const Services = () => {
                         onMouseEnter={() => setActiveProcess(index)}
                         onMouseLeave={() => setActiveProcess(null)}
                       >
+                        {/* Step connection lines (now placed behind the circles) */}
+                        {index < 3 && (
+                          <div className="absolute top-6 left-12 w-full h-0.5 bg-primary/20 -z-10"></div>
+                        )}
+                        
+                        {/* Circle */}
                         <div className="relative z-10">
                           <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 border-2 transition-all duration-300 ${
-                            activeProcess === index || index === 0 
-                              ? 'bg-primary/20 border-primary' 
-                              : 'bg-primary/10 border-primary/40'
-                          } transform ${activeProcess === index ? 'scale-110' : 'scale-100'}`}>
+                            activeProcess === index 
+                              ? 'bg-primary/20 border-primary scale-110' 
+                              : 'bg-primary/10 border-primary/40 scale-100'
+                          }`}>
                             <span className="text-primary font-medium">{index + 1}</span>
                           </div>
-                          {index < 3 && (
-                            <div className="absolute top-6 left-12 w-full h-0.5 bg-primary/20 -z-10"></div>
-                          )}
                         </div>
+                        
                         <h4 className="text-lg font-medium mb-2">{t(phase.title)}</h4>
                         <p className="text-text/80">
                           {t(phase.description)}
