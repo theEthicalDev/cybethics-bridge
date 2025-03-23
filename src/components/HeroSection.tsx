@@ -197,14 +197,6 @@ const HeroSection: React.FC = () => {
                 <CodeAnimation />
               </div>
               
-              {/* Personal image below code animation */}
-              <div className="absolute inset-0 mt-64 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
-                <img 
-                  src="/lovable-uploads/7c05cd7c-66b7-46f9-8156-5b85017caf76.png"
-                  alt="Cybethics Team"
-                  className="w-full h-full object-cover opacity-90"
-                />
-              </div>
             </div>
           </div>
         </div>
