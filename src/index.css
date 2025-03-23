@@ -119,7 +119,7 @@
     @apply w-4 h-1 top-1/2 -mt-0.5 left-1/2 -ml-2;
   }
   
-  /* Smooth page transitions */
+  /* Fixed animations to prevent disappearing content */
   .page-transition-enter {
     @apply opacity-0;
   }
@@ -136,7 +136,7 @@
     @apply opacity-0 transition-opacity duration-300;
   }
   
-  /* Additional animations */
+  /* Additional animations with fixed properties */
   @keyframes float {
     0% {
       transform: translateY(0px);
@@ -171,17 +171,17 @@
   
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out forwards;
-    opacity: 0;
+    opacity: 1; /* Changed from 0 to 1 to prevent disappearing */
   }
   
   .animate-scale-in {
     animation: scaleIn 0.8s ease-out forwards;
-    opacity: 0;
+    opacity: 1; /* Changed from 0 to 1 to prevent disappearing */
   }
   
   @keyframes fadeUp {
     from {
-      opacity: 0;
+      opacity: 0.8; /* Changed from 0 to ensure visibility */
       transform: translateY(20px);
     }
     to {
@@ -192,7 +192,7 @@
   
   @keyframes scaleIn {
     from {
-      opacity: 0;
+      opacity: 0.8; /* Changed from 0 to ensure visibility */
       transform: scale(0.95);
     }
     to {

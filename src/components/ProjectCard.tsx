@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   requestButton
 }) => {
   return (
-    <Card className="overflow-hidden border-0 shadow-md group animate-fade-up" style={{ animationDelay: `${delay}ms` }}>
+    <Card className="overflow-hidden border-0 shadow-md group" style={{ animationDelay: `${delay}ms` }}>
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 
