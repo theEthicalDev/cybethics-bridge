@@ -40,7 +40,7 @@ console.log(result); // FETCI
   }, []);
   
   return (
-    <div className="glass rounded-lg border border-white/20 shadow-lg p-6 font-mono text-sm overflow-hidden animate-float">
+    <div className="glass rounded-lg border border-white/20 shadow-lg p-6 font-mono text-sm overflow-hidden animate-float absolute top-0">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
