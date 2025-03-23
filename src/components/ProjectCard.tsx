@@ -12,6 +12,7 @@ interface ProjectCardProps {
   tags: string[];
   url: string;
   delay?: number;
+  requestButton?: React.ReactNode;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
@@ -20,7 +21,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image, 
   tags, 
   url,
-  delay = 0
+  delay = 0,
+  requestButton
 }) => {
   return (
     <Card className="overflow-hidden border-0 shadow-md group animate-fade-up" style={{ animationDelay: `${delay}ms` }}>
@@ -45,6 +47,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <CardDescription className="text-text/80">
           {description}
         </CardDescription>
+        {requestButton && (
+          <div className="mt-4">
+            {requestButton}
+          </div>
+        )}
       </CardContent>
       <CardFooter>
         <Link 
