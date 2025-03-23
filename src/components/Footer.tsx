@@ -63,6 +63,9 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.api.title')}</Link>
               </li>
+              <li>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.takeover.title')}</Link>
+              </li>
             </ul>
           </div>
           

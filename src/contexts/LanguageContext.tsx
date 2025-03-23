@@ -42,12 +42,16 @@ const translations = {
     'services.api.title': 'API Development',
     'services.api.description': 'Custom interfaces and API integration with existing systems',
     
+    'services.takeover.title': 'Website Takeover & IT Support',
+    'services.takeover.description': 'Complete website management and comprehensive IT support services',
+    
     'services.more': 'Learn More',
     
     // Projects section
     'projects.title': 'Our Projects',
     'projects.subtitle': 'Showcasing our work and expertise',
     'projects.viewall': 'View All Projects',
+    'projects.request': 'Request Similar Project',
     
     // About section
     'about.title': 'About Cybethics',
@@ -58,7 +62,7 @@ const translations = {
     'about.values.empathy': 'One of our main strengths is to put ourselves in our customers\' shoes and think about their actual goal.',
     'about.values.ethics': 'We believe it\'s ethical to only implement the most suitable solution, not the most expensive one.',
     'about.values.trust': 'We want to be a trustworthy partner in your digital journey.',
-    'about.swiss': 'Proudly based in Switzerland',
+    'about.swiss': 'We prefer deeds to words',
     
     // Contact section
     'contact.title': 'Get in Touch',
@@ -69,6 +73,17 @@ const translations = {
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
+    
+    // Development Process
+    'dev.process.title': 'Our Development Process',
+    'dev.process.discovery': 'Discovery',
+    'dev.process.planning': 'Planning',
+    'dev.process.implementation': 'Implementation',
+    'dev.process.delivery': 'Delivery',
+    'dev.process.discovery.desc': 'We understand your requirements and business goals.',
+    'dev.process.planning.desc': 'We create a detailed plan with timeline and deliverables.',
+    'dev.process.implementation.desc': 'We develop the solution with regular updates and testing.',
+    'dev.process.delivery.desc': 'We deliver the finished product with support and training.',
   },
   de: {
     // Navigation
@@ -102,12 +117,16 @@ const translations = {
     'services.api.title': 'Schnittstellenentwicklung',
     'services.api.description': 'Benutzerdefinierte Schnittstellen und API-Integration mit bestehenden Systemen',
     
+    'services.takeover.title': 'Website-Übernahme & IT-Support',
+    'services.takeover.description': 'Komplettes Website-Management und umfassende IT-Support-Dienstleistungen',
+    
     'services.more': 'Mehr erfahren',
     
     // Projects section
     'projects.title': 'Unsere Projekte',
     'projects.subtitle': 'Präsentation unserer Arbeit und Expertise',
     'projects.viewall': 'Alle Projekte ansehen',
+    'projects.request': 'Ähnliches Projekt anfragen',
     
     // About section
     'about.title': 'Über Cybethics',
@@ -118,7 +137,7 @@ const translations = {
     'about.values.empathy': 'Eine unserer Hauptstärken ist es, uns in die Lage unserer Kunden zu versetzen und über ihr eigentliches Ziel nachzudenken.',
     'about.values.ethics': 'Wir glauben, dass es ethisch ist, nur die am besten geeignete Lösung zu implementieren, nicht die teuerste.',
     'about.values.trust': 'Wir möchten ein vertrauenswürdiger Partner auf Ihrem digitalen Weg sein.',
-    'about.swiss': 'Mit Stolz in der Schweiz ansässig',
+    'about.swiss': 'Wir bevorzugen Taten statt Worte',
     
     // Contact section
     'contact.title': 'Kontaktieren Sie uns',
@@ -129,6 +148,17 @@ const translations = {
     'footer.rights': 'Alle Rechte vorbehalten',
     'footer.privacy': 'Datenschutzrichtlinie',
     'footer.terms': 'Nutzungsbedingungen',
+    
+    // Development Process
+    'dev.process.title': 'Unser Entwicklungsprozess',
+    'dev.process.discovery': 'Entdeckung',
+    'dev.process.planning': 'Planung',
+    'dev.process.implementation': 'Umsetzung',
+    'dev.process.delivery': 'Lieferung',
+    'dev.process.discovery.desc': 'Wir verstehen Ihre Anforderungen und Geschäftsziele.',
+    'dev.process.planning.desc': 'Wir erstellen einen detaillierten Plan mit Zeitplan und Lieferergebnissen.',
+    'dev.process.implementation.desc': 'Wir entwickeln die Lösung mit regelmässigen Updates und Tests.',
+    'dev.process.delivery.desc': 'Wir liefern das fertige Produkt mit Support und Schulung.',
   }
 };
 

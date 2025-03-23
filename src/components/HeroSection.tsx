@@ -1,9 +1,52 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+
+const CodeAnimation: React.FC = () => {
+  const [text, setText] = useState("");
+  const codeSnippet = `
+function cybethics() {
+  const ethics = ["fairness", "empathy", "trust"];
+  const cyber = ["code", "automation", "innovation"];
+  
+  return [...ethics, ...cyber].reduce((solution, value) => {
+    return solution + value.charAt(0).toUpperCase();
+  }, "");
+}
+
+// We prefer deeds to words
+const result = cybethics();
+console.log(result); // FETCI
+`;
+
+  useEffect(() => {
+    let currentText = "";
+    let currentIndex = 0;
+    
+    const interval = setInterval(() => {
+      if (currentIndex < codeSnippet.length) {
+        currentText += codeSnippet[currentIndex];
+        setText(currentText);
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 15);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <div className="glass rounded-lg border border-white/20 shadow-lg p-6 font-mono text-sm overflow-hidden animate-float">
+      <pre className="text-left overflow-x-auto">
+        <code className="text-primary/90">{text}</code>
+      </pre>
+    </div>
+  );
+};
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -44,18 +87,23 @@ const HeroSection: React.FC = () => {
             </div>
             
             <div className="flex items-center space-x-4 pt-4">
-              <div className="swiss-cross w-6 h-6"></div>
+              <div className="w-6 h-6 bg-red-600 rounded"></div>
               <p className="text-sm font-medium">{t('about.swiss')}</p>
             </div>
           </div>
           
           <div className="relative animate-scale-in">
-            <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-white via-transparent to-primary/10 rounded-3xl transform rotate-3 animate-float" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
+            <div className="w-full h-full max-w-lg mx-auto relative">
+              {/* Code animation */}
+              <div className="absolute top-0 right-0 left-0 z-10">
+                <CodeAnimation />
+              </div>
+              
+              {/* Personal image below code animation */}
+              <div className="absolute inset-0 mt-64 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
                 <img 
                   src="/lovable-uploads/7c05cd7c-66b7-46f9-8156-5b85017caf76.png"
-                  alt="Cybethics Logo"
+                  alt="Cybethics Team"
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>

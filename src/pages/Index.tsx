@@ -3,7 +3,7 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Cog, Terminal, GitBranch, ServerCog } from 'lucide-react';
+import { ArrowRight, Code, Cog, Terminal, GitBranch, ServerCog, Monitor } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
@@ -36,6 +36,11 @@ const Index = () => {
       icon: <ServerCog className="h-6 w-6 text-primary" />,
       titleKey: 'services.api.title',
       descriptionKey: 'services.api.description',
+    },
+    {
+      icon: <Monitor className="h-6 w-6 text-primary" />,
+      titleKey: 'services.takeover.title',
+      descriptionKey: 'services.takeover.description',
     }
   ];
 
@@ -120,6 +125,11 @@ const Index = () => {
                 tags={project.tags}
                 url={project.url}
                 delay={index * 100}
+                requestButton={
+                  <Button asChild variant="outline" size="sm" className="mt-4 w-full">
+                    <Link to="/contact">{t('projects.request')}</Link>
+                  </Button>
+                }
               />
             ))}
           </div>
@@ -137,7 +147,7 @@ const Index = () => {
                 </div>
                 <div className="relative bg-white rounded-3xl shadow-lg p-8 -mt-8 ml-8 animate-float" style={{ animationDelay: '1.2s' }}>
                   <div className="flex mb-4">
-                    <div className="w-6 h-6 swiss-cross"></div>
+                    <div className="w-6 h-6 bg-red-600 rounded"></div>
                   </div>
                   <blockquote className="text-lg italic text-text/90">
                     "We believe it's ethical to only implement the most suitable solution, not the most expensive one."
