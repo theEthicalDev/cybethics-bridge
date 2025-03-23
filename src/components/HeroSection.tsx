@@ -134,7 +134,7 @@ const AnimatedBall: React.FC = () => {
   }, []);
   
   return (
-    <canvas ref={canvasRef} className="absolute top-0 left-0 right-0 z-0 opacity-80"></canvas>
+    <canvas ref={canvasRef} className="z-0 opacity-80"></canvas>
   );
 };
 
