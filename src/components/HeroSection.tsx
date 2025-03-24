@@ -193,7 +193,7 @@ const HeroSection: React.FC = () => {
               </div>
               
               {/* Code animation */}
-              <div className="">
+              <div className="absolute top-0">
                 <CodeAnimation />
               </div>
               
