@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -41,249 +40,11 @@ console.log(result); // FETCI
   }, []);
   
   return (
-    <div className="glass rounded-lg border border-white/20 shadow-lg p-6 font-mono text-sm overflow-hidden animate-float absolute top-0">
+    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
     </div>
-  );
-};
-
-const MountainAnimation: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    // Professional mountain outline points with Swiss-inspired silhouette
-    canvas.width = window.innerWidth;
-    canvas.height = 300;
-    
-    // Adjust mountain width based on canvas width
-    const scaleWidth = canvas.width / 1400;
-    
-    // Define the mountain range as a series of peaks (Swiss Alps inspired)
-    const mountainPoints = [
-      [0, 300],
-      [canvas.width * 0.1, 250 * scaleWidth],
-      [canvas.width * 0.15, 200], 
-      [canvas.width * 0.2, 150], // First peak
-      [canvas.width * 0.25, 180],
-      [canvas.width * 0.3, 130], // Second peak
-      [canvas.width * 0.35, 160],
-      [canvas.width * 0.4, 120], // Third peak
-      [canvas.width * 0.45, 170],
-      [canvas.width * 0.5, 100], // Main peak (Matterhorn-inspired)
-      [canvas.width * 0.55, 160],
-      [canvas.width * 0.6, 140], // Another peak
-      [canvas.width * 0.65, 180],
-      [canvas.width * 0.7, 130], // Final peak
-      [canvas.width * 0.8, 200],
-      [canvas.width * 0.9, 250],
-      [canvas.width, 300]
-    ];
-    
-    let progress = 0;
-    const animationDuration = 2500;
-    const startTime = performance.now();
-    
-    function drawMountain(currentTime: number) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      progress = Math.min((currentTime - startTime) / animationDuration, 1);
-      
-      // Draw mountain fill
-      ctx.beginPath();
-      ctx.moveTo(mountainPoints[0][0], mountainPoints[0][1]);
-      
-      for (let i = 1; i < Math.floor(progress * mountainPoints.length); i++) {
-        ctx.lineTo(mountainPoints[i][0], mountainPoints[i][1]);
-      }
-      
-      if (progress < 1) {
-        const currentIndex = Math.floor(progress * mountainPoints.length);
-        const nextIndex = Math.min(currentIndex + 1, mountainPoints.length - 1);
-        const subProgress = (progress * mountainPoints.length) % 1;
-        
-        const currentX = mountainPoints[currentIndex][0] + (mountainPoints[nextIndex][0] - mountainPoints[currentIndex][0]) * subProgress;
-        const currentY = mountainPoints[currentIndex][1] + (mountainPoints[nextIndex][1] - mountainPoints[currentIndex][1]) * subProgress;
-        
-        ctx.lineTo(currentX, currentY);
-      }
-      
-      // Complete the path back to the bottom
-      ctx.lineTo(canvas.width, 300);
-      ctx.lineTo(0, 300);
-      
-      ctx.closePath();
-      
-      // Create a gradient fill for the mountains
-      const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-      gradient.addColorStop(0, 'rgba(124, 28, 212, 0.08)');
-      gradient.addColorStop(1, 'rgba(124, 28, 212, 0.01)');
-      ctx.fillStyle = gradient;
-      ctx.fill();
-      
-      // Draw mountain outline
-      ctx.beginPath();
-      ctx.moveTo(mountainPoints[0][0], mountainPoints[0][1]);
-      
-      for (let i = 1; i < Math.floor(progress * mountainPoints.length); i++) {
-        ctx.lineTo(mountainPoints[i][0], mountainPoints[i][1]);
-      }
-      
-      if (progress < 1) {
-        const currentIndex = Math.floor(progress * mountainPoints.length);
-        const nextIndex = Math.min(currentIndex + 1, mountainPoints.length - 1);
-        const subProgress = (progress * mountainPoints.length) % 1;
-        
-        const currentX = mountainPoints[currentIndex][0] + (mountainPoints[nextIndex][0] - mountainPoints[currentIndex][0]) * subProgress;
-        const currentY = mountainPoints[currentIndex][1] + (mountainPoints[nextIndex][1] - mountainPoints[currentIndex][1]) * subProgress;
-        
-        ctx.lineTo(currentX, currentY);
-      }
-      
-      ctx.strokeStyle = 'rgba(124, 28, 212, 0.4)';
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-      
-      // Add subtle snow caps to the peaks
-      if (progress > 0.5) {
-        const snowOpacity = (progress - 0.5) * 2; // Fade in snow after mountain is halfway drawn
-        
-        const peakIndices = [3, 5, 7, 9, 11, 13]; // Indices of mountain peaks
-        for (const peakIndex of peakIndices) {
-          if (peakIndex < Math.floor(progress * mountainPoints.length)) {
-            const peakX = mountainPoints[peakIndex][0];
-            const peakY = mountainPoints[peakIndex][1];
-            
-            ctx.beginPath();
-            ctx.arc(peakX, peakY, 3, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${0.7 * snowOpacity})`;
-            ctx.fill();
-          }
-        }
-      }
-      
-      if (progress < 1) {
-        requestAnimationFrame(drawMountain);
-      }
-    }
-    
-    requestAnimationFrame(drawMountain);
-    
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      drawMountain(performance.now());
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  
-  return (
-    <canvas ref={canvasRef} className="w-full absolute top-0 opacity-80 pointer-events-none" style={{ zIndex: 1 }}></canvas>
-  );
-};
-
-const LogoBubbleAnimation: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    canvas.width = 400;
-    canvas.height = 400;
-    
-    // Create image element for the logo
-    const logoImage = new Image();
-    logoImage.src = '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png';
-    
-    // Bubble parameters
-    const bubbles: {x: number, y: number, radius: number, speed: number, opacity: number}[] = [];
-    const bubbleCount = 15;
-    
-    // Create initial bubbles
-    for (let i = 0; i < bubbleCount; i++) {
-      bubbles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 20 + 5,
-        speed: Math.random() * 0.5 + 0.2,
-        opacity: Math.random() * 0.6 + 0.2
-      });
-    }
-    
-    // Draw function
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Draw the background bubbles
-      bubbles.forEach(bubble => {
-        // Move bubbles upward
-        bubble.y -= bubble.speed;
-        
-        // Reset bubbles when they reach the top
-        if (bubble.y < -bubble.radius * 2) {
-          bubble.y = canvas.height + bubble.radius;
-          bubble.x = Math.random() * canvas.width;
-        }
-        
-        // Draw bubble
-        ctx.beginPath();
-        ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(124, 28, 212, ${bubble.opacity * 0.2})`;
-        ctx.fill();
-        ctx.strokeStyle = `rgba(124, 28, 212, ${bubble.opacity * 0.4})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      });
-      
-      // Draw logo in the center
-      if (logoImage.complete) {
-        const logoSize = canvas.width * 0.7;
-        const centerX = (canvas.width - logoSize) / 2;
-        const centerY = (canvas.height - logoSize) / 2;
-        
-        // Apply a subtle glow effect
-        ctx.shadowColor = 'rgba(124, 28, 212, 0.3)';
-        ctx.shadowBlur = 15;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-        
-        ctx.drawImage(logoImage, centerX, centerY, logoSize, logoSize);
-        
-        // Reset shadow
-        ctx.shadowBlur = 0;
-      }
-      
-      requestAnimationFrame(animate);
-    }
-    
-    // Start animation when image is loaded
-    logoImage.onload = () => {
-      animate();
-    };
-    
-    return () => {};
-  }, []);
-  
-  return (
-    <canvas 
-      ref={canvasRef} 
-      className="w-full h-full rounded-xl overflow-hidden border-4 border-primary/20 shadow-lg"
-    />
   );
 };
 
@@ -373,6 +134,47 @@ const BackgroundParticles: React.FC = () => {
   );
 };
 
+const LogoAnimation: React.FC = () => {
+  const [scale, setScale] = useState(0);
+  const [opacity, setOpacity] = useState(0);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setOpacity(1);
+      setScale(1.2);
+    }, 300);
+    
+    setTimeout(() => {
+      setScale(1);
+    }, 800);
+    
+    setTimeout(() => {
+      setScale(1.1);
+    }, 1200);
+    
+    setTimeout(() => {
+      setScale(1);
+    }, 1500);
+  }, []);
+  
+  return (
+    <div 
+      className="w-full h-full flex items-center justify-center"
+      style={{
+        opacity,
+        transform: `scale(${scale})`,
+        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+      }}
+    >
+      <img 
+        src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png" 
+        alt="Cybethics Logo" 
+        className="w-3/4 h-auto"
+      />
+    </div>
+  );
+};
+
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   
@@ -384,10 +186,6 @@ const HeroSection: React.FC = () => {
       </div>
       
       <BackgroundParticles />
-      
-      <div className="absolute top-0 left-0 right-0 z-0">
-        <MountainAnimation />
-      </div>
       
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -425,15 +223,13 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="relative animate-scale-in flex flex-col items-center">
-            <div className="w-full max-w-md mx-auto relative mb-8">
-              <div className="rounded-xl overflow-hidden h-96">
-                <LogoBubbleAnimation />
-              </div>
-              
-              <div className="absolute -bottom-16 -right-8 w-64 transform rotate-6 scale-75 opacity-90 z-10">
-                <CodeAnimation />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-6 h-64 flex items-center justify-center">
+              <LogoAnimation />
+            </div>
+            
+            <div className="lg:col-span-6">
+              <CodeAnimation />
             </div>
           </div>
         </div>
