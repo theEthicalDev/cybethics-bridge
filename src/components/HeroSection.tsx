@@ -105,7 +105,7 @@ const BackgroundParticles: React.FC = () => {
             ctx.beginPath();
             ctx.strokeStyle = `rgba(124, 28, 212, ${0.05 * (1 - distance / 85)})`;
             ctx.lineWidth = 0.5;
-            ctx.moveTo(particle[i].x, particles[i].y);
+            ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
           }
