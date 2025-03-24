@@ -1,14 +1,40 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code, Cog, Terminal, GitBranch, ServerCog, CheckCircle, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import '../components/DevProcessLine.css';
 
 const Services = () => {
   const { t } = useLanguage();
   const [activeProcess, setActiveProcess] = useState<number | null>(0);
+  
+  // Set up animation for staggered elements
+  useEffect(() => {
+    const elements = document.querySelectorAll('.vertical-timeline-element');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate-fade-up');
+            entry.target.classList.remove('opacity-0');
+          }, index * 150);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    elements.forEach(el => {
+      el.classList.add('opacity-0');
+      observer.observe(el);
+    });
+    
+    return () => observer.disconnect();
+  }, []);
 
   const services = [
     {
@@ -118,19 +144,33 @@ const Services = () => {
   const processSteps = [
     {
       title: 'dev.process.discovery',
-      description: 'dev.process.discovery.desc'
+      description: 'dev.process.discovery.desc',
+      detailedDesc: 'dev.process.discovery.detailed',
+      icon: '🔍'
     },
     {
       title: 'dev.process.planning',
-      description: 'dev.process.planning.desc'
+      description: 'dev.process.planning.desc',
+      detailedDesc: 'dev.process.planning.detailed',
+      icon: '📝'
     },
     {
       title: 'dev.process.implementation',
-      description: 'dev.process.implementation.desc'
+      description: 'dev.process.implementation.desc',
+      detailedDesc: 'dev.process.implementation.detailed',
+      icon: '⚙️'
     },
     {
       title: 'dev.process.delivery',
-      description: 'dev.process.delivery.desc'
+      description: 'dev.process.delivery.desc',
+      detailedDesc: 'dev.process.delivery.detailed',
+      icon: '🚀'
+    },
+    {
+      title: 'dev.process.support',
+      description: 'dev.process.support.desc',
+      detailedDesc: 'dev.process.support.detailed',
+      icon: '🛠️'
     }
   ];
 
@@ -215,37 +255,41 @@ const Services = () => {
                   </Card>
                 </div>
 
-                {/* Process Section - Fixed to show lines behind circles and add hover effects */}
+                {/* Vertical Development Process Section */}
                 <div className="mt-16">
                   <h3 className="text-2xl font-medium mb-8">{t('dev.process.title')}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  
+                  <div className="relative px-4">
                     {processSteps.map((phase, index) => (
                       <div 
                         key={index} 
-                        className="relative" 
+                        className="vertical-timeline-element"
                         onMouseEnter={() => setActiveProcess(index)}
                         onMouseLeave={() => setActiveProcess(null)}
                       >
-                        {/* Step connection lines (now placed behind the circles) */}
-                        {index < 3 && (
-                          <div className="absolute top-6 left-12 w-full h-0.5 bg-primary/20 -z-10"></div>
-                        )}
-                        
-                        {/* Circle */}
-                        <div className="relative z-10">
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 border-2 transition-all duration-300 ${
-                            activeProcess === index 
-                              ? 'bg-primary/20 border-primary scale-110' 
-                              : 'bg-primary/10 border-primary/40 scale-100'
-                          }`}>
-                            <span className="text-primary font-medium">{index + 1}</span>
-                          </div>
+                        <div 
+                          className="vertical-timeline-element-icon"
+                          style={{
+                            top: index === 0 ? '0' : 'calc(50% - 12px)'
+                          }}
+                        >
+                          <span className="text-primary text-xs font-bold">{index + 1}</span>
                         </div>
                         
-                        <h4 className="text-lg font-medium mb-2">{t(phase.title)}</h4>
-                        <p className="text-text/80">
-                          {t(phase.description)}
-                        </p>
+                        <div className="vertical-timeline-element-content">
+                          <div className="flex items-center mb-3">
+                            <span className="text-xl mr-2">{phase.icon}</span>
+                            <h4 className="text-lg font-medium">{t(phase.title)}</h4>
+                          </div>
+                          <p className="text-text/80 mb-4">
+                            {t(phase.description)}
+                          </p>
+                          <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                            <p className="text-text/70 text-sm">
+                              {t(phase.detailedDesc)}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>

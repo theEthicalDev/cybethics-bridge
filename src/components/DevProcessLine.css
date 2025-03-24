@@ -4,7 +4,16 @@
   z-index: 10;
 }
 
-.process-line {
+.process-line-vertical {
+  position: absolute;
+  width: 2px;
+  background-color: #e2e8f0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure the line is behind the steps */
+}
+
+.process-line-horizontal {
   position: absolute;
   height: 2px;
   background-color: #e2e8f0;
@@ -26,4 +35,66 @@
 .process-step:hover .step-title {
   color: #7c1cd4;
   transition: color 0.3s ease;
+}
+
+.vertical-timeline-element {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 3rem;
+}
+
+.vertical-timeline-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 2px;
+  background-color: rgba(124, 28, 212, 0.2);
+  z-index: 1;
+}
+
+.vertical-timeline-element:last-child::before {
+  height: 50%;
+}
+
+.vertical-timeline-element:first-child::before {
+  top: 50%;
+}
+
+.vertical-timeline-element-icon {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(124, 28, 212, 0.1);
+  border: 2px solid rgba(124, 28, 212, 0.4);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.vertical-timeline-element:hover .vertical-timeline-element-icon {
+  background-color: rgba(124, 28, 212, 0.2);
+  border-color: rgba(124, 28, 212, 0.8);
+  transform: scale(1.1);
+}
+
+.vertical-timeline-element-content {
+  position: relative;
+  margin-left: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(124, 28, 212, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vertical-timeline-element:hover .vertical-timeline-element-content {
+  box-shadow: 0 4px 12px rgba(124, 28, 212, 0.1);
+  border-color: rgba(124, 28, 212, 0.2);
 }
