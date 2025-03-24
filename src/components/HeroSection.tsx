@@ -1,9 +1,9 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Sparkles } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
@@ -48,7 +48,8 @@ console.log(result); // FETCI
   );
 };
 
-const MountainAnimation: React.FC = () => {
+// Floating animation ball
+const AnimatedBall: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   useEffect(() => {
@@ -58,127 +59,38 @@ const MountainAnimation: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    canvas.width = 900;
+    // Set canvas dimensions
+    canvas.width = 300;
     canvas.height = 300;
     
-    const mountainPoints = [
-      [0, 300],
-      [100, 250],
-      [200, 180],
-      [300, 120],
-      [350, 200],
-      [400, 150],
-      [450, 220],
-      [550, 100],
-      [650, 180],
-      [750, 220],
-      [850, 240],
-      [900, 300]
-    ];
-    
-    let progress = 0;
-    const animationDuration = 3000;
-    const startTime = performance.now();
-    
-    function drawMountain(currentTime: number) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      progress = Math.min((currentTime - startTime) / animationDuration, 1);
-      
-      ctx.beginPath();
-      ctx.moveTo(mountainPoints[0][0], mountainPoints[0][1]);
-      
-      for (let i = 1; i < Math.floor(progress * mountainPoints.length); i++) {
-        ctx.lineTo(mountainPoints[i][0], mountainPoints[i][1]);
-      }
-      
-      if (progress < 1) {
-        const currentIndex = Math.floor(progress * mountainPoints.length);
-        const nextIndex = Math.min(currentIndex + 1, mountainPoints.length - 1);
-        const subProgress = (progress * mountainPoints.length) % 1;
-        
-        const currentX = mountainPoints[currentIndex][0] + (mountainPoints[nextIndex][0] - mountainPoints[currentIndex][0]) * subProgress;
-        const currentY = mountainPoints[currentIndex][1] + (mountainPoints[nextIndex][1] - mountainPoints[currentIndex][1]) * subProgress;
-        
-        ctx.lineTo(currentX, currentY);
-      }
-      
-      ctx.closePath();
-      
-      ctx.fillStyle = 'rgba(124, 28, 212, 0.05)';
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.moveTo(mountainPoints[0][0], mountainPoints[0][1]);
-      
-      for (let i = 1; i < Math.floor(progress * mountainPoints.length); i++) {
-        ctx.lineTo(mountainPoints[i][0], mountainPoints[i][1]);
-      }
-      
-      if (progress < 1) {
-        const currentIndex = Math.floor(progress * mountainPoints.length);
-        const nextIndex = Math.min(currentIndex + 1, mountainPoints.length - 1);
-        const subProgress = (progress * mountainPoints.length) % 1;
-        
-        const currentX = mountainPoints[currentIndex][0] + (mountainPoints[nextIndex][0] - mountainPoints[currentIndex][0]) * subProgress;
-        const currentY = mountainPoints[currentIndex][1] + (mountainPoints[nextIndex][1] - mountainPoints[currentIndex][1]) * subProgress;
-        
-        ctx.lineTo(currentX, currentY);
-      }
-      
-      ctx.strokeStyle = 'rgba(124, 28, 212, 0.3)';
-      ctx.lineWidth = 2;
-      ctx.stroke();
-      
-      if (progress < 1) {
-        requestAnimationFrame(drawMountain);
-      }
-    }
-    
-    requestAnimationFrame(drawMountain);
-    
-    return () => {};
-  }, []);
-  
-  return (
-    <canvas ref={canvasRef} className="w-full absolute top-0 opacity-70 pointer-events-none" style={{ zIndex: 1 }}></canvas>
-  );
-};
-
-const BackgroundParticles: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
+    // Particle properties
     const particles: {x: number, y: number, size: number, speedX: number, speedY: number, color: string}[] = [];
-    const particleCount = 30;
+    const particleCount = 50;
     
+    // Fill particles array with random values
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        color: `rgba(124, 28, 212, ${Math.random() * 0.2 + 0.05})`
+        size: Math.random() * 5 + 1,
+        speedX: (Math.random() - 0.5) * 2,
+        speedY: (Math.random() - 0.5) * 2,
+        color: `rgba(124, 28, 212, ${Math.random() * 0.5 + 0.25})`
       });
     }
     
+    // Animation loop
     function animate() {
+      // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      // Update and draw particles
       particles.forEach(particle => {
+        // Update position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
         
+        // Bounce off walls
         if (particle.x > canvas.width || particle.x < 0) {
           particle.speedX *= -1;
         }
@@ -186,12 +98,14 @@ const BackgroundParticles: React.FC = () => {
           particle.speedY *= -1;
         }
         
+        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = particle.color;
         ctx.fill();
       });
       
+      // Draw connections between particles that are close to each other
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -200,8 +114,8 @@ const BackgroundParticles: React.FC = () => {
           
           if (distance < 85) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(124, 28, 212, ${0.05 * (1 - distance / 85)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(124, 28, 212, ${0.2 * (1 - distance / 85)})`;
+            ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -214,20 +128,13 @@ const BackgroundParticles: React.FC = () => {
     
     animate();
     
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
     return () => {
-      window.removeEventListener('resize', handleResize);
+      // Cleanup if needed
     };
   }, []);
   
   return (
-    <canvas ref={canvasRef} className="fixed inset-0 z-0 opacity-30 pointer-events-none"></canvas>
+    <canvas ref={canvasRef} className="z-0 opacity-80"></canvas>
   );
 };
 
@@ -236,15 +143,10 @@ const HeroSection: React.FC = () => {
   
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
+      {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/10 blur-3xl animate-pulse-subtle" />
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse-subtle" style={{ animationDelay: '1s' }} />
-      </div>
-      
-      <BackgroundParticles />
-      
-      <div className="absolute top-0 left-0 right-0 z-0">
-        <MountainAnimation />
       </div>
       
       <div className="container">
@@ -283,19 +185,18 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="relative animate-scale-in flex flex-col items-center">
-            <div className="w-full max-w-md mx-auto relative mb-8">
-              <div className="rounded-xl overflow-hidden border-4 border-primary/20 shadow-lg">
-                <img 
-                  src="/public/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" 
-                  alt="Professional portrait" 
-                  className="w-full object-cover"
-                />
+          <div className="relative animate-scale-in">
+            <div className="w-full h-full max-w-lg mx-auto relative">
+              {/* Animated particle network */}
+              <div className="">
+                <AnimatedBall />
               </div>
               
-              <div className="absolute -bottom-16 -right-8 w-64 transform rotate-6 scale-75 opacity-90 z-10">
+              {/* Code animation */}
+              <div className="">
                 <CodeAnimation />
               </div>
+              
             </div>
           </div>
         </div>
