@@ -7,6 +7,7 @@ interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
   t: (key: string) => string;
+  setLanguage: (lang: Language) => void;
 }
 
 const translations: Record<Language, Record<string, string>> = {
@@ -57,7 +58,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.cta.subtitle': 'Get in touch today to discuss your requirements and how we can help you achieve your business goals.',
     
     'projects.title': 'Recent Projects',
-    'projects.subtitle': 'Explore some of our recent work and see how we've helped businesses like yours.',
+    'projects.subtitle': 'Explore some of our recent work and see how we have helped businesses like yours.',
     'projects.viewall': 'View All Projects',
     'projects.request': 'Request Similar Project',
     
@@ -77,6 +78,11 @@ const translations: Record<Language, Record<string, string>> = {
     
     'error.404': 'Page not found',
     'error.back': 'Back to home',
+    
+    'services.more': 'Learn More',
+    'footer.rights': 'All rights reserved',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service',
   },
   de: {
     'nav.home': 'Startseite',
@@ -145,6 +151,11 @@ const translations: Record<Language, Record<string, string>> = {
     
     'error.404': 'Seite nicht gefunden',
     'error.back': 'Zurück zur Startseite',
+    
+    'services.more': 'Mehr erfahren',
+    'footer.rights': 'Alle Rechte vorbehalten',
+    'footer.privacy': 'Datenschutzerklärung',
+    'footer.terms': 'Nutzungsbedingungen',
   }
 };
 
@@ -162,7 +173,7 @@ export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ childr
   };
   
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, t, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
