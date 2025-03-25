@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -48,7 +49,7 @@ console.log(result); // FETCI
   );
 };
 
-const BackgroundParticles: React.FC = () => {
+const MeshGradientBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   useEffect(() => {
@@ -61,56 +62,44 @@ const BackgroundParticles: React.FC = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     
-    const particles: {x: number, y: number, size: number, speedX: number, speedY: number, color: string}[] = [];
-    const particleCount = 30;
+    // Create gradient circles
+    const gradientCircles = [
+      { x: canvas.width * 0.2, y: canvas.height * 0.3, radius: canvas.width * 0.3, color: 'rgba(124, 28, 212, 0.07)' },
+      { x: canvas.width * 0.7, y: canvas.height * 0.6, radius: canvas.width * 0.4, color: 'rgba(146, 82, 234, 0.07)' },
+      { x: canvas.width * 0.5, y: canvas.height * 0.2, radius: canvas.width * 0.35, color: 'rgba(183, 148, 244, 0.05)' },
+      { x: canvas.width * 0.8, y: canvas.height * 0.3, radius: canvas.width * 0.25, color: 'rgba(207, 186, 240, 0.06)' }
+    ];
     
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        color: `rgba(124, 28, 212, ${Math.random() * 0.2 + 0.05})`
-      });
-    }
+    // Animation variables
+    let angle = 0;
+    const speed = 0.001;
     
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      particles.forEach(particle => {
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
+      // Update circle positions with subtle movement
+      angle += speed;
+      gradientCircles.forEach((circle, index) => {
+        const offsetX = Math.sin(angle + index * 0.5) * 50;
+        const offsetY = Math.cos(angle + index * 0.7) * 30;
         
-        if (particle.x > canvas.width || particle.x < 0) {
-          particle.speedX *= -1;
-        }
-        if (particle.y > canvas.height || particle.y < 0) {
-          particle.speedY *= -1;
-        }
+        const gradient = ctx.createRadialGradient(
+          circle.x + offsetX, 
+          circle.y + offsetY, 
+          0, 
+          circle.x + offsetX, 
+          circle.y + offsetY, 
+          circle.radius
+        );
         
+        gradient.addColorStop(0, circle.color);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
+        ctx.arc(circle.x + offsetX, circle.y + offsetY, circle.radius, 0, Math.PI * 2);
         ctx.fill();
       });
-      
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 85) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(124, 28, 212, ${0.05 * (1 - distance / 85)})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
       
       requestAnimationFrame(animate);
     }
@@ -130,7 +119,7 @@ const BackgroundParticles: React.FC = () => {
   }, []);
   
   return (
-    <canvas ref={canvasRef} className="fixed inset-0 z-0 opacity-30 pointer-events-none"></canvas>
+    <canvas ref={canvasRef} className="fixed inset-0 z-0 opacity-70 pointer-events-none"></canvas>
   );
 };
 
@@ -181,11 +170,8 @@ const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/10 blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-pulse-subtle" style={{ animationDelay: '1s' }} />
+        <MeshGradientBackground />
       </div>
-      
-      <BackgroundParticles />
       
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -223,12 +209,12 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-6 h-64 flex items-center justify-center">
+          <div className="flex flex-col gap-6">
+            <div className="h-64 flex items-center justify-center">
               <LogoAnimation />
             </div>
             
-            <div className="lg:col-span-6">
+            <div>
               <CodeAnimation />
             </div>
           </div>
