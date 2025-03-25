@@ -1,10 +1,10 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Sparkles } from 'lucide-react';
 import Logo from '@/components/Logo';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
@@ -59,20 +59,24 @@ const MeshGradientBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    resizeCanvas();
     
     // Create gradient circles
     const gradientCircles = [
-      { x: canvas.width * 0.2, y: canvas.height * 0.3, radius: canvas.width * 0.3, color: 'rgba(124, 28, 212, 0.07)' },
-      { x: canvas.width * 0.7, y: canvas.height * 0.6, radius: canvas.width * 0.4, color: 'rgba(146, 82, 234, 0.07)' },
-      { x: canvas.width * 0.5, y: canvas.height * 0.2, radius: canvas.width * 0.35, color: 'rgba(183, 148, 244, 0.05)' },
-      { x: canvas.width * 0.8, y: canvas.height * 0.3, radius: canvas.width * 0.25, color: 'rgba(207, 186, 240, 0.06)' }
+      { x: canvas.width * 0.2, y: canvas.height * 0.3, radius: canvas.width * 0.4, color: 'rgba(124, 28, 212, 0.15)' },
+      { x: canvas.width * 0.7, y: canvas.height * 0.6, radius: canvas.width * 0.5, color: 'rgba(146, 82, 234, 0.15)' },
+      { x: canvas.width * 0.5, y: canvas.height * 0.2, radius: canvas.width * 0.45, color: 'rgba(183, 148, 244, 0.12)' },
+      { x: canvas.width * 0.8, y: canvas.height * 0.3, radius: canvas.width * 0.35, color: 'rgba(207, 186, 240, 0.13)' }
     ];
     
     // Animation variables
     let angle = 0;
-    const speed = 0.001;
+    const speed = 0.0008;
     
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -80,8 +84,8 @@ const MeshGradientBackground: React.FC = () => {
       // Update circle positions with subtle movement
       angle += speed;
       gradientCircles.forEach((circle, index) => {
-        const offsetX = Math.sin(angle + index * 0.5) * 50;
-        const offsetY = Math.cos(angle + index * 0.7) * 30;
+        const offsetX = Math.sin(angle + index * 0.5) * 70;
+        const offsetY = Math.cos(angle + index * 0.7) * 50;
         
         const gradient = ctx.createRadialGradient(
           circle.x + offsetX, 
@@ -106,20 +110,15 @@ const MeshGradientBackground: React.FC = () => {
     
     animate();
     
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', resizeCanvas);
     
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
   
   return (
-    <canvas ref={canvasRef} className="fixed inset-0 z-0 opacity-70 pointer-events-none"></canvas>
+    <canvas ref={canvasRef} className="fixed inset-0 -z-10 w-full h-full"></canvas>
   );
 };
 
@@ -164,63 +163,82 @@ const LogoAnimation: React.FC = () => {
   );
 };
 
+const ContactPartner: React.FC = () => {
+  return (
+    <div className="container">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 py-8 px-4 -mt-16 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg max-w-xl mx-auto">
+        <Avatar className="h-20 w-20 border-2 border-primary/20">
+          <AvatarImage src="/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic" />
+          <AvatarFallback>DK</AvatarFallback>
+        </Avatar>
+        <div className="text-center md:text-left">
+          <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
+          <p className="text-xl font-medium">Djordje Karadzic</p>
+          <p className="text-sm text-gray-600 mt-1">Cybethics Solutions</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+    <>
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
         <MeshGradientBackground />
-      </div>
-      
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-up">
-            <div>
-              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-                <span className="text-sm font-medium text-primary flex items-center">
-                  <Sparkles className="mr-2 h-4 w-4" />
-                  Cybethics
-                </span>
+        
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-up">
+              <div>
+                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+                  <span className="text-sm font-medium text-primary flex items-center">
+                    <Sparkles className="mr-2 h-4 w-4" />
+                    Cybethics
+                  </span>
+                </div>
+                <h1 className="mb-4 leading-tight text-balance">{t('hero.title')}</h1>
+                <p className="text-lg md:text-xl text-text/80 max-w-xl text-balance">
+                  {t('hero.subtitle')}
+                </p>
               </div>
-              <h1 className="mb-4 leading-tight text-balance">{t('hero.title')}</h1>
-              <p className="text-lg md:text-xl text-text/80 max-w-xl text-balance">
-                {t('hero.subtitle')}
-              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
+                  <Link to="/services">
+                    {t('hero.cta')}
+                    <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
+                  <Link to="/contact">
+                    {t('contact.booking')}
+                  </Link>
+                </Button>
+              </div>
+              
+              <div className="flex items-center space-x-4 pt-4">
+                <div className="w-6 h-6 bg-red-600 rounded"></div>
+                <p className="text-sm font-medium">{t('about.swiss')}</p>
+              </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
-                <Link to="/services">
-                  {t('hero.cta')}
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
-                <Link to="/contact">
-                  {t('contact.booking')}
-                </Link>
-              </Button>
-            </div>
-            
-            <div className="flex items-center space-x-4 pt-4">
-              <div className="w-6 h-6 bg-red-600 rounded"></div>
-              <p className="text-sm font-medium">{t('about.swiss')}</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col gap-6">
-            <div className="h-64 flex items-center justify-center">
-              <LogoAnimation />
-            </div>
-            
-            <div>
-              <CodeAnimation />
+            <div className="flex flex-col gap-6">
+              <div className="h-64 flex items-center justify-center">
+                <LogoAnimation />
+              </div>
+              
+              <div>
+                <CodeAnimation />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <ContactPartner />
+    </>
   );
 };
 
