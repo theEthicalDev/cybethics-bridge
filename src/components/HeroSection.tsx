@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -81,7 +82,7 @@ const MeshGradientBackground: React.FC = () => {
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Update circle positions with subtle movement
+      // Update circle positions with continuous subtle movement
       angle += speed;
       gradientCircles.forEach((circle, index) => {
         const offsetX = Math.sin(angle + index * 0.5) * 70;
@@ -186,7 +187,7 @@ const HeroSection: React.FC = () => {
   
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-24">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 bg-gradient-to-b from-white via-white to-gray-50/80">
         <MeshGradientBackground />
         
         <div className="container relative z-10">
@@ -237,6 +238,11 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* Add a gradient transition div */}
+      <div className="h-24 bg-gradient-to-b from-gray-50/80 to-gray-50 -mt-24"></div>
+      
+      {/* Contact Partner positioned centrally between sections */}
       <ContactPartner />
     </>
   );
