@@ -67,7 +67,7 @@ const MeshGradientBackground: React.FC = () => {
     
     resizeCanvas();
     
-    // Create gradient circles
+    // Create gradient circles with continuous animation
     const gradientCircles = [
       { x: canvas.width * 0.2, y: canvas.height * 0.3, radius: canvas.width * 0.4, color: 'rgba(124, 28, 212, 0.15)' },
       { x: canvas.width * 0.7, y: canvas.height * 0.6, radius: canvas.width * 0.5, color: 'rgba(146, 82, 234, 0.15)' },
