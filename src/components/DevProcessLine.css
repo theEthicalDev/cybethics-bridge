@@ -65,6 +65,8 @@
 .vertical-timeline-element-icon {
   position: absolute;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -80,7 +82,7 @@
 .vertical-timeline-element:hover .vertical-timeline-element-icon {
   background-color: rgba(124, 28, 212, 0.2);
   border-color: rgba(124, 28, 212, 0.8);
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .vertical-timeline-element-content {
