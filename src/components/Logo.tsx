@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
     ? '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png' 
     : '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png';
   
-  const logoSize = variant === 'small' ? 'h-10' : 'h-16';
+  const logoSize = variant === 'small' ? 'h-14' : 'h-20'; // Increased size from h-10 to h-14
   
   return (
     <Link 

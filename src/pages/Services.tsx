@@ -9,7 +9,8 @@ import {
   GitBranch, 
   ServerCog, 
   Monitor, 
-  ArrowRight 
+  ArrowRight, 
+  Check 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/ServiceCard';
@@ -46,8 +47,63 @@ const Services = () => {
     },
     {
       icon: <Monitor className="h-6 w-6 text-primary" />,
-      titleKey: 'services.takeover.title',
-      descriptionKey: 'services.takeover.description',
+      titleKey: 'services.offshoring.title',
+      descriptionKey: 'services.offshoring.description',
+    }
+  ];
+  
+  const serviceCategories = [
+    {
+      title: "Custom Software Development",
+      description: "Tailor-made software solutions designed specifically for your business needs and workflows.",
+      features: [
+        "Web Applications",
+        "Desktop Software",
+        "Mobile Applications",
+        "Enterprise Solutions"
+      ],
+      color: "from-blue-50 to-indigo-100",
+      textColor: "text-indigo-900",
+      icon: <Code className="h-10 w-10 text-indigo-700" />
+    },
+    {
+      title: "Process Automation",
+      description: "Streamline your business operations by automating repetitive tasks and workflows.",
+      features: [
+        "Workflow Automation",
+        "Business Process Management",
+        "Robotic Process Automation",
+        "Intelligent Document Processing"
+      ],
+      color: "from-purple-50 to-violet-100",
+      textColor: "text-violet-900",
+      icon: <Cog className="h-10 w-10 text-violet-700" />
+    },
+    {
+      title: "System Integration",
+      description: "Connect your diverse systems and applications to create a unified and efficient ecosystem.",
+      features: [
+        "API Development",
+        "Middleware Solutions",
+        "Legacy System Integration",
+        "Cloud Integration"
+      ],
+      color: "from-teal-50 to-emerald-100",
+      textColor: "text-emerald-900",
+      icon: <ServerCog className="h-10 w-10 text-emerald-700" />
+    },
+    {
+      title: "IT Offshoring & Support",
+      description: "Comprehensive IT support and offshore development services to optimize your operations.",
+      features: [
+        "Complete IT Takeover",
+        "IT Consulting",
+        "24/7 Support",
+        "Dedicated Development Teams"
+      ],
+      color: "from-amber-50 to-orange-100",
+      textColor: "text-orange-900",
+      icon: <Monitor className="h-10 w-10 text-orange-700" />
     }
   ];
 
@@ -70,8 +126,46 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Service Categories */}
       <section className="py-24">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="mb-4">Our Services</h2>
+            <p className="text-lg text-text/80">
+              Comprehensive technology solutions tailored to your specific business needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {serviceCategories.map((category, index) => (
+              <div 
+                key={index} 
+                className={`rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-up`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className={`bg-gradient-to-br ${category.color} p-8`}>
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className={`text-2xl font-semibold ${category.textColor}`}>{category.title}</h3>
+                    <div className="bg-white/80 p-3 rounded-full shadow-sm">{category.icon}</div>
+                  </div>
+                  <p className={`${category.textColor} mb-6 opacity-90`}>{category.description}</p>
+                  <div className="space-y-2">
+                    {category.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <Check className={`h-5 w-5 mr-2 ${category.textColor}`} />
+                        <span className={`${category.textColor} font-medium`}>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Services */}
+      <section className="py-24 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="mb-4">{t('services.title')}</h2>
@@ -95,7 +189,7 @@ const Services = () => {
       </section>
       
       {/* Development Process */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-white py-24">
         <div className="container">
           <DevProcessVertical />
         </div>

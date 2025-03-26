@@ -15,6 +15,25 @@ interface ProjectCardProps {
   requestButton?: React.ReactNode;
 }
 
+const getTagColor = (tag: string): string => {
+  const colorMap: Record<string, string> = {
+    'Web Development': 'bg-blue-100 text-blue-800',
+    'Spring Boot': 'bg-green-100 text-green-800',
+    'Angular': 'bg-red-100 text-red-800',
+    'Automation': 'bg-purple-100 text-purple-800',
+    'Microsoft PowerAutomate': 'bg-indigo-100 text-indigo-800',
+    'Zapier': 'bg-orange-100 text-orange-800',
+    'API Development': 'bg-cyan-100 text-cyan-800',
+    'Integration': 'bg-teal-100 text-teal-800',
+    'Backend': 'bg-emerald-100 text-emerald-800',
+    'Frontend': 'bg-pink-100 text-pink-800',
+    'Mobile': 'bg-amber-100 text-amber-800',
+    'UI/UX': 'bg-rose-100 text-rose-800',
+  };
+  
+  return colorMap[tag] || 'bg-gray-100 text-gray-800';
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ 
   title, 
   description, 
@@ -25,18 +44,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   requestButton
 }) => {
   return (
-    <Card className="overflow-hidden border-0 shadow-md group" style={{ animationDelay: `${delay}ms` }}>
+    <Card className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fade-up" style={{ animationDelay: `${delay}ms` }}>
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <CardHeader className="pb-2">
         <div className="flex flex-wrap gap-2 mb-3">
           {tags.map((tag, index) => (
-            <Badge key={index} variant="secondary" className="font-normal bg-gray-100 text-text/70">
+            <Badge key={index} variant="outline" className={`font-normal ${getTagColor(tag)}`}>
               {tag}
             </Badge>
           ))}

@@ -70,18 +70,18 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: rgba(124, 28, 212, 0.1);
-  border: 2px solid rgba(124, 28, 212, 0.4);
+  background-color: white;
+  border: 2px solid rgba(124, 28, 212, 0.8);
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  box-shadow: 0 0 0 5px rgba(124, 28, 212, 0.1);
 }
 
 .vertical-timeline-element:hover .vertical-timeline-element-icon {
   background-color: rgba(124, 28, 212, 0.2);
-  border-color: rgba(124, 28, 212, 0.8);
   transform: translateY(-50%) scale(1.1);
 }
 

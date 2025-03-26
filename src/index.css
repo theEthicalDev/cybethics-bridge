@@ -161,12 +161,25 @@
     }
   }
   
+  @keyframes gradient-x {
+    0% {
+      background-position: 0% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
   
   .animate-pulse-subtle {
     animation: pulse-subtle 4s ease-in-out infinite;
+  }
+  
+  .animate-gradient-x {
+    animation: gradient-x 3s linear infinite;
   }
   
   .animate-fade-up {

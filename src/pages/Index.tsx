@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,45 @@ import { ArrowRight, Code, Cog, Terminal, GitBranch, ServerCog, Monitor } from '
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
+
+// Animated counter component
+const AnimatedCounter: React.FC<{ value: number; label: string; delay?: number }> = ({ 
+  value, 
+  label, 
+  delay = 0 
+}) => {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const duration = 2000; // 2 seconds animation
+      const interval = 20; // Update every 20ms
+      const steps = duration / interval;
+      const increment = value / steps;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= value) {
+          clearInterval(timer);
+          current = value;
+        }
+        setCount(Math.floor(current));
+      }, interval);
+      
+      return () => clearInterval(timer);
+    }, delay);
+    
+    return () => clearTimeout(timeout);
+  }, [value, delay]);
+  
+  return (
+    <div className="text-center">
+      <div className="text-4xl font-bold text-primary mb-2">{count}+</div>
+      <div className="text-sm text-text/70">{label}</div>
+    </div>
+  );
+};
 
 const Index = () => {
   const { t } = useLanguage();
@@ -39,8 +78,8 @@ const Index = () => {
     },
     {
       icon: <Monitor className="h-6 w-6 text-primary" />,
-      titleKey: 'services.takeover.title',
-      descriptionKey: 'services.takeover.description',
+      titleKey: 'services.offshoring.title',
+      descriptionKey: 'services.offshoring.description',
     }
   ];
 
@@ -142,12 +181,12 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-                <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform rotate-2 animate-float" style={{ animationDelay: '0.7s' }}>
+                <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden animate-float" style={{ animationDelay: '0.7s' }}>
                   <div className="h-full w-full bg-gradient-to-br from-primary/20 to-purple-50"></div>
                 </div>
                 <div className="relative bg-white rounded-3xl shadow-lg p-8 -mt-8 ml-8 animate-float" style={{ animationDelay: '1.2s' }}>
                   <div className="flex mb-4">
-                    <div className="w-6 h-6 bg-red-600 rounded"></div>
+                    <div className="w-6 h-6 bg-primary/20 rounded"></div>
                   </div>
                   <blockquote className="text-lg italic text-text/90">
                     "We believe it's ethical to only implement the most suitable solution, not the most expensive one."
@@ -162,6 +201,14 @@ const Index = () => {
                 <p className="text-lg text-text/80 mb-6">
                   {t('about.intro')}
                 </p>
+              </div>
+              
+              {/* Stats Counter Section */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+                <AnimatedCounter value={50} label="Happy Clients" delay={0} />
+                <AnimatedCounter value={125} label="Projects Completed" delay={300} />
+                <AnimatedCounter value={10} label="Years Experience" delay={600} />
+                <AnimatedCounter value={99} label="Success Rate" delay={900} />
               </div>
               
               <div className="space-y-4">

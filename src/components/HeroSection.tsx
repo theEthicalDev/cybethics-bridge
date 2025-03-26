@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight, Sparkles, Calendar } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
@@ -42,7 +43,7 @@ console.log(result); // FETCI
   }, []);
   
   return (
-    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-64">
+    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-80">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
@@ -126,6 +127,7 @@ const MeshGradientBackground: React.FC = () => {
 const LogoAnimation: React.FC = () => {
   const [scale, setScale] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     setTimeout(() => {
@@ -145,6 +147,10 @@ const LogoAnimation: React.FC = () => {
       setScale(1);
     }, 1500);
   }, []);
+  
+  if (isMobile) {
+    return null;
+  }
   
   return (
     <div 
@@ -168,24 +174,25 @@ const ContactPartner: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <div className="container">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8 px-6 -mt-16 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg max-w-4xl mx-auto">
+    <div className="container flex justify-center">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-6 px-8 -mt-16 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 backdrop-blur-sm rounded-xl shadow-lg max-w-3xl mx-auto">
         <div className="text-left">
           <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
           <p className="text-sm text-gray-600 mt-1">Cybethics Solutions</p>
         </div>
         
-        <Avatar className="h-20 w-20 border-2 border-primary/20 flex-shrink-0">
+        <Avatar className="h-24 w-24 border-2 border-primary/20 flex-shrink-0">
           <AvatarImage src="/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic" />
           <AvatarFallback>DK</AvatarFallback>
         </Avatar>
         
-        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
-          <Link to="/contact">
+        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group relative overflow-hidden">
+          <Link to="/contact" className="flex items-center py-6 px-6">
             <Calendar className="mr-2 h-4 w-4" />
-            {t('contact.booking')}
+            <span className="relative z-10">{t('contact.booking')}</span>
             <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-600 to-primary bg-[length:200%_100%] animate-gradient-x"></span>
           </Link>
         </Button>
       </div>
@@ -232,8 +239,8 @@ const HeroSection: React.FC = () => {
               </div>
               
               <div className="flex items-center space-x-4 pt-4">
-                <div className="w-6 h-6 bg-red-600 rounded"></div>
-                <p className="text-sm font-medium">{t('about.swiss')}</p>
+                <div className="w-6 h-6 bg-primary/20 rounded"></div>
+                <p className="text-sm font-medium">We prefer deeds to words</p>
               </div>
             </div>
             
