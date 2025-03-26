@@ -13,6 +13,7 @@ interface ProjectCardProps {
   url: string;
   delay?: number;
   requestButton?: React.ReactNode;
+  tagColor?: string; // Added this property to fix the type error
 }
 
 const getTagColor = (tag: string): string => {
@@ -41,7 +42,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tags, 
   url,
   delay = 0,
-  requestButton
+  requestButton,
+  tagColor // Add this to the destructured props
 }) => {
   return (
     <Card className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fade-up" style={{ animationDelay: `${delay}ms` }}>
@@ -56,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <CardHeader className="pb-2">
         <div className="flex flex-wrap gap-2 mb-3">
           {tags.map((tag, index) => (
-            <Badge key={index} variant="outline" className={`font-normal ${getTagColor(tag)}`}>
+            <Badge key={index} variant="outline" className={`font-normal ${tagColor || getTagColor(tag)}`}>
               {tag}
             </Badge>
           ))}
