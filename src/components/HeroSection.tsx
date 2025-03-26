@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -54,8 +55,8 @@ const ContactPartner: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <div className="container flex justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 -mt-16 bg-white shadow-lg rounded-xl max-w-2xl mx-auto relative">
+    <div className="container relative z-20 -mb-16 mt-16">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
         <div className="text-left">
           <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
@@ -86,7 +87,7 @@ const HeroSection: React.FC = () => {
   
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 bg-white">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-32 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-up">
@@ -142,7 +143,7 @@ const HeroSection: React.FC = () => {
 
             {/* Show only code animation for mobile with proper spacing */}
             {isMobile && (
-              <div className="mt-4 mb-24">
+              <div className="mt-4 mb-32">
                 <CodeAnimation />
               </div>
             )}
@@ -150,7 +151,7 @@ const HeroSection: React.FC = () => {
         </div>
       </section>
       
-      {/* Contact Partner positioned centrally between sections */}
+      {/* Contact Partner positioned between sections */}
       <ContactPartner />
     </>
   );

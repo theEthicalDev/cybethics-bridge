@@ -12,8 +12,8 @@ const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
     ? '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png' 
     : '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png';
   
-  // Increased size by 75%
-  const logoSize = variant === 'small' ? 'h-28' : 'h-40';
+  // Increased size by 25%
+  const logoSize = variant === 'small' ? 'h-20' : 'h-40';
   
   return (
     <Link 

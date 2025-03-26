@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Code, Cog, Network, Terminal, GitBranch, Smartphone } from 'lucide-react';
 
 const Projects = () => {
   const { t } = useLanguage();
@@ -80,12 +80,12 @@ const Projects = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'software', label: 'Software Development' },
-    { id: 'automation', label: 'Automation' },
-    { id: 'api', label: 'API & Integration' },
-    { id: 'cicd', label: 'CI/CD' },
-    { id: 'scripting', label: 'Scripting' },
+    { id: 'all', label: 'All Projects', icon: <Code className="mr-2 h-4 w-4" />, color: 'from-primary to-purple-600' },
+    { id: 'software', label: 'Software Development', icon: <Smartphone className="mr-2 h-4 w-4" />, color: 'from-blue-600 to-blue-400' },
+    { id: 'automation', label: 'Automation', icon: <Cog className="mr-2 h-4 w-4" />, color: 'from-violet-600 to-violet-400' },
+    { id: 'api', label: 'API & Integration', icon: <Network className="mr-2 h-4 w-4" />, color: 'from-green-600 to-green-400' },
+    { id: 'cicd', label: 'CI/CD', icon: <GitBranch className="mr-2 h-4 w-4" />, color: 'from-amber-600 to-amber-400' },
+    { id: 'scripting', label: 'Scripting', icon: <Terminal className="mr-2 h-4 w-4" />, color: 'from-red-600 to-red-400' },
   ];
 
   // Get unique tags from all projects
@@ -148,17 +148,20 @@ const Projects = () => {
 
           {/* Projects by category */}
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="w-full justify-start overflow-x-auto flex-nowrap mb-8 p-1 bg-gray-100/50 rounded-lg animate-fade-up">
-              {categories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className="px-4 py-2.5 data-[state=active]:bg-white data-[state=active]:shadow-sm rounded-md whitespace-nowrap"
-                >
-                  {category.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="flex justify-center w-full">
+              <TabsList className="flex-wrap space-x-2 mb-8 p-1 bg-transparent justify-center animate-fade-up">
+                {categories.map((category) => (
+                  <TabsTrigger
+                    key={category.id}
+                    value={category.id}
+                    className={`px-4 py-2.5 data-[state=active]:bg-gradient-to-r data-[state=active]:${category.color} data-[state=active]:text-white data-[state=active]:shadow-sm rounded-full flex items-center gap-1 transition-all duration-200`}
+                  >
+                    {category.icon}
+                    {category.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
 
             {categories.map((category) => (
               <TabsContent

@@ -192,6 +192,11 @@
     opacity: 1; /* Changed from 0 to 1 to prevent disappearing */
   }
   
+  /* Updated animation duration to 10 seconds */
+  .animate-pulse {
+    animation: pulse 10s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
   @keyframes fadeUp {
     from {
       opacity: 0.8; /* Changed from 0 to ensure visibility */
@@ -211,6 +216,16 @@
     to {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  /* Custom pulse animation with longer duration */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
     }
   }
 }
