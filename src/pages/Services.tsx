@@ -96,8 +96,8 @@ const Services = () => {
       title: "IT Offshoring & Support",
       description: "Comprehensive IT support and offshore development services to optimize your operations.",
       features: [
-        "Complete IT Takeover",
-        "IT Consulting",
+        "Website Takeover",
+        "Full IT Offshoring",
         "24/7 Support",
         "Dedicated Development Teams"
       ],

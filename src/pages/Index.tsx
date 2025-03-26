@@ -90,6 +90,7 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYiUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
       tags: ['Web Development', 'Spring Boot', 'Angular'],
       url: '/projects',
+      tagColor: 'bg-blue-100 text-blue-800'
     },
     {
       title: 'Workflow Automation System',
@@ -97,6 +98,7 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9tYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
       tags: ['Automation', 'Microsoft PowerAutomate', 'Zapier'],
       url: '/projects',
+      tagColor: 'bg-purple-100 text-purple-800'
     },
     {
       title: 'API Integration Platform',
@@ -104,6 +106,7 @@ const Index = () => {
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwaSUyMGRldmVsb3BtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
       tags: ['API Development', 'Integration', 'Backend'],
       url: '/projects',
+      tagColor: 'bg-green-100 text-green-800'
     },
   ];
 
@@ -162,6 +165,7 @@ const Index = () => {
                 description={project.description}
                 image={project.image}
                 tags={project.tags}
+                tagColor={project.tagColor}
                 url={project.url}
                 delay={index * 100}
                 requestButton={
@@ -181,10 +185,10 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-                <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden animate-float" style={{ animationDelay: '0.7s' }}>
+                <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden">
                   <div className="h-full w-full bg-gradient-to-br from-primary/20 to-purple-50"></div>
                 </div>
-                <div className="relative bg-white rounded-3xl shadow-lg p-8 -mt-8 ml-8 animate-float" style={{ animationDelay: '1.2s' }}>
+                <div className="relative bg-white rounded-3xl shadow-lg p-8 -mt-8 ml-8">
                   <div className="flex mb-4">
                     <div className="w-6 h-6 bg-primary/20 rounded"></div>
                   </div>

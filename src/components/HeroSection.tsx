@@ -43,129 +43,10 @@ console.log(result); // FETCI
   }, []);
   
   return (
-    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-80">
+    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-96">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
-    </div>
-  );
-};
-
-const MeshGradientBackground: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    resizeCanvas();
-    
-    // Create gradient circles with continuous animation
-    const gradientCircles = [
-      { x: canvas.width * 0.2, y: canvas.height * 0.3, radius: canvas.width * 0.4, color: 'rgba(124, 28, 212, 0.15)' },
-      { x: canvas.width * 0.7, y: canvas.height * 0.6, radius: canvas.width * 0.5, color: 'rgba(146, 82, 234, 0.15)' },
-      { x: canvas.width * 0.5, y: canvas.height * 0.2, radius: canvas.width * 0.45, color: 'rgba(183, 148, 244, 0.12)' },
-      { x: canvas.width * 0.8, y: canvas.height * 0.3, radius: canvas.width * 0.35, color: 'rgba(207, 186, 240, 0.13)' }
-    ];
-    
-    // Animation variables
-    let angle = 0;
-    const speed = 0.0008;
-    
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Update circle positions with continuous subtle movement
-      angle += speed;
-      gradientCircles.forEach((circle, index) => {
-        const offsetX = Math.sin(angle + index * 0.5) * 70;
-        const offsetY = Math.cos(angle + index * 0.7) * 50;
-        
-        const gradient = ctx.createRadialGradient(
-          circle.x + offsetX, 
-          circle.y + offsetY, 
-          0, 
-          circle.x + offsetX, 
-          circle.y + offsetY, 
-          circle.radius
-        );
-        
-        gradient.addColorStop(0, circle.color);
-        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(circle.x + offsetX, circle.y + offsetY, circle.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      
-      requestAnimationFrame(animate);
-    }
-    
-    animate();
-    
-    window.addEventListener('resize', resizeCanvas);
-    
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
-  
-  return (
-    <canvas ref={canvasRef} className="fixed inset-0 -z-10 w-full h-full"></canvas>
-  );
-};
-
-const LogoAnimation: React.FC = () => {
-  const [scale, setScale] = useState(0);
-  const [opacity, setOpacity] = useState(0);
-  const isMobile = useIsMobile();
-  
-  useEffect(() => {
-    setTimeout(() => {
-      setOpacity(1);
-      setScale(1.2);
-    }, 300);
-    
-    setTimeout(() => {
-      setScale(1);
-    }, 800);
-    
-    setTimeout(() => {
-      setScale(1.1);
-    }, 1200);
-    
-    setTimeout(() => {
-      setScale(1);
-    }, 1500);
-  }, []);
-  
-  if (isMobile) {
-    return null;
-  }
-  
-  return (
-    <div 
-      className="w-full h-full flex items-center justify-center"
-      style={{
-        opacity,
-        transform: `scale(${scale})`,
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
-      }}
-    >
-      <img 
-        src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png" 
-        alt="Cybethics Logo" 
-        className="w-3/4 h-auto"
-      />
     </div>
   );
 };
@@ -175,24 +56,27 @@ const ContactPartner: React.FC = () => {
   
   return (
     <div className="container flex justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-6 px-8 -mt-16 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 backdrop-blur-sm rounded-xl shadow-lg max-w-3xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 -mt-16 bg-white shadow-lg rounded-xl max-w-3xl mx-auto relative">
+        {/* Background gradient centered behind the card */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 rounded-xl blur-sm transform scale-105"></div>
+        
         <div className="text-left">
           <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
           <p className="text-sm text-gray-600 mt-1">Cybethics Solutions</p>
         </div>
         
-        <Avatar className="h-24 w-24 border-2 border-primary/20 flex-shrink-0">
+        <Avatar className="h-28 w-28 border-2 border-primary/20 flex-shrink-0">
           <AvatarImage src="/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic" />
           <AvatarFallback>DK</AvatarFallback>
         </Avatar>
         
-        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group relative overflow-hidden">
+        <Button asChild size="lg" className="bg-primary text-white rounded-full relative overflow-hidden group">
           <Link to="/contact" className="flex items-center py-6 px-6">
             <Calendar className="mr-2 h-4 w-4" />
             <span className="relative z-10">{t('contact.booking')}</span>
             <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            <span className="absolute inset-0 bg-gradient-to-r from-primary via-purple-600 to-primary bg-[length:200%_100%] animate-gradient-x"></span>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </Link>
         </Button>
       </div>
@@ -202,12 +86,11 @@ const ContactPartner: React.FC = () => {
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   
   return (
     <>
       <section className="relative min-h-screen flex items-center overflow-hidden pt-24 bg-gradient-to-b from-white via-white to-gray-50/80">
-        <MeshGradientBackground />
-        
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-up">
@@ -244,15 +127,26 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="flex flex-col gap-6">
+            <div className={`flex flex-col gap-6 ${isMobile ? 'hidden' : 'block'}`}>
               <div className="h-64 flex items-center justify-center">
-                <LogoAnimation />
+                <img 
+                  src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png" 
+                  alt="Cybethics Logo" 
+                  className="w-3/4 h-auto"
+                />
               </div>
               
               <div>
                 <CodeAnimation />
               </div>
             </div>
+
+            {/* Display only code animation for mobile without the logo space */}
+            {isMobile && (
+              <div className="mt-4">
+                <CodeAnimation />
+              </div>
+            )}
           </div>
         </div>
       </section>
