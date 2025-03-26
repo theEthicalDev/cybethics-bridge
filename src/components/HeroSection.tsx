@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,7 +6,6 @@ import { ChevronRight, Sparkles, Calendar } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
   const codeSnippet = `
@@ -24,11 +22,9 @@ function cybethics() {
 const result = cybethics();
 console.log(result); // FETCI
 `;
-
   useEffect(() => {
     let currentText = "";
     let currentIndex = 0;
-    
     const interval = setInterval(() => {
       if (currentIndex < codeSnippet.length) {
         currentText += codeSnippet[currentIndex];
@@ -38,24 +34,19 @@ console.log(result); // FETCI
         clearInterval(interval);
       }
     }, 15);
-    
     return () => clearInterval(interval);
   }, []);
-  
-  return (
-    <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-96">
+  return <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-96">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
-    </div>
-  );
+    </div>;
 };
-
 const ContactPartner: React.FC = () => {
-  const { t } = useLanguage();
-  
-  return (
-    <div className="container relative z-20 -mb-16 mt-16">
+  const {
+    t
+  } = useLanguage();
+  return <div className="container relative z-20 -mb-16 mt-16">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
         <div className="text-left">
           <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
@@ -77,17 +68,15 @@ const ContactPartner: React.FC = () => {
           </Link>
         </Button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const HeroSection: React.FC = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
   const isMobile = useIsMobile();
-  
-  return (
-    <>
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-32 bg-white">
+  return <>
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-2 pb-3 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-up">
@@ -125,36 +114,26 @@ const HeroSection: React.FC = () => {
             </div>
             
             {/* Only show this div on desktop */}
-            {!isMobile && (
-              <div className="flex flex-col gap-6">
+            {!isMobile && <div className="flex flex-col gap-6">
                 <div className="h-64 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png" 
-                    alt="Cybethics Logo" 
-                    className="w-3/4 h-auto"
-                  />
+                  <img src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png" alt="Cybethics Logo" className="w-3/4 h-auto" />
                 </div>
                 
                 <div>
                   <CodeAnimation />
                 </div>
-              </div>
-            )}
+              </div>}
 
             {/* Show only code animation for mobile with proper spacing */}
-            {isMobile && (
-              <div className="mt-4 mb-32">
+            {isMobile && <div className="mt-4 mb-32">
                 <CodeAnimation />
-              </div>
-            )}
+              </div>}
           </div>
         </div>
       </section>
       
       {/* Contact Partner positioned between sections */}
       <ContactPartner />
-    </>
-  );
+    </>;
 };
-
 export default HeroSection;
