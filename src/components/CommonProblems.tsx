@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   ClipboardList, 
-  NetworkOff, 
+  WifiOff, 
   Clock, 
   PieChart, 
   TrendingUp, 
@@ -52,7 +52,7 @@ const CommonProblems = () => {
       descriptionKey: 'common.problems.inefficiency.description',
     },
     {
-      icon: <NetworkOff className="h-5 w-5 text-primary" />,
+      icon: <WifiOff className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.integration.title',
       descriptionKey: 'common.problems.integration.description',
     },

@@ -1,48 +1,77 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-interface AnimatedCounterProps {
+export interface AnimatedCounterProps {
   value: number;
   label: string;
   icon?: React.ReactNode;
   delay?: number;
+  suffix?: string;
 }
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ 
   value, 
   label, 
-  icon,
-  delay = 0 
+  icon, 
+  delay = 0,
+  suffix = ""
 }) => {
   const [count, setCount] = useState(0);
-  
+  const countRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const duration = 2000; // 2 seconds animation
-      const interval = 20; // Update every 20ms
-      const steps = duration / interval;
-      const increment = value / steps;
-      let current = 0;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          clearInterval(timer);
-          current = value;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          
+          // Add delay before starting animation
+          const timeoutId = setTimeout(() => {
+            let startTime: number;
+            const duration = 2000; // 2 seconds
+            
+            const animate = (timestamp: number) => {
+              if (!startTime) startTime = timestamp;
+              const progress = Math.min((timestamp - startTime) / duration, 1);
+              const currentCount = Math.floor(progress * value);
+              
+              setCount(currentCount);
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                setCount(value);
+              }
+            };
+            
+            requestAnimationFrame(animate);
+          }, delay);
+          
+          return () => clearTimeout(timeoutId);
         }
-        setCount(Math.floor(current));
-      }, interval);
-      
-      return () => clearInterval(timer);
-    }, delay);
+      },
+      { threshold: 0.1 }
+    );
     
-    return () => clearTimeout(timeout);
+    if (countRef.current) {
+      observer.observe(countRef.current);
+    }
+    
+    return () => {
+      if (countRef.current) {
+        observer.unobserve(countRef.current);
+      }
+    };
   }, [value, delay]);
   
   return (
-    <div className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-      {icon && <div className="text-primary mb-4">{icon}</div>}
-      <div className="text-4xl font-bold text-primary mb-2 font-heading">{count}+</div>
+    <div ref={countRef} className="text-center p-6 animate-fade-in" style={{ animationDelay: `${delay}ms` }}>
+      {icon && <div className="mb-3">{icon}</div>}
+      <div className="text-4xl font-bold text-primary mb-2">
+        {count}{suffix}
+      </div>
       <div className="text-sm text-text/70">{label}</div>
     </div>
   );
