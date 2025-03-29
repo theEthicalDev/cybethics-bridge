@@ -215,9 +215,8 @@ const DetailedServiceTabs = () => {
                             <div>
                               <h4 className="font-medium mb-1">{point}</h4>
                               <p className="text-sm text-text/70">
-                                {t(`services.${category.id}.point${index + 1}`, {
-                                  defaultValue: 'Professional implementation with focus on quality and efficiency.',
-                                })}
+                                {t(`services.${category.id}.point${index + 1}`, 
+                                  'Professional implementation with focus on quality and efficiency.')}
                               </p>
                             </div>
                           </div>
