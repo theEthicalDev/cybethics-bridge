@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -8,9 +8,41 @@ import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import CommonProblems from '@/components/CommonProblems';
+import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
 
 const Index = () => {
   const { t } = useLanguage();
+  const [projects, setProjects] = useState([
+    {
+      title: 'Enterprise Web Portal',
+      description: 'A comprehensive web portal for enterprise resource management built with Spring Boot and Angular.',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYiUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+      tags: ['Web Development', 'Spring Boot', 'Angular'],
+      url: '/projects',
+      tagColor: 'bg-blue-100 text-blue-800'
+    },
+    {
+      title: 'Workflow Automation System',
+      description: 'Custom workflow automation solution for streamlining business processes and improving efficiency.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9tYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+      tags: ['Automation', 'Microsoft PowerAutomate', 'Zapier'],
+      url: '/projects',
+      tagColor: 'bg-purple-100 text-purple-800'
+    },
+    {
+      title: 'API Integration Platform',
+      description: 'Seamless integration platform connecting multiple systems through custom API development.',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwaSUyMGRldmVsb3BtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+      tags: ['API Development', 'Integration', 'Backend'],
+      url: '/projects',
+      tagColor: 'bg-green-100 text-green-800'
+    },
+  ]);
+
+  // Fetch and update projects from Projects page
+  // Note: In a real app, this would be done with global state or API calls
+  // This is a placeholder to demonstrate the concept
 
   const services = [
     {
@@ -45,61 +77,13 @@ const Index = () => {
     }
   ];
 
-  const projects = [
-    {
-      title: 'Enterprise Web Portal',
-      description: 'A comprehensive web portal for enterprise resource management built with Spring Boot and Angular.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYiUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-      tags: ['Web Development', 'Spring Boot', 'Angular'],
-      url: '/projects',
-      tagColor: 'bg-blue-100 text-blue-800'
-    },
-    {
-      title: 'Workflow Automation System',
-      description: 'Custom workflow automation solution for streamlining business processes and improving efficiency.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9tYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-      tags: ['Automation', 'Microsoft PowerAutomate', 'Zapier'],
-      url: '/projects',
-      tagColor: 'bg-purple-100 text-purple-800'
-    },
-    {
-      title: 'API Integration Platform',
-      description: 'Seamless integration platform connecting multiple systems through custom API development.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwaSUyMGRldmVsb3BtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-      tags: ['API Development', 'Integration', 'Backend'],
-      url: '/projects',
-      tagColor: 'bg-green-100 text-green-800'
-    },
-  ];
-
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Services Section - add top padding to account for Contact Partner overlap */}
-      <section className="py-24 pt-32 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="mb-4">{t('services.title')}</h2>
-            <p className="text-lg text-text/80">
-              {t('services.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard 
-                key={index}
-                icon={service.icon}
-                titleKey={service.titleKey}
-                descriptionKey={service.descriptionKey}
-                delay={index * 100}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Common Problems Section */}
+      <CommonProblems />
       
       {/* Projects Section */}
       <section className="py-24">
@@ -138,6 +122,44 @@ const Index = () => {
               />
             ))}
           </div>
+        </div>
+      </section>
+      
+      {/* Services Section - add top padding to account for Contact Partner overlap */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="mb-4">{t('services.title')}</h2>
+            <p className="text-lg text-text/80">
+              {t('services.subtitle')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard 
+                key={index}
+                icon={service.icon}
+                titleKey={service.titleKey}
+                descriptionKey={service.descriptionKey}
+                delay={index * 100}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Development Process Section */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="mb-4">{t('services.process.title')}</h2>
+            <p className="text-lg text-text/80">
+              {t('services.process.subtitle')}
+            </p>
+          </div>
+          
+          <VerticalProcessTimeline />
         </div>
       </section>
       

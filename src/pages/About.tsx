@@ -3,6 +3,8 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import { User, BarChart2, Award, ThumbsUp } from 'lucide-react';
 
 const About = () => {
   const { t } = useLanguage();
@@ -28,14 +30,6 @@ const About = () => {
       description: t('about.values.trust'),
       icon: '🤝',
     },
-  ];
-
-  const team = [
-    {
-      name: 'Professional Team',
-      role: 'Software Experts',
-      image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHRlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-    }
   ];
 
   const skills = [
@@ -71,7 +65,7 @@ const About = () => {
             
             <div className="relative animate-scale-in">
               <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-                <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden transform animate-fade-up" style={{ animationDelay: '0s', animationDuration: '1.4s' }}>
+                <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden">
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
                       src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png"
@@ -90,7 +84,7 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-6">{t('about.subtitle')}</h2>
+            <h2 className="mb-6">Our Story</h2>
             <p className="text-lg text-text/80">
               The name <span className="text-primary font-medium">Cybethics</span> combines "Cyber" and "Ethics" because ethics means something to us. It's at the core of how we approach every project and client relationship.
             </p>
@@ -224,34 +218,42 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16">
+      {/* Stats Section - Replacing Team Section */}
+      <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-4">Our Team</h2>
+            <h2 className="mb-4">Our Impact</h2>
             <p className="text-lg text-text/80">
-              Meet the skilled professionals behind Cybethics who bring their expertise and passion to every project.
+              Our dedication to quality and client satisfaction has helped us achieve impressive results
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-lg mx-auto">
-            {team.map((member, index) => (
-              <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-md group">
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-medium mb-1">{member.name}</h3>
-                    <p className="text-text/70">{member.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <AnimatedCounter 
+              value={50} 
+              label="Happy Clients" 
+              icon={<User className="h-8 w-8 mx-auto text-primary" />}
+              delay={0} 
+            />
+            <AnimatedCounter 
+              value={125} 
+              label="Projects Completed" 
+              icon={<BarChart2 className="h-8 w-8 mx-auto text-primary" />}
+              delay={300} 
+            />
+            <AnimatedCounter 
+              value={10} 
+              label="Years Experience" 
+              icon={<Award className="h-8 w-8 mx-auto text-primary" />}
+              delay={600} 
+            />
+            <AnimatedCounter 
+              value={99} 
+              label="Success Rate" 
+              icon={<ThumbsUp className="h-8 w-8 mx-auto text-primary" />}
+              delay={900} 
+              suffix="%" 
+            />
           </div>
         </div>
       </section>

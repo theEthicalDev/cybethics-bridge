@@ -47,7 +47,10 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Logo variant="medium" className="z-50" />
+        {/* 25% larger logo */}
+        <div className="scale-125 origin-left">
+          <Logo variant="medium" className="z-50" />
+        </div>
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8">

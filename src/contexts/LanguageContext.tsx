@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'de';
 
@@ -34,6 +34,8 @@ const translations: Record<Language, Record<string, string>> = {
     'services.cicd.description': 'Implement continuous integration and deployment practices to accelerate your development lifecycle.',
     'services.api.title': 'API Development',
     'services.api.description': 'Create robust APIs to enable seamless communication between your systems and third-party services.',
+    'services.offshoring.title': 'IT Offshoring',
+    'services.offshoring.description': 'Reduce costs and access global talent with our IT offshoring services and expertise.',
     'services.takeover.title': 'Project Takeover',
     'services.takeover.description': 'We can take over and maintain existing projects, providing continued support and development.',
     
@@ -83,6 +85,21 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
+    
+    'common.problems.title': 'Common Business Challenges',
+    'common.problems.subtitle': 'Identifying these challenges is the first step towards solving them',
+    'common.problems.inefficiency.title': 'Manual & Inefficient Processes',
+    'common.problems.inefficiency.description': 'Staff spending too much time on repetitive tasks that could be automated, reducing productivity and increasing costs.',
+    'common.problems.integration.title': 'System Integration Issues',
+    'common.problems.integration.description': 'Multiple systems that don\'t communicate with each other, resulting in data silos and duplicate work.',
+    'common.problems.legacy.title': 'Legacy System Limitations',
+    'common.problems.legacy.description': 'Outdated software that limits business growth, increases security risks, and is costly to maintain.',
+    'common.problems.insights.title': 'Lack of Data Insights',
+    'common.problems.insights.description': 'Inability to access real-time business intelligence and analytics to make informed decisions.',
+    'common.problems.scalability.title': 'Scalability Challenges',
+    'common.problems.scalability.description': 'Current systems struggle to handle growth in users, transactions, or data volume as your business expands.',
+    'common.problems.compliance.title': 'Compliance & Security Concerns',
+    'common.problems.compliance.description': 'Difficulties meeting regulatory requirements and protecting sensitive data from security threats.',
   },
   de: {
     'nav.home': 'Startseite',
@@ -107,6 +124,8 @@ const translations: Record<Language, Record<string, string>> = {
     'services.cicd.description': 'Implementieren Sie kontinuierliche Integrations- und Bereitstellungspraktiken, um Ihren Entwicklungszyklus zu beschleunigen.',
     'services.api.title': 'API-Entwicklung',
     'services.api.description': 'Erstellen Sie robuste APIs, um eine nahtlose Kommunikation zwischen Ihren Systemen und Drittanbieterdiensten zu ermöglichen.',
+    'services.offshoring.title': 'IT-Offshoring',
+    'services.offshoring.description': 'Reduzieren Sie Kosten und nutzen Sie globale Talente mit unseren IT-Offshoring-Dienstleistungen und Expertise.',
     'services.takeover.title': 'Projektübernahme',
     'services.takeover.description': 'Wir können bestehende Projekte übernehmen und warten sowie kontinuierliche Unterstützung und Weiterentwicklung bieten.',
     
@@ -156,13 +175,37 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Alle Rechte vorbehalten',
     'footer.privacy': 'Datenschutzerklärung',
     'footer.terms': 'Nutzungsbedingungen',
+    
+    'common.problems.title': 'Häufige Geschäftsherausforderungen',
+    'common.problems.subtitle': 'Die Identifizierung dieser Herausforderungen ist der erste Schritt zu ihrer Lösung',
+    'common.problems.inefficiency.title': 'Manuelle & ineffiziente Prozesse',
+    'common.problems.inefficiency.description': 'Mitarbeiter verbringen zu viel Zeit mit sich wiederholenden Aufgaben, die automatisiert werden könnten, was die Produktivität senkt und die Kosten erhöht.',
+    'common.problems.integration.title': 'Systemintegrationsprobleome',
+    'common.problems.integration.description': 'Mehrere Systeme, die nicht miteinander kommunizieren, führen zu Datensilos und Doppelarbeit.',
+    'common.problems.legacy.title': 'Einschränkungen durch Legacy-Systeme',
+    'common.problems.legacy.description': 'Veraltete Software, die das Geschäftswachstum einschränkt, Sicherheitsrisiken erhöht und teuer in der Wartung ist.',
+    'common.problems.insights.title': 'Mangel an Dateneinblicken',
+    'common.problems.insights.description': 'Unfähigkeit, auf Echtzeit-Business-Intelligence und -Analytik zuzugreifen, um fundierte Entscheidungen zu treffen.',
+    'common.problems.scalability.title': 'Skalierbarkeitsherausforderungen',
+    'common.problems.scalability.description': 'Aktuelle Systeme haben Schwierigkeiten, mit dem Wachstum von Benutzern, Transaktionen oder Datenvolumen Schritt zu halten, wenn Ihr Unternehmen expandiert.',
+    'common.problems.compliance.title': 'Compliance- und Sicherheitsbedenken',
+    'common.problems.compliance.description': 'Schwierigkeiten bei der Erfüllung gesetzlicher Anforderungen und beim Schutz sensibler Daten vor Sicherheitsbedrohungen.',
   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  // Get stored language from localStorage or default to 'de'
+  const [language, setLanguage] = useState<Language>(() => {
+    const storedLanguage = localStorage.getItem('language') as Language;
+    return storedLanguage ? storedLanguage : 'de';
+  });
+  
+  // Store language preference in localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
   
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'de' : 'en');
