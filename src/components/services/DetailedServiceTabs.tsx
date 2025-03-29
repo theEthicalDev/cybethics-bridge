@@ -92,7 +92,8 @@ const DetailedServiceTabs = () => {
           description: "We continuously measure and optimize the automated processes for better results."
         }
       ],
-      technologies: ["RPA tools", "Workflow engines", "Integration platforms", "AI/ML", "Custom scripts"]
+      technologies: ["Workflow engines", "Middleware Development", "Integration platforms", "AI/ML", "Custom scripts", "API" +
+      " integrations", "API Development", "RPA tools"]
     },
     {
       id: "integration",
@@ -162,7 +163,7 @@ const DetailedServiceTabs = () => {
     <section className="py-24 bg-gray-50">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="mb-4">Our Detailed Services</h2>
+          <h2 className="mb-4">Services in Detail</h2>
           <p className="text-lg text-text/80">
             Explore our comprehensive service offerings designed to transform your business
           </p>
@@ -192,7 +193,7 @@ const DetailedServiceTabs = () => {
               Integration
             </TabsTrigger>
             <TabsTrigger 
-              value="offshoring" 
+              value="offshoring"
               className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
             >
               <Monitor className="mr-2 h-4 w-4" />

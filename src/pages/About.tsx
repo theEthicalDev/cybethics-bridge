@@ -71,8 +71,7 @@ const About = () => {
             
             <div className="relative animate-scale-in">
               <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-white via-transparent to-primary/10 rounded-3xl transform rotate-3 animate-float" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute inset-0 glass rounded-3xl border border-white/20 shadow-lg overflow-hidden transform -rotate-3 animate-float" style={{ animationDelay: '1s' }}>
+                <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden transform animate-fade-up" style={{ animationDelay: '0s', animationDuration: '1.4s' }}>
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
                       src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png"

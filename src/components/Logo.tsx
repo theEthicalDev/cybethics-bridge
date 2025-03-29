@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface LogoProps {
-  variant?: 'small' | 'large';
+  variant?: 'small' | 'medium' | 'large';
   className?: string;
 }
 
@@ -11,9 +11,8 @@ const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
   const logoPath = variant === 'small' 
     ? '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png' 
     : '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png';
-  
-  // Increased size by 25%
-  const logoSize = variant === 'small' ? 'h-20' : 'h-40';
+
+  const logoSize = LogoSize[variant.toUpperCase()];
   
   return (
     <Link 
@@ -28,5 +27,11 @@ const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
     </Link>
   );
 };
+
+enum LogoSize {
+  SMALL = 'h-12',
+  MEDIUM = 'h-20',
+  LARGE = 'h-32',
+}
 
 export default Logo;

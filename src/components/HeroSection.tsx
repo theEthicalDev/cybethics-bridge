@@ -12,15 +12,13 @@ const CodeAnimation: React.FC = () => {
 function cybethics() {
   const ethics = ["fairness", "empathy", "trust"];
   const cyber = ["code", "automation", "innovation"];
-  
   return [...ethics, ...cyber].reduce((solution, value) => {
     return solution + value.charAt(0).toUpperCase();
   }, "");
 }
 
 // We prefer deeds to words
-const result = cybethics();
-console.log(result); // FETCI
+return cybethics();
 `;
   useEffect(() => {
     let currentText = "";
@@ -36,7 +34,7 @@ console.log(result); // FETCI
     }, 15);
     return () => clearInterval(interval);
   }, []);
-  return <div className="glass rounded-lg shadow-lg p-6 font-mono text-sm overflow-hidden h-96">
+  return <div className="glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm overflow-hidden h-64">
       <pre className="text-left overflow-x-auto">
         <code className="text-primary/90">{text}</code>
       </pre>
@@ -49,16 +47,16 @@ const ContactPartner: React.FC = () => {
   return <div className="container relative z-20 -mb-16 mt-16">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
         <div className="text-left">
-          <h3 className="text-lg font-semibold text-primary">Your Contact Partner</h3>
+          <h3 className="text-xl font-semibold text-primary pb-2">Your Contact Partner</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
-          <p className="text-sm text-gray-600 mt-1">Cybethics Solutions</p>
+          <p className="text-md text-gray-400 mt-1">Cybethics</p>
         </div>
-        
-        <Avatar className="h-32 w-32 border-2 border-primary/20 flex-shrink-0">
+
+        <Avatar className="h-36 w-36 border-2 border-primary/20 flex-shrink-0">
           <AvatarImage src="/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic" />
           <AvatarFallback>DK</AvatarFallback>
         </Avatar>
-        
+
         <Button asChild size="lg" className="group relative overflow-hidden rounded-full animate-pulse hover:animate-none">
           <Link to="/contact" className="flex items-center py-6 px-6 bg-primary hover:bg-primary/90">
             <Calendar className="mr-2 h-4 w-4" />
@@ -76,7 +74,7 @@ const HeroSection: React.FC = () => {
   } = useLanguage();
   const isMobile = useIsMobile();
   return <>
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-2 pb-3 bg-white">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-2 pb-3 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-up">

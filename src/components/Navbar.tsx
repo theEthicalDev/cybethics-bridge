@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Logo variant="small" className="z-50" />
+        <Logo variant="medium" className="z-50" />
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8">
