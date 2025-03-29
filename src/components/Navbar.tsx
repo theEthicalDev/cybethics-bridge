@@ -6,10 +6,12 @@ import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar: React.FC = () => {
   const { t } = useLanguage();
   const location = useLocation();
+  const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -19,10 +21,19 @@ const Navbar: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Disable body scroll when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.body.style.overflow = '';
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -47,9 +58,9 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        {/* 25% larger logo */}
-        <div className="scale-125 origin-left">
-          <Logo variant="medium" className="z-50" />
+        {/* Dynamically sized logo based on screen size */}
+        <div className={`${isMobile ? 'scale-75' : 'scale-125'} origin-left`}>
+          <Logo variant={isMobile ? "small" : "medium"} className="z-50" />
         </div>
         
         {/* Desktop Menu */}

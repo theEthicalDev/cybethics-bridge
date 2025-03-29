@@ -1,13 +1,16 @@
+
 import React, {useState} from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Badge} from '@/components/ui/badge';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {ArrowRight, ExternalLink, Code, Cog, Network, Terminal, GitBranch, Smartphone, Monitor} from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Projects = () => {
   const {t} = useLanguage();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const isMobile = useIsMobile();
 
   const projects = [
     {
@@ -30,7 +33,6 @@ const Projects = () => {
       longDescription: 'This file management system was developed using Spring Boot and Angular. It provides a user-friendly interface for' +
         ' managing files, folders, and content across multiple SFTP servers. The system includes features for automating file transfers, archiving,' +
         ' synchronization, and quick search. It improves efficiency and reduces manual file management tasks.',
-      // image: '/lovable-uploads/project-sftp.png',
       image: '/lovable-uploads/project-sftp.png',
       tags: ['Web Development', 'Spring Boot', 'Angular', 'API Development', 'Backend', 'Frontend', 'Java', 'IT', 'CI/CD', 'DevOps', 'Docker'],
       category: 'automation',
@@ -120,7 +122,6 @@ const Projects = () => {
       client: 'Restaurant Chain',
     },
     {
-      // Order Printing IOT
       id: 90,
       title: 'Order Printing Automation System',
       description: 'Printing automation system for processing takeaway and delivery orders in restaurants.',
@@ -135,7 +136,6 @@ const Projects = () => {
       client: 'Restaurant Chain',
     },
     {
-      // Website Takeover + IT Support
       id: 140,
       title: 'IT Support & Minor Web Improvements',
       description: 'Complete takeover of website management and IT support for a physiotherapy practice.',
@@ -150,7 +150,6 @@ const Projects = () => {
       client: 'Physiotherapy Practice',
     },
     {
-      // Educational Content Management System
       id: 300,
       title: 'Interactive Educational Kiosk | In progress',
       description: 'Interactive touch-screen kiosk application with admin CMS for managing media.',
@@ -165,7 +164,6 @@ const Projects = () => {
       client: 'Educational Institution',
     },
     {
-      // AI App Backend API Development
       id: 120,
       title: 'AI App Backend API Development',
       description: 'Backend development for an AI chatbot app to automate AI prompts, authoritation, document management, and more.',
@@ -179,7 +177,6 @@ const Projects = () => {
       client: 'Tech Startup',
     },
     {
-      // Riceage: Custom Webshop Development
       id: 5,
       title: 'Custom Webshop Development | In progress',
       description: 'Custom webshop development for an online rice-based product retailer with product management, order processing, and' +
@@ -193,9 +190,7 @@ const Projects = () => {
       year: '2025',
       client: 'Food Manufacturer',
     },
-
     {
-      // Task / Service Management + Calendar + Time Tracking Sync
       id: 140,
       title: 'Task Manager | Calendar | Time Tracker Sync',
       description: 'Synchonized update of tasks, services, appointments, and time tracking',
@@ -211,7 +206,6 @@ const Projects = () => {
       client: 'IT Services Provider',
     },
     {
-      // Jenkins CI/CD Pipeline
       id: 150,
       title: 'Jenkins CI/CD Pipeline',
       description: 'Automated CI/CD pipeline for building, testing, and deploying software applications.',
@@ -225,19 +219,12 @@ const Projects = () => {
       year: '2023',
       client: 'Financial Services',
     },
-
-    // tags: ['Mobile Development', 'Flutter', 'Cross-platform', 'IOT', 'IT Offshoring', 'Digital Signage', 'Desktop Development'],
-
-  ].sort((a, b) => a.id - b.id);
-
-  const categories = [
-    {id: 'all', label: 'All Projects', icon: <Code className="mr-2 h-4 w-4"/>, color: 'from-primary to-purple-600'},
-    {id: 'software', label: 'Software Development', icon: <Smartphone className="mr-2 h-4 w-4"/>, color: 'from-blue-600 to-blue-400'},
-    {id: 'workflow', label: 'Workflow Automation', icon: <Cog className="mr-2 h-4 w-4"/>, color: 'from-yellow-600 to-yellow-400'},
-    {id: 'api', label: 'API & Integration', icon: <Network className="mr-2 h-4 w-4"/>, color: 'from-green-600 to-green-400'},
-    {id: 'cicd', label: 'CI/CD', icon: <GitBranch className="mr-2 h-4 w-4"/>, color: 'from-amber-600 to-amber-400'},
-    {id: 'it', label: 'IT', icon: <Monitor className="mr-2 h-4 w-4"/>, color: 'from-red-600 to-red-400'},
-  ];
+  ]
+  // Remove duplicate projects with the same id
+  .filter((project, index, self) => 
+    index === self.findIndex((p) => p.id === project.id)
+  )
+  .sort((a, b) => a.id - b.id);
 
   // Get unique tags from all projects
   const allTags = [...new Set(projects.flatMap(project => project.tags))];
@@ -253,6 +240,15 @@ const Projects = () => {
   const handleTagClick = (tag: string) => {
     setSelectedTag(prevTag => prevTag === tag ? null : tag);
   };
+
+  const categories = [
+    {id: 'all', label: 'All Projects', icon: <Code className="mr-2 h-4 w-4"/>, color: 'from-primary to-purple-600'},
+    {id: 'software', label: 'Software Development', icon: <Smartphone className="mr-2 h-4 w-4"/>, color: 'from-blue-600 to-blue-400'},
+    {id: 'workflow', label: 'Workflow Automation', icon: <Cog className="mr-2 h-4 w-4"/>, color: 'from-yellow-600 to-yellow-400'},
+    {id: 'api', label: 'API & Integration', icon: <Network className="mr-2 h-4 w-4"/>, color: 'from-green-600 to-green-400'},
+    {id: 'cicd', label: 'CI/CD', icon: <GitBranch className="mr-2 h-4 w-4"/>, color: 'from-amber-600 to-amber-400'},
+    {id: 'it', label: 'IT', icon: <Monitor className="mr-2 h-4 w-4"/>, color: 'from-red-600 to-red-400'},
+  ];
 
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -274,38 +270,40 @@ const Projects = () => {
       {/* Projects Section */}
       <section className="py-8">
         <div className="container">
-          {/* Filter by tags */}
-          <div className="mb-8 flex flex-wrap gap-2 justify-center animate-fade-up">
-            {allTags.map(tag => (
-              <Badge
-                key={tag}
-                variant={selectedTag === tag ? "default" : "outline"}
-                className={`cursor-pointer ${selectedTag === tag ? 'bg-primary' : 'hover:bg-gray-100'}`}
-                onClick={() => handleTagClick(tag)}
-              >
-                {tag}
-              </Badge>
-            ))}
-            {selectedTag && (
-              <Badge
-                variant="outline"
-                className="cursor-pointer hover:bg-gray-100"
-                onClick={() => setSelectedTag(null)}
-              >
-                Clear Filter
-              </Badge>
-            )}
-          </div>
+          {/* Filter by tags - only show on larger screens */}
+          {!isMobile && (
+            <div className="mb-8 flex flex-wrap gap-2 justify-center animate-fade-up">
+              {allTags.map(tag => (
+                <Badge
+                  key={tag}
+                  variant={selectedTag === tag ? "default" : "outline"}
+                  className={`cursor-pointer ${selectedTag === tag ? 'bg-primary' : 'hover:bg-gray-100'}`}
+                  onClick={() => handleTagClick(tag)}
+                >
+                  {tag}
+                </Badge>
+              ))}
+              {selectedTag && (
+                <Badge
+                  variant="outline"
+                  className="cursor-pointer hover:bg-gray-100"
+                  onClick={() => setSelectedTag(null)}
+                >
+                  Clear Filter
+                </Badge>
+              )}
+            </div>
+          )}
 
           {/* Projects by category */}
           <Tabs defaultValue="all" className="w-full">
-            <div className="flex justify-center w-full">
-              <TabsList className="flex-wrap space-x-2 mb-8 p-1 bg-transparent justify-center animate-fade-up">
+            <div className="flex justify-center w-full overflow-x-auto scrollbar-none">
+              <TabsList className="flex-nowrap mb-8 p-1 bg-transparent justify-start md:justify-center animate-fade-up">
                 {categories.map((category) => (
                   <TabsTrigger
                     key={category.id}
                     value={category.id}
-                    className={`px-4 py-2.5 data-[state=active]:bg-gradient-to-r data-[state=active]:${category.color} data-[state=active]:text-primary data-[state=active]:shadow-sm rounded-full flex items-center gap-1 transition-all duration-200`}
+                    className={`px-4 py-2.5 data-[state=active]:bg-gradient-to-r data-[state=active]:${category.color} data-[state=active]:text-primary data-[state=active]:shadow-sm rounded-full flex items-center gap-1 transition-all duration-200 whitespace-nowrap`}
                   >
                     {category.icon}
                     {category.label}
@@ -332,20 +330,23 @@ const Projects = () => {
                           />
                         </div>
                         <CardHeader className="pb-2">
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {project.tags.map((tag, index) => (
-                              <Badge
-                                key={index}
-                                variant="secondary"
-                                className={`font-normal text-xs cursor-pointer ${
-                                  selectedTag === tag ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-text/70'
-                                }`}
-                                onClick={() => handleTagClick(tag)}
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
+                          {/* Only show tags on non-mobile devices */}
+                          {!isMobile && (
+                            <div className="flex flex-wrap gap-2 mb-3">
+                              {project.tags.map((tag, index) => (
+                                <Badge
+                                  key={index}
+                                  variant="secondary"
+                                  className={`font-normal text-xs cursor-pointer ${
+                                    selectedTag === tag ? 'bg-primary/20 text-primary' : 'bg-gray-100 text-text/70'
+                                  }`}
+                                  onClick={() => handleTagClick(tag)}
+                                >
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          )}
                           <CardTitle className="text-lg font-medium">{project.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
@@ -386,13 +387,15 @@ const Projects = () => {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-up order-2 lg:order-1">
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag, index) => (
-                    <Badge key={index} variant="outline" className="bg-gray-50">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
+                {!isMobile && (
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag, index) => (
+                      <Badge key={index} variant="outline" className="bg-gray-50">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
                 <h2 className="text-2xl md:text-3xl font-medium mb-4">{project.title}</h2>
                 <p className="text-text/80 mb-6">{project.longDescription}</p>
 

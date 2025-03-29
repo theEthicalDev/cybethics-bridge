@@ -1,277 +1,229 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Code, 
-  Cog, 
-  Network,
-  Monitor, 
-  ArrowRight, 
-  Check,
-  Book,
-  Rocket,
-  Zap,
-  Layers
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import VerticalTimeline from '@/components/VerticalTimeline';
-
-interface ServiceDetail {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  benefits: string[];
-  process: {
-    title: string;
-    description: string;
-  }[];
-  technologies: string[];
-}
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, Code, Cog, Network, Terminal, GitBranch, Smartphone, Monitor } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const DetailedServiceTabs = () => {
-  const serviceDetails: ServiceDetail[] = [
+  const { t } = useLanguage();
+  const isMobile = useIsMobile();
+
+  const serviceCategories = [
     {
-      id: "software",
-      title: "Custom Software Development",
-      description: "We develop tailored software solutions to meet your unique business requirements and optimize your operations.",
-      icon: <Code className="h-12 w-12 text-primary" />,
-      benefits: [
-        "Customized solutions aligned with your business goals",
-        "Scalable architecture for future growth",
-        "Intuitive user interfaces for better adoption",
-        "Comprehensive support and maintenance"
+      id: 'software',
+      icon: <Smartphone className="h-5 w-5" />,
+      title: 'Software Development',
+      description: 'Custom web and mobile application development tailored to your business needs.',
+      detailedDescription:
+        'Our software development services cover everything from initial concept to deployment and maintenance. We build scalable, secure, and user-friendly applications using the latest technologies and best practices.',
+      points: [
+        'Custom Web Applications',
+        'Progressive Web Apps (PWAs)',
+        'Mobile App Development',
+        'E-commerce Solutions',
+        'Content Management Systems',
+        'Backend Systems & Databases',
       ],
-      process: [
-        {
-          title: "Requirements Analysis",
-          description: "We work closely with you to understand your business needs and define clear requirements."
-        },
-        {
-          title: "Design and Architecture",
-          description: "Our experts create a robust architecture and intuitive design for your software."
-        },
-        {
-          title: "Development and Testing",
-          description: "We implement the solution using agile methodologies with continuous testing."
-        },
-        {
-          title: "Deployment and Support",
-          description: "We ensure smooth deployment and provide ongoing support for your software."
-        }
-      ],
-      technologies: ["React", "Node.js", "Python", "Java", ".NET", "SQL/NoSQL", "DevOps tools"]
+      icon2: <Code className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
     },
     {
-      id: "automation",
-      title: "Process Automation",
-      description: "Streamline your operations by automating repetitive tasks and complex workflows to improve efficiency and reduce errors.",
-      icon: <Cog className="h-12 w-12 text-primary" />,
-      benefits: [
-        "Increased operational efficiency",
-        "Reduced human error",
-        "Cost savings through optimized processes",
-        "Improved data accuracy and consistency"
+      id: 'automation',
+      icon: <Cog className="h-5 w-5" />,
+      title: 'Process Automation',
+      description: 'Streamline your business operations with custom automation solutions.',
+      detailedDescription:
+        'Our automation services help businesses eliminate repetitive tasks, reduce human error, and increase efficiency. We identify opportunities for automation and implement solutions that save time and resources.',
+      points: [
+        'Business Process Automation',
+        'Workflow Optimization',
+        'RPA (Robotic Process Automation)',
+        'Microsoft Power Automate Solutions',
+        'Zapier Integrations',
+        'Custom Scripting for Automation',
       ],
-      process: [
-        {
-          title: "Process Analysis",
-          description: "We analyze your current workflows to identify automation opportunities."
-        },
-        {
-          title: "Solution Design",
-          description: "Our team designs an automation solution tailored to your specific processes."
-        },
-        {
-          title: "Implementation",
-          description: "We develop and implement the automation solution with minimal disruption."
-        },
-        {
-          title: "Measurement and Optimization",
-          description: "We continuously measure and optimize the automated processes for better results."
-        }
-      ],
-      technologies: ["Workflow engines", "Middleware Development", "Integration platforms", "AI/ML", "Custom scripts", "API" +
-      " integrations", "API Development", "RPA tools"]
+      icon2: <Cog className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
     },
     {
-      id: "integration",
-      title: "System Integration",
-      description: "Connect your diverse applications, data sources, and systems to create a unified and efficient ecosystem.",
-      icon: <Network className="h-12 w-12 text-primary" />,
-      benefits: [
-        "Seamless data flow across systems",
-        "Elimination of data silos",
-        "Improved business intelligence",
-        "Enhanced operational efficiency"
+      id: 'api',
+      icon: <Network className="h-5 w-5" />,
+      title: 'API Development',
+      description:
+        'Connect your systems and services with custom APIs for seamless integration.',
+      detailedDescription:
+        'Our API development services enable businesses to connect disparate systems, expose functionality, and integrate with third-party services. We build secure, scalable, and well-documented APIs that meet your integration needs.',
+      points: [
+        'RESTful API Development',
+        'GraphQL APIs',
+        'API Gateway Implementation',
+        'System Integration Services',
+        'Legacy System APIs',
+        'API Documentation & Testing',
       ],
-      process: [
-        {
-          title: "System Assessment",
-          description: "We analyze your existing systems and integration requirements."
-        },
-        {
-          title: "Integration Strategy",
-          description: "Our experts develop a comprehensive integration strategy and architecture."
-        },
-        {
-          title: "Implementation",
-          description: "We implement the integration solution using appropriate technologies."
-        },
-        {
-          title: "Testing and Optimization",
-          description: "We rigorously test and optimize the integrated system for reliability."
-        }
-      ],
-      technologies: ["API development", "Middleware", "ETL tools", "ESB", "Cloud integration services"]
+      icon2: <Network className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
     },
     {
-      id: "offshoring",
-      title: "IT Offshoring & Support",
-      description: "Leverage our expertise to manage your IT infrastructure and provide continuous support for your business operations.",
-      icon: <Monitor className="h-12 w-12 text-primary" />,
-      benefits: [
-        "Cost-effective IT operations",
-        "Access to specialized expertise",
-        "24/7 support coverage",
-        "Focus on your core business activities"
+      id: 'scripting',
+      icon: <Terminal className="h-5 w-5" />,
+      title: 'Scripting Solutions',
+      description:
+        'Custom scripts for data processing, file manipulation, and system tasks.',
+      detailedDescription:
+        'Our scripting services help businesses automate tasks, process data, and solve specific technical challenges. We develop scripts that can run on-demand or on schedule to handle various system operations.',
+      points: [
+        'Python Scripting',
+        'Shell Scripting',
+        'PowerShell Scripts',
+        'Data Processing & Extraction',
+        'System Maintenance Scripts',
+        'Schedule & Task Automation',
       ],
-      process: [
-        {
-          title: "Assessment",
-          description: "We assess your current IT operations and support requirements."
-        },
-        {
-          title: "Transition Planning",
-          description: "We develop a detailed transition plan for a smooth handover."
-        },
-        {
-          title: "Knowledge Transfer",
-          description: "We ensure comprehensive knowledge transfer from your team to ours."
-        },
-        {
-          title: "Ongoing Operations",
-          description: "We manage and continuously improve your IT operations and support."
-        }
+      icon2: <Terminal className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
+    },
+    {
+      id: 'cicd',
+      icon: <GitBranch className="h-5 w-5" />,
+      title: 'CI/CD Implementation',
+      description:
+        'Streamline development with automated build, test, and deployment pipelines.',
+      detailedDescription:
+        'Our CI/CD services help development teams automate the software delivery process. We set up pipelines that build, test, and deploy code changes automatically, ensuring faster and more reliable releases.',
+      points: [
+        'CI/CD Pipeline Setup',
+        'Jenkins Configuration',
+        'GitHub Actions Implementation',
+        'Docker & Containerization',
+        'Deployment Automation',
+        'Quality Gate Integration',
       ],
-      technologies: ["ITSM tools", "Monitoring platforms", "Helpdesk systems", "Remote management", "Security tools"]
-    }
+      icon2: <GitBranch className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
+    },
+    {
+      id: 'offshoring',
+      icon: <Monitor className="h-5 w-5" />,
+      title: 'IT Offshoring',
+      description:
+        'Comprehensive IT support and maintenance for your business infrastructure.',
+      detailedDescription:
+        'Our IT offshoring services provide businesses with reliable IT support and maintenance without the overhead of an in-house IT department. We handle everything from day-to-day support to strategic IT planning.',
+      points: [
+        'Help Desk Support',
+        'Network Administration',
+        'System Monitoring & Maintenance',
+        'Security Management',
+        'Backup & Recovery',
+        'IT Infrastructure Planning',
+      ],
+      icon2: <Monitor className="h-14 w-14 md:h-20 md:w-20 text-primary/50 mb-4" />,
+    },
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="mb-4">Services in Detail</h2>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="mb-4">{t('services.detailed.title')}</h2>
           <p className="text-lg text-text/80">
-            Explore our comprehensive service offerings designed to transform your business
+            {t('services.detailed.subtitle')}
           </p>
         </div>
-        
+
         <Tabs defaultValue="software" className="w-full">
-          <TabsList className="w-full max-w-4xl mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
-            <TabsTrigger 
-              value="software" 
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Code className="mr-2 h-4 w-4" />
-              Software Dev
-            </TabsTrigger>
-            <TabsTrigger 
-              value="automation" 
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Cog className="mr-2 h-4 w-4" />
-              Automation
-            </TabsTrigger>
-            <TabsTrigger 
-              value="integration" 
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Network className="mr-2 h-4 w-4" />
-              Integration
-            </TabsTrigger>
-            <TabsTrigger 
-              value="offshoring"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Monitor className="mr-2 h-4 w-4" />
-              IT Offshoring
-            </TabsTrigger>
-          </TabsList>
-          
-          {serviceDetails.map((service) => (
-            <TabsContent key={service.id} value={service.id} className="focus-visible:outline-none focus-visible:ring-0">
-              <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                <div className="p-8 md:p-12">
-                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 mb-10">
-                    <div className="bg-primary/10 p-6 rounded-2xl md:w-auto w-16">
-                      {service.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-semibold mb-4">{service.title}</h3>
-                      <p className="text-lg text-text/80">{service.description}</p>
-                    </div>
+          <div className="overflow-x-auto pb-4 scrollbar-none">
+            <TabsList className="flex h-auto p-1 bg-gray-100/80 rounded-xl mb-12 mx-auto max-w-4xl">
+              {serviceCategories.map((category) => (
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
+                  className="flex items-center gap-2 py-3 px-4 whitespace-nowrap rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm data-[state=active]:text-primary transition-all"
+                >
+                  {category.icon}
+                  <span className="text-sm font-medium">{category.title}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+
+          {serviceCategories.map((category) => (
+            <TabsContent key={category.id} value={category.id} className="animate-fade-up">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div className="lg:col-span-1 flex flex-col items-start lg:sticky lg:top-24 self-start">
+                  <div className="mb-6 flex justify-center w-full lg:justify-start">
+                    {category.icon2}
                   </div>
+                  <h3 className="text-2xl font-medium mb-4 text-center lg:text-left w-full">
+                    {category.title}
+                  </h3>
+                  <p className="text-text/80 mb-6 text-center lg:text-left">
+                    {category.detailedDescription}
+                  </p>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
-                    <div>
-                      <h4 className="text-xl font-medium mb-4 flex items-center">
-                        <Zap className="mr-2 h-5 w-5 text-primary" />
-                        Key Benefits
-                      </h4>
-                      <ul className="space-y-3">
-                        {service.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <Check className="h-5 w-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-xl font-medium mb-4 flex items-center">
-                        <Layers className="mr-2 h-5 w-5 text-primary" />
-                        Technologies
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {service.technologies.map((tech, idx) => (
-                          <span 
-                            key={idx} 
-                            className="bg-gray-100 text-text/90 px-3 py-1 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                  {!isMobile && (
+                    <div className="space-y-6 w-full">
+                      <div>
+                        <h4 className="text-lg font-medium mb-4">Our Implementation Process</h4>
+                        <Card className="border-0 shadow-sm">
+                          <CardContent className="p-6 space-y-4">
+                            <div className="flex items-start">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                <span className="text-primary font-medium">1</span>
+                              </div>
+                              <div>
+                                <h5 className="font-medium mb-1">Discovery & Planning</h5>
+                                <p className="text-sm text-text/70">
+                                  We analyze your requirements and develop a detailed implementation plan.
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                <span className="text-primary font-medium">2</span>
+                              </div>
+                              <div>
+                                <h5 className="font-medium mb-1">Development & Testing</h5>
+                                <p className="text-sm text-text/70">
+                                  We build and test your solution using agile methodologies.
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex items-start">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mr-4 mt-1">
+                                <span className="text-primary font-medium">3</span>
+                              </div>
+                              <div>
+                                <h5 className="font-medium mb-1">Deployment & Support</h5>
+                                <p className="text-sm text-text/70">
+                                  We deploy your solution and provide ongoing maintenance and support.
+                                </p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
                       </div>
                     </div>
-                    
-                    <div>
-                      <h4 className="text-xl font-medium mb-4 flex items-center">
-                        <Book className="mr-2 h-5 w-5 text-primary" />
-                        Why Choose Us
-                      </h4>
-                      <p className="text-text/80 mb-4">
-                        Our team combines deep expertise with a client-centered approach to deliver solutions that truly transform your business operations.
-                      </p>
-                      <Button asChild className="rounded-full group">
-                        <Link to="/contact">
-                          Get Started
-                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  {/* Implementation Process */}
-                  <div>
-                    <h4 className="text-xl font-medium mb-8 flex items-center">
-                      <Rocket className="mr-2 h-5 w-5 text-primary" />
-                      Our Implementation Process
-                    </h4>
-                    <VerticalTimeline items={service.process} />
+                  )}
+                </div>
+
+                <div className="lg:col-span-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {category.points.map((point, index) => (
+                      <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="flex items-start">
+                            <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                            <div>
+                              <h4 className="font-medium mb-1">{point}</h4>
+                              <p className="text-sm text-text/70">
+                                {t(`services.${category.id}.point${index + 1}`, {
+                                  defaultValue: 'Professional implementation with focus on quality and efficiency.',
+                                })}
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
                 </div>
               </div>

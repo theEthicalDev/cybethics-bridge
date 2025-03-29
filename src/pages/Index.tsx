@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -10,39 +10,17 @@ import ProjectCard from '@/components/ProjectCard';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import CommonProblems from '@/components/CommonProblems';
 import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
+import { useIsMobile } from '@/hooks/use-mobile';
+
+// Import the project data directly
+import { getProjects } from '@/utils/projectData';
 
 const Index = () => {
   const { t } = useLanguage();
-  const [projects, setProjects] = useState([
-    {
-      title: 'Enterprise Web Portal',
-      description: 'A comprehensive web portal for enterprise resource management built with Spring Boot and Angular.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYiUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-      tags: ['Web Development', 'Spring Boot', 'Angular'],
-      url: '/projects',
-      tagColor: 'bg-blue-100 text-blue-800'
-    },
-    {
-      title: 'Workflow Automation System',
-      description: 'Custom workflow automation solution for streamlining business processes and improving efficiency.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGF1dG9tYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-      tags: ['Automation', 'Microsoft PowerAutomate', 'Zapier'],
-      url: '/projects',
-      tagColor: 'bg-purple-100 text-purple-800'
-    },
-    {
-      title: 'API Integration Platform',
-      description: 'Seamless integration platform connecting multiple systems through custom API development.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwaSUyMGRldmVsb3BtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-      tags: ['API Development', 'Integration', 'Backend'],
-      url: '/projects',
-      tagColor: 'bg-green-100 text-green-800'
-    },
-  ]);
-
-  // Fetch and update projects from Projects page
-  // Note: In a real app, this would be done with global state or API calls
-  // This is a placeholder to demonstrate the concept
+  const isMobile = useIsMobile();
+  
+  // Get the first three projects from the projects list
+  const projects = getProjects().slice(0, 3);
 
   const services = [
     {
@@ -112,7 +90,7 @@ const Index = () => {
                 image={project.image}
                 tags={project.tags}
                 tagColor={project.tagColor}
-                url={project.url}
+                url={`/projects#project-${project.id}`}
                 delay={index * 100}
                 requestButton={
                   <Button asChild variant="outline" size="sm" className="mt-4 w-full">
@@ -125,7 +103,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Services Section - add top padding to account for Contact Partner overlap */}
+      {/* Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -192,7 +170,8 @@ const Index = () => {
                   value={99} 
                   label="Success Rate" 
                   icon={<ThumbsUp className="h-8 w-8 mx-auto" />}
-                  delay={900} 
+                  delay={900}
+                  suffix="%" 
                 />
               </div>
             </div>

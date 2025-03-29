@@ -10,6 +10,7 @@ import {
   TrendingUp, 
   ShieldAlert 
 } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ProblemCard = ({ 
   icon, 
@@ -44,6 +45,7 @@ const ProblemCard = ({
 
 const CommonProblems = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   
   const problems = [
     {
@@ -88,7 +90,7 @@ const CommonProblems = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isMobile ? 'max-w-full overflow-hidden' : ''}`}>
           {problems.map((problem, index) => (
             <ProblemCard
               key={index}
