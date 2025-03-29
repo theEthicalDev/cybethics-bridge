@@ -136,13 +136,13 @@ const Projects = () => {
       client: 'Restaurant Chain',
     },
     {
-      id: 140,
+      id: 280,
       title: 'IT Support & Minor Web Improvements',
       description: 'Complete takeover of website management and IT support for a physiotherapy practice.',
       longDescription: 'This project involved taking over the management of a physiotherapy practice\'s website and providing IT support' +
         ' services as part of a long-term partnership and IT Single Point of Contact (SPOC) agreement. The services includes improvements' +
         ' to the website and IT support for the practice\'s internal systems and devices.',
-      image: '/lovable-uploads/img.png',
+      image: '/lovable-uploads/project-physio.png',
       tags: ['Web Development', 'IT Support', 'IT Consulting', 'Device Management', 'Domain Management', 'Hosting', 'M365', 'Email' +
       ' Management', 'Printer Management'],
       category: 'it',
@@ -219,12 +219,10 @@ const Projects = () => {
       year: '2023',
       client: 'Financial Services',
     },
-  ]
-  // Remove duplicate projects with the same id
-  .filter((project, index, self) => 
-    index === self.findIndex((p) => p.id === project.id)
-  )
-  .sort((a, b) => a.id - b.id);
+
+    // tags: ['Mobile Development', 'Flutter', 'Cross-platform', 'IOT', 'IT Offshoring', 'Digital Signage', 'Desktop Development'],
+
+  ].sort((a, b) => a.id - b.id);
 
   // Get unique tags from all projects
   const allTags = [...new Set(projects.flatMap(project => project.tags))];
