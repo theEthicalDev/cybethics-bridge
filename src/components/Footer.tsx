@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-12 border-b border-gray-200">
           <div className="space-y-4">
-            <Logo variant="small" />
+            <Logo />
             <p className="text-sm text-text/80 max-w-xs">
               Crafting customized digital solutions with integrity, putting ethics at the core of our development approach.
             </p>

@@ -3,17 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface LogoProps {
-  variant?: 'small' | 'medium' | 'large';
   className?: string;
+  imgClass?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
-  const logoPath = variant === 'small' 
-    ? '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png' 
-    : '/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png';
+const Logo: React.FC<LogoProps> = ({ className = '', imgClass = 'h-12' }) => {
 
-  const logoSize = LogoSize[variant.toUpperCase()];
-  
+  const logoPath = '/lovable-uploads/cybethics.png';
+
   return (
     <Link 
       to="/" 
@@ -22,16 +19,10 @@ const Logo: React.FC<LogoProps> = ({ variant = 'small', className = '' }) => {
       <img 
         src={logoPath} 
         alt="Cybethics Logo" 
-        className={`${logoSize} w-auto`} 
+        className={`${imgClass} w-auto`}
       />
     </Link>
   );
 };
-
-enum LogoSize {
-  SMALL = 'h-12',
-  MEDIUM = 'h-20',
-  LARGE = 'h-32',
-}
 
 export default Logo;

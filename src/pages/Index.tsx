@@ -1,19 +1,18 @@
-
 import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Cog, Terminal, GitBranch, ServerCog, Monitor, User, BarChart2, ThumbsUp, Award } from 'lucide-react';
+import {useLanguage} from '@/contexts/LanguageContext';
+import {Button} from '@/components/ui/button';
+import {Link} from 'react-router-dom';
+import {ArrowRight, Code, Cog, GitBranch, Monitor, ServerCog, Terminal} from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
-import AnimatedCounter from '@/components/AnimatedCounter';
 import CommonProblems from '@/components/CommonProblems';
 import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
-import { useIsMobile } from '@/hooks/use-mobile';
+import {useIsMobile} from '@/hooks/use-mobile';
+import Stats from '@/components/Stats';
 
 // Import the project data directly
-import { getProjects } from '@/utils/projectData';
+import {getProjects} from '@/utils/projectData';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -147,33 +146,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
               {/* Stats Counter Section */}
-              <div className="grid grid-cols-2 gap-6">
-                <AnimatedCounter 
-                  value={50} 
-                  label="Happy Clients" 
-                  icon={<User className="h-8 w-8 mx-auto" />}
-                  delay={0} 
-                />
-                <AnimatedCounter 
-                  value={125} 
-                  label="Projects Completed" 
-                  icon={<BarChart2 className="h-8 w-8 mx-auto" />}
-                  delay={300} 
-                />
-                <AnimatedCounter 
-                  value={10} 
-                  label="Years Experience" 
-                  icon={<Award className="h-8 w-8 mx-auto" />}
-                  delay={600} 
-                />
-                <AnimatedCounter 
-                  value={99} 
-                  label="Success Rate" 
-                  icon={<ThumbsUp className="h-8 w-8 mx-auto" />}
-                  delay={900}
-                  suffix="%" 
-                />
-              </div>
+              <Stats></Stats>
             </div>
             
             <div className="space-y-6 order-1 lg:order-2">

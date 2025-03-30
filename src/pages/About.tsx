@@ -1,10 +1,8 @@
-
 import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
-import AnimatedCounter from '@/components/AnimatedCounter';
-import { User, BarChart2, Award, ThumbsUp } from 'lucide-react';
+import {useLanguage} from '@/contexts/LanguageContext';
+import {Card, CardContent} from '@/components/ui/card';
+import {CheckCircle} from 'lucide-react';
+import Stats from '@/components/Stats';
 
 const About = () => {
   const { t } = useLanguage();
@@ -68,7 +66,7 @@ const About = () => {
                 <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden">
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
-                      src="/lovable-uploads/192393ac-becc-48a5-9de0-8d8874776f38.png"
+                      src="/lovable-uploads/cybethics.png"
                       alt="Cybethics Logo"
                       className="w-full h-auto"
                     />
@@ -227,34 +225,9 @@ const About = () => {
               Our dedication to quality and client satisfaction has helped us achieve impressive results
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <AnimatedCounter 
-              value={50} 
-              label="Happy Clients" 
-              icon={<User className="h-8 w-8 mx-auto text-primary" />}
-              delay={0} 
-            />
-            <AnimatedCounter 
-              value={125} 
-              label="Projects Completed" 
-              icon={<BarChart2 className="h-8 w-8 mx-auto text-primary" />}
-              delay={300} 
-            />
-            <AnimatedCounter 
-              value={10} 
-              label="Years Experience" 
-              icon={<Award className="h-8 w-8 mx-auto text-primary" />}
-              delay={600} 
-            />
-            <AnimatedCounter 
-              value={99} 
-              label="Success Rate" 
-              icon={<ThumbsUp className="h-8 w-8 mx-auto text-primary" />}
-              delay={900} 
-              suffix="%" 
-            />
-          </div>
+
+          <Stats></Stats>
+
         </div>
       </section>
 
