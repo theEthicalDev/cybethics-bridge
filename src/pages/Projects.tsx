@@ -100,7 +100,9 @@ const Projects = () => {
                 ))}
               </TabsList>
 
-              <style jsx>{`
+              {/* Fixed: Removed the jsx property that was causing the type error */}
+              <style>
+                  {`
                   .custom-scroll {
                       overflow-x: auto;
                       scrollbar-width: none; /* Firefox */
@@ -110,7 +112,8 @@ const Projects = () => {
                   .custom-scroll::-webkit-scrollbar {
                       display: none; /* Safari and Chrome */
                   }
-              `}</style>
+                  `}
+              </style>
             </div>
 
             {categories.map((category) => (
