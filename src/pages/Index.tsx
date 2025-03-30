@@ -1,18 +1,48 @@
+
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
 import {Link} from 'react-router-dom';
-import {ArrowRight, Code, Cog, GitBranch, Monitor, ServerCog, Terminal} from 'lucide-react';
+import {ArrowRight, Code, Cog, GitBranch, Monitor, ServerCog, Terminal, CheckCircle2} from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
-import CommonProblems from '@/components/CommonProblems';
 import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
 import {useIsMobile} from '@/hooks/use-mobile';
 import Stats from '@/components/Stats';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
+import { Card, CardContent } from '@/components/ui/card';
+
+const IdentificationQuestion = ({ 
+  question, 
+  description, 
+  index = 0 
+}: { 
+  question: string; 
+  description: string; 
+  index?: number; 
+}) => {
+  const { t } = useLanguage();
+  
+  return (
+    <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-up" 
+          style={{ animationDelay: `${index * 100}ms` }}>
+      <CardContent className="p-6">
+        <div className="flex items-start gap-4">
+          <div className="p-2 rounded-full bg-primary/10 mt-1 flex-shrink-0">
+            <CheckCircle2 className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <h3 className="text-lg font-medium mb-2">{t(question)}</h3>
+            <p className="text-text/80">{t(description)}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
 
 const Index = () => {
   const { t } = useLanguage();
@@ -54,13 +84,73 @@ const Index = () => {
     }
   ];
 
+  const identificationQuestions = [
+    {
+      questionKey: 'identify.manual.question',
+      descriptionKey: 'identify.manual.description',
+    },
+    {
+      questionKey: 'identify.integration.question',
+      descriptionKey: 'identify.integration.description',
+    },
+    {
+      questionKey: 'identify.legacy.question',
+      descriptionKey: 'identify.legacy.description',
+    },
+    {
+      questionKey: 'identify.insights.question',
+      descriptionKey: 'identify.insights.description',
+    },
+    {
+      questionKey: 'identify.scalability.question',
+      descriptionKey: 'identify.scalability.description',
+    },
+    {
+      questionKey: 'identify.security.question',
+      descriptionKey: 'identify.security.description',
+    },
+    {
+      questionKey: 'identify.cost.question',
+      descriptionKey: 'identify.cost.description',
+    },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Common Problems Section */}
-      <CommonProblems />
+      {/* Self-identification Questions Section */}
+      <section className="py-24 bg-gray-50" id="identify-challenges">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="mb-4">{t('identify.title')}</h2>
+            <p className="text-lg text-text/80">
+              {t('identify.subtitle')}
+            </p>
+          </div>
+          
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isMobile ? 'max-w-full overflow-hidden' : ''}`}>
+            {identificationQuestions.map((item, index) => (
+              <IdentificationQuestion
+                key={index}
+                question={item.questionKey}
+                description={item.descriptionKey}
+                index={index}
+              />
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-full group">
+              <Link to="/faq">
+                {t('services.more')}
+                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
       
       {/* Projects Section */}
       <section className="py-24">

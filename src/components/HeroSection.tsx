@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
@@ -8,6 +9,7 @@ import {useIsMobile} from '@/hooks/use-mobile';
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
+  const isMobile = useIsMobile();
   const codeSnippet = `
 function cybethics() {
   const ethics = ["fairness", "empathy", "trust"];
@@ -36,7 +38,7 @@ console.log(cybethics());
   }, []);
 
   return (
-    <div className="glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm overflow-hidden h-64">
+    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[90%] mx-auto' : ''} overflow-hidden h-64`}>
       <pre className="text-left overflow-x-hidden">
         <code className="text-primary/90 text-xs sm:text-base">
           {text}

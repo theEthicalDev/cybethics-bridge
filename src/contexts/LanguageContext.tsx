@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'de';
@@ -16,11 +15,29 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.services': 'Services',
     'nav.projects': 'Projects',
     'nav.about': 'About',
+    'nav.faq': 'FAQ',
     'nav.contact': 'Contact',
     
     'hero.title': 'Ethical Software Solutions for Your Business',
     'hero.subtitle': 'We build software solutions with integrity, placing ethics and your specific business needs at the forefront of our development process.',
     'hero.cta': 'Explore Services',
+
+    'identify.title': 'Do You Recognize These Challenges?',
+    'identify.subtitle': 'Many businesses face similar challenges. Check if any of these sound familiar:',
+    'identify.manual.question': 'Do you or your staff spend too much time on repetitive tasks?',
+    'identify.manual.description': 'Manual data entry, report generation, and other repetitive tasks are consuming valuable staff time that could be better spent on strategic activities.',
+    'identify.integration.question': 'Are your systems not communicating effectively with each other?',
+    'identify.integration.description': 'Different departments use separate systems that don\'t share data, causing information silos and requiring duplicate work.',
+    'identify.legacy.question': 'Is outdated software limiting your business growth?',
+    'identify.legacy.description': 'Your legacy systems are difficult to maintain, expensive to operate, and can\'t keep pace with your evolving business needs.',
+    'identify.insights.question': 'Do you struggle to get actionable insights from your data?',
+    'identify.insights.description': 'Despite collecting data, you can\'t easily access real-time business intelligence to support informed decision-making.',
+    'identify.scalability.question': 'Is your current infrastructure struggling to handle growth?',
+    'identify.scalability.description': 'As your business expands, your systems are having difficulty managing increased users, transactions, or data volume.',
+    'identify.security.question': 'Are you concerned about compliance and security risks?',
+    'identify.security.description': 'Meeting regulatory requirements and protecting sensitive data from security threats is becoming increasingly challenging.',
+    'identify.cost.question': 'Are IT costs unpredictable or higher than expected?',
+    'identify.cost.description': 'Managing and maintaining your current technology stack is resulting in unpredictable expenses and higher total cost of ownership.',
     
     'services.title': 'Our Services',
     'services.subtitle': 'We offer comprehensive software solutions tailored to meet your specific business requirements.',
@@ -58,6 +75,39 @@ const translations: Record<Language, Record<string, string>> = {
     'services.hero.subtitle': 'We provide ethical software solutions tailored to your specific business needs.',
     'services.cta.title': 'Ready to start your project?',
     'services.cta.subtitle': 'Get in touch today to discuss your requirements and how we can help you achieve your business goals.',
+    
+    'detailed.services.software.title': 'Custom Software Development',
+    'detailed.services.software.description': 'We design and build tailored software solutions that address your specific business challenges and align with your strategic goals. Our custom development approach ensures you get exactly what your business needs.',
+    'detailed.services.software.benefits': 'Perfect alignment with business processes, scalability, competitive advantage, full ownership of intellectual property, and ongoing support and maintenance.',
+    'detailed.services.software.process': 'We begin with a thorough needs analysis, followed by solution design, iterative development, comprehensive testing, and deployment with dedicated post-launch support.',
+    
+    'detailed.services.automation.title': 'Business Process Automation',
+    'detailed.services.automation.description': 'We identify and automate repetitive, manual processes to increase efficiency, reduce errors, and free up your team to focus on higher-value activities.',
+    'detailed.services.automation.benefits': 'Enhanced efficiency, reduced operational costs, minimized human error, improved data accuracy, faster processing times, and better resource allocation.',
+    'detailed.services.automation.process': 'We analyze your workflows, identify automation opportunities, design solutions using appropriate tools, develop and implement the automation, and provide training and monitoring.',
+    
+    'detailed.services.api.title': 'API Development',
+    'detailed.services.api.description': 'We design and build robust, secure APIs that enable seamless integration between your systems and third-party services, facilitating data exchange and functionality sharing.',
+    'detailed.services.api.benefits': 'Enhanced system integration, improved data flow, better third-party service integration, mobile app enablement, and support for partner ecosystems.',
+    'detailed.services.api.process': 'We define the API requirements, design the architecture and endpoints, develop with proper security, thoroughly test for performance and reliability, and provide documentation and ongoing support.',
+    
+    'detailed.services.scripting.title': 'Scripting & Integration',
+    'detailed.services.scripting.description': 'We create custom scripts to automate tasks, connect systems, and streamline operations, enabling your existing software to work together more efficiently.',
+    'detailed.services.scripting.benefits': 'Quick implementation, cost-effectiveness, automation of routine tasks, enhanced data consistency, and extended functionality of existing systems.',
+    'detailed.services.scripting.process': 'We identify integration needs, select appropriate scripting languages and tools, develop and test the scripts, implement them into your workflow, and provide documentation and support.',
+    
+    'detailed.services.cicd.title': 'CI/CD Implementation',
+    'detailed.services.cicd.description': 'We establish continuous integration and continuous delivery pipelines that automate your software testing and deployment processes, leading to faster, more reliable releases.',
+    'detailed.services.cicd.benefits': 'Faster time to market, reduced deployment risks, improved code quality, consistent release processes, and enhanced team collaboration.',
+    'detailed.services.cicd.process': 'We assess your current development workflow, design the CI/CD pipeline architecture, implement the automated builds and tests, set up deployment automation, and train your team on best practices.',
+    
+    'detailed.services.offshoring.title': 'IT Offshoring',
+    'detailed.services.offshoring.description': 'We help you establish and manage offshore development teams that extend your IT capabilities while reducing costs and accessing global talent pools.',
+    'detailed.services.offshoring.benefits': 'Significant cost savings, access to specialized skills, business continuity, scalability, and focus on core business activities.',
+    'detailed.services.offshoring.process': 'We identify your offshoring needs, source and vet qualified professionals, manage the transition process, establish communication protocols, and provide ongoing management support.',
+    
+    'detailed.process.title': 'Our Implementation Process',
+    'detailed.process.description': 'We follow a structured approach to ensure successful delivery of all our services',
     
     'projects.title': 'Recent Projects',
     'projects.subtitle': 'Explore some of our recent work and see how we have helped businesses like yours.',
@@ -100,17 +150,66 @@ const translations: Record<Language, Record<string, string>> = {
     'common.problems.scalability.description': 'Current systems struggle to handle growth in users, transactions, or data volume as your business expands.',
     'common.problems.compliance.title': 'Compliance & Security Concerns',
     'common.problems.compliance.description': 'Difficulties meeting regulatory requirements and protecting sensitive data from security threats.',
+    
+    'faq.title': 'Frequently Asked Questions',
+    'faq.subtitle': 'Find answers to common questions about our software development services and processes',
+    'faq.categories.all': 'All Questions',
+    'faq.categories.process': 'Process',
+    'faq.categories.technical': 'Technical',
+    'faq.categories.business': 'Business',
+    
+    'faq.process.question': 'What is your software development process?',
+    'faq.process.answer': 'Our development process follows a structured approach: Discovery & Requirements, Planning & Architecture, Development & Implementation, Testing & Quality Assurance, Deployment & Launch, and ongoing Support & Maintenance. We keep you involved at every stage to ensure the solution meets your expectations.',
+    
+    'faq.pricing.question': 'How do you determine the cost of a project?',
+    'faq.pricing.answer': 'Project costs are determined based on several factors: project scope and complexity, timeline requirements, technologies involved, and the level of ongoing support needed. We provide transparent pricing with no hidden fees and can work with fixed-price or time-and-materials models depending on your needs.',
+    
+    'faq.timeline.question': 'How long does it typically take to complete a software project?',
+    'faq.timeline.answer': 'Project timelines vary significantly depending on scope and complexity. Small to medium projects might take 2-4 months, while larger enterprise solutions can take 6-12 months or more. We provide realistic timeline estimates during the planning phase and keep you updated on progress throughout development.',
+    
+    'faq.technologies.question': 'What technologies and programming languages do you work with?',
+    'faq.technologies.answer': 'We work with a wide range of technologies including but not limited to: front-end (React, Angular, Vue.js), back-end (Node.js, .NET, Python, Java), mobile (React Native, Flutter), databases (SQL, NoSQL), cloud platforms (AWS, Azure, Google Cloud), and DevOps tools (Docker, Kubernetes, Jenkins). We choose the best technology stack for your specific project needs.',
+    
+    'faq.maintenance.question': 'Do you provide ongoing maintenance and support after launch?',
+    'faq.maintenance.answer': 'Yes, we offer various maintenance and support packages to ensure your software continues to perform optimally. These can include bug fixes, security updates, performance optimization, feature enhancements, and user support. We can tailor a support package to match your specific needs and budget.',
+    
+    'faq.ownership.question': 'Who owns the intellectual property rights to the developed software?',
+    'faq.ownership.answer': 'Upon final payment, you retain full ownership of all intellectual property rights to the custom software we develop for you. This includes source code, design elements, and documentation. We believe that if you pay for custom development, you should own the results completely.',
+    
+    'faq.communication.question': 'How do you handle project communication and updates?',
+    'faq.communication.answer': 'We maintain regular communication throughout the project using your preferred channels (email, phone, video calls, project management tools). We schedule regular progress updates, conduct sprint demos for iterative projects, and provide access to project tracking tools so you can monitor progress in real-time.',
+    
+    'faq.cta.title': 'Still Have Questions?',
+    'faq.cta.subtitle': 'Our team is ready to answer any additional questions you might have about our services or your specific project needs.'
   },
   de: {
     'nav.home': 'Startseite',
     'nav.services': 'Dienstleistungen',
     'nav.projects': 'Projekte',
     'nav.about': 'Über uns',
+    'nav.faq': 'FAQ',
     'nav.contact': 'Kontakt',
     
     'hero.title': 'Ethische Softwarelösungen für Ihr Unternehmen',
     'hero.subtitle': 'Wir entwickeln Softwarelösungen mit Integrität und stellen Ethik und Ihre spezifischen Geschäftsanforderungen in den Mittelpunkt unseres Entwicklungsprozesses.',
     'hero.cta': 'Dienstleistungen erkunden',
+
+    'identify.title': 'Erkennen Sie diese Herausforderungen?',
+    'identify.subtitle': 'Viele Unternehmen stehen vor ähnlichen Herausforderungen. Prüfen Sie, ob Ihnen etwas davon bekannt vorkommt:',
+    'identify.manual.question': 'Verbringen Sie oder Ihre Mitarbeiter zu viel Zeit mit sich wiederholenden Aufgaben?',
+    'identify.manual.description': 'Manuelle Dateneingabe, Berichtserstellung und andere repetitive Aufgaben verbrauchen wertvolle Mitarbeiterzeit, die besser für strategische Aktivitäten genutzt werden könnte.',
+    'identify.integration.question': 'Kommunizieren Ihre Systeme nicht effektiv miteinander?',
+    'identify.integration.description': 'Verschiedene Abteilungen nutzen separate Systeme, die keine Daten austauschen, was zu Informationssilos führt und Doppelarbeit erfordert.',
+    'identify.legacy.question': 'Schränkt veraltete Software Ihr Unternehmenswachstum ein?',
+    'identify.legacy.description': 'Ihre Legacy-Systeme sind schwer zu warten, teuer im Betrieb und können mit Ihren sich entwickelnden Geschäftsanforderungen nicht Schritt halten.',
+    'identify.insights.question': 'Haben Sie Schwierigkeiten, umsetzbare Erkenntnisse aus Ihren Daten zu gewinnen?',
+    'identify.insights.description': 'Trotz Datensammlung können Sie nicht einfach auf Echtzeit-Business-Intelligence zugreifen, um fundierte Entscheidungen zu unterstützen.',
+    'identify.scalability.question': 'Hat Ihre aktuelle Infrastruktur Schwierigkeiten, mit dem Wachstum Schritt zu halten?',
+    'identify.scalability.description': 'Mit der Expansion Ihres Unternehmens haben Ihre Systeme Schwierigkeiten, mit der steigenden Anzahl von Benutzern, Transaktionen oder Datenvolumen umzugehen.',
+    'identify.security.question': 'Sind Sie besorgt über Compliance- und Sicherheitsrisiken?',
+    'identify.security.description': 'Die Einhaltung regulatorischer Anforderungen und der Schutz sensibler Daten vor Sicherheitsbedrohungen wird zunehmend herausfordernd.',
+    'identify.cost.question': 'Sind Ihre IT-Kosten unvorhersehbar oder höher als erwartet?',
+    'identify.cost.description': 'Die Verwaltung und Wartung Ihres aktuellen Technologie-Stacks führt zu unvorhersehbaren Ausgaben und höheren Gesamtbetriebskosten.',
     
     'services.title': 'Unsere Dienstleistungen',
     'services.subtitle': 'Wir bieten umfassende Softwarelösungen, die auf Ihre spezifischen Geschäftsanforderungen zugeschnitten sind.',
@@ -148,6 +247,39 @@ const translations: Record<Language, Record<string, string>> = {
     'services.hero.subtitle': 'Wir bieten ethische Softwarelösungen, die auf Ihre spezifischen Geschäftsanforderungen zugeschnitten sind.',
     'services.cta.title': 'Bereit, Ihr Projekt zu starten?',
     'services.cta.subtitle': 'Kontaktieren Sie uns noch heute, um Ihre Anforderungen zu besprechen und wie wir Ihnen helfen können, Ihre Geschäftsziele zu erreichen.',
+    
+    'detailed.services.software.title': 'Individuelle Softwareentwicklung',
+    'detailed.services.software.description': 'Wir entwickeln und programmieren massgeschneiderte Softwarelösungen, die auf Ihre spezifischen Geschäftsherausforderungen eingehen und mit Ihren strategischen Zielen im Einklang stehen. Unser individueller Entwicklungsansatz stellt sicher, dass Sie genau das bekommen, was Ihr Unternehmen benötigt.',
+    'detailed.services.software.benefits': 'Perfekte Abstimmung auf Geschäftsprozesse, Skalierbarkeit, Wettbewerbsvorteil, vollständiges Eigentum an geistigem Eigentum sowie kontinuierliche Unterstützung und Wartung.',
+    'detailed.services.software.process': 'Wir beginnen mit einer gründlichen Bedarfsanalyse, gefolgt von der Lösungskonzeption, iterativer Entwicklung, umfassenden Tests und Bereitstellung mit dediziertem Support nach dem Start.',
+    
+    'detailed.services.automation.title': 'Automatisierung von Geschäftsprozessen',
+    'detailed.services.automation.description': 'Wir identifizieren und automatisieren repetitive, manuelle Prozesse, um die Effizienz zu steigern, Fehler zu reduzieren und Ihr Team zu entlasten, damit es sich auf Aufgaben mit höherem Wert konzentrieren kann.',
+    'detailed.services.automation.benefits': 'Verbesserte Effizienz, reduzierte Betriebskosten, minimierte menschliche Fehler, verbesserte Datengenauigkeit, schnellere Verarbeitungszeiten und bessere Ressourcenzuweisung.',
+    'detailed.services.automation.process': 'Wir analysieren Ihre Workflows, identifizieren Automatisierungspotenziale, entwerfen Lösungen mit geeigneten Tools, entwickeln und implementieren die Automatisierung und bieten Schulungen und Überwachung an.',
+    
+    'detailed.services.api.title': 'API-Entwicklung',
+    'detailed.services.api.description': 'Wir entwickeln robuste, sichere APIs, die eine nahtlose Integration zwischen Ihren Systemen und Diensten von Drittanbietern ermöglichen und den Datenaustausch und die gemeinsame Nutzung von Funktionen erleichtern.',
+    'detailed.services.api.benefits': 'Verbesserte Systemintegration, optimierter Datenfluss, bessere Integration von Drittanbieterdiensten, mobile App-Unterstützung und Förderung von Partner-Ökosystemen.',
+    'detailed.services.api.process': 'Wir definieren die API-Anforderungen, konzipieren die Architektur und Endpunkte, entwickeln mit angemessener Sicherheit, testen gründlich auf Leistung und Zuverlässigkeit und bieten Dokumentation und laufende Unterstützung.',
+    
+    'detailed.services.scripting.title': 'Skripting & Integration',
+    'detailed.services.scripting.description': 'Wir erstellen benutzerdefinierte Skripte zur Automatisierung von Aufgaben, zur Verbindung von Systemen und zur Optimierung von Abläufen, damit Ihre bestehende Software effizienter zusammenarbeiten kann.',
+    'detailed.services.scripting.benefits': 'Schnelle Implementierung, Kosteneffizienz, Automatisierung von Routineaufgaben, verbesserte Datenkonsistenz und erweiterte Funktionalität bestehender Systeme.',
+    'detailed.services.scripting.process': 'Wir identifizieren Integrationsbedürfnisse, wählen geeignete Skriptsprachen und Tools aus, entwickeln und testen die Skripte, implementieren sie in Ihren Workflow und stellen Dokumentation und Support bereit.',
+    
+    'detailed.services.cicd.title': 'CI/CD-Implementierung',
+    'detailed.services.cicd.description': 'Wir etablieren Pipelines für kontinuierliche Integration und kontinuierliche Bereitstellung, die Ihre Software-Test- und Bereitstellungsprozesse automatisieren und zu schnelleren, zuverlässigeren Veröffentlichungen führen.',
+    'detailed.services.cicd.benefits': 'Schnellere Markteinführung, reduzierte Bereitstellungsrisiken, verbesserte Codequalität, konsistente Release-Prozesse und verbesserte Teamzusammenarbeit.',
+    'detailed.services.cicd.process': 'Wir bewerten Ihren aktuellen Entwicklungsworkflow, konzipieren die CI/CD-Pipeline-Architektur, implementieren automatisierte Builds und Tests, richten die Bereitstellungsautomatisierung ein und schulen Ihr Team in Best Practices.',
+    
+    'detailed.services.offshoring.title': 'IT-Offshoring',
+    'detailed.services.offshoring.description': 'Wir helfen Ihnen, Offshore-Entwicklungsteams aufzubauen und zu verwalten, die Ihre IT-Fähigkeiten erweitern und gleichzeitig Kosten senken und Zugang zu globalen Talentpools verschaffen.',
+    'detailed.services.offshoring.benefits': 'Erhebliche Kosteneinsparungen, Zugang zu spezialisierten Fähigkeiten, Geschäftskontinuität, Skalierbarkeit und Fokus auf Kerngeschäftsaktivitäten.',
+    'detailed.services.offshoring.process': 'Wir identifizieren Ihre Offshoring-Bedürfnisse, beschaffen und überprüfen qualifizierte Fachkräfte, verwalten den Übergangsprozess, etablieren Kommunikationsprotokolle und bieten laufende Managementunterstützung.',
+    
+    'detailed.process.title': 'Unser Implementierungsprozess',
+    'detailed.process.description': 'Wir folgen einem strukturierten Ansatz, um die erfolgreiche Bereitstellung all unserer Dienste zu gewährleisten',
     
     'projects.title': 'Aktuelle Projekte',
     'projects.subtitle': 'Entdecken Sie einige unserer jüngsten Arbeiten und sehen Sie, wie wir Unternehmen wie dem Ihren geholfen haben.',
@@ -190,6 +322,37 @@ const translations: Record<Language, Record<string, string>> = {
     'common.problems.scalability.description': 'Aktuelle Systeme haben Schwierigkeiten, mit dem Wachstum von Benutzern, Transaktionen oder Datenvolumen Schritt zu halten, wenn Ihr Unternehmen expandiert.',
     'common.problems.compliance.title': 'Compliance- und Sicherheitsbedenken',
     'common.problems.compliance.description': 'Schwierigkeiten bei der Erfüllung gesetzlicher Anforderungen und beim Schutz sensibler Daten vor Sicherheitsbedrohungen.',
+    
+    'faq.title': 'Häufig gestellte Fragen',
+    'faq.subtitle': 'Finden Sie Antworten auf häufige Fragen zu unseren Softwareentwicklungsdienstleistungen und -prozessen',
+    'faq.categories.all': 'Alle Fragen',
+    'faq.categories.process': 'Prozess',
+    'faq.categories.technical': 'Technisch',
+    'faq.categories.business': 'Geschäftlich',
+    
+    'faq.process.question': 'Wie sieht Ihr Softwareentwicklungsprozess aus?',
+    'faq.process.answer': 'Unser Entwicklungsprozess folgt einem strukturierten Ansatz: Entdeckung & Anforderungen, Planung & Architektur, Entwicklung & Implementierung, Tests & Qualitätssicherung, Bereitstellung & Start und fortlaufender Support & Wartung. Wir halten Sie in jeder Phase involviert, um sicherzustellen, dass die Lösung Ihren Erwartungen entspricht.',
+    
+    'faq.pricing.question': 'Wie bestimmen Sie die Kosten eines Projekts?',
+    'faq.pricing.answer': 'Die Projektkosten werden auf Basis mehrerer Faktoren bestimmt: Projektumfang und Komplexität, Zeitvorgaben, verwendete Technologien und benötigtes Maß an fortlaufendem Support. Wir bieten transparente Preise ohne versteckte Kosten und können mit Festpreis- oder Zeit-und-Material-Modellen arbeiten, je nach Ihren Bedürfnissen.',
+    
+    'faq.timeline.question': 'Wie lange dauert typischerweise die Fertigstellung eines Softwareprojekts?',
+    'faq.timeline.answer': 'Projektzeitpläne variieren erheblich je nach Umfang und Komplexität. Kleine bis mittlere Projekte können 2-4 Monate dauern, während größere Unternehmenslösungen 6-12 Monate oder länger benötigen können. Wir geben realistische Zeitschätzungen während der Planungsphase und halten Sie während der gesamten Entwicklung über den Fortschritt auf dem Laufenden.',
+    
+    'faq.technologies.question': 'Mit welchen Technologien und Programmiersprachen arbeiten Sie?',
+    'faq.technologies.answer': 'Wir arbeiten mit einer breiten Palette von Technologien, darunter: Front-End (React, Angular, Vue.js), Back-End (Node.js, .NET, Python, Java), Mobile (React Native, Flutter), Datenbanken (SQL, NoSQL), Cloud-Plattformen (AWS, Azure, Google Cloud) und DevOps-Tools (Docker, Kubernetes, Jenkins). Wir wählen den besten Technologie-Stack für Ihre spezifischen Projektanforderungen.',
+    
+    'faq.maintenance.question': 'Bieten Sie nach dem Launch fortlaufende Wartung und Support an?',
+    'faq.maintenance.answer': 'Ja, wir bieten verschiedene Wartungs- und Support-Pakete an, um sicherzustellen, dass Ihre Software weiterhin optimal funktioniert. Diese können Fehlerbehebungen, Sicherheitsupdates, Leistungsoptimierungen, Funktionserweiterungen und Benutzerunterstützung umfassen. Wir können ein Support-Paket auf Ihre spezifischen Bedürfnisse und Ihr Budget zuschneiden.',
+    
+    'faq.ownership.question': 'Wer besitzt die Rechte am geistigen Eigentum der entwickelten Software?',
+    'faq.ownership.answer': 'Nach der abschließenden Zahlung behalten Sie alle Rechte am geistigen Eigentum der für Sie entwickelten kundenspezifischen Software. Dies umfasst Quellcode, Designelemente und Dokumentation. Wir sind der Meinung, dass Sie, wenn Sie für eine maßgeschneiderte Entwicklung bezahlen, die Ergebnisse vollständig besitzen sollten.',
+    
+    'faq.communication.question': 'Wie handhaben Sie Projektkommunikation und Updates?',
+    'faq.communication.answer': 'Wir pflegen während des gesamten Projekts regelmäßige Kommunikation über Ihre bevorzugten Kanäle (E-Mail, Telefon, Videoanrufe, Projektmanagement-Tools). Wir planen regelmäßige Fortschrittsberichte, führen Sprint-Demos für iterative Projekte durch und bieten Zugang zu Projekt-Tracking-Tools, damit Sie den Fortschritt in Echtzeit überwachen können.',
+    
+    'faq.cta.title': 'Noch Fragen?',
+    'faq.cta.subtitle': 'Unser Team steht bereit, um alle weiteren Fragen zu beantworten, die Sie zu unseren Dienstleistungen oder Ihren spezifischen Projektanforderungen haben könnten.'
   }
 };
 

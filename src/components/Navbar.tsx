@@ -14,10 +14,12 @@ const Navbar: React.FC = () => {
   const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [pageScrollY, setPageScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      setPageScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,15 +27,28 @@ const Navbar: React.FC = () => {
     // Disable body scroll when mobile menu is open
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${pageScrollY}px`;
     } else {
+      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     }
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, pageScrollY]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -44,6 +59,7 @@ const Navbar: React.FC = () => {
     { path: '/services', label: t('nav.services') },
     { path: '/projects', label: t('nav.projects') },
     { path: '/about', label: t('nav.about') },
+    { path: '/faq', label: t('nav.faq') },
     { path: '/contact', label: t('nav.contact') },
   ];
 
@@ -60,7 +76,7 @@ const Navbar: React.FC = () => {
       <div className="container flex items-center justify-between">
         {/* Dynamically sized logo based on screen size */}
         <div className={`${isMobile ? 'scale-75' : 'scale-125'} origin-left`}>
-          <Logo variant={isMobile ? "small" : "medium"} className="z-50" />
+          <Logo imgClass={isMobile ? 'h-8' : 'h-12'} className="z-50" />
         </div>
         
         {/* Desktop Menu */}
