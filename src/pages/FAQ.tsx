@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const FAQ: React.FC = () => {
   const { t } = useLanguage();
@@ -46,6 +47,7 @@ const FAQ: React.FC = () => {
   const detailedExamples = [
     {
       title: "Spreadsheet Chaos to Structured Data Management",
+      icon: <FileSpreadsheet className="h-8 w-8 text-primary" />,
       problems: [
         "Excel files get blocked when multiple users try to work simultaneously",
         "Data gets overwritten accidentally without track changes",
@@ -64,6 +66,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Manual Processes to Automated Workflows",
+      icon: <Zap className="h-8 w-8 text-primary" />,
       problems: [
         "Staff spending hours on repetitive data entry tasks",
         "Human errors requiring extensive reviewing and corrections",
@@ -82,6 +85,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Legacy System Modernization",
+      icon: <Clock className="h-8 w-8 text-primary" />,
       problems: [
         "Outdated systems expensive to maintain and modify",
         "Security vulnerabilities in unsupported software",
@@ -100,6 +104,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Disconnected Systems to Integrated Ecosystem",
+      icon: <Link className="h-8 w-8 text-primary" />,
       problems: [
         "Data entered multiple times in different systems",
         "Information silos preventing unified business view",
@@ -114,6 +119,63 @@ const FAQ: React.FC = () => {
         "Automated reporting with consolidated data",
         "End-to-end process visibility across system boundaries",
         "Reduced administrative overhead maintaining multiple systems"
+      ]
+    },
+    {
+      title: "Email Threads & Spreadsheets to Structured Workflows",
+      icon: <Users className="h-8 w-8 text-primary" />,
+      problems: [
+        "Keeping track of projects through emails leads to confusion",
+        "Version control issues with shared documents",
+        "Missed deadlines due to lost communications",
+        "No central place to check project status",
+        "Time wasted searching for the latest information"
+      ],
+      solution: "Development of a centralized project management system with automated workflows, notifications, and document management.",
+      benefits: [
+        "All project information accessible in one place",
+        "Clear accountability with assigned tasks and deadlines",
+        "Automated notifications keep everyone informed",
+        "Real-time status updates visible to all stakeholders",
+        "Secure document storage with version control"
+      ]
+    },
+    {
+      title: "Gut Feeling to Data-Driven Decision Making",
+      icon: <BarChart className="h-8 w-8 text-primary" />,
+      problems: [
+        "Relying on outdated reports for business decisions",
+        "No real-time visibility into performance metrics",
+        "Difficulty identifying trends and patterns in data",
+        "Time-consuming manual report generation",
+        "Different departments working with different numbers"
+      ],
+      solution: "Implementation of business intelligence dashboards with real-time data visualization and advanced analytics.",
+      benefits: [
+        "Real-time insights enable faster, better decisions",
+        "Interactive dashboards make data accessible to everyone",
+        "Automated reporting saves hours of manual work",
+        "Predictive analytics identify opportunities and risks",
+        "Single source of truth for all business metrics"
+      ]
+    },
+    {
+      title: "Excel Database to Proper Data Management",
+      icon: <Database className="h-8 w-8 text-primary" />,
+      problems: [
+        "Using Excel as a database creates versioning issues",
+        "Limited data validation leads to errors and inconsistencies",
+        "Difficult to enforce security and access controls",
+        "Performance degrades as data volume grows",
+        "No proper backup or disaster recovery options"
+      ],
+      solution: "Development of a proper database-driven application with secure access controls, data validation, and scalable architecture.",
+      benefits: [
+        "Robust data integrity with proper validation rules",
+        "Granular access controls protect sensitive information",
+        "Scalable performance even with large data volumes",
+        "Automated backups and disaster recovery",
+        "Easy integration with other business systems"
       ]
     }
   ];
@@ -163,41 +225,64 @@ const FAQ: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8">
               {detailedExamples.map((example, index) => (
                 <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-2xl font-medium mb-6 text-primary">{example.title}</h3>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4 text-red-500">Common Problems</h4>
-                      <ul className="space-y-3">
-                        {example.problems.map((problem, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <div className="mr-3 mt-1.5 text-red-500">•</div>
-                            <p>{problem}</p>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <div className="mt-6">
-                        <h4 className="text-lg font-semibold mb-4 text-blue-500">Our Solution</h4>
-                        <p className="text-text/90">{example.solution}</p>
-                      </div>
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4 p-3 rounded-full bg-primary/10">
+                      {example.icon}
                     </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold mb-4 text-green-500">Key Benefits</h4>
-                      <ul className="space-y-3">
-                        {example.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <div className="mr-3 mt-1.5 text-green-500">•</div>
-                            <p>{benefit}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <h3 className="text-2xl font-medium text-primary">{example.title}</h3>
                   </div>
+                  
+                  <Accordion type="single" collapsible className="w-full border-none">
+                    <AccordionItem value={`item-${index}`} className="border-none">
+                      <AccordionTrigger className="py-2 text-lg font-medium text-gray-700 hover:no-underline">
+                        View Details <ChevronRight className="h-4 w-4 transition-transform duration-200" />
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+                          <div>
+                            <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
+                              <span className="mr-2 text-red-500">•</span>
+                              Common Problems
+                            </h4>
+                            <ul className="space-y-3">
+                              {example.problems.map((problem, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <div className="mr-3 mt-1.5 text-red-500">•</div>
+                                  <p>{problem}</p>
+                                </li>
+                              ))}
+                            </ul>
+                            
+                            <div className="mt-6">
+                              <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
+                                <span className="mr-2 text-blue-500">•</span>
+                                Our Solution
+                              </h4>
+                              <p className="text-text/90">{example.solution}</p>
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
+                              <span className="mr-2 text-green-500">•</span>
+                              Key Benefits
+                            </h4>
+                            <ul className="space-y-3">
+                              {example.benefits.map((benefit, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <div className="mr-3 mt-1.5 text-green-500">•</div>
+                                  <p>{benefit}</p>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               ))}
             </div>
