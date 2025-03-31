@@ -14,41 +14,26 @@ const Navbar: React.FC = () => {
   const isMobile = useIsMobile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [pageScrollY, setPageScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      setPageScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     
-    // Disable body scroll when mobile menu is open
+    // Proper mobile menu handling without scrolling to top
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = `-${pageScrollY}px`;
     } else {
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      }
     }
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
     };
-  }, [isMobileMenuOpen, pageScrollY]);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -111,7 +96,7 @@ const Navbar: React.FC = () => {
           )}
         </Button>
         
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Updated for proper handling */}
         <div
           className={`fixed inset-0 bg-white/90 backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'

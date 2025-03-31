@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
@@ -15,7 +14,7 @@ import Stats from '@/components/Stats';
 import {getProjects} from '@/utils/projectData';
 import { Card, CardContent } from '@/components/ui/card';
 
-const IdentificationQuestion = ({ 
+const BusinessQuestion = ({ 
   question, 
   description, 
   index = 0 
@@ -84,34 +83,30 @@ const Index = () => {
     }
   ];
 
-  const identificationQuestions = [
+  const businessQuestions = [
     {
-      questionKey: 'identify.manual.question',
-      descriptionKey: 'identify.manual.description',
+      questionKey: 'business.questions.manual.question',
+      descriptionKey: 'business.questions.manual.description',
     },
     {
-      questionKey: 'identify.integration.question',
-      descriptionKey: 'identify.integration.description',
+      questionKey: 'business.questions.time.question',
+      descriptionKey: 'business.questions.time.description',
     },
     {
-      questionKey: 'identify.legacy.question',
-      descriptionKey: 'identify.legacy.description',
+      questionKey: 'business.questions.errors.question',
+      descriptionKey: 'business.questions.errors.description',
     },
     {
-      questionKey: 'identify.insights.question',
-      descriptionKey: 'identify.insights.description',
+      questionKey: 'business.questions.integration.question',
+      descriptionKey: 'business.questions.integration.description',
     },
     {
-      questionKey: 'identify.scalability.question',
-      descriptionKey: 'identify.scalability.description',
+      questionKey: 'business.questions.reporting.question',
+      descriptionKey: 'business.questions.reporting.description',
     },
     {
-      questionKey: 'identify.security.question',
-      descriptionKey: 'identify.security.description',
-    },
-    {
-      questionKey: 'identify.cost.question',
-      descriptionKey: 'identify.cost.description',
+      questionKey: 'business.questions.systems.question',
+      descriptionKey: 'business.questions.systems.description',
     },
   ];
 
@@ -120,19 +115,19 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Self-identification Questions Section */}
+      {/* Business Questions Section - Updated */}
       <section className="py-24 bg-gray-50" id="identify-challenges">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="mb-4">{t('identify.title')}</h2>
+            <h2 className="mb-4">{t('business.questions.title')}</h2>
             <p className="text-lg text-text/80">
-              {t('identify.subtitle')}
+              {t('business.questions.subtitle')}
             </p>
           </div>
           
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isMobile ? 'max-w-full overflow-hidden' : ''}`}>
-            {identificationQuestions.map((item, index) => (
-              <IdentificationQuestion
+            {businessQuestions.map((item, index) => (
+              <BusinessQuestion
                 key={index}
                 question={item.questionKey}
                 description={item.descriptionKey}

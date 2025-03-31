@@ -1,10 +1,10 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const FAQ: React.FC = () => {
@@ -42,11 +42,27 @@ const FAQ: React.FC = () => {
     },
   ];
 
-  const categories = [
-    { value: "all", label: "faq.categories.all" },
-    { value: "process", label: "faq.categories.process" },
-    { value: "technical", label: "faq.categories.technical" },
-    { value: "business", label: "faq.categories.business" },
+  const solutionExamples = [
+    {
+      problem: 'faq.examples.manual.problem',
+      solution: 'faq.examples.manual.solution',
+      benefits: 'faq.examples.manual.benefits',
+    },
+    {
+      problem: 'faq.examples.integration.problem',
+      solution: 'faq.examples.integration.solution',
+      benefits: 'faq.examples.integration.benefits',
+    },
+    {
+      problem: 'faq.examples.reporting.problem',
+      solution: 'faq.examples.reporting.solution',
+      benefits: 'faq.examples.reporting.benefits',
+    },
+    {
+      problem: 'faq.examples.legacy.problem',
+      solution: 'faq.examples.legacy.solution',
+      benefits: 'faq.examples.legacy.benefits',
+    },
   ];
 
   return (
@@ -63,60 +79,62 @@ const FAQ: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Categories */}
+      {/* FAQ Questions - Removed filtering tabs */}
       <section className="py-12 bg-gray-50">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <Tabs defaultValue="all" className="w-full">
-              <div className="flex justify-center mb-8">
-                <TabsList className={`${isMobile ? 'overflow-x-auto' : ''} p-1 bg-gray-100 rounded-full`}>
-                  {categories.map((category) => (
-                    <TabsTrigger
-                      key={category.value}
-                      value={category.value}
-                      className="px-6 py-2 rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
-                    >
-                      {t(category.label)}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+          <div className="max-w-4xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-xl font-medium mb-3">{t(faq.question)}</h3>
+                <p className="text-text/80">{t(faq.answer)}</p>
               </div>
-
-              <TabsContent value="all" className="space-y-6">
-                {faqs.map((faq, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-                  >
-                    <h3 className="text-xl font-medium mb-3">{t(faq.question)}</h3>
-                    <p className="text-text/80">{t(faq.answer)}</p>
-                  </div>
-                ))}
-              </TabsContent>
-
-              {/* Other category tabs would filter the FAQs accordingly */}
-              {categories.slice(1).map((category) => (
-                <TabsContent key={category.value} value={category.value} className="space-y-6">
-                  {faqs
-                    .filter((faq) => faq.question.includes(category.value))
-                    .map((faq, index) => (
-                      <div 
-                        key={index} 
-                        className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-                      >
-                        <h3 className="text-xl font-medium mb-3">{t(faq.question)}</h3>
-                        <p className="text-text/80">{t(faq.answer)}</p>
-                      </div>
-                    ))}
-                </TabsContent>
-              ))}
-            </Tabs>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Common Business Problems Section */}
       <CommonProblems />
+
+      {/* Solution Examples Section - New */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="mb-4">{t('faq.examples.title')}</h2>
+              <p className="text-lg text-text/80">
+                {t('faq.examples.subtitle')}
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {solutionExamples.map((example, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="bg-white p-5 rounded-md shadow-sm">
+                      <h3 className="text-lg font-semibold mb-3 text-red-500">{t('faq.examples.problem')}</h3>
+                      <p>{t(example.problem)}</p>
+                    </div>
+                    
+                    <div className="bg-white p-5 rounded-md shadow-sm">
+                      <h3 className="text-lg font-semibold mb-3 text-blue-500">{t('faq.examples.solution')}</h3>
+                      <p>{t(example.solution)}</p>
+                    </div>
+                    
+                    <div className="bg-white p-5 rounded-md shadow-sm">
+                      <h3 className="text-lg font-semibold mb-3 text-green-500">{t('faq.examples.benefits')}</h3>
+                      <p>{t(example.benefits)}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16">
