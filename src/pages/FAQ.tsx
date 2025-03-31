@@ -42,83 +42,78 @@ const FAQ: React.FC = () => {
     },
   ];
 
-  const solutionExamples = [
-    {
-      problem: 'faq.examples.manual.problem',
-      solution: 'faq.examples.manual.solution',
-      benefits: 'faq.examples.manual.benefits',
-    },
-    {
-      problem: 'faq.examples.integration.problem',
-      solution: 'faq.examples.integration.solution',
-      benefits: 'faq.examples.integration.benefits',
-    },
-    {
-      problem: 'faq.examples.reporting.problem',
-      solution: 'faq.examples.reporting.solution',
-      benefits: 'faq.examples.reporting.benefits',
-    },
-    {
-      problem: 'faq.examples.legacy.problem',
-      solution: 'faq.examples.legacy.solution',
-      benefits: 'faq.examples.legacy.benefits',
-    },
-  ];
-
-  // New detailed examples section
+  // Detailed solution examples with real content
   const detailedExamples = [
     {
-      title: 'faq.detailed.excel.title',
+      title: "Spreadsheet Chaos to Structured Data Management",
       problems: [
-        'faq.detailed.excel.problems.blocking',
-        'faq.detailed.excel.problems.overriding',
-        'faq.detailed.excel.problems.collaboration',
-        'faq.detailed.excel.problems.permissions',
-        'faq.detailed.excel.problems.reporting',
+        "Excel files get blocked when multiple users try to work simultaneously",
+        "Data gets overwritten accidentally without track changes",
+        "No granular permission system - everyone sees everything or nothing",
+        "No data validation leading to inconsistent inputs and errors",
+        "Complex formulas break easily when spreadsheet structure changes"
       ],
-      solution: 'faq.detailed.excel.solution',
+      solution: "Development of a tailored multi-user web or desktop application with role-based access control, data validation, and audit trails.",
       benefits: [
-        'faq.detailed.excel.benefits.access',
-        'faq.detailed.excel.benefits.roles',
-        'faq.detailed.excel.benefits.validation',
-        'faq.detailed.excel.benefits.history',
-        'faq.detailed.excel.benefits.automation',
+        "Multiple users can work simultaneously without conflicts",
+        "Role-based access controls ensure users only see what they need",
+        "Built-in validation prevents data entry errors before they happen",
+        "Complete audit history of who changed what and when",
+        "Automated workflows replace manual copy-paste processes"
       ]
     },
     {
-      title: 'faq.detailed.manual.title',
+      title: "Manual Processes to Automated Workflows",
       problems: [
-        'faq.detailed.manual.problems.time',
-        'faq.detailed.manual.problems.errors',
-        'faq.detailed.manual.problems.consistency',
-        'faq.detailed.manual.problems.training',
-        'faq.detailed.manual.problems.scaling',
+        "Staff spending hours on repetitive data entry tasks",
+        "Human errors requiring extensive reviewing and corrections",
+        "Inconsistent process execution depending on who performs the task",
+        "Knowledge trapped with specific employees creates business continuity risks",
+        "Difficult to scale operations as volume increases"
       ],
-      solution: 'faq.detailed.manual.solution',
+      solution: "Implementation of workflow automation software with API integrations to connect systems and eliminate manual steps.",
       benefits: [
-        'faq.detailed.manual.benefits.efficiency',
-        'faq.detailed.manual.benefits.accuracy',
-        'faq.detailed.manual.benefits.standardization',
-        'faq.detailed.manual.benefits.insights',
-        'faq.detailed.manual.benefits.scalability',
+        "Reduce processing time from hours to minutes or seconds",
+        "Eliminate human errors in routine tasks",
+        "Standardized processes regardless of who initiates them",
+        "Business logic documented in systems rather than employee knowledge",
+        "Easily handle 10x volume without adding staff"
       ]
     },
     {
-      title: 'faq.detailed.legacy.title',
+      title: "Legacy System Modernization",
       problems: [
-        'faq.detailed.legacy.problems.maintenance',
-        'faq.detailed.legacy.problems.compatibility',
-        'faq.detailed.legacy.problems.security',
-        'faq.detailed.legacy.problems.limitations',
-        'faq.detailed.legacy.problems.support',
+        "Outdated systems expensive to maintain and modify",
+        "Security vulnerabilities in unsupported software",
+        "Incompatibility with modern operating systems and browsers",
+        "Limited functionality compared to modern alternatives",
+        "Difficulty finding developers who can work with obsolete technologies"
       ],
-      solution: 'faq.detailed.legacy.solution',
+      solution: "Gradual migration to modern technology stack with improved security, user experience, and integration capabilities.",
       benefits: [
-        'faq.detailed.legacy.benefits.modern',
-        'faq.detailed.legacy.benefits.performance',
-        'faq.detailed.legacy.benefits.security',
-        'faq.detailed.legacy.benefits.integration',
-        'faq.detailed.legacy.benefits.features',
+        "Lower maintenance costs and faster feature development",
+        "Improved security and compliance with current standards",
+        "Better performance and responsiveness for users",
+        "Easier integration with other business systems",
+        "Access to larger talent pool for ongoing development"
+      ]
+    },
+    {
+      title: "Disconnected Systems to Integrated Ecosystem",
+      problems: [
+        "Data entered multiple times in different systems",
+        "Information silos preventing unified business view",
+        "Time lag between systems creates inconsistencies",
+        "Reporting requires manual consolidation from multiple sources",
+        "Process breaks when handoffs between systems occur"
+      ],
+      solution: "Implementation of API integration layer or middleware to connect existing systems and synchronize data automatically.",
+      benefits: [
+        "Single source of truth for business data",
+        "Real-time data flow between systems eliminates delays",
+        "Automated reporting with consolidated data",
+        "End-to-end process visibility across system boundaries",
+        "Reduced administrative overhead maintaining multiple systems"
       ]
     }
   ];
@@ -157,84 +152,47 @@ const FAQ: React.FC = () => {
       {/* Common Business Problems Section */}
       <CommonProblems />
 
-      {/* Solution Examples Section - Previous */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="mb-4">{t('faq.examples.title')}</h2>
-              <p className="text-lg text-text/80">
-                {t('faq.examples.subtitle')}
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {solutionExamples.map((example, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="bg-white p-5 rounded-md shadow-sm">
-                      <h3 className="text-lg font-semibold mb-3 text-red-500">{t('faq.examples.problem')}</h3>
-                      <p>{t(example.problem)}</p>
-                    </div>
-                    
-                    <div className="bg-white p-5 rounded-md shadow-sm">
-                      <h3 className="text-lg font-semibold mb-3 text-blue-500">{t('faq.examples.solution')}</h3>
-                      <p>{t(example.solution)}</p>
-                    </div>
-                    
-                    <div className="bg-white p-5 rounded-md shadow-sm">
-                      <h3 className="text-lg font-semibold mb-3 text-green-500">{t('faq.examples.benefits')}</h3>
-                      <p>{t(example.benefits)}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* NEW: Detailed Solution Examples Section */}
+      {/* Detailed Solution Examples Section */}
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-4">{t('faq.detailed.title')}</h2>
+              <h2 className="mb-4">Common Business Problems Solved</h2>
               <p className="text-lg text-text/80">
-                {t('faq.detailed.subtitle')}
+                Here are some common business challenges and how custom software development can solve them.
               </p>
             </div>
 
             <div className="space-y-12">
               {detailedExamples.map((example, index) => (
                 <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-2xl font-medium mb-6 text-primary">{t(example.title)}</h3>
+                  <h3 className="text-2xl font-medium mb-6 text-primary">{example.title}</h3>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-lg font-semibold mb-4 text-red-500">{t('faq.detailed.problems')}</h4>
+                      <h4 className="text-lg font-semibold mb-4 text-red-500">Common Problems</h4>
                       <ul className="space-y-3">
                         {example.problems.map((problem, idx) => (
                           <li key={idx} className="flex items-start">
                             <div className="mr-3 mt-1.5 text-red-500">•</div>
-                            <p>{t(problem)}</p>
+                            <p>{problem}</p>
                           </li>
                         ))}
                       </ul>
                       
                       <div className="mt-6">
-                        <h4 className="text-lg font-semibold mb-4 text-blue-500">{t('faq.detailed.solution')}</h4>
-                        <p className="text-text/90">{t(example.solution)}</p>
+                        <h4 className="text-lg font-semibold mb-4 text-blue-500">Our Solution</h4>
+                        <p className="text-text/90">{example.solution}</p>
                       </div>
                     </div>
                     
                     <div>
-                      <h4 className="text-lg font-semibold mb-4 text-green-500">{t('faq.detailed.benefits')}</h4>
+                      <h4 className="text-lg font-semibold mb-4 text-green-500">Key Benefits</h4>
                       <ul className="space-y-3">
                         {example.benefits.map((benefit, idx) => (
                           <li key={idx} className="flex items-start">
                             <div className="mr-3 mt-1.5 text-green-500">•</div>
-                            <p>{t(benefit)}</p>
+                            <p>{benefit}</p>
                           </li>
                         ))}
                       </ul>

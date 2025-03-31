@@ -1,8 +1,9 @@
+
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
 import {Link} from 'react-router-dom';
-import {ArrowRight, Code, Cog, GitBranch, Monitor, ServerCog, Terminal, CheckCircle2} from 'lucide-react';
+import {ArrowRight, CheckCircle2, Code, Cog, FileSpreadsheet, GitBranch, Monitor, ServerCog, Terminal} from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
@@ -13,22 +14,29 @@ import Stats from '@/components/Stats';
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
 
-const BusinessQuestion = ({ 
-  question, 
+const BusinessChallenge = ({ 
+  icon, 
+  title, 
+  description, 
   index = 0 
 }: { 
-  question: string; 
+  icon: React.ReactNode;
+  title: string; 
+  description: string;
   index?: number; 
 }) => {
-  const { t } = useLanguage();
-  
   return (
     <div 
-      className="flex items-center gap-3 animate-fade-up" 
+      className="flex items-start gap-4 animate-fade-up" 
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2"></div>
-      <p className="text-lg font-medium">{t(question)}</p>
+      <div className="flex-shrink-0 mt-1">
+        {icon}
+      </div>
+      <div>
+        <p className="text-lg font-medium">{title}</p>
+        <p className="text-base text-text/80 mt-1">{description}</p>
+      </div>
     </div>
   );
 };
@@ -73,13 +81,38 @@ const Index = () => {
     }
   ];
 
-  const businessQuestions = [
-    'business.questions.manual.question',
-    'business.questions.time.question',
-    'business.questions.errors.question',
-    'business.questions.integration.question',
-    'business.questions.reporting.question',
-    'business.questions.systems.question',
+  // New Business Challenges with title and description
+  const businessChallenges = [
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "You are using Excel everywhere",
+      description: "Excel prevents collaboration, role separation, audit trails, and leads to data inconsistencies.",
+    },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "Your team performs repetitive manual tasks",
+      description: "Manual data entry wastes time, introduces errors, and prevents your team from focusing on valuable work.",
+    },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "Your systems don't communicate with each other",
+      description: "Disconnected systems require duplicate data entry, slow down processes, and create data silos.",
+    },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "You lack real-time insights for decision making",
+      description: "Without automated reporting, you're making decisions based on outdated or incomplete information.",
+    },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "Your legacy systems are holding you back",
+      description: "Outdated technology limits your growth, increases maintenance costs, and creates security risks.",
+    },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "Your processes don't scale with your business",
+      description: "Manual workflows that worked for a small team become bottlenecks as your business grows.",
+    },
   ];
 
   return (
@@ -87,7 +120,7 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Business Questions Section - Updated to simple bullet points */}
+      {/* Business Challenges Section - Updated with new design */}
       <section className="py-24 bg-gray-50" id="identify-challenges">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -97,11 +130,13 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto space-y-4">
-            {businessQuestions.map((question, index) => (
-              <BusinessQuestion
+          <div className="max-w-3xl mx-auto space-y-6">
+            {businessChallenges.map((challenge, index) => (
+              <BusinessChallenge
                 key={index}
-                question={question}
+                icon={challenge.icon}
+                title={challenge.title}
+                description={challenge.description}
                 index={index}
               />
             ))}
