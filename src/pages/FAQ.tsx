@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link, BarChart } from 'lucide-react';
+import { ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
