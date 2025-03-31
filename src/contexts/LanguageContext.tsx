@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'de';
@@ -38,6 +39,23 @@ const translations: Record<Language, Record<string, string>> = {
     'identify.security.description': 'Meeting regulatory requirements and protecting sensitive data from security threats is becoming increasingly challenging.',
     'identify.cost.question': 'Are IT costs unpredictable or higher than expected?',
     'identify.cost.description': 'Managing and maintaining your current technology stack is resulting in unpredictable expenses and higher total cost of ownership.',
+    
+    'business.questions.title': 'Do These Challenges Sound Familiar?',
+    'business.questions.subtitle': 'Many businesses struggle with these common issues that custom software solutions can address.',
+    'business.challenge.emails': 'You\'re drowning in email threads and spreadsheets',
+    'business.challenge.emails.desc': 'Keeping track of projects, approvals, and updates through emails and shared documents leads to confusion, version control issues, and missed deadlines.',
+    'business.challenge.copying': 'Your team wastes hours copying and pasting data',
+    'business.challenge.copying.desc': 'Manual data transfers between different systems or documents create inefficiencies, introduce errors, and prevent your team from focusing on strategic tasks.',
+    'business.challenge.separated': 'Your data is separated across different tools',
+    'business.challenge.separated.desc': 'Information stored in multiple disconnected applications makes it difficult to get a complete picture, leading to inefficiencies and poor decision-making.',
+    'business.challenge.gutfeeling': 'You\'re making business decisions based on gut feeling',
+    'business.challenge.gutfeeling.desc': 'Without real-time data and analytics, you\'re forced to rely on outdated reports or assumptions, leading to missed opportunities and costly mistakes.',
+    'business.challenge.adminwork': 'Your employees spend more time on admin work than actual work',
+    'business.challenge.adminwork.desc': 'Manually filling out forms, generating reports, and organizing files takes away time from innovation, problem-solving, and customer service.',
+    'business.challenge.doublework': 'Your systems don\'t talk to each other, causing double work',
+    'business.challenge.doublework.desc': 'Disconnected software forces employees to re-enter the same data multiple times, leading to inconsistencies, errors, and inefficiencies.',
+    'business.challenge.excel': 'You\'re pushing Excel beyond its limits and it\'s costing you',
+    'business.challenge.excel.desc': 'Using Excel as a database, workflow manager, or reporting tool creates versioning issues, manual errors, lack of collaboration, and security risks.',
     
     'services.title': 'Our Services',
     'services.subtitle': 'We offer comprehensive software solutions tailored to meet your specific business requirements.',
@@ -210,6 +228,23 @@ const translations: Record<Language, Record<string, string>> = {
     'identify.security.description': 'Die Einhaltung regulatorischer Anforderungen und der Schutz sensibler Daten vor Sicherheitsbedrohungen wird zunehmend herausfordernd.',
     'identify.cost.question': 'Sind Ihre IT-Kosten unvorhersehbar oder höher als erwartet?',
     'identify.cost.description': 'Die Verwaltung und Wartung Ihres aktuellen Technologie-Stacks führt zu unvorhersehbaren Ausgaben und höheren Gesamtbetriebskosten.',
+    
+    'business.questions.title': 'Klingen diese Herausforderungen vertraut?',
+    'business.questions.subtitle': 'Viele Unternehmen kämpfen mit diesen häufigen Problemen, die durch maßgeschneiderte Softwarelösungen behoben werden können.',
+    'business.challenge.emails': 'Sie ertrinken in E-Mail-Threads und Tabellenkalkulationen',
+    'business.challenge.emails.desc': 'Die Verfolgung von Projekten, Genehmigungen und Aktualisierungen über E-Mails und gemeinsam genutzte Dokumente führt zu Verwirrung, Versionskontrollproblemen und verpassten Fristen.',
+    'business.challenge.copying': 'Ihr Team verschwendet Stunden mit dem Kopieren und Einfügen von Daten',
+    'business.challenge.copying.desc': 'Manuelle Datenübertragungen zwischen verschiedenen Systemen oder Dokumenten schaffen Ineffizienzen, führen zu Fehlern und hindern Ihr Team daran, sich auf strategische Aufgaben zu konzentrieren.',
+    'business.challenge.separated': 'Ihre Daten sind auf verschiedene Tools verteilt',
+    'business.challenge.separated.desc': 'In mehreren getrennten Anwendungen gespeicherte Informationen erschweren es, ein vollständiges Bild zu erhalten, was zu Ineffizienzen und schlechten Entscheidungen führt.',
+    'business.challenge.gutfeeling': 'Sie treffen Geschäftsentscheidungen auf Basis von Bauchgefühl',
+    'business.challenge.gutfeeling.desc': 'Ohne Echtzeitdaten und -analysen sind Sie gezwungen, sich auf veraltete Berichte oder Annahmen zu verlassen, was zu verpassten Chancen und kostspieligen Fehlern führt.',
+    'business.challenge.adminwork': 'Ihre Mitarbeiter verbringen mehr Zeit mit Verwaltungsarbeit als mit eigentlicher Arbeit',
+    'business.challenge.adminwork.desc': 'Das manuelle Ausfüllen von Formularen, Erstellen von Berichten und Organisieren von Dateien nimmt Zeit für Innovation, Problemlösung und Kundenservice weg.',
+    'business.challenge.doublework': 'Ihre Systeme kommunizieren nicht miteinander, was zu Doppelarbeit führt',
+    'business.challenge.doublework.desc': 'Unverbundene Software zwingt Mitarbeiter, dieselben Daten mehrfach einzugeben, was zu Inkonsistenzen, Fehlern und Ineffizienzen führt.',
+    'business.challenge.excel': 'Sie treiben Excel über seine Grenzen hinaus und das kostet Sie',
+    'business.challenge.excel.desc': 'Die Verwendung von Excel als Datenbank, Workflow-Manager oder Reporting-Tool schafft Versionierungsprobleme, manuelle Fehler, mangelnde Zusammenarbeit und Sicherheitsrisiken.',
     
     'services.title': 'Unsere Dienstleistungen',
     'services.subtitle': 'Wir bieten umfassende Softwarelösungen, die auf Ihre spezifischen Geschäftsanforderungen zugeschnitten sind.',

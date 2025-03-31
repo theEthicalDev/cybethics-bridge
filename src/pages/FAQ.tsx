@@ -104,7 +104,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Disconnected Systems to Integrated Ecosystem",
-      icon: <Link className="h-8 w-8 text-primary" />,
+      icon: <LinkIcon className="h-8 w-8 text-primary" />,
       problems: [
         "Data entered multiple times in different systems",
         "Information silos preventing unified business view",

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
@@ -81,38 +80,43 @@ const Index = () => {
     }
   ];
 
-  // New Business Challenges with title and description
+  // Updated Business Challenges with new content
   const businessChallenges = [
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "You are using Excel everywhere",
-      description: "Excel prevents collaboration, role separation, audit trails, and leads to data inconsistencies.",
+      title: "You're drowning in email threads and spreadsheets",
+      description: "Keeping track of projects, approvals, and updates through emails and shared documents leads to confusion, version control issues, and missed deadlines.",
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your team performs repetitive manual tasks",
-      description: "Manual data entry wastes time, introduces errors, and prevents your team from focusing on valuable work.",
+      title: "Your team wastes hours copying and pasting data",
+      description: "Manual data transfers between different systems or documents create inefficiencies, introduce errors, and prevent your team from focusing on strategic tasks.",
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your systems don't communicate with each other",
-      description: "Disconnected systems require duplicate data entry, slow down processes, and create data silos.",
+      title: "Your data is separated across different tools",
+      description: "Information stored in multiple disconnected applications makes it difficult to get a complete picture, leading to inefficiencies and poor decision-making.",
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "You lack real-time insights for decision making",
-      description: "Without automated reporting, you're making decisions based on outdated or incomplete information.",
+      title: "You're making business decisions based on gut feeling",
+      description: "Without real-time data and analytics, you're forced to rely on outdated reports or assumptions, leading to missed opportunities and costly mistakes.",
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your legacy systems are holding you back",
-      description: "Outdated technology limits your growth, increases maintenance costs, and creates security risks.",
+      title: "Your employees spend more time on admin work than actual work",
+      description: "Manually filling out forms, generating reports, and organizing files takes away time from innovation, problem-solving, and customer service.",
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your processes don't scale with your business",
-      description: "Manual workflows that worked for a small team become bottlenecks as your business grows.",
+      title: "Your systems don't talk to each other, causing double work",
+      description: "Disconnected software forces employees to re-enter the same data multiple times, leading to inconsistencies, errors, and inefficiencies.",
     },
+    {
+      icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
+      title: "You're pushing Excel beyond its limits and it's costing you",
+      description: "Using Excel as a database, workflow manager, or reporting tool creates versioning issues, manual errors, lack of collaboration, and security risks.",
+    }
   ];
 
   return (
