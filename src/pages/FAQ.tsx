@@ -65,6 +65,64 @@ const FAQ: React.FC = () => {
     },
   ];
 
+  // New detailed examples section
+  const detailedExamples = [
+    {
+      title: 'faq.detailed.excel.title',
+      problems: [
+        'faq.detailed.excel.problems.blocking',
+        'faq.detailed.excel.problems.overriding',
+        'faq.detailed.excel.problems.collaboration',
+        'faq.detailed.excel.problems.permissions',
+        'faq.detailed.excel.problems.reporting',
+      ],
+      solution: 'faq.detailed.excel.solution',
+      benefits: [
+        'faq.detailed.excel.benefits.access',
+        'faq.detailed.excel.benefits.roles',
+        'faq.detailed.excel.benefits.validation',
+        'faq.detailed.excel.benefits.history',
+        'faq.detailed.excel.benefits.automation',
+      ]
+    },
+    {
+      title: 'faq.detailed.manual.title',
+      problems: [
+        'faq.detailed.manual.problems.time',
+        'faq.detailed.manual.problems.errors',
+        'faq.detailed.manual.problems.consistency',
+        'faq.detailed.manual.problems.training',
+        'faq.detailed.manual.problems.scaling',
+      ],
+      solution: 'faq.detailed.manual.solution',
+      benefits: [
+        'faq.detailed.manual.benefits.efficiency',
+        'faq.detailed.manual.benefits.accuracy',
+        'faq.detailed.manual.benefits.standardization',
+        'faq.detailed.manual.benefits.insights',
+        'faq.detailed.manual.benefits.scalability',
+      ]
+    },
+    {
+      title: 'faq.detailed.legacy.title',
+      problems: [
+        'faq.detailed.legacy.problems.maintenance',
+        'faq.detailed.legacy.problems.compatibility',
+        'faq.detailed.legacy.problems.security',
+        'faq.detailed.legacy.problems.limitations',
+        'faq.detailed.legacy.problems.support',
+      ],
+      solution: 'faq.detailed.legacy.solution',
+      benefits: [
+        'faq.detailed.legacy.benefits.modern',
+        'faq.detailed.legacy.benefits.performance',
+        'faq.detailed.legacy.benefits.security',
+        'faq.detailed.legacy.benefits.integration',
+        'faq.detailed.legacy.benefits.features',
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -99,7 +157,7 @@ const FAQ: React.FC = () => {
       {/* Common Business Problems Section */}
       <CommonProblems />
 
-      {/* Solution Examples Section - New */}
+      {/* Solution Examples Section - Previous */}
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
@@ -127,6 +185,59 @@ const FAQ: React.FC = () => {
                     <div className="bg-white p-5 rounded-md shadow-sm">
                       <h3 className="text-lg font-semibold mb-3 text-green-500">{t('faq.examples.benefits')}</h3>
                       <p>{t(example.benefits)}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Detailed Solution Examples Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="mb-4">{t('faq.detailed.title')}</h2>
+              <p className="text-lg text-text/80">
+                {t('faq.detailed.subtitle')}
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              {detailedExamples.map((example, index) => (
+                <div key={index} className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="text-2xl font-medium mb-6 text-primary">{t(example.title)}</h3>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-lg font-semibold mb-4 text-red-500">{t('faq.detailed.problems')}</h4>
+                      <ul className="space-y-3">
+                        {example.problems.map((problem, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="mr-3 mt-1.5 text-red-500">•</div>
+                            <p>{t(problem)}</p>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      <div className="mt-6">
+                        <h4 className="text-lg font-semibold mb-4 text-blue-500">{t('faq.detailed.solution')}</h4>
+                        <p className="text-text/90">{t(example.solution)}</p>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold mb-4 text-green-500">{t('faq.detailed.benefits')}</h4>
+                      <ul className="space-y-3">
+                        {example.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="mr-3 mt-1.5 text-green-500">•</div>
+                            <p>{t(benefit)}</p>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

@@ -12,34 +12,24 @@ import Stats from '@/components/Stats';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
-import { Card, CardContent } from '@/components/ui/card';
 
 const BusinessQuestion = ({ 
   question, 
-  description, 
   index = 0 
 }: { 
   question: string; 
-  description: string; 
   index?: number; 
 }) => {
   const { t } = useLanguage();
   
   return (
-    <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-up" 
-          style={{ animationDelay: `${index * 100}ms` }}>
-      <CardContent className="p-6">
-        <div className="flex items-start gap-4">
-          <div className="p-2 rounded-full bg-primary/10 mt-1 flex-shrink-0">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
-          </div>
-          <div>
-            <h3 className="text-lg font-medium mb-2">{t(question)}</h3>
-            <p className="text-text/80">{t(description)}</p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+    <div 
+      className="flex items-center gap-3 animate-fade-up" 
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2"></div>
+      <p className="text-lg font-medium">{t(question)}</p>
+    </div>
   );
 };
 
@@ -84,30 +74,12 @@ const Index = () => {
   ];
 
   const businessQuestions = [
-    {
-      questionKey: 'business.questions.manual.question',
-      descriptionKey: 'business.questions.manual.description',
-    },
-    {
-      questionKey: 'business.questions.time.question',
-      descriptionKey: 'business.questions.time.description',
-    },
-    {
-      questionKey: 'business.questions.errors.question',
-      descriptionKey: 'business.questions.errors.description',
-    },
-    {
-      questionKey: 'business.questions.integration.question',
-      descriptionKey: 'business.questions.integration.description',
-    },
-    {
-      questionKey: 'business.questions.reporting.question',
-      descriptionKey: 'business.questions.reporting.description',
-    },
-    {
-      questionKey: 'business.questions.systems.question',
-      descriptionKey: 'business.questions.systems.description',
-    },
+    'business.questions.manual.question',
+    'business.questions.time.question',
+    'business.questions.errors.question',
+    'business.questions.integration.question',
+    'business.questions.reporting.question',
+    'business.questions.systems.question',
   ];
 
   return (
@@ -115,7 +87,7 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Business Questions Section - Updated */}
+      {/* Business Questions Section - Updated to simple bullet points */}
       <section className="py-24 bg-gray-50" id="identify-challenges">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -125,12 +97,11 @@ const Index = () => {
             </p>
           </div>
           
-          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isMobile ? 'max-w-full overflow-hidden' : ''}`}>
-            {businessQuestions.map((item, index) => (
+          <div className="max-w-3xl mx-auto space-y-4">
+            {businessQuestions.map((question, index) => (
               <BusinessQuestion
                 key={index}
-                question={item.questionKey}
-                description={item.descriptionKey}
+                question={question}
                 index={index}
               />
             ))}

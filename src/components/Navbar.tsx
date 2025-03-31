@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     
-    // Proper mobile menu handling without scrolling to top
+    // Proper mobile menu handling
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -96,13 +96,19 @@ const Navbar: React.FC = () => {
           )}
         </Button>
         
-        {/* Mobile Menu - Updated for proper handling */}
+        {/* Mobile Menu - Updated to work regardless of scroll position */}
         <div
           className={`fixed inset-0 bg-white/90 backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
+          style={{
+            top: 0,
+            height: '100vh',
+            position: 'fixed',
+            zIndex: 40,
+          }}
         >
-          <nav className="flex flex-col items-center space-y-6">
+          <nav className="flex flex-col items-center space-y-6 py-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
