@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next';
 
 interface TranslationContextProps {
   language: string;
-  t: (key: string, options?: any) => string | object;
+  t: (key: string, options?: any) => string;
   setLanguage: (lang: string) => void;
 }
 
@@ -437,8 +437,11 @@ const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
     });
   }, []);
 
-  const t = useCallback((key: string, options?: any) => {
-    return i18next.t(key, options);
+  // Modified t function to ensure it always returns a string
+  const t = useCallback((key: string, options?: any): string => {
+    const translated = i18next.t(key, options);
+    // Convert any object results to string to ensure type safety
+    return typeof translated === 'object' ? JSON.stringify(translated) : String(translated);
   }, []);
 
   return (
