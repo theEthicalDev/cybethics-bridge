@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedCounter from '@/components/AnimatedCounter.tsx';
 import {Award, BellRingIcon, ReceiptTextIcon, ScaleIcon} from 'lucide-react';

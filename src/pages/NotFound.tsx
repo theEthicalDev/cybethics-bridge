@@ -22,14 +22,14 @@ const NotFound = () => {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
           <span className="text-primary text-2xl font-bold">404</span>
         </div>
-        <h1 className="text-3xl font-medium mb-4">Page Not Found</h1>
+        <h1 className="text-3xl font-medium mb-4">{t('notFound.title')}</h1>
         <p className="text-text/80 mb-8">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          {t('notFound.description')}
         </p>
         <Button asChild className="bg-primary hover:bg-primary/90 text-white group">
           <Link to="/" className="flex items-center">
             <Home className="mr-2 h-5 w-5" />
-            Return to Home
+            {t('notFound.returnHome')}
           </Link>
         </Button>
       </div>
