@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next';
 
 interface TranslationContextProps {
   language: string;
-  t: (key: string, options?: any) => string;
+  t: (key: string, options?: any) => string | object;
   setLanguage: (lang: string) => void;
 }
 
