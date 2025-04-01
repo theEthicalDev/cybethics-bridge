@@ -1,15 +1,14 @@
-
 import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import {useLanguage} from '@/contexts/LanguageContext';
+import {ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart} from 'lucide-react';
+import {Link} from 'react-router-dom';
+import {Button} from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import {useIsMobile} from '@/hooks/use-mobile';
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/accordion';
 
 const FAQ: React.FC = () => {
-  const { t } = useLanguage();
+  const {t} = useLanguage();
   const isMobile = useIsMobile();
 
   const faqs = [
@@ -47,7 +46,7 @@ const FAQ: React.FC = () => {
   const detailedExamples = [
     {
       title: "Spreadsheet Chaos to Structured Data Management",
-      icon: <FileSpreadsheet className="h-8 w-8 text-primary" />,
+      icon: <FileSpreadsheet className="h-8 w-8 text-primary"/>,
       problems: [
         "Excel files get blocked when multiple users try to work simultaneously",
         "Data gets overwritten accidentally without track changes",
@@ -66,7 +65,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Manual Processes to Automated Workflows",
-      icon: <Zap className="h-8 w-8 text-primary" />,
+      icon: <Zap className="h-8 w-8 text-primary"/>,
       problems: [
         "Staff spending hours on repetitive data entry tasks",
         "Human errors requiring extensive reviewing and corrections",
@@ -85,7 +84,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Legacy System Modernization",
-      icon: <Clock className="h-8 w-8 text-primary" />,
+      icon: <Clock className="h-8 w-8 text-primary"/>,
       problems: [
         "Outdated systems expensive to maintain and modify",
         "Security vulnerabilities in unsupported software",
@@ -104,7 +103,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Disconnected Systems to Integrated Ecosystem",
-      icon: <LinkIcon className="h-8 w-8 text-primary" />,
+      icon: <LinkIcon className="h-8 w-8 text-primary"/>,
       problems: [
         "Data entered multiple times in different systems",
         "Information silos preventing unified business view",
@@ -123,7 +122,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Email Threads & Spreadsheets to Structured Workflows",
-      icon: <Users className="h-8 w-8 text-primary" />,
+      icon: <Users className="h-8 w-8 text-primary"/>,
       problems: [
         "Keeping track of projects through emails leads to confusion",
         "Version control issues with shared documents",
@@ -142,7 +141,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Gut Feeling to Data-Driven Decision Making",
-      icon: <BarChart className="h-8 w-8 text-primary" />,
+      icon: <BarChart className="h-8 w-8 text-primary"/>,
       problems: [
         "Relying on outdated reports for business decisions",
         "No real-time visibility into performance metrics",
@@ -161,7 +160,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: "Excel Database to Proper Data Management",
-      icon: <Database className="h-8 w-8 text-primary" />,
+      icon: <Database className="h-8 w-8 text-primary"/>,
       problems: [
         "Using Excel as a database creates versioning issues",
         "Limited data validation leads to errors and inconsistencies",
@@ -199,8 +198,8 @@ const FAQ: React.FC = () => {
         <div className="container">
           <div className="max-w-4xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
                 <h3 className="text-xl font-medium mb-3">{t(faq.question)}</h3>
@@ -212,7 +211,7 @@ const FAQ: React.FC = () => {
       </section>
 
       {/* Common Business Problems Section */}
-      <CommonProblems />
+      <CommonProblems/>
 
       {/* Detailed Solution Examples Section */}
       <section className="py-16 bg-gray-50">
@@ -234,46 +233,43 @@ const FAQ: React.FC = () => {
                     </div>
                     <h3 className="text-2xl font-medium text-primary">{example.title}</h3>
                   </div>
-                  
+
                   <Accordion type="single" collapsible className="w-full border-none">
                     <AccordionItem value={`item-${index}`} className="border-none">
                       <AccordionTrigger className="py-2 text-lg font-medium text-gray-700 hover:no-underline">
-                        View Details <ChevronRight className="h-4 w-4 transition-transform duration-200" />
+                        View Details
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              <span className="mr-2 text-red-500">•</span>
                               Common Problems
                             </h4>
                             <ul className="space-y-3">
                               {example.problems.map((problem, idx) => (
                                 <li key={idx} className="flex items-start">
-                                  <div className="mr-3 mt-1.5 text-red-500">•</div>
+                                  <div className="mr-3 mb-1.5 text-red-500">•</div>
                                   <p>{problem}</p>
                                 </li>
                               ))}
                             </ul>
-                            
+
                             <div className="mt-6">
                               <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                                <span className="mr-2 text-blue-500">•</span>
                                 Our Solution
                               </h4>
                               <p className="text-text/90">{example.solution}</p>
                             </div>
                           </div>
-                          
+
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              <span className="mr-2 text-green-500">•</span>
                               Key Benefits
                             </h4>
                             <ul className="space-y-3">
                               {example.benefits.map((benefit, idx) => (
                                 <li key={idx} className="flex items-start">
-                                  <div className="mr-3 mt-1.5 text-green-500">•</div>
+                                  <div className="mr-3 mb-1.5 text-green-500">•</div>
                                   <p>{benefit}</p>
                                 </li>
                               ))}
@@ -298,7 +294,7 @@ const FAQ: React.FC = () => {
               <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-white/10 blur-2xl"></div>
               <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
             </div>
-            
+
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">{t('faq.cta.title')}</h2>
               <p className="text-lg md:text-xl text-white/90 mb-8">{t('faq.cta.subtitle')}</p>
