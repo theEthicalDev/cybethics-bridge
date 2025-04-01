@@ -31,11 +31,13 @@ const About = () => {
     },
   ];
 
+  // Updated skills list to match the Projects page
   const skills = [
-    'Spring Boot', 'Angular', 'React', 'Node.js', 
-    'Microsoft PowerAutomate', 'Zapier', 
+    'Web Development', 'Spring Boot', 'Angular', 'React', 'Node.js', 
+    'Automation', 'Microsoft PowerAutomate', 'Zapier', 
+    'API Development', 'System Integration', 'Integration',
+    'Backend', 'Frontend', 'Mobile', 'UI/UX',
     'CI/CD', 'GitHub Actions', 'Jenkins',
-    'API Development', 'System Integration',
     'Scripting', 'Cloud Infrastructure',
   ];
 
