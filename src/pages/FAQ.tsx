@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart} from 'lucide-react';
@@ -45,136 +46,136 @@ const FAQ: React.FC = () => {
   // Detailed solution examples with real content
   const detailedExamples = [
     {
-      title: "Spreadsheet Chaos to Structured Data Management",
+      title: t('faq.solutions.spreadsheet.title'),
       icon: <FileSpreadsheet className="h-8 w-8 text-primary"/>,
       problems: [
-        "Excel files get blocked when multiple users try to work simultaneously",
-        "Data gets overwritten accidentally without track changes",
-        "No granular permission system - everyone sees everything or nothing",
-        "No data validation leading to inconsistent inputs and errors",
-        "Complex formulas break easily when spreadsheet structure changes"
+        t('faq.solutions.spreadsheet.problems.1'),
+        t('faq.solutions.spreadsheet.problems.2'),
+        t('faq.solutions.spreadsheet.problems.3'),
+        t('faq.solutions.spreadsheet.problems.4'),
+        t('faq.solutions.spreadsheet.problems.5')
       ],
-      solution: "Development of a tailored multi-user web or desktop application with role-based access control, data validation, and audit trails.",
+      solution: t('faq.solutions.spreadsheet.solution'),
       benefits: [
-        "Multiple users can work simultaneously without conflicts",
-        "Role-based access controls ensure users only see what they need",
-        "Built-in validation prevents data entry errors before they happen",
-        "Complete audit history of who changed what and when",
-        "Automated workflows replace manual copy-paste processes"
+        t('faq.solutions.spreadsheet.benefits.1'),
+        t('faq.solutions.spreadsheet.benefits.2'),
+        t('faq.solutions.spreadsheet.benefits.3'),
+        t('faq.solutions.spreadsheet.benefits.4'),
+        t('faq.solutions.spreadsheet.benefits.5')
       ]
     },
     {
-      title: "Manual Processes to Automated Workflows",
+      title: t('faq.solutions.automation.title'),
       icon: <Zap className="h-8 w-8 text-primary"/>,
       problems: [
-        "Staff spending hours on repetitive data entry tasks",
-        "Human errors requiring extensive reviewing and corrections",
-        "Inconsistent process execution depending on who performs the task",
-        "Knowledge trapped with specific employees creates business continuity risks",
-        "Difficult to scale operations as volume increases"
+        t('faq.solutions.automation.problems.1'),
+        t('faq.solutions.automation.problems.2'),
+        t('faq.solutions.automation.problems.3'),
+        t('faq.solutions.automation.problems.4'),
+        t('faq.solutions.automation.problems.5')
       ],
-      solution: "Implementation of workflow automation software with API integrations to connect systems and eliminate manual steps.",
+      solution: t('faq.solutions.automation.solution'),
       benefits: [
-        "Reduce processing time from hours to minutes or seconds",
-        "Eliminate human errors in routine tasks",
-        "Standardized processes regardless of who initiates them",
-        "Business logic documented in systems rather than employee knowledge",
-        "Easily handle 10x volume without adding staff"
+        t('faq.solutions.automation.benefits.1'),
+        t('faq.solutions.automation.benefits.2'),
+        t('faq.solutions.automation.benefits.3'),
+        t('faq.solutions.automation.benefits.4'),
+        t('faq.solutions.automation.benefits.5')
       ]
     },
     {
-      title: "Legacy System Modernization",
+      title: t('faq.solutions.legacy.title'),
       icon: <Clock className="h-8 w-8 text-primary"/>,
       problems: [
-        "Outdated systems expensive to maintain and modify",
-        "Security vulnerabilities in unsupported software",
-        "Incompatibility with modern operating systems and browsers",
-        "Limited functionality compared to modern alternatives",
-        "Difficulty finding developers who can work with obsolete technologies"
+        t('faq.solutions.legacy.problems.1'),
+        t('faq.solutions.legacy.problems.2'),
+        t('faq.solutions.legacy.problems.3'),
+        t('faq.solutions.legacy.problems.4'),
+        t('faq.solutions.legacy.problems.5')
       ],
-      solution: "Gradual migration to modern technology stack with improved security, user experience, and integration capabilities.",
+      solution: t('faq.solutions.legacy.solution'),
       benefits: [
-        "Lower maintenance costs and faster feature development",
-        "Improved security and compliance with current standards",
-        "Better performance and responsiveness for users",
-        "Easier integration with other business systems",
-        "Access to larger talent pool for ongoing development"
+        t('faq.solutions.legacy.benefits.1'),
+        t('faq.solutions.legacy.benefits.2'),
+        t('faq.solutions.legacy.benefits.3'),
+        t('faq.solutions.legacy.benefits.4'),
+        t('faq.solutions.legacy.benefits.5')
       ]
     },
     {
-      title: "Disconnected Systems to Integrated Ecosystem",
+      title: t('faq.solutions.integration.title'),
       icon: <LinkIcon className="h-8 w-8 text-primary"/>,
       problems: [
-        "Data entered multiple times in different systems",
-        "Information silos preventing unified business view",
-        "Time lag between systems creates inconsistencies",
-        "Reporting requires manual consolidation from multiple sources",
-        "Process breaks when handoffs between systems occur"
+        t('faq.solutions.integration.problems.1'),
+        t('faq.solutions.integration.problems.2'),
+        t('faq.solutions.integration.problems.3'),
+        t('faq.solutions.integration.problems.4'),
+        t('faq.solutions.integration.problems.5')
       ],
-      solution: "Implementation of API integration layer or middleware to connect existing systems and synchronize data automatically.",
+      solution: t('faq.solutions.integration.solution'),
       benefits: [
-        "Single source of truth for business data",
-        "Real-time data flow between systems eliminates delays",
-        "Automated reporting with consolidated data",
-        "End-to-end process visibility across system boundaries",
-        "Reduced administrative overhead maintaining multiple systems"
+        t('faq.solutions.integration.benefits.1'),
+        t('faq.solutions.integration.benefits.2'),
+        t('faq.solutions.integration.benefits.3'),
+        t('faq.solutions.integration.benefits.4'),
+        t('faq.solutions.integration.benefits.5')
       ]
     },
     {
-      title: "Email Threads & Spreadsheets to Structured Workflows",
+      title: t('faq.solutions.workflow.title'),
       icon: <Users className="h-8 w-8 text-primary"/>,
       problems: [
-        "Keeping track of projects through emails leads to confusion",
-        "Version control issues with shared documents",
-        "Missed deadlines due to lost communications",
-        "No central place to check project status",
-        "Time wasted searching for the latest information"
+        t('faq.solutions.workflow.problems.1'),
+        t('faq.solutions.workflow.problems.2'),
+        t('faq.solutions.workflow.problems.3'),
+        t('faq.solutions.workflow.problems.4'),
+        t('faq.solutions.workflow.problems.5')
       ],
-      solution: "Development of a centralized project management system with automated workflows, notifications, and document management.",
+      solution: t('faq.solutions.workflow.solution'),
       benefits: [
-        "All project information accessible in one place",
-        "Clear accountability with assigned tasks and deadlines",
-        "Automated notifications keep everyone informed",
-        "Real-time status updates visible to all stakeholders",
-        "Secure document storage with version control"
+        t('faq.solutions.workflow.benefits.1'),
+        t('faq.solutions.workflow.benefits.2'),
+        t('faq.solutions.workflow.benefits.3'),
+        t('faq.solutions.workflow.benefits.4'),
+        t('faq.solutions.workflow.benefits.5')
       ]
     },
     {
-      title: "Gut Feeling to Data-Driven Decision Making",
+      title: t('faq.solutions.datadriven.title'),
       icon: <BarChart className="h-8 w-8 text-primary"/>,
       problems: [
-        "Relying on outdated reports for business decisions",
-        "No real-time visibility into performance metrics",
-        "Difficulty identifying trends and patterns in data",
-        "Time-consuming manual report generation",
-        "Different departments working with different numbers"
+        t('faq.solutions.datadriven.problems.1'),
+        t('faq.solutions.datadriven.problems.2'),
+        t('faq.solutions.datadriven.problems.3'),
+        t('faq.solutions.datadriven.problems.4'),
+        t('faq.solutions.datadriven.problems.5')
       ],
-      solution: "Implementation of business intelligence dashboards with real-time data visualization and advanced analytics.",
+      solution: t('faq.solutions.datadriven.solution'),
       benefits: [
-        "Real-time insights enable faster, better decisions",
-        "Interactive dashboards make data accessible to everyone",
-        "Automated reporting saves hours of manual work",
-        "Predictive analytics identify opportunities and risks",
-        "Single source of truth for all business metrics"
+        t('faq.solutions.datadriven.benefits.1'),
+        t('faq.solutions.datadriven.benefits.2'),
+        t('faq.solutions.datadriven.benefits.3'),
+        t('faq.solutions.datadriven.benefits.4'),
+        t('faq.solutions.datadriven.benefits.5')
       ]
     },
     {
-      title: "Excel Database to Proper Data Management",
+      title: t('faq.solutions.database.title'),
       icon: <Database className="h-8 w-8 text-primary"/>,
       problems: [
-        "Using Excel as a database creates versioning issues",
-        "Limited data validation leads to errors and inconsistencies",
-        "Difficult to enforce security and access controls",
-        "Performance degrades as data volume grows",
-        "No proper backup or disaster recovery options"
+        t('faq.solutions.database.problems.1'),
+        t('faq.solutions.database.problems.2'),
+        t('faq.solutions.database.problems.3'),
+        t('faq.solutions.database.problems.4'),
+        t('faq.solutions.database.problems.5')
       ],
-      solution: "Development of a proper database-driven application with secure access controls, data validation, and scalable architecture.",
+      solution: t('faq.solutions.database.solution'),
       benefits: [
-        "Robust data integrity with proper validation rules",
-        "Granular access controls protect sensitive information",
-        "Scalable performance even with large data volumes",
-        "Automated backups and disaster recovery",
-        "Easy integration with other business systems"
+        t('faq.solutions.database.benefits.1'),
+        t('faq.solutions.database.benefits.2'),
+        t('faq.solutions.database.benefits.3'),
+        t('faq.solutions.database.benefits.4'),
+        t('faq.solutions.database.benefits.5')
       ]
     }
   ];
@@ -218,9 +219,9 @@ const FAQ: React.FC = () => {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-4">Common Business Problems Solved</h2>
+              <h2 className="mb-4">{t('faq.solutions.title')}</h2>
               <p className="text-lg text-text/80">
-                Here are some common business challenges and how custom software development can solve them.
+                {t('faq.solutions.description')}
               </p>
             </div>
 
@@ -237,13 +238,13 @@ const FAQ: React.FC = () => {
                   <Accordion type="single" collapsible className="w-full border-none">
                     <AccordionItem value={`item-${index}`} className="border-none">
                       <AccordionTrigger className="py-2 text-lg font-medium text-gray-700 hover:no-underline">
-                        View Details
+                        {t('faq.solutions.viewDetails')}
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              Common Problems
+                              {t('faq.solutions.commonProblems')}
                             </h4>
                             <ul className="space-y-3">
                               {example.problems.map((problem, idx) => (
@@ -256,7 +257,7 @@ const FAQ: React.FC = () => {
 
                             <div className="mt-6">
                               <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                                Our Solution
+                                {t('faq.solutions.ourSolution')}
                               </h4>
                               <p className="text-text/90">{example.solution}</p>
                             </div>
@@ -264,7 +265,7 @@ const FAQ: React.FC = () => {
 
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              Key Benefits
+                              {t('faq.solutions.keyBenefits')}
                             </h4>
                             <ul className="space-y-3">
                               {example.benefits.map((benefit, idx) => (

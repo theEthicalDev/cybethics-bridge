@@ -11,7 +11,8 @@ import {
   Book,
   Rocket,
   Zap,
-  Layers
+  Layers,
+  GitBranch
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -129,6 +130,37 @@ const DetailedServiceTabs = () => {
       technologies: ["API development", "Middleware", "ETL tools", "ESB", "Cloud integration services"]
     },
     {
+      id: "cicd",
+      title: t('services.cicd.title'),
+      description: t('services.cicd.description'),
+      icon: <GitBranch className="h-12 w-12 text-primary" />,
+      benefits: [
+        t('services.cicd.benefit1'),
+        t('services.cicd.benefit2'),
+        t('services.cicd.benefit3'),
+        t('services.cicd.benefit4')
+      ],
+      process: [
+        {
+          title: t('services.cicd.process1.title'),
+          description: t('services.cicd.process1.description')
+        },
+        {
+          title: t('services.cicd.process2.title'),
+          description: t('services.cicd.process2.description')
+        },
+        {
+          title: t('services.cicd.process3.title'),
+          description: t('services.cicd.process3.description')
+        },
+        {
+          title: t('services.cicd.process4.title'),
+          description: t('services.cicd.process4.description')
+        }
+      ],
+      technologies: ["GitHub Actions", "Jenkins", "GitLab CI", "Docker", "Kubernetes", "Terraform", "Ansible", "AWS/Azure DevOps"]
+    },
+    {
       id: "offshoring",
       title: t('services.offshoring.title'),
       description: t('services.offshoring.description'),
@@ -197,6 +229,13 @@ const DetailedServiceTabs = () => {
               {t('services.integration.title')}
             </TabsTrigger>
             <TabsTrigger
+              value="cicd"
+              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+            >
+              <GitBranch className="mr-2 h-4 w-4" />
+              {t('services.cicd.title')}
+            </TabsTrigger>
+            <TabsTrigger
               value="offshoring"
               className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
             >
@@ -204,9 +243,6 @@ const DetailedServiceTabs = () => {
               {t('services.offshoring.title')}
             </TabsTrigger>
           </TabsList>
-
-
-
           </div>
 
           {serviceDetails.map((service) => (

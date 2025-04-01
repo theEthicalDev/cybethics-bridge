@@ -14,23 +14,31 @@ interface ProjectCardProps {
   url: string;
   delay?: number;
   requestButton?: React.ReactNode;
-  tagColor?: string; // Added this property to fix the type error
+  tagColor?: string;
 }
 
 const getTagColor = (tag: string): string => {
   const colorMap: Record<string, string> = {
-    // 'Web Development': 'bg-blue-100 text-blue-800',
-    // 'Spring Boot': 'bg-green-100 text-green-800',
-    // 'Angular': 'bg-red-100 text-red-800',
-    // 'Automation': 'bg-purple-100 text-purple-800',
-    // 'Microsoft PowerAutomate': 'bg-indigo-100 text-indigo-800',
-    // 'Zapier': 'bg-orange-100 text-orange-800',
-    // 'API Development': 'bg-cyan-100 text-cyan-800',
-    // 'Integration': 'bg-teal-100 text-teal-800',
-    // 'Backend': 'bg-emerald-100 text-emerald-800',
-    // 'Frontend': 'bg-pink-100 text-pink-800',
-    // 'Mobile': 'bg-amber-100 text-amber-800',
-    // 'UI/UX': 'bg-rose-100 text-rose-800',
+    'Web Development': 'bg-blue-100 text-blue-800',
+    'Spring Boot': 'bg-green-100 text-green-800',
+    'Angular': 'bg-red-100 text-red-800',
+    'React': 'bg-cyan-100 text-cyan-800',
+    'Node.js': 'bg-green-100 text-green-800',
+    'Automation': 'bg-purple-100 text-purple-800',
+    'Microsoft PowerAutomate': 'bg-indigo-100 text-indigo-800',
+    'Zapier': 'bg-orange-100 text-orange-800',
+    'API Development': 'bg-teal-100 text-teal-800',
+    'System Integration': 'bg-yellow-100 text-yellow-800',
+    'Integration': 'bg-teal-100 text-teal-800',
+    'Backend': 'bg-emerald-100 text-emerald-800',
+    'Frontend': 'bg-pink-100 text-pink-800',
+    'Mobile': 'bg-amber-100 text-amber-800',
+    'UI/UX': 'bg-rose-100 text-rose-800',
+    'CI/CD': 'bg-purple-100 text-purple-800',
+    'GitHub Actions': 'bg-gray-100 text-gray-800',
+    'Jenkins': 'bg-blue-100 text-blue-800',
+    'Scripting': 'bg-lime-100 text-lime-800',
+    'Cloud Infrastructure': 'bg-sky-100 text-sky-800',
   };
   
   return colorMap[tag] || 'bg-gray-200 text-gray-800';
@@ -44,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   url,
   delay = 0,
   requestButton,
-  tagColor // Add this to the destructured props
+  tagColor
 }) => {
   const { t } = useLanguage();
 
