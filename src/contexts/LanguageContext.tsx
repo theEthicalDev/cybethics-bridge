@@ -1,7 +1,7 @@
 
 import React, {createContext, useContext, useState, useEffect, ReactNode} from 'react';
 import i18n from 'i18next';
-import {initReactI18next, useTranslation} from 'react-i18next';
+import {initReactI18next, useTranslation, TFunction} from 'react-i18next';
 
 // Define language options
 export type LanguageOption = 'en' | 'de';
@@ -640,7 +640,7 @@ i18n
 interface LanguageContextType {
   language: LanguageOption;
   setLanguage: (lang: LanguageOption) => void;
-  t: (key: string, options?: object) => string;
+  t: TFunction<"translation", undefined>;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
