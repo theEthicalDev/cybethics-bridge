@@ -126,7 +126,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.subtitle': 'We offer comprehensive software solutions tailored to meet your specific business requirements',
     'services.scripting.title': 'Scripting & Integration',
     'services.scripting.description': 'Connect your systems and automate repetitive tasks with custom scripts and integrations',
-    'services.cicd.title': 'CI/CD Implementation',
+    'services.cicd.title': 'DevOps Implementation',
     'services.cicd.description': 'Implement continuous integration and deployment practices to accelerate your development lifecycle',
     'services.api.title': 'API Development',
     'services.api.description': 'Create robust APIs to enable seamless communication between your systems and third-party services',
@@ -173,10 +173,11 @@ const translations: Record<Language, Record<string, string>> = {
     'detailed.services.scripting.benefits': 'Quick implementation, cost-effectiveness, automation of routine tasks, enhanced data consistency, and extended functionality of existing systems.',
     'detailed.services.scripting.process': 'We identify integration needs, select appropriate scripting languages and tools, develop and test the scripts, implement them into your workflow, and provide documentation and support.',
 
-    'detailed.services.cicd.title': 'CI/CD Implementation',
+    'detailed.services.cicd.title': 'DevOps Implementation',
     'detailed.services.cicd.description': 'We establish continuous integration and continuous delivery pipelines that automate your software testing and deployment processes, leading to faster, more reliable releases.',
     'detailed.services.cicd.benefits': 'Faster time to market, reduced deployment risks, improved code quality, consistent release processes, and enhanced team collaboration.',
-    'detailed.services.cicd.process': 'We assess your current development workflow, design the CI/CD pipeline architecture, implement the automated builds and tests, set up deployment automation, and train your team on best practices.',
+    'detailed.services.cicd.process': 'We assess your current development workflow, design the DevOps pipeline architecture, implement' +
+      ' the automated builds and tests, set up deployment automation, and train your team on best practices.',
 
     'detailed.services.offshoring.title': 'IT Offshoring',
     'detailed.services.offshoring.description': 'We help you establish and manage offshore development teams that extend your IT capabilities while reducing costs and accessing global talent pools.',
@@ -261,9 +262,12 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.taskManager.longDescription': 'This project involved developing an automation for synchronizing tasks, services, appointments, and time tracking between multiple systems. The integration connects a task management system (JIRA) with an automated calendar solution (Motion) and time tracking tool (Early) to ensure that all data is up-to-date and consistent across platforms. The automation reduces manual data entry, improves efficiency, ensures accurate time tracking & scheduling and allows focus on core business activities.',
     'projects.taskManager.client': 'IT Services Provider',
 
-    'projects.jenkinsPipeline.title': 'Jenkins CI/CD Pipeline',
-    'projects.jenkinsPipeline.description': 'Automated CI/CD pipeline for building, testing, and deploying software applications.',
-    'projects.jenkinsPipeline.longDescription': 'This project involved setting up a Jenkins CI/CD pipeline to automate the building, testing, and deployment of software applications. The pipeline integrates with version control systems (Git) and orchestration platforms (Portainer) to automate the software development lifecycle. The CI/CD pipeline ensures faster deployment time, higher code quality, and improved collaboration among development teams.',
+    'projects.jenkinsPipeline.title': 'Jenkins DevOps Pipeline',
+    'projects.jenkinsPipeline.description': 'Automated DevOps pipeline for building, testing, and deploying software applications.',
+    'projects.jenkinsPipeline.longDescription': 'This project involved setting up a Jenkins DevOps pipeline to automate the building,' +
+      ' testing, and deployment of software applications. The pipeline integrates with version control systems (Git) and orchestration' +
+      ' platforms (Portainer) to automate the software development lifecycle. The DevOps pipeline ensures faster deployment time, higher' +
+      ' code quality, and improved collaboration among development teams.',
     'projects.jenkinsPipeline.client': 'Financial Services',
 
     'about.title': 'About Us',
@@ -403,7 +407,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.scripting.title': 'Skripting & Integration',
     'services.scripting.description': 'Verbindt Eure Systeme und automatisiert wiederkehrende Aufgaben mit benutzerdefinierten' +
       ' Skripts & Integrationen',
-    'services.cicd.title': 'CI/CD-Implementierung',
+    'services.cicd.title': 'DevOps-Implementierung',
     'services.cicd.description': 'Implementiert kontinuierliche Integrations- und Bereitstellungspraktiken, um Euren' +
       ' Entwicklungszyklus zu beschleunigen',
     'services.api.title': 'Schnittstellenentwicklung (APIs)',
@@ -457,6 +461,18 @@ const translations: Record<Language, Record<string, string>> = {
     'services.integration.process3.description': 'Umsetzung der Lösung mit den geeigneten Technologien',
     'services.integration.process4.title': 'Testen & Optimierung',
     'services.integration.process4.description': 'Testen & optimieren des integrierten Systems',
+    'services.cicd.benefit1': 'Schnellere Bereitstellung von Software',
+    'services.cicd.benefit2': 'Reduzierte Bereitstellungsrisiken',
+    'services.cicd.benefit3': 'Verbesserte Codequalität und Konsistenz',
+    'services.cicd.benefit4': 'Konsistente Bereitstellungsprozesse',
+    'services.cicd.process1.title': 'Bewertung',
+    'services.cicd.process1.description': 'Analyse Eurer aktuellen Entwicklungs- und Bereitstellungsprozesse',
+    'services.cicd.process2.title': 'Planung & Architektur',
+    'services.cicd.process2.description': 'Entwicklung einer DevOps-Architektur und -strategie',
+    'services.cicd.process3.title': 'Implementierung',
+    'services.cicd.process3.description': 'Implementierung der DevOps-Pipeline und Automatisierung',
+    'services.cicd.process4.title': 'Testen & Optimierung',
+    'services.cicd.process4.description': 'Testen & Optimieren der DevOps-Pipeline',
     'services.offshoring.benefit1': 'Eine Anlaufstelle für alle IT-Angelegenheiten',
     'services.offshoring.benefit2': 'Kombiniertes Optimierungs- und Kostensenkungspotenzial',
     'services.offshoring.benefit3': '24/7 Support-Option',
@@ -527,10 +543,11 @@ const translations: Record<Language, Record<string, string>> = {
     'detailed.services.scripting.process': 'Wir identifizieren Integrationsbedürfnisse, wählen geeignete Skriptsprachen und Tools aus,' +
       ' entwickeln und testen die Skripte, implementieren sie in Eurem Workflow und stellen Dokumentation und Support bereit.',
 
-    'detailed.services.cicd.title': 'CI/CD-Implementierung',
+    'detailed.services.cicd.title': 'DevOps-Implementierung',
     'detailed.services.cicd.description': 'Wir etablieren Pipelines für kontinuierliche Integration und kontinuierliche Bereitstellung, die Eure Software-Test- und Bereitstellungsprozesse automatisieren und zu schnelleren, zuverlässigeren Veröffentlichungen führen.',
     'detailed.services.cicd.benefits': 'Schnellere Markteinführung, reduzierte Bereitstellungsrisiken, verbesserte Codequalität, konsistente Release-Prozesse und verbesserte Teamzusammenarbeit.',
-    'detailed.services.cicd.process': 'Wir bewerten Euren aktuellen Entwicklungsworkflow, konzipieren die CI/CD-Pipeline-Architektur, implementieren automatisierte Builds und Tests, richten die Bereitstellungsautomatisierung ein und schulen Euer Team in Best Practices.',
+    'detailed.services.cicd.process': 'Wir bewerten Euren aktuellen Entwicklungsworkflow, konzipieren die DevOps-Pipeline-Architektur,' +
+      ' implementieren automatisierte Builds und Tests, richten die Bereitstellungsautomatisierung ein und schulen Euer Team in Best Practices.',
 
     'detailed.services.offshoring.title': 'IT-Übernahme',
     'detailed.services.offshoring.description': 'Wir helfen Ihnen, Offshore-Entwicklungsteams aufzubauen und zu verwalten, die Eure IT-Fähigkeiten erweitern und gleichzeitig Kosten senken und Zugang zu globalen Talentpools verschaffen.',
@@ -619,9 +636,14 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.taskManager.longDescription': 'Dieses Projekt umfasste die Entwicklung einer Automatisierung zur Synchronisation von Aufgaben, Dienstleistungen, Terminen und Zeiterfassung zwischen mehreren Systemen. Die Integration verbindet ein Aufgabenmanagementsystem (JIRA) mit einer automatisierten Kalendarlösung (Motion) und einem Zeiterfassungstool (Early), um sicherzustellen, dass alle Daten aktuell und konsistent über die Plattformen hinweg sind. Die Automatisierung reduziert manuelle Dateneingaben, verbessert die Effizienz, stellt eine genaue Zeiterfassung und Terminplanung sicher und ermöglicht den Fokus auf Kernaktivitäten des Unternehmens.',
     'projects.taskManager.client': 'IT-Dienstleister',
 
-    'projects.jenkinsPipeline.title': 'Jenkins CI/CD-Pipeline',
-    'projects.jenkinsPipeline.description': 'Automatisierte CI/CD-Pipeline zum Erstellen, Testen und Bereitstellen von Softwareanwendungen.',
-    'projects.jenkinsPipeline.longDescription': 'Dieses Projekt umfasste die Einrichtung einer Jenkins CI/CD-Pipeline zur Automatisierung des Erstellens, Testens und Bereitstellens von Softwareanwendungen. Die Pipeline integriert sich in Versionskontrollsysteme (Git) und Orchestrierungsplattformen (Portainer), um den Softwareentwicklungszyklus zu automatisieren. Die CI/CD-Pipeline sorgt für schnellere Bereitstellungszeiten, höhere Codequalität und verbesserte Zusammenarbeit zwischen Entwicklungsteams.',
+    'projects.jenkinsPipeline.title': 'Jenkins DevOps-Pipeline',
+    'projects.jenkinsPipeline.description': 'Automatisierte DevOps-Pipeline zum Erstellen, Testen und Bereitstellen von' +
+      ' Softwareanwendungen.',
+    'projects.jenkinsPipeline.longDescription': 'Dieses Projekt umfasste die Einrichtung einer Jenkins DevOps-Pipeline zur' +
+      ' Automatisierung des Erstellens, Testens und Bereitstellens von Softwareanwendungen. Die Pipeline integriert sich in' +
+      ' Versionskontrollsysteme (Git) und Orchestrierungsplattformen (Portainer), um den Softwareentwicklungszyklus zu automatisieren.' +
+      ' Die DevOps-Pipeline sorgt für schnellere Bereitstellungszeiten, höhere Codequalität und verbesserte Zusammenarbeit zwischen' +
+      ' Entwicklungsteams.',
     'projects.jenkinsPipeline.client': 'Finanzdienstleistungen',
 
     'about.title': 'Über uns',
