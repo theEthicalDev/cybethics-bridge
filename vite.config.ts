@@ -6,6 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return ({
+    base: './', // Add this line to set the base path
     server: {
       host: "::",
       port: 8080,
