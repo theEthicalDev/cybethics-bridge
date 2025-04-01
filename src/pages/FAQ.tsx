@@ -194,7 +194,7 @@ const FAQ: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Questions - Removed filtering tabs */}
+      {/* FAQ Questions */}
       <section className="py-12 bg-gray-50">
         <div className="container">
           <div className="max-w-4xl mx-auto space-y-6">
@@ -211,7 +211,7 @@ const FAQ: React.FC = () => {
         </div>
       </section>
 
-      {/* Common Business Problems Section */}
+      {/* Common Business Problems Section - Ensure this uses translation */}
       <CommonProblems/>
 
       {/* Detailed Solution Examples Section */}

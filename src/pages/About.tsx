@@ -31,11 +31,12 @@ const About = () => {
     },
   ];
 
+  // Updated to match project page tags
   const skills = [
-    'Spring Boot', 'Angular', 'React', 'Node.js', 
-    'Microsoft PowerAutomate', 'Zapier', 
-    'CI/CD', 'GitHub Actions', 'Jenkins',
-    'API Development', 'System Integration',
+    'Web Development', 'Spring Boot', 'Angular', 'React', 'Node.js', 
+    'Automation', 'Microsoft PowerAutomate', 'Zapier', 
+    'API Development', 'System Integration', 'Backend', 'Frontend',
+    'Mobile', 'UI/UX', 'CI/CD', 'GitHub Actions', 'Jenkins',
     'Scripting', 'Cloud Infrastructure',
   ];
 
@@ -53,13 +54,6 @@ const About = () => {
               <p className="text-lg text-text/80 mb-6">
                 {t('about.intro')}
               </p>
-              
-              {/*<div className="pt-4">*/}
-              {/*  <div className="flex items-center space-x-4">*/}
-              {/*    <div className="w-6 h-6 bg-red-600 rounded"></div>*/}
-              {/*    <p className="text-base font-medium">{t('about.swiss')}</p>*/}
-              {/*  </div>*/}
-              {/*</div>*/}
             </div>
             
             <div className="relative animate-scale-in">
@@ -68,7 +62,7 @@ const About = () => {
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
                       src="/lovable-uploads/cybethics.png"
-                      alt="Cybethics Logo"
+                      alt={t('about.logoAlt')}
                       className="w-full h-auto"
                     />
                   </div>
