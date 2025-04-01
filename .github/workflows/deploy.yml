@@ -26,9 +26,9 @@ jobs:
           npm install
 
       # Step 4: Build the app
-      - name: Build the app
+      - name: Deploy the app
         run: |
-          npm run build
+          npm run deploy
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
