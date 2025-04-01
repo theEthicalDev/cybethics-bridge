@@ -173,10 +173,11 @@ const DetailedServiceTabs = () => {
         </div>
 
         <Tabs defaultValue="software" className="w-full">
-          <TabsList className="w-full max-w-4xl mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
-            <TabsTrigger
-              value="software"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+          <div className="overflow-x-auto scroll-smooth" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+            <TabsList className="w-full max-w-4xl mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
+              <TabsTrigger
+                value="software"
+                className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
             >
               <Code className="mr-2 h-4 w-4" />
               {t('services.software.title')}
@@ -203,6 +204,10 @@ const DetailedServiceTabs = () => {
               {t('services.offshoring.title')}
             </TabsTrigger>
           </TabsList>
+
+
+
+          </div>
 
           {serviceDetails.map((service) => (
             <TabsContent key={service.id} value={service.id} className="focus-visible:outline-none focus-visible:ring-0">
@@ -268,7 +273,7 @@ const DetailedServiceTabs = () => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="hidden md:block">
                     <h4 className="text-xl font-medium mb-8 flex items-center">
                       <Rocket className="mr-2 h-5 w-5 text-primary" />
                       {t('services.implementationProcess')}
