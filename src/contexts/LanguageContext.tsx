@@ -1,10 +1,11 @@
+
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 interface TranslationContextProps {
   language: string;
-  t: (key: string, options?: i18next.TOptions) => string;
+  t: (key: string, options?: any) => string;
   setLanguage: (lang: string) => void;
 }
 
@@ -436,7 +437,7 @@ const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
     });
   }, []);
 
-  const t = useCallback((key: string, options?: i18next.TOptions) => {
+  const t = useCallback((key: string, options?: any) => {
     return i18next.t(key, options);
   }, []);
 
