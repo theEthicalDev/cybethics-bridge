@@ -206,7 +206,7 @@ const DetailedServiceTabs = () => {
 
         <Tabs defaultValue="software" className="w-full">
           <div className="overflow-x-auto scroll-smooth" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-            <TabsList className="w-full max-w-4xl mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
+            <TabsList className="w-max mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
               <TabsTrigger
                 value="software"
                 className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
@@ -250,7 +250,7 @@ const DetailedServiceTabs = () => {
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 mb-10">
-                    <div className="bg-primary/10 p-6 rounded-2xl md:w-auto w-16">
+                    <div className="bg-primary/10 p-6 rounded-2xl md:w-auto w-max">
                       {service.icon}
                     </div>
                     <div>

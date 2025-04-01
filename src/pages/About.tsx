@@ -215,9 +215,9 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-4">{t('about.impact.title')}</h2>
+            <h2 className="mb-4">{t('about.title')}</h2>
             <p className="text-lg text-text/80">
-              {t('about.impact.description')}
+              {t('about.intro')}
             </p>
           </div>
 
@@ -255,8 +255,8 @@ const About = () => {
         <div className="container">
           <div className="bg-white rounded-3xl p-12 text-center relative overflow-hidden border border-gray-100 shadow-lg animate-scale-in">
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">{t('about.cta.title')}</h2>
-              <p className="text-lg text-text/80 mb-8">{t('about.cta.description')}</p>
+              <h2 className="text-2xl md:text-3xl font-medium mb-6">{t('contact.title')}</h2>
+              <p className="text-lg text-text/80 mb-8">{t('contact.subtitle')}</p>
               <a 
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-white shadow-sm transition-colors hover:bg-primary/90"

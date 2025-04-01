@@ -87,7 +87,7 @@ const HeroSection: React.FC = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden py-36 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-up">
+            <div className="space-y-8 animate-slide">
               <div>
                 <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
                   <span className="text-sm font-medium text-primary flex items-center">

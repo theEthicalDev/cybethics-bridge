@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-text/80 max-w-xs">
-              Crafting customized digital solutions with integrity, putting ethics at the core of our development approach.
+              {t('footer.about')}
             </p>
             {/*<div className="flex items-center space-x-2">*/}
             {/*  <div className="w-5 h-5 bg-red-600 rounded"></div>*/}

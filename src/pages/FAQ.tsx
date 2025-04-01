@@ -1,7 +1,19 @@
-
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
-import {ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart} from 'lucide-react';
+import {
+  ClipboardListIcon,
+  Clock,
+  DatabaseIcon,
+  FileSpreadsheet,
+  HandIcon,
+  HeadsetIcon,
+  NetworkIcon,
+  ShieldBanIcon,
+  ShoppingCartIcon,
+  SnailIcon,
+  UsersIcon,
+  WarehouseIcon
+} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {Button} from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
@@ -66,7 +78,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: t('faq.solutions.automation.title'),
-      icon: <Zap className="h-8 w-8 text-primary"/>,
+      icon: <HandIcon className="h-8 w-8 text-primary"/>,
       problems: [
         t('faq.solutions.automation.problems.1'),
         t('faq.solutions.automation.problems.2'),
@@ -103,8 +115,8 @@ const FAQ: React.FC = () => {
       ]
     },
     {
-      title: t('faq.solutions.integration.title'),
-      icon: <LinkIcon className="h-8 w-8 text-primary"/>,
+      title: t('faq.solutions.separation.title'),
+      icon: <NetworkIcon className="h-8 w-8 text-primary"/>,
       problems: [
         t('faq.solutions.integration.problems.1'),
         t('faq.solutions.integration.problems.2'),
@@ -123,7 +135,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: t('faq.solutions.workflow.title'),
-      icon: <Users className="h-8 w-8 text-primary"/>,
+      icon: <SnailIcon className="h-8 w-8 text-primary"/>,
       problems: [
         t('faq.solutions.workflow.problems.1'),
         t('faq.solutions.workflow.problems.2'),
@@ -142,7 +154,7 @@ const FAQ: React.FC = () => {
     },
     {
       title: t('faq.solutions.datadriven.title'),
-      icon: <BarChart className="h-8 w-8 text-primary"/>,
+      icon: <DatabaseIcon className="h-8 w-8 text-primary"/>,
       problems: [
         t('faq.solutions.datadriven.problems.1'),
         t('faq.solutions.datadriven.problems.2'),
@@ -160,24 +172,119 @@ const FAQ: React.FC = () => {
       ]
     },
     {
-      title: t('faq.solutions.database.title'),
-      icon: <Database className="h-8 w-8 text-primary"/>,
+      title: t('faq.solutions.customerSupport.title'),
+      icon: <HeadsetIcon className="h-8 w-8 text-primary"/>,
       problems: [
-        t('faq.solutions.database.problems.1'),
-        t('faq.solutions.database.problems.2'),
-        t('faq.solutions.database.problems.3'),
-        t('faq.solutions.database.problems.4'),
-        t('faq.solutions.database.problems.5')
+        t('faq.solutions.customerSupport.problems.1'),
+        t('faq.solutions.customerSupport.problems.2'),
+        t('faq.solutions.customerSupport.problems.3'),
+        t('faq.solutions.customerSupport.problems.4'),
+        t('faq.solutions.customerSupport.problems.5')
       ],
-      solution: t('faq.solutions.database.solution'),
+      solution: t('faq.solutions.customerSupport.solution'),
       benefits: [
-        t('faq.solutions.database.benefits.1'),
-        t('faq.solutions.database.benefits.2'),
-        t('faq.solutions.database.benefits.3'),
-        t('faq.solutions.database.benefits.4'),
-        t('faq.solutions.database.benefits.5')
-      ]
-    }
+        t('faq.solutions.customerSupport.benefits.1'),
+        t('faq.solutions.customerSupport.benefits.2'),
+        t('faq.solutions.customerSupport.benefits.3'),
+        t('faq.solutions.customerSupport.benefits.4'),
+        t('faq.solutions.customerSupport.benefits.5'),
+      ],
+    },
+    {
+      title: t('faq.solutions.inventoryManagement.title'),
+      icon: <WarehouseIcon className="h-8 w-8 text-primary"/>,
+      problems: [
+        t('faq.solutions.inventoryManagement.problems.1'),
+        t('faq.solutions.inventoryManagement.problems.2'),
+        t('faq.solutions.inventoryManagement.problems.3'),
+        t('faq.solutions.inventoryManagement.problems.4'),
+        t('faq.solutions.inventoryManagement.problems.5')
+      ],
+      solution: t('faq.solutions.inventoryManagement.solution'),
+      benefits: [
+        t('faq.solutions.inventoryManagement.benefits.1'),
+        t('faq.solutions.inventoryManagement.benefits.2'),
+        t('faq.solutions.inventoryManagement.benefits.3'),
+        t('faq.solutions.inventoryManagement.benefits.4'),
+        t('faq.solutions.inventoryManagement.benefits.5'),
+      ],
+    },
+    {
+      title: t('faq.solutions.teamCollaboration.title'),
+      icon: <UsersIcon className="h-8 w-8 text-primary"/>,
+      problems: [
+        t('faq.solutions.teamCollaboration.problems.1'),
+        t('faq.solutions.teamCollaboration.problems.2'),
+        t('faq.solutions.teamCollaboration.problems.3'),
+        t('faq.solutions.teamCollaboration.problems.4'),
+        t('faq.solutions.teamCollaboration.problems.5')
+      ],
+      solution: t('faq.solutions.teamCollaboration.solution'),
+      benefits: [
+        t('faq.solutions.teamCollaboration.benefits.1'),
+        t('faq.solutions.teamCollaboration.benefits.2'),
+        t('faq.solutions.teamCollaboration.benefits.3'),
+        t('faq.solutions.teamCollaboration.benefits.4'),
+        t('faq.solutions.teamCollaboration.benefits.5'),
+      ],
+    },
+    {
+      title: t('faq.solutions.salesAutomation.title'),
+      icon: <ShoppingCartIcon className="h-8 w-8 text-primary"/>,
+      problems: [
+        t('faq.solutions.salesAutomation.problems.1'),
+        t('faq.solutions.salesAutomation.problems.2'),
+        t('faq.solutions.salesAutomation.problems.3'),
+        t('faq.solutions.salesAutomation.problems.4'),
+        t('faq.solutions.salesAutomation.problems.5')
+      ],
+      solution: t('faq.solutions.salesAutomation.solution'),
+      benefits: [
+        t('faq.solutions.salesAutomation.benefits.1'),
+        t('faq.solutions.salesAutomation.benefits.2'),
+        t('faq.solutions.salesAutomation.benefits.3'),
+        t('faq.solutions.salesAutomation.benefits.4'),
+        t('faq.solutions.salesAutomation.benefits.5'),
+      ],
+    },
+    {
+      title: t('faq.solutions.projectManagement.title'),
+      icon: <ClipboardListIcon className="h-8 w-8 text-primary"/>,
+      problems: [
+        t('faq.solutions.projectManagement.problems.1'),
+        t('faq.solutions.projectManagement.problems.2'),
+        t('faq.solutions.projectManagement.problems.3'),
+        t('faq.solutions.projectManagement.problems.4'),
+        t('faq.solutions.projectManagement.problems.5')
+      ],
+      solution: t('faq.solutions.projectManagement.solution'),
+      benefits: [
+        t('faq.solutions.projectManagement.benefits.1'),
+        t('faq.solutions.projectManagement.benefits.2'),
+        t('faq.solutions.projectManagement.benefits.3'),
+        t('faq.solutions.projectManagement.benefits.4'),
+        t('faq.solutions.projectManagement.benefits.5'),
+      ],
+    },
+    {
+      title: t('faq.solutions.security.title'),
+      icon: <ShieldBanIcon className="h-8 w-8 text-primary"/>,
+      problems: [
+        t('faq.solutions.security.problems.1'),
+        t('faq.solutions.security.problems.2'),
+        t('faq.solutions.security.problems.3'),
+        t('faq.solutions.security.problems.4'),
+        t('faq.solutions.security.problems.5')
+      ],
+      solution: t('faq.solutions.security.solution'),
+      benefits: [
+        t('faq.solutions.security.benefits.1'),
+        t('faq.solutions.security.benefits.2'),
+        t('faq.solutions.security.benefits.3'),
+        t('faq.solutions.security.benefits.4'),
+        t('faq.solutions.security.benefits.5'),
+      ],
+    },
   ];
 
   return (
