@@ -7,30 +7,30 @@ const Stats: React.FC = () => {
     <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
       <AnimatedCounter
         value={25}
-        label="Successful Projects"
+        label='stats.successfulProjects'
         icon={<ReceiptTextIcon className="h-8 w-8 mx-auto text-primary"/>}
         delay={50}
         suffix="+"
       />
       <AnimatedCounter
         value={12}
-        label="Years Software Experience"
+        label='stats.yearsSoftwareExperience'
         icon={<Award className="h-8 w-8 mx-auto text-primary"/>}
         delay={300}
         suffix="+"
       />
       <AnimatedCounter
         value={100}
-        label="Priceworthy Improvements"
+        label='stats.priceworthyImprovements'
         icon={<ScaleIcon className="h-8 w-8 mx-auto text-primary"/>}
         delay={600}
         suffix="%"
       />
       <AnimatedCounter
         value={8}
-        label="Possibilities"
+        label='stats.possibilities'
         icon={<BellRingIcon className="h-8 w-8 mx-auto text-primary"/>}
-        delay={900}
+        delay={0}
         transform={true}
       />
     </div>

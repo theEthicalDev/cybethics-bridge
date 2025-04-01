@@ -15,12 +15,9 @@ function cybethics() {
   const ethics = ["fairness", "empathy", "trust"];
   const cyber = ["code", "automation", "security"];
   ethics.map((ethic, i) => {
-    return 
-      \`Cybethics => \${cyber[i]} & \${ethic}\`;
+    console.log(\`Cybethics = \${cyber[i]} & \${ethic}\`); 
   });
 }
-
-console.log(cybethics());
 `;
   useEffect(() => {
     let currentText = "";
@@ -38,7 +35,7 @@ console.log(cybethics());
   }, []);
 
   return (
-    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[90%] mx-auto' : ''} overflow-hidden h-64`}>
+    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden h-64`}>
       <pre className="text-left overflow-x-hidden">
         <code className="text-primary/90 text-xs sm:text-base">
           {text}
@@ -55,7 +52,7 @@ const ContactPartner: React.FC = () => {
     <div className="container relative z-20 -mb-16">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
         <div className="text-left">
-          <h3 className="text-xl font-semibold text-primary pb-2">Your Contact Partner</h3>
+          <h3 className="text-xl font-semibold text-primary pb-2">{t('contact.partner')}</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
           <p className="text-md text-gray-400 mt-1">Cybethics</p>
         </div>
@@ -87,7 +84,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-24 pb-36 bg-white">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden py-36 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-up">
@@ -105,23 +102,22 @@ const HeroSection: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
                   <Link to="/services">
                     {t('hero.cta')}
                     <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
                   <Link to="/contact">
                     {t('contact.booking')}
                   </Link>
                 </Button>
               </div>
-
-              <div className="flex items-center space-x-4 pt-4">
-                <div className="w-6 h-6 bg-primary/20 rounded"></div>
-                <p className="text-sm font-medium">We prefer deeds to words</p>
-              </div>
+              {/*<div className="flex items-center space-x-4 pt-4">*/}
+              {/*  <div className="w-6 h-6 bg-primary/20 rounded"></div>*/}
+              {/*  <p className="text-sm font-medium">We prefer deeds to words</p>*/}
+              {/*</div>*/}
             </div>
 
             {/* Only show this div on desktop */}

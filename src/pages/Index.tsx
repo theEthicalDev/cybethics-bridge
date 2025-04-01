@@ -84,38 +84,38 @@ const Index = () => {
   const businessChallenges = [
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "You're drowning in email threads and spreadsheets",
-      description: "Keeping track of projects, approvals, and updates through emails and shared documents leads to confusion, version control issues, and missed deadlines.",
+      title: 'business.challenge.email.title',
+      description: 'business.challenge.email.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your team wastes hours copying and pasting data",
-      description: "Manual data transfers between different systems or documents create inefficiencies, introduce errors, and prevent your team from focusing on strategic tasks.",
+      title: 'business.challenge.data.title',
+      description: 'business.challenge.data.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your data is separated across different tools",
-      description: "Information stored in multiple disconnected applications makes it difficult to get a complete picture, leading to inefficiencies and poor decision-making.",
+      title: 'business.challenge.copy.title',
+      description: 'business.challenge.copy.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "You're making business decisions based on gut feeling",
-      description: "Without real-time data and analytics, you're forced to rely on outdated reports or assumptions, leading to missed opportunities and costly mistakes.",
+      title: 'business.challenge.gut.title',
+      description: 'business.challenge.gut.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your employees spend more time on admin work than actual work",
-      description: "Manually filling out forms, generating reports, and organizing files takes away time from innovation, problem-solving, and customer service.",
+      title: 'business.challenge.admin.title',
+      description: 'business.challenge.admin.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "Your systems don't talk to each other, causing double work",
-      description: "Disconnected software forces employees to re-enter the same data multiple times, leading to inconsistencies, errors, and inefficiencies.",
+      title: 'business.challenge.systems.title',
+      description: 'business.challenge.systems.description',
     },
     {
       icon: <CheckCircle2 className="h-6 w-6 text-primary" />,
-      title: "You're pushing Excel beyond its limits and it's costing you",
-      description: "Using Excel as a database, workflow manager, or reporting tool creates versioning issues, manual errors, lack of collaboration, and security risks.",
+      title: 'business.challenge.excel.title',
+      description: 'business.challenge.excel.description',
     }
   ];
 
@@ -125,7 +125,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Business Challenges Section - Updated with new design */}
-      <section className="py-24 bg-gray-50" id="identify-challenges">
+      <section className="py-36 bg-gray-50" id="identify-challenges">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="mb-4">{t('business.questions.title')}</h2>
@@ -139,8 +139,8 @@ const Index = () => {
               <BusinessChallenge
                 key={index}
                 icon={challenge.icon}
-                title={challenge.title}
-                description={challenge.description}
+                title={t(challenge.title)}
+                description={t(challenge.description)}
                 index={index}
               />
             ))}
@@ -179,11 +179,10 @@ const Index = () => {
             {projects.map((project, index) => (
               <ProjectCard 
                 key={index}
-                title={project.title}
-                description={project.description}
+                title={t(project.title)}
+                description={t(project.description)}
                 image={project.image}
                 tags={project.tags}
-                tagColor={project.tagColor}
                 url={`/projects#project-${project.id}`}
                 delay={index * 100}
                 requestButton={

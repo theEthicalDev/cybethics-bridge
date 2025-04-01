@@ -18,10 +18,10 @@ const Footer: React.FC = () => {
             <p className="text-sm text-text/80 max-w-xs">
               Crafting customized digital solutions with integrity, putting ethics at the core of our development approach.
             </p>
-            <div className="flex items-center space-x-2">
-              <div className="w-5 h-5 bg-red-600 rounded"></div>
-              <p className="text-sm font-medium">{t('about.swiss')}</p>
-            </div>
+            {/*<div className="flex items-center space-x-2">*/}
+            {/*  <div className="w-5 h-5 bg-red-600 rounded"></div>*/}
+            {/*  <p className="text-sm font-medium">{t('about.swiss')}</p>*/}
+            {/*</div>*/}
           </div>
           
           <div className="space-y-4">

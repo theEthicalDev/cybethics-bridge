@@ -1,228 +1,281 @@
-
 import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Code, 
-  Cog, 
-  Terminal, 
-  GitBranch, 
-  ServerCog, 
+import { Link } from 'react-router-dom';
+import {
+  Code,
+  Cog,
+  Network,
   Monitor,
-  ArrowRight
+  ArrowRight,
+  Check,
+  Book,
+  Rocket,
+  Zap,
+  Layers
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import VerticalTimeline from '@/components/VerticalTimeline';
+import {useLanguage} from '@/contexts/LanguageContext.tsx';
 
-const ServiceTab = ({ 
-  value, 
-  icon, 
-  title 
-}: { 
-  value: string; 
-  icon: React.ReactNode; 
-  title: string; 
-}) => {
-  return (
-    <TabsTrigger 
-      value={value}
-      className="py-3 px-4 flex items-center space-x-2 data-[state=active]:bg-primary data-[state=active]:text-white"
-    >
-      <span className="hidden md:inline mr-2">{icon}</span>
-      <span>{title}</span>
-    </TabsTrigger>
-  );
-};
-
-const ServiceDetail = ({
-  title,
-  description,
-  benefits,
-  process,
-  icon
-}: {
+interface ServiceDetail {
+  id: string;
   title: string;
   description: string;
-  benefits: string;
-  process: string;
   icon: React.ReactNode;
-}) => {
-  const { t } = useLanguage();
-  const isMobile = useIsMobile();
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="col-span-2">
-        <Card>
-          <CardHeader>
-            <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                {icon}
-              </div>
-              <div>
-                <CardTitle className="text-2xl">{title}</CardTitle>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <p className="text-lg">{description}</p>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-medium mb-2">{t('detailed.benefits')}</h4>
-              <p>{benefits}</p>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-medium mb-2">{t('detailed.approach')}</h4>
-              <p>{process}</p>
-            </div>
-            
-            <div className="pt-4">
-              <Button asChild className="group">
-                <Link to="/contact" className="flex items-center">
-                  {t('contact.start')}
-                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      {!isMobile && (
-        <div className="col-span-1">
-          <Card>
-            <CardHeader>
-              <CardTitle>{t('detailed.process.title')}</CardTitle>
-              <CardDescription>{t('detailed.process.description')}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="border-l-2 border-primary/30 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.discovery.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.discovery.description').split('.')[0]}.</p>
-                </div>
-                <div className="border-l-2 border-primary/30 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.planning.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.planning.description').split('.')[0]}.</p>
-                </div>
-                <div className="border-l-2 border-primary/50 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.development.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.development.description').split('.')[0]}.</p>
-                </div>
-                <div className="border-l-2 border-primary/30 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.testing.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.testing.description').split('.')[0]}.</p>
-                </div>
-                <div className="border-l-2 border-primary/30 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.deployment.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.deployment.description').split('.')[0]}.</p>
-                </div>
-                <div className="border-l-2 border-primary/30 pl-4 py-2">
-                  <h4 className="text-sm font-medium">{t('services.process.maintenance.title')}</h4>
-                  <p className="text-sm text-muted-foreground">{t('services.process.maintenance.description').split('.')[0]}.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-    </div>
-  );
-};
+  benefits: string[];
+  process: {
+    title: string;
+    description: string;
+  }[];
+  technologies: string[];
+}
 
 const DetailedServiceTabs = () => {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
 
-  const services = [
+  const serviceDetails: ServiceDetail[] = [
     {
-      value: "software",
-      icon: <Code className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.software.title',
-      descriptionKey: 'detailed.services.software.description',
-      benefitsKey: 'detailed.services.software.benefits',
-      processKey: 'detailed.services.software.process',
+      id: "software",
+      title: t('services.software.title'),
+      description: t('services.software.description'),
+      icon: <Code className="h-12 w-12 text-primary" />,
+      benefits: [
+        t('services.software.benefit1'),
+        t('services.software.benefit2'),
+        t('services.software.benefit3'),
+        t('services.software.benefit4')
+      ],
+      process: [
+        {
+          title: t('services.software.process1.title'),
+          description: t('services.software.process1.description')
+        },
+        {
+          title: t('services.software.process2.title'),
+          description: t('services.software.process2.description')
+        },
+        {
+          title: t('services.software.process3.title'),
+          description: t('services.software.process3.description')
+        },
+        {
+          title: t('services.software.process4.title'),
+          description: t('services.software.process4.description')
+        }
+      ],
+      technologies: ["React", "Node.js", "Python", "Java", ".NET", "SQL/NoSQL", "DevOps tools"]
     },
     {
-      value: "automation",
-      icon: <Cog className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.automation.title',
-      descriptionKey: 'detailed.services.automation.description',
-      benefitsKey: 'detailed.services.automation.benefits',
-      processKey: 'detailed.services.automation.process',
+      id: "automation",
+      title: t('services.automation.title'),
+      description: t('services.automation.description'),
+      icon: <Cog className="h-12 w-12 text-primary" />,
+      benefits: [
+        t('services.automation.benefit1'),
+        t('services.automation.benefit2'),
+        t('services.automation.benefit3'),
+        t('services.automation.benefit4')
+      ],
+      process: [
+        {
+          title: t('services.automation.process1.title'),
+          description: t('services.automation.process1.description')
+        },
+        {
+          title: t('services.automation.process2.title'),
+          description: t('services.automation.process2.description')
+        },
+        {
+          title: t('services.automation.process3.title'),
+          description: t('services.automation.process3.description')
+        },
+        {
+          title: t('services.automation.process4.title'),
+          description: t('services.automation.process4.description')
+        }
+      ],
+      technologies: ["Workflow engines", "Middleware Development", "Integration platforms", "AI/ML", "Custom scripts", "API integrations", "API Development", "RPA tools"]
     },
     {
-      value: "api",
-      icon: <ServerCog className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.api.title',
-      descriptionKey: 'detailed.services.api.description',
-      benefitsKey: 'detailed.services.api.benefits',
-      processKey: 'detailed.services.api.process',
+      id: "integration",
+      title: t('services.integration.title'),
+      description: t('services.integration.description'),
+      icon: <Network className="h-12 w-12 text-primary" />,
+      benefits: [
+        t('services.integration.benefit1'),
+        t('services.integration.benefit2'),
+        t('services.integration.benefit3'),
+        t('services.integration.benefit4')
+      ],
+      process: [
+        {
+          title: t('services.integration.process1.title'),
+          description: t('services.integration.process1.description')
+        },
+        {
+          title: t('services.integration.process2.title'),
+          description: t('services.integration.process2.description')
+        },
+        {
+          title: t('services.integration.process3.title'),
+          description: t('services.integration.process3.description')
+        },
+        {
+          title: t('services.integration.process4.title'),
+          description: t('services.integration.process4.description')
+        }
+      ],
+      technologies: ["API development", "Middleware", "ETL tools", "ESB", "Cloud integration services"]
     },
     {
-      value: "scripting",
-      icon: <Terminal className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.scripting.title',
-      descriptionKey: 'detailed.services.scripting.description',
-      benefitsKey: 'detailed.services.scripting.benefits',
-      processKey: 'detailed.services.scripting.process',
-    },
-    {
-      value: "cicd",
-      icon: <GitBranch className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.cicd.title',
-      descriptionKey: 'detailed.services.cicd.description',
-      benefitsKey: 'detailed.services.cicd.benefits',
-      processKey: 'detailed.services.cicd.process',
-    },
-    {
-      value: "offshoring",
-      icon: <Monitor className="h-5 w-5 text-primary" />,
-      titleKey: 'detailed.services.offshoring.title',
-      descriptionKey: 'detailed.services.offshoring.description',
-      benefitsKey: 'detailed.services.offshoring.benefits',
-      processKey: 'detailed.services.offshoring.process',
+      id: "offshoring",
+      title: t('services.offshoring.title'),
+      description: t('services.offshoring.description'),
+      icon: <Monitor className="h-12 w-12 text-primary" />,
+      benefits: [
+        t('services.offshoring.benefit1'),
+        t('services.offshoring.benefit2'),
+        t('services.offshoring.benefit3'),
+        t('services.offshoring.benefit4')
+      ],
+      process: [
+        {
+          title: t('services.offshoring.process1.title'),
+          description: t('services.offshoring.process1.description')
+        },
+        {
+          title: t('services.offshoring.process2.title'),
+          description: t('services.offshoring.process2.description')
+        },
+        {
+          title: t('services.offshoring.process3.title'),
+          description: t('services.offshoring.process3.description')
+        },
+        {
+          title: t('services.offshoring.process4.title'),
+          description: t('services.offshoring.process4.description')
+        }
+      ],
+      technologies: ["ITSM tools", "Monitoring platforms", "Helpdesk systems", "Remote management", "Security tools"]
     }
   ];
 
   return (
-    <section className="py-24 bg-gray-50" id="detailed-services">
+    <section className="py-24 bg-gray-50">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4">{t('services.title')}</h2>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="mb-4">{t('services.detailTitle')}</h2>
+          <h2 className="mb-4">{t('services.detailSubtitle')}</h2>
           <p className="text-lg text-text/80">
-            {t('services.subtitle')}
+            {t('services.detailDescription')}
           </p>
         </div>
-        
+
         <Tabs defaultValue="software" className="w-full">
-          <div className={`bg-white rounded-xl p-6 mb-8 overflow-x-auto ${isMobile ? 'w-full' : 'w-fit mx-auto'}`}>
-            <TabsList className={`${isMobile ? 'flex overflow-x-auto pb-2 w-max' : ''} bg-gray-100`}>
-              {services.map((service) => (
-                <ServiceTab 
-                  key={service.value}
-                  value={service.value}
-                  icon={service.icon}
-                  title={t(service.titleKey)}
-                />
-              ))}
-            </TabsList>
-          </div>
-          
-          {services.map((service) => (
-            <TabsContent key={service.value} value={service.value} className="mt-0">
-              <ServiceDetail 
-                title={t(service.titleKey)}
-                description={t(service.descriptionKey)}
-                benefits={t(service.benefitsKey || "")}
-                process={t(service.processKey || "")}
-                icon={service.icon}
-              />
+          <TabsList className="w-full max-w-4xl mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
+            <TabsTrigger
+              value="software"
+              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+            >
+              <Code className="mr-2 h-4 w-4" />
+              {t('services.software.title')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="automation"
+              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+            >
+              <Cog className="mr-2 h-4 w-4" />
+              {t('services.automation.title')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="integration"
+              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+            >
+              <Network className="mr-2 h-4 w-4" />
+              {t('services.integration.title')}
+            </TabsTrigger>
+            <TabsTrigger
+              value="offshoring"
+              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+            >
+              <Monitor className="mr-2 h-4 w-4" />
+              {t('services.offshoring.title')}
+            </TabsTrigger>
+          </TabsList>
+
+          {serviceDetails.map((service) => (
+            <TabsContent key={service.id} value={service.id} className="focus-visible:outline-none focus-visible:ring-0">
+              <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div className="p-8 md:p-12">
+                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 mb-10">
+                    <div className="bg-primary/10 p-6 rounded-2xl md:w-auto w-16">
+                      {service.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-semibold mb-4">{service.title}</h3>
+                      <p className="text-lg text-text/80">{service.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+                    <div>
+                      <h4 className="text-xl font-medium mb-4 flex items-center">
+                        <Zap className="mr-2 h-5 w-5 text-primary" />
+                        {t('services.benefits')}
+                      </h4>
+                      <ul className="space-y-3">
+                        {service.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <Check className="h-5 w-5 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-medium mb-4 flex items-center">
+                        <Layers className="mr-2 h-5 w-5 text-primary" />
+                        {t('services.technologies')}
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.technologies.map((tech, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-gray-100 text-text/90 px-3 py-1 rounded-full text-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-xl font-medium mb-4 flex items-center">
+                        <Book className="mr-2 h-5 w-5 text-primary" />
+                        {t('services.whyChooseUs')}
+                      </h4>
+                      <p className="text-text/80 mb-4">
+                        {t('services.whyChooseUsDescription')}
+                      </p>
+                      <Button asChild className="rounded-full group">
+                        <Link to="/contact">
+                          {t('services.getStarted')}
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-medium mb-8 flex items-center">
+                      <Rocket className="mr-2 h-5 w-5 text-primary" />
+                      {t('services.implementationProcess')}
+                    </h4>
+                    <VerticalTimeline items={service.process} />
+                  </div>
+                </div>
+              </div>
             </TabsContent>
           ))}
         </Tabs>

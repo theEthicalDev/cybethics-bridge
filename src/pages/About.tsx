@@ -53,12 +53,12 @@ const About = () => {
                 {t('about.intro')}
               </p>
               
-              <div className="pt-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-6 h-6 bg-red-600 rounded"></div>
-                  <p className="text-base font-medium">{t('about.swiss')}</p>
-                </div>
-              </div>
+              {/*<div className="pt-4">*/}
+              {/*  <div className="flex items-center space-x-4">*/}
+              {/*    <div className="w-6 h-6 bg-red-600 rounded"></div>*/}
+              {/*    <p className="text-base font-medium">{t('about.swiss')}</p>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
             
             <div className="relative animate-scale-in">

@@ -7,6 +7,8 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {ArrowRight, ExternalLink, Code, Cog, Network, Terminal, GitBranch, Smartphone, Monitor} from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {getProjects} from '@/utils/projectData.ts';
+import path from 'path';
+import {Link} from 'react-router-dom';
 
 const Projects = () => {
   const {t} = useLanguage();
@@ -32,11 +34,11 @@ const Projects = () => {
 
   const categories = [
     {id: 'all', label: 'All Projects', icon: <Code className="mr-2 h-4 w-4"/>, color: 'from-primary to-purple-600'},
-    {id: 'software', label: 'Software Development', icon: <Smartphone className="mr-2 h-4 w-4"/>, color: 'from-blue-600 to-blue-400'},
-    {id: 'workflow', label: 'Workflow Automation', icon: <Cog className="mr-2 h-4 w-4"/>, color: 'from-yellow-600 to-yellow-400'},
-    {id: 'api', label: 'API & Integration', icon: <Network className="mr-2 h-4 w-4"/>, color: 'from-green-600 to-green-400'},
-    {id: 'cicd', label: 'CI/CD', icon: <GitBranch className="mr-2 h-4 w-4"/>, color: 'from-amber-600 to-amber-400'},
-    {id: 'it', label: 'IT', icon: <Monitor className="mr-2 h-4 w-4"/>, color: 'from-red-600 to-red-400'},
+    {id: 'software', label: t('services.software.title'), icon: <Terminal className="mr-2 h-4 w-4"/>, color: 'from-purple-600 to-purple-400'},
+    {id: 'workflow', label: t('services.automation.title'), icon: <Cog className="mr-2 h-4 w-4"/>, color: 'from-yellow-600 to-yellow-400'},
+    {id: 'api', label: t('services.api.title'), icon: <Network className="mr-2 h-4 w-4"/>, color: 'from-green-600 to-green-400'},
+    {id: 'cicd', label: t('services.cicd.title'), icon: <GitBranch className="mr-2 h-4 w-4"/>, color: 'from-amber-600 to-amber-400'},
+    {id: 'it', label: t('services.offshoring.title'), icon: <Smartphone className="mr-2 h-4 w-4"/>, color: 'from-blue-600 to-blue-400'},
   ];
 
   return (
@@ -129,7 +131,7 @@ const Projects = () => {
                         <div className="relative h-48 overflow-hidden">
                           <img
                             src={project.image}
-                            alt={project.title}
+                            alt={t(project.title)}
                             className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                           />
                         </div>
@@ -151,16 +153,16 @@ const Projects = () => {
                               ))}
                             </div>
                           )}
-                          <CardTitle className="text-lg font-medium">{project.title}</CardTitle>
+                          <CardTitle className="text-lg font-medium">{t(project.title)}</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <CardDescription className="text-text/80">
-                            {project.description}
+                            {t(project.description)}
                           </CardDescription>
 
                           <div className="pt-2 flex justify-between items-center">
                             <div className="text-sm text-text/60">
-                              {project.year} • {project.client}
+                              {project.year} • {t(project.client)}
                             </div>
                             <button
                               className="text-sm text-primary font-medium flex items-center group"
@@ -200,8 +202,8 @@ const Projects = () => {
                     ))}
                   </div>
                 )}
-                <h2 className="text-2xl md:text-3xl font-medium mb-4">{project.title}</h2>
-                <p className="text-text/80 mb-6">{project.longDescription}</p>
+                <h2 className="text-2xl md:text-3xl font-medium mb-4">{t(project.title)}</h2>
+                <p className="text-text/80 mb-6">{t(project.longDescription)}</p>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
@@ -210,7 +212,7 @@ const Projects = () => {
                   </div>
                   <div>
                     <h4 className="text-sm text-text/60 mb-1">Client</h4>
-                    <p className="font-medium">{project.client}</p>
+                    <p className="font-medium">{t(project.client)}</p>
                   </div>
                   <div>
                     <h4 className="text-sm text-text/60 mb-1">Category</h4>
@@ -221,8 +223,10 @@ const Projects = () => {
                 </div>
 
                 <button className="inline-flex items-center text-primary font-medium hover:underline">
-                  <ExternalLink className="h-4 w-4 mr-1" />
-                  Request Similar Project
+                  <Link to="/contact" className="flex items-center">
+                    <ExternalLink className="h-4 w-4 mr-1"/>
+                    {t('projects.request')}
+                  </Link>
                 </button>
               </div>
 

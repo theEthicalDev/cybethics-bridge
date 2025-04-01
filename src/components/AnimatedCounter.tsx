@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {useLanguage} from '@/contexts/LanguageContext.tsx';
 
 export interface AnimatedCounterProps {
   value: number;
@@ -21,6 +22,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   const [rotate, setRotate] = useState(false);
   const countRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,7 +82,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
         </span>
         {suffix}
       </div>
-      <div className="text-sm text-text/70">{label}</div>
+      <div className="text-sm text-text/70">{t(label)}</div>
     </div>
   );
 };

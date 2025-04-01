@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
         
         {/* Mobile Menu - Updated to have consistent styling regardless of scroll position */}
         <div
-          className={`fixed inset-0 bg-white/90 backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 md:hidden ${
+          className={`fixed inset-0 bg-white backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
           style={{
