@@ -1,3 +1,4 @@
+
 import React, {createContext, useContext, useState, useEffect, ReactNode} from 'react';
 import i18n from 'i18next';
 import {initReactI18next, useTranslation} from 'react-i18next';
@@ -637,3 +638,33 @@ i18n
   });
 
 interface LanguageContextType {
+  language: LanguageOption;
+  setLanguage: (lang: LanguageOption) => void;
+  t: (key: string, options?: object) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export const LanguageProvider: React.FC<{children: ReactNode}> = ({children}) => {
+  const [language, setLanguage] = useState<LanguageOption>('en');
+  const {t, i18n} = useTranslation();
+  
+  // Set the language in i18n when it changes
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
+  
+  return (
+    <LanguageContext.Provider value={{language, setLanguage, t}}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
