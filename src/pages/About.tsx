@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Card, CardContent} from '@/components/ui/card';
@@ -10,22 +9,22 @@ const About = () => {
 
   const values = [
     {
-      title: t('about.values.fairness.title'),
+      title: 'Fairness',
       description: t('about.values.fairness'),
       icon: '⚖️',
     },
     {
-      title: t('about.values.empathy.title'),
+      title: 'Empathy',
       description: t('about.values.empathy'),
       icon: '👥',
     },
     {
-      title: t('about.values.ethics.title'),
+      title: 'Ethics',
       description: t('about.values.ethics'),
       icon: '🔍',
     },
     {
-      title: t('about.values.trust.title'),
+      title: 'Trust',
       description: t('about.values.trust'),
       icon: '🤝',
     },
@@ -53,6 +52,13 @@ const About = () => {
               <p className="text-lg text-text/80 mb-6">
                 {t('about.intro')}
               </p>
+              
+              {/*<div className="pt-4">*/}
+              {/*  <div className="flex items-center space-x-4">*/}
+              {/*    <div className="w-6 h-6 bg-red-600 rounded"></div>*/}
+              {/*    <p className="text-base font-medium">{t('about.swiss')}</p>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
             
             <div className="relative animate-scale-in">
@@ -61,7 +67,7 @@ const About = () => {
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
                       src="/lovable-uploads/cybethics.png"
-                      alt={t('about.logo.alt')}
+                      alt="Cybethics Logo"
                       className="w-full h-auto"
                     />
                   </div>
@@ -76,9 +82,9 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-6">{t('about.story.title')}</h2>
+            <h2 className="mb-6">Our Story</h2>
             <p className="text-lg text-text/80">
-              {t('about.story.description')}
+              The name <span className="text-primary font-medium">Cybethics</span> combines "Cyber" and "Ethics" because ethics means something to us. It's at the core of how we approach every project and client relationship.
             </p>
           </div>
           
@@ -87,9 +93,9 @@ const About = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <span className="text-primary text-xl font-bold">C</span>
               </div>
-              <h3 className="text-xl font-medium mb-2">{t('about.cyber.title')}</h3>
+              <h3 className="text-xl font-medium mb-2">Cyber</h3>
               <p className="text-text/70">
-                {t('about.cyber.description')}
+                Representing our technical expertise in software development, automation, and digital solutions.
               </p>
             </div>
             
@@ -99,9 +105,9 @@ const About = () => {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <span className="text-primary text-xl font-bold">E</span>
               </div>
-              <h3 className="text-xl font-medium mb-2">{t('about.ethics.title')}</h3>
+              <h3 className="text-xl font-medium mb-2">Ethics</h3>
               <p className="text-text/70">
-                {t('about.ethics.description')}
+                Highlighting our commitment to fairness, transparency, and doing what's right for our clients.
               </p>
             </div>
           </div>
@@ -114,7 +120,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
             <h2 className="mb-4">{t('about.values.title')}</h2>
             <p className="text-lg text-text/80">
-              {t('about.values.description')}
+              Our values guide everything we do, from how we interact with clients to how we approach development challenges.
             </p>
           </div>
           
@@ -141,38 +147,38 @@ const About = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-up">
-              <h2 className="mb-6">{t('about.approach.title')}</h2>
+              <h2 className="mb-6">Our Approach</h2>
               <p className="text-lg text-text/80 mb-6">
-                {t('about.approach.description')}
+                We believe that successful software projects start with understanding the real needs and goals of our clients. Our approach focuses on these key principles:
               </p>
               
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium mb-1">{t('about.approach.listen.title')}</h4>
-                    <p className="text-text/80">{t('about.approach.listen.description')}</p>
+                    <h4 className="font-medium mb-1">Listen First</h4>
+                    <p className="text-text/80">We take the time to truly understand your business objectives before proposing solutions.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium mb-1">{t('about.approach.rightsized.title')}</h4>
-                    <p className="text-text/80">{t('about.approach.rightsized.description')}</p>
+                    <h4 className="font-medium mb-1">Right-sized Solutions</h4>
+                    <p className="text-text/80">We implement the most suitable solution, not necessarily the most complex or expensive one.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium mb-1">{t('about.approach.transparent.title')}</h4>
-                    <p className="text-text/80">{t('about.approach.transparent.description')}</p>
+                    <h4 className="font-medium mb-1">Transparent Communication</h4>
+                    <p className="text-text/80">We maintain clear and honest communication throughout the project lifecycle.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium mb-1">{t('about.approach.longterm.title')}</h4>
-                    <p className="text-text/80">{t('about.approach.longterm.description')}</p>
+                    <h4 className="font-medium mb-1">Long-term Partnership</h4>
+                    <p className="text-text/80">We aim to be a trusted partner in your digital journey, not just a service provider.</p>
                   </div>
                 </li>
               </ul>
@@ -183,25 +189,25 @@ const About = () => {
                 <div className="aspect-square rounded-lg bg-white p-6 shadow-md flex items-center justify-center hover:shadow-lg transition-shadow transform hover:-translate-y-1 duration-300">
                   <div className="text-center">
                     <div className="text-3xl text-primary mb-2">💡</div>
-                    <h4 className="font-medium text-sm">{t('about.qualities.innovative')}</h4>
+                    <h4 className="font-medium text-sm">Innovative</h4>
                   </div>
                 </div>
                 <div className="aspect-square rounded-lg bg-white p-6 shadow-md flex items-center justify-center hover:shadow-lg transition-shadow transform hover:-translate-y-1 duration-300">
                   <div className="text-center">
                     <div className="text-3xl text-primary mb-2">🛠️</div>
-                    <h4 className="font-medium text-sm">{t('about.qualities.practical')}</h4>
+                    <h4 className="font-medium text-sm">Practical</h4>
                   </div>
                 </div>
                 <div className="aspect-square rounded-lg bg-white p-6 shadow-md flex items-center justify-center hover:shadow-lg transition-shadow transform hover:-translate-y-1 duration-300">
                   <div className="text-center">
                     <div className="text-3xl text-primary mb-2">🤝</div>
-                    <h4 className="font-medium text-sm">{t('about.qualities.collaborative')}</h4>
+                    <h4 className="font-medium text-sm">Collaborative</h4>
                   </div>
                 </div>
                 <div className="aspect-square rounded-lg bg-white p-6 shadow-md flex items-center justify-center hover:shadow-lg transition-shadow transform hover:-translate-y-1 duration-300">
                   <div className="text-center">
                     <div className="text-3xl text-primary mb-2">🚀</div>
-                    <h4 className="font-medium text-sm">{t('about.qualities.efficient')}</h4>
+                    <h4 className="font-medium text-sm">Efficient</h4>
                   </div>
                 </div>
               </div>
@@ -214,9 +220,9 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-4">{t('about.impact.title')}</h2>
+            <h2 className="mb-4">Our Impact</h2>
             <p className="text-lg text-text/80">
-              {t('about.impact.description')}
+              Our dedication to quality and client satisfaction has helped us achieve impressive results
             </p>
           </div>
 
@@ -229,9 +235,9 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
-            <h2 className="mb-4">{t('about.expertise.title')}</h2>
+            <h2 className="mb-4">Our Expertise</h2>
             <p className="text-lg text-text/80">
-              {t('about.expertise.description')}
+              We bring a diverse range of technical skills and expertise to solve your most complex challenges.
             </p>
           </div>
           
@@ -254,8 +260,8 @@ const About = () => {
         <div className="container">
           <div className="bg-white rounded-3xl p-12 text-center relative overflow-hidden border border-gray-100 shadow-lg animate-scale-in">
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">{t('about.cta.title')}</h2>
-              <p className="text-lg text-text/80 mb-8">{t('about.cta.description')}</p>
+              <h2 className="text-2xl md:text-3xl font-medium mb-6">Ready to work with us?</h2>
+              <p className="text-lg text-text/80 mb-8">Schedule a consultation with our team to discuss your project requirements.</p>
               <a 
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-white shadow-sm transition-colors hover:bg-primary/90"

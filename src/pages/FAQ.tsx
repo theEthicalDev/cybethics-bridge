@@ -1,7 +1,6 @@
-
 import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
-import {ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, LinkIcon, BarChart} from 'lucide-react';
+import {ArrowRight, ChevronRight, Database, Clock, FileSpreadsheet, Users, Zap, Link as LinkIcon, BarChart} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {Button} from '@/components/ui/button';
 import CommonProblems from '@/components/CommonProblems';
@@ -214,14 +213,14 @@ const FAQ: React.FC = () => {
       {/* Common Business Problems Section */}
       <CommonProblems/>
 
-      {/* Detailed Solution Examples Section - Fixed duplicate details buttons */}
+      {/* Detailed Solution Examples Section */}
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="mb-4">{t('faq.examples.title')}</h2>
+              <h2 className="mb-4">Common Business Problems Solved</h2>
               <p className="text-lg text-text/80">
-                {t('faq.examples.subtitle')}
+                Here are some common business challenges and how custom software development can solve them.
               </p>
             </div>
 
@@ -238,13 +237,13 @@ const FAQ: React.FC = () => {
                   <Accordion type="single" collapsible className="w-full border-none">
                     <AccordionItem value={`item-${index}`} className="border-none">
                       <AccordionTrigger className="py-2 text-lg font-medium text-gray-700 hover:no-underline">
-                        {t('faq.viewDetails')}
+                        View Details
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              {t('faq.examples.problems')}
+                              Common Problems
                             </h4>
                             <ul className="space-y-3">
                               {example.problems.map((problem, idx) => (
@@ -257,7 +256,7 @@ const FAQ: React.FC = () => {
 
                             <div className="mt-6">
                               <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                                {t('faq.examples.solution')}
+                                Our Solution
                               </h4>
                               <p className="text-text/90">{example.solution}</p>
                             </div>
@@ -265,7 +264,7 @@ const FAQ: React.FC = () => {
 
                           <div>
                             <h4 className="text-lg font-semibold mb-4 flex items-center text-gray-700">
-                              {t('faq.examples.benefits')}
+                              Key Benefits
                             </h4>
                             <ul className="space-y-3">
                               {example.benefits.map((benefit, idx) => (
