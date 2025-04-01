@@ -28,7 +28,7 @@ jobs:
       # Step 4: Build the app
       - name: Deploy the app
         run: |
-          npm run deploy
+          npm run build
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
