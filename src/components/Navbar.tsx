@@ -1,10 +1,11 @@
+
 import React, {useEffect, useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
 import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
 import {Button} from '@/components/ui/button';
-import {Menu, X} from 'lucide-react';
+import {Menu, X, MapPin} from 'lucide-react';
 import {useIsTablet} from '@/hooks/use-mobile';
 
 const Navbar: React.FC = () => {
@@ -44,6 +45,7 @@ const Navbar: React.FC = () => {
     { path: '/projects', label: t('nav.projects') },
     { path: '/about', label: t('nav.about') },
     { path: '/faq', label: t('nav.faq') },
+    { path: '/zentralschweiz', label: 'Zentralschweiz', icon: <MapPin className="h-3 w-3 ml-1" /> },
     { path: '/contact', label: t('nav.contact') },
   ];
 
@@ -69,13 +71,14 @@ const Navbar: React.FC = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`relative text-sm font-medium transition-colors ${
+              className={`relative text-sm font-medium transition-colors flex items-center ${
                 isActive(link.path)
                   ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary'
                   : 'text-text hover:text-primary'
               } link-underline`}
             >
               {link.label}
+              {link.icon}
             </Link>
           ))}
           <LanguageSwitcher />
@@ -112,11 +115,12 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-xl font-medium transition-colors ${
+                className={`text-xl font-medium transition-colors flex items-center ${
                   isActive(link.path) ? 'text-primary' : 'text-text hover:text-primary'
                 }`}
               >
                 {link.label}
+                {link.icon && <span className="ml-2">{link.icon}</span>}
               </Link>
             ))}
             <LanguageSwitcher className="mt-6" />

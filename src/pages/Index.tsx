@@ -3,13 +3,14 @@ import React from 'react';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
 import {Link} from 'react-router-dom';
-import {ArrowRight, CheckCircle2, Code, Cog, FileSpreadsheet, GitBranch, Monitor, ServerCog, Terminal} from 'lucide-react';
+import {ArrowRight, CheckCircle2, Code, Cog, GitBranch, Monitor, ServerCog, Terminal} from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import ProjectCard from '@/components/ProjectCard';
 import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
 import {useIsMobile} from '@/hooks/use-mobile';
 import Stats from '@/components/Stats';
+import LocalBusinessInfo from '@/components/LocalBusinessInfo';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
@@ -34,7 +35,7 @@ const BusinessChallenge = ({
         {icon}
       </div>
       <div>
-        <p className="text-lg font-medium">{title}</p>
+        <h3 className="text-lg font-medium">{title}</h3>
         <p className="text-base text-text/80 mt-1">{description}</p>
       </div>
     </div>
@@ -125,27 +126,28 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Business Challenges Section - Updated with new design */}
-      <section className="pt-28 pb-8 md:pt-36 md:pb-36 bg-gray-50" id="identify-challenges">
+      {/* Business Challenges Section - Updated with better semantic markup */}
+      <section aria-labelledby="challenges-heading" className="pt-28 pb-8 md:pt-36 md:pb-36 bg-gray-50" id="identify-challenges">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="mb-4">{t('business.questions.title')}</h2>
+          <header className="text-center max-w-3xl mx-auto mb-16">
+            <h2 id="challenges-heading" className="mb-4">{t('business.questions.title')}</h2>
             <p className="text-lg text-text/80">
               {t('business.questions.subtitle')}
             </p>
-          </div>
+          </header>
           
-          <div className="max-w-3xl mx-auto space-y-6">
+          <ul className="max-w-3xl mx-auto space-y-6">
             {businessChallenges.map((challenge, index) => (
-              <BusinessChallenge
-                key={index}
-                icon={challenge.icon}
-                title={t(challenge.title)}
-                description={t(challenge.description)}
-                index={index}
-              />
+              <li key={index}>
+                <BusinessChallenge
+                  icon={challenge.icon}
+                  title={t(challenge.title)}
+                  description={t(challenge.description)}
+                  index={index}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
           
           <div className="text-center mt-12">
             <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-full group">
@@ -159,11 +161,11 @@ const Index = () => {
       </section>
       
       {/* Projects Section */}
-      <section className="py-12 md:py-24">
+      <section aria-labelledby="projects-heading" className="py-12 md:py-24">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
             <div className="max-w-2xl">
-              <h2 className="mb-4">{t('projects.title')}</h2>
+              <h2 id="projects-heading" className="mb-4">{t('projects.title')}</h2>
               <p className="text-lg text-text/80">
                 {t('projects.subtitle')}
               </p>
@@ -197,11 +199,14 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Local Business Info Section */}
+      <LocalBusinessInfo />
+      
       {/* Services Section */}
-      <section className="py-12 md:py-24 bg-gray-50">
+      <section aria-labelledby="services-heading" className="py-12 md:py-24 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="mb-4">{t('services.title')}</h2>
+            <h2 id="services-heading" className="mb-4">{t('services.title')}</h2>
             <p className="text-lg text-text/80">
               {t('services.subtitle')}
             </p>
@@ -222,10 +227,10 @@ const Index = () => {
       </section>
       
       {/* Development Process Section */}
-      <section className="py-12 md:py-24 bg-white">
+      <section aria-labelledby="process-heading" className="py-12 md:py-24 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="mb-4">{t('services.process.title')}</h2>
+            <h2 id="process-heading" className="mb-4">{t('services.process.title')}</h2>
             <p className="text-lg text-text/80">
               {t('services.process.subtitle')}
             </p>
@@ -236,7 +241,7 @@ const Index = () => {
       </section>
       
       {/* About Section */}
-      <section className="py-12 md:py-24 bg-gray-50">
+      <section aria-labelledby="about-heading" className="py-12 md:py-24 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
@@ -246,7 +251,7 @@ const Index = () => {
             
             <div className="space-y-6 order-1 lg:order-2">
               <div>
-                <h2 className="mb-4">{t('about.title')}</h2>
+                <h2 id="about-heading" className="mb-4">{t('about.title')}</h2>
                 <p className="text-lg text-text/80 mb-6">
                   {t('about.intro')}
                 </p>
@@ -286,7 +291,7 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-12 md:py-24">
+      <section aria-labelledby="cta-heading" className="py-12 md:py-24">
         <div className="container">
           <div className="bg-gradient-to-br from-primary/90 to-purple-700 rounded-3xl p-12 text-white text-center relative overflow-hidden">
             {/* Background Elements */}
@@ -296,7 +301,7 @@ const Index = () => {
             </div>
             
             <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">{t('contact.title')}</h2>
+              <h2 id="cta-heading" className="text-3xl md:text-4xl font-medium text-white mb-6">{t('contact.title')}</h2>
               <p className="text-lg md:text-xl text-white/90 mb-8">{t('contact.subtitle')}</p>
               <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 hover:text-primary border-none rounded-full">
                 <Link to="/contact">

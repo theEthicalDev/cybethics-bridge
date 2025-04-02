@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
-import {Calendar, ChevronRight, Sparkles} from 'lucide-react';
+import {Calendar, ChevronRight, Sparkles, MapPin} from 'lucide-react';
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {useIsMobile} from '@/hooks/use-mobile';
 
@@ -95,10 +95,18 @@ const HeroSection: React.FC = () => {
                     Cybethics
                   </span>
                 </div>
-                <h1 className="mb-4 leading-tight text-balance">{t('hero.title')}</h1>
+                <h1 className="mb-4 leading-tight text-balance">
+                  {t('hero.title')} <span className="text-primary">Zentralschweiz</span>
+                </h1>
                 <p className="text-lg md:text-xl text-text/80 ">
-                  {t('hero.subtitle')}
+                  {t('hero.subtitle')} <span className="font-medium">Luzern, Zug und der gesamten Zentralschweiz</span>.
                 </p>
+                
+                {/* Location Badge */}
+                <div className="mt-4 inline-flex items-center py-2 px-4 bg-gray-50 rounded-full">
+                  <MapPin className="h-4 w-4 text-primary mr-2" />
+                  <span className="text-sm font-medium">Emmen, Luzern</span>
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -114,10 +122,12 @@ const HeroSection: React.FC = () => {
                   </Link>
                 </Button>
               </div>
-              {/*<div className="flex items-center space-x-4 pt-4">*/}
-              {/*  <div className="w-6 h-6 bg-primary/20 rounded"></div>*/}
-              {/*  <p className="text-sm font-medium">We prefer deeds to words</p>*/}
-              {/*</div>*/}
+              <div className="flex items-center space-x-4 pt-4">
+                <Link to="/zentralschweiz" className="text-sm font-medium flex items-center text-primary/80 hover:text-primary group">
+                  <span>IT-Lösungen in der Zentralschweiz</span>
+                  <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
+                </Link>
+              </div>
             </div>
 
             {/* Only show this div on desktop */}
@@ -126,7 +136,7 @@ const HeroSection: React.FC = () => {
                 <div className="h-64 items-center justify-center hidden lg:flex">
                   <img
                     src="/media/cybethics.png"
-                    alt="Cybethics Logo"
+                    alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
                     className="w-3/4 h-auto"
                   />
                 </div>
