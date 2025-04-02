@@ -89,7 +89,7 @@ const Projects = () => {
           {/* Projects by category */}
           <Tabs defaultValue="all" className="w-full">
             <div className="flex justify-center w-full overflow-x-auto scrollbar-none">
-              <TabsList className="flex-nowrap mb-8 p-1 bg-transparent justify-start md:justify-center animate-fade-up custom-scroll">
+              <TabsList className="flex-nowrap mb-8 p-1 bg-transparent justify-start md:justify-center animate-fade-up custom-scroll" style={{overflowY: 'hidden'}}>
                 {categories.map((category) => (
                   <TabsTrigger
                     key={category.id}
@@ -102,7 +102,6 @@ const Projects = () => {
                 ))}
               </TabsList>
 
-              {/* Fixed: Removed the jsx property that was causing the type error */}
               <style>
                   {`
                   .custom-scroll {
@@ -202,7 +201,7 @@ const Projects = () => {
                     ))}
                   </div>
                 )}
-                <h2 className="text-2xl md:text-3xl font-medium mb-4">{t(project.title)}</h2>
+                <h2 className="text-wrap break-words md:text-3xl font-medium mb-4">{t(project.title)}</h2>
                 <p className="text-text/80 mb-6">{t(project.longDescription)}</p>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
@@ -212,7 +211,7 @@ const Projects = () => {
                   </div>
                   <div>
                     <h4 className="text-sm text-text/60 mb-1">{t('projects.client')}</h4>
-                    <p className="font-medium">{t(project.client)}</p>
+                    <p className="font-medium text-wrap">{t(project.client)}</p>
                   </div>
                   <div>
                     <h4 className="text-sm text-text/60 mb-1">{t('projects.category')}</h4>

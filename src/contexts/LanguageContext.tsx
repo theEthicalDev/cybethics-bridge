@@ -816,7 +816,7 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.itMonitoring.longDescription': 'Diese Suite von Skripten wurde entwickelt, um routinemässige Wartungsaufgaben zu automatisieren, die Systemgesundheit zu überwachen und Berichte für die IT-Abteilung zu erstellen. Die Skripte, die hauptsächlich in Python geschrieben sind, interagieren mit verschiedenen Systemen, um Daten zu sammeln, Wartungsaufgaben durchzuführen und Administratoren auf potenzielle Probleme aufmerksam zu machen, bevor sie den Betrieb beeinträchtigen.',
     'projects.itMonitoring.client': 'IT-Dienstleister',
 
-    'projects.orderPrinting.title': 'Bestelldruck-Überwachungssystem',
+    'projects.orderPrinting.title': 'Bestelldruck Überwachungssystem',
     'projects.orderPrinting.description': 'Echtzeit-Überwachungssystem zur Verfolgung des Druckstatus von Takeaway- und Lieferbestellungen von Restaurants und Lebensmittelproduktionsstätten.',
     'projects.orderPrinting.longDescription': 'Dieses Überwachungssystem wurde entwickelt, um den Druckstatus von Takeaway- und Lieferbestellungen von Restaurants zu verfolgen. Das System integriert sich in die E-Mail- und Drucksysteme unserer Kunden, um Echtzeit-Updates zum Bestellstatus, Druckfehlern und zur Auftragsfertigstellung bereitzustellen. Das System führt Benachrichtigungen ein, um die Auftragsabwicklungseffizienz zu verbessern, unnötige Kosten zu vermeiden und die Kundenzufriedenheit zu steigern.',
     'projects.orderPrinting.client': 'Restaurantkette',
@@ -834,7 +834,7 @@ const translations: Record<Language, Record<string, string>> = {
       ' einer IT-Single-Point-of-Contact (SPOC)-Vereinbarung. Die Dienstleistungen umfassen Website-Wartung, Updates, Backups, Sicherheit und IT-Support für die internen Systeme und Geräte des Restaurants an mehreren Standorten. Die Partnerschaft zielt darauf ab, die IT-Effizienz zu verbessern, die Verfügbarkeit sicherzustellen, Kosten zu senken und die Geschäftskontinuität zu gewährleisten.',
     'projects.digitalInfrastructure.client': 'Restaurantkette',
 
-    'projects.orderPrintingAutomation.title': 'Bestelldruck-Automatisierungssystem',
+    'projects.orderPrintingAutomation.title': 'Bestelldruck Automatisierungssystem',
     'projects.orderPrintingAutomation.description': 'Druckautomatisierungssystem zur Verarbeitung von Takeaway- und Lieferbestellungen in Restaurants.',
     'projects.orderPrintingAutomation.longDescription': 'Dieses Projekt umfasste ein IoT-basiertes Druckautomatisierungssystem zur Verarbeitung von Takeaway- und Lieferbestellungen in Restaurants und Produktionsstätten. Das System integriert sich in das Bestellsystem des Restaurants, um Bestellungen zu empfangen und an die entsprechenden Drucker in der Küche oder im Produktionsbereich zu senden. Das System reduziert manuelle Eingriffe, verbessert die Effizienz der Auftragsabwicklung und stellt sicher, dass Bestellungen rechtzeitig an die Kunden geliefert werden.',
     'projects.orderPrintingAutomation.client': 'Restaurantkette',
