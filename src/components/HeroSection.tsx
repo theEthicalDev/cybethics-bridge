@@ -96,16 +96,16 @@ const HeroSection: React.FC = () => {
                   </span>
                 </div>
                 <h1 className="mb-4 leading-tight text-balance">
-                  {t('hero.title')} <span className="text-primary">Zentralschweiz</span>
+                  {t('hero.title')}
                 </h1>
                 <p className="text-lg md:text-xl text-text/80 ">
-                  {t('hero.subtitle')} <span className="font-medium">Luzern, Zug und der gesamten Zentralschweiz</span>.
+                  {t('hero.subtitle')}
                 </p>
                 
                 {/* Location Badge */}
                 <div className="mt-4 inline-flex items-center py-2 px-4 bg-gray-50 rounded-full">
                   <MapPin className="h-4 w-4 text-primary mr-2" />
-                  <span className="text-sm font-medium">Emmen, Luzern</span>
+                  <span className="text-sm font-medium">Emmen | Luzern | Zentralschweiz</span>
                 </div>
               </div>
 
@@ -122,12 +122,12 @@ const HeroSection: React.FC = () => {
                   </Link>
                 </Button>
               </div>
-              <div className="flex items-center space-x-4 pt-4">
-                <Link to="/zentralschweiz" className="text-sm font-medium flex items-center text-primary/80 hover:text-primary group">
-                  <span>IT-Lösungen in der Zentralschweiz</span>
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
-                </Link>
-              </div>
+              {/*<div className="flex items-center space-x-4 pt-4">*/}
+              {/*  <Link to="/location" className="text-sm font-medium flex items-center text-primary/80 hover:text-primary group">*/}
+              {/*    <span>IT-Lösungen in der Zentralschweiz</span>*/}
+              {/*    <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>*/}
+              {/*  </Link>*/}
+              {/*</div>*/}
             </div>
 
             {/* Only show this div on desktop */}

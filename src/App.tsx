@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useLocation } from 'react-router-dom';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -16,20 +16,25 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
-import ZentralschweizServices from "./pages/ZentralschweizServices";
+import LocalServices from "./pages/LocalServices.tsx";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import LoadingSpinner from '@/components/LoadingSpinner.tsx';
 
 const queryClient = new QueryClient();
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(false);
   }, [pathname]);
 
-  return null;
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 }
 
 const AppContent = () => {
@@ -45,7 +50,7 @@ const AppContent = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/zentralschweiz" element={<ZentralschweizServices />} />
+            <Route path="/location" element={<LocalServices />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

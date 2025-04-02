@@ -19,6 +19,11 @@ const ServiceCards = () => {
       descriptionKey: 'services.automation.description',
     },
     {
+      icon: <ServerCog className="h-6 w-6 text-primary" />,
+      titleKey: 'services.api.title',
+      descriptionKey: 'services.api.description',
+    },
+    {
       icon: <Terminal className="h-6 w-6 text-primary" />,
       titleKey: 'services.scripting.title',
       descriptionKey: 'services.scripting.description',
@@ -27,11 +32,6 @@ const ServiceCards = () => {
       icon: <GitBranch className="h-6 w-6 text-primary" />,
       titleKey: 'services.cicd.title',
       descriptionKey: 'services.cicd.description',
-    },
-    {
-      icon: <ServerCog className="h-6 w-6 text-primary" />,
-      titleKey: 'services.api.title',
-      descriptionKey: 'services.api.description',
     },
     {
       icon: <Monitor className="h-6 w-6 text-primary" />,

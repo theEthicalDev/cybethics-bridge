@@ -12,7 +12,7 @@ const ServiceHero = () => {
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="mb-6">{t('services.hero.title')}</h1>
-          <p className="text-lg md:text-xl text-text/80 mb-8">
+          <p className="text-lg md:text-xl text-text/80 mb-8 text-balance">
             {t('services.hero.subtitle')}
           </p>
           {/*<Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full">*/}

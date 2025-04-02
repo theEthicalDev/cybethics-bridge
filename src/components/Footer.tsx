@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
             <h4 className="font-medium text-lg">{t('nav.contact')}</h4>
             <address className="not-italic text-text/80">
               <p>Cybethics GmbH</p>
-              <p>Switzerland</p>
+              <p>Emmen | Luzern | Zentralschweiz | CH</p>
               <p className="mt-2">
                 <a href="mailto:info@cybethics.com" className="hover:text-primary transition-colors">
                   info@cybethics.com

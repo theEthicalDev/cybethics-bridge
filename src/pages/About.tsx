@@ -34,10 +34,10 @@ const About = () => {
   // Updated to match project page tags
   const skills = [
     'Web Development', 'Spring Boot', 'Angular', 'React', 'Node.js', 
-    'Automation', 'Microsoft PowerAutomate', 'Zapier', 
-    'API Development', 'System Integration', 'Backend', 'Frontend',
+    'Automation', 'PowerAutomate', 'Zapier',
+    'API', 'Integration', 'Backend', 'Frontend',
     'Mobile', 'UI/UX', 'CI/CD', 'GitHub Actions', 'Jenkins',
-    'Scripting', 'Cloud Infrastructure',
+    'Scripting', 'Cloud', 'Software', 'DevOps', 'Docker', 'Kubernetes'
   ];
 
   return (

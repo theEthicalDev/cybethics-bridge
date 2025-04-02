@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6 text-primary"/>,
       title: 'Location',
-      content: 'Emmen 📍 Luzern 📍 Switzerland',
+      content: 'Emmen 📍 Luzern 📍 Zentralschweiz 📍 Schweiz',
       link: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d67473.34567433297!2d8.23025083798067!3d47.0770799150297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffd006436942d%3A0x3a3d41af9207071d!2sFeldbreitequartier%20Emmen!5e0!3m2!1sde!2sch!4v1743022148634!5m2!1sde!2sch',
     },
   ];

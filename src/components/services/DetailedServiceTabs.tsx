@@ -65,7 +65,7 @@ const DetailedServiceTabs = () => {
           description: t('services.software.process4.description')
         }
       ],
-      technologies: ["React", "Node.js", "Python", "Java", ".NET", "SQL/NoSQL", "DevOps tools"]
+      technologies: ["Angular", "Spring Boot", "Java", "Python", "React", "PostgreSQL", "Docker", "Kubernetes", "Jenkins"]
     },
     {
       id: "automation",
@@ -96,7 +96,7 @@ const DetailedServiceTabs = () => {
           description: t('services.automation.process4.description')
         }
       ],
-      technologies: ["Workflow engines", "Middleware Development", "Integration platforms", "AI/ML", "Custom scripts", "API integrations", "API Development", "RPA tools"]
+      technologies: ["Workflow Engines", "Middleware", "Integration platforms", "Scripting", "API"],
     },
     {
       id: "integration",
@@ -127,7 +127,7 @@ const DetailedServiceTabs = () => {
           description: t('services.integration.process4.description')
         }
       ],
-      technologies: ["API development", "Middleware", "ETL tools", "ESB", "Cloud integration services"]
+      technologies: ["Development", "API", "Integration", "Middleware", "Data", "Batch"]
     },
     {
       id: "cicd",
@@ -189,7 +189,7 @@ const DetailedServiceTabs = () => {
           description: t('services.offshoring.process4.description')
         }
       ],
-      technologies: ["ITSM tools", "Monitoring platforms", "Helpdesk systems", "Remote management", "Security tools"]
+      technologies: ["Backup", "PC", "Monitoring", "Security", "VPN", "Email", "Printing", "Support", "Disaster Recovery"]
     }
   ];
 

@@ -255,7 +255,7 @@ const Projects = () => {
 
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">Let's Build Your Next Project</h2>
-              <p className="text-lg md:text-xl text-white/90 mb-8">Ready to bring your ideas to life? Schedule a consultation with our
+              <p className="text-lg md:text-xl text-white/90 mb-8 text-balance">Ready to bring your ideas to life? Schedule a consultation with our
                 experts.
               </p>
               <a

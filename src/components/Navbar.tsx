@@ -44,8 +44,8 @@ const Navbar: React.FC = () => {
     { path: '/services', label: t('nav.services') },
     { path: '/projects', label: t('nav.projects') },
     { path: '/about', label: t('nav.about') },
+    { path: '/location', label: 'Standort', icon: <MapPin className="h-3 w-3 ml-1" /> },
     { path: '/faq', label: t('nav.faq') },
-    { path: '/zentralschweiz', label: 'Zentralschweiz', icon: <MapPin className="h-3 w-3 ml-1" /> },
     { path: '/contact', label: t('nav.contact') },
   ];
 

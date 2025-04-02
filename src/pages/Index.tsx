@@ -61,6 +61,11 @@ const Index = () => {
       descriptionKey: 'services.automation.description',
     },
     {
+      icon: <ServerCog className="h-6 w-6 text-primary" />,
+      titleKey: 'services.api.title',
+      descriptionKey: 'services.api.description',
+    },
+    {
       icon: <Terminal className="h-6 w-6 text-primary" />,
       titleKey: 'services.scripting.title',
       descriptionKey: 'services.scripting.description',
@@ -69,11 +74,6 @@ const Index = () => {
       icon: <GitBranch className="h-6 w-6 text-primary" />,
       titleKey: 'services.cicd.title',
       descriptionKey: 'services.cicd.description',
-    },
-    {
-      icon: <ServerCog className="h-6 w-6 text-primary" />,
-      titleKey: 'services.api.title',
-      descriptionKey: 'services.api.description',
     },
     {
       icon: <Monitor className="h-6 w-6 text-primary" />,
@@ -302,7 +302,7 @@ const Index = () => {
             
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 id="cta-heading" className="text-3xl md:text-4xl font-medium text-white mb-6">{t('contact.title')}</h2>
-              <p className="text-lg md:text-xl text-white/90 mb-8">{t('contact.subtitle')}</p>
+              <p className="text-lg md:text-xl text-white/90 mb-8 text-balance">{t('contact.subtitle')}</p>
               <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 hover:text-primary border-none rounded-full">
                 <Link to="/contact">
                   {t('contact.booking')}

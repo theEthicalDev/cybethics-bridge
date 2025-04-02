@@ -405,7 +405,7 @@ const FAQ: React.FC = () => {
 
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">{t('faq.cta.title')}</h2>
-              <p className="text-lg md:text-xl text-white/90 mb-8">{t('faq.cta.subtitle')}</p>
+              <p className="text-lg md:text-xl text-white/90 mb-8 text-balance">{t('faq.cta.subtitle')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 hover:text-primary border-none rounded-full">
                   <Link to="/contact">
