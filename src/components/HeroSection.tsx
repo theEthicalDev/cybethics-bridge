@@ -51,7 +51,7 @@ const ContactPartner: React.FC = () => {
   return (
     <div className="container relative z-20 -mb-16">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
-        <div className="text-left">
+        <div className="text-center md:text-left">
           <h3 className="text-xl font-semibold text-primary pb-2">{t('contact.partner')}</h3>
           <p className="text-xl font-medium">Djordje Karadzic</p>
           <p className="text-md text-gray-400 mt-1">Cybethics</p>
