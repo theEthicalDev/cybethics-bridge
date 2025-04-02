@@ -40,7 +40,7 @@ const DetailedServiceTabs = () => {
       id: "software",
       title: t('services.software.title'),
       description: t('services.software.description'),
-      icon: <Code className="h-12 w-12 text-primary" />,
+      icon: <Code className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
       benefits: [
         t('services.software.benefit1'),
         t('services.software.benefit2'),
@@ -71,7 +71,7 @@ const DetailedServiceTabs = () => {
       id: "automation",
       title: t('services.automation.title'),
       description: t('services.automation.description'),
-      icon: <Cog className="h-12 w-12 text-primary" />,
+      icon: <Cog className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
       benefits: [
         t('services.automation.benefit1'),
         t('services.automation.benefit2'),
@@ -102,7 +102,7 @@ const DetailedServiceTabs = () => {
       id: "integration",
       title: t('services.integration.title'),
       description: t('services.integration.description'),
-      icon: <Network className="h-12 w-12 text-primary" />,
+      icon: <Network className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
       benefits: [
         t('services.integration.benefit1'),
         t('services.integration.benefit2'),
@@ -133,7 +133,7 @@ const DetailedServiceTabs = () => {
       id: "cicd",
       title: t('services.cicd.title'),
       description: t('services.cicd.description'),
-      icon: <GitBranch className="h-12 w-12 text-primary" />,
+      icon: <GitBranch className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
       benefits: [
         t('services.cicd.benefit1'),
         t('services.cicd.benefit2'),
@@ -164,7 +164,7 @@ const DetailedServiceTabs = () => {
       id: "offshoring",
       title: t('services.offshoring.title'),
       description: t('services.offshoring.description'),
-      icon: <Monitor className="h-12 w-12 text-primary" />,
+      icon: <Monitor className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
       benefits: [
         t('services.offshoring.benefit1'),
         t('services.offshoring.benefit2'),
@@ -194,15 +194,14 @@ const DetailedServiceTabs = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="bg-gray-50">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="mb-4">{t('services.detailTitle')}</h2>
-          <h2 className="mb-4">{t('services.detailSubtitle')}</h2>
-          <p className="text-lg text-text/80">
-            {t('services.detailDescription')}
-          </p>
-        </div>
+        {/*<div className="text-center max-w-2xl mx-auto mb-16">*/}
+        {/*  <h2 className="mb-4">{t('services.detailSubtitle')}</h2>*/}
+        {/*  <p className="text-lg text-text/80">*/}
+        {/*    {t('services.detailDescription')}*/}
+        {/*  </p>*/}
+        {/*</div>*/}
 
         <Tabs defaultValue="software" className="w-full">
           <div className="overflow-x-auto scroll-smooth" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>

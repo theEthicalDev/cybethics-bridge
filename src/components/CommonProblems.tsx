@@ -81,7 +81,7 @@ const CommonProblems = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50" id="common-problems">
+    <section className="py-12 md:py-24 bg-gray-50" id="common-problems">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="mb-4">{t('common.problems.title')}</h2>

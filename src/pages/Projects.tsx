@@ -42,7 +42,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 md:pb-16">
       {/* Hero Section */}
       <section className="py-12 md:py-24">
         <div className="container">
@@ -168,7 +168,7 @@ const Projects = () => {
                               className="text-sm text-primary font-medium flex items-center group"
                               onClick={() => window.open(`#project-${project.id}`, '_self')}
                             >
-                              View Details
+                              {t('faq.solutions.viewDetails')}
                               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
                             </button>
                           </div>
@@ -207,15 +207,15 @@ const Projects = () => {
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
-                    <h4 className="text-sm text-text/60 mb-1">Year</h4>
+                    <h4 className="text-sm text-text/60 mb-1">{t('projects.year')}</h4>
                     <p className="font-medium">{project.year}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm text-text/60 mb-1">Client</h4>
+                    <h4 className="text-sm text-text/60 mb-1">{t('projects.client')}</h4>
                     <p className="font-medium">{t(project.client)}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm text-text/60 mb-1">Category</h4>
+                    <h4 className="text-sm text-text/60 mb-1">{t('projects.category')}</h4>
                     <p className="font-medium">
                       {categories.find(c => c.id === project.category)?.label}
                     </p>

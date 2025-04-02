@@ -126,7 +126,7 @@ const Index = () => {
       <HeroSection />
       
       {/* Business Challenges Section - Updated with new design */}
-      <section className="py-36 bg-gray-50" id="identify-challenges">
+      <section className="pt-28 pb-8 md:pt-36 md:pb-36 bg-gray-50" id="identify-challenges">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="mb-4">{t('business.questions.title')}</h2>
@@ -159,7 +159,7 @@ const Index = () => {
       </section>
       
       {/* Projects Section */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
             <div className="max-w-2xl">
@@ -198,7 +198,7 @@ const Index = () => {
       </section>
       
       {/* Services Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-12 md:py-24 bg-gray-50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="mb-4">{t('services.title')}</h2>
@@ -222,7 +222,7 @@ const Index = () => {
       </section>
       
       {/* Development Process Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="mb-4">{t('services.process.title')}</h2>
@@ -236,7 +236,7 @@ const Index = () => {
       </section>
       
       {/* About Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-12 md:py-24 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative order-2 lg:order-1">
@@ -286,7 +286,7 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="container">
           <div className="bg-gradient-to-br from-primary/90 to-purple-700 rounded-3xl p-12 text-white text-center relative overflow-hidden">
             {/* Background Elements */}

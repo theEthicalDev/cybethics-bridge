@@ -41,7 +41,7 @@ const ServiceCards = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="mb-4">{t('services.title')}</h2>

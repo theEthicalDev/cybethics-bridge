@@ -9,7 +9,7 @@ const ServicesCTA = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24">
+    <section className="py-12 md:py-24">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="mb-6">{t('services.cta.title')}</h2>

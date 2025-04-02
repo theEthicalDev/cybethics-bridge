@@ -43,7 +43,7 @@ const About = () => {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="py-12 md:py-24">
+      <section className="pt-12 pb-6 md:py-24">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-up">
@@ -57,9 +57,9 @@ const About = () => {
             </div>
             
             <div className="relative animate-scale-in">
-              <div className="w-full h-full aspect-square max-w-lg mx-auto relative">
-                <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden">
-                  <div className="h-full w-full flex items-center justify-center p-12">
+              <div className="w-full h-full lg:aspect-square max-w-lg mx-auto relative">
+                <div className="lg:absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden">
+                  <div className="h-full w-full flex items-center justify-center lg:p-12">
                     <img 
                       src="/media/cybethics.png"
                       alt={t('about.logoAlt')}
@@ -74,7 +74,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
             <h2 className="mb-6">{t('about.story.title')}</h2>
@@ -110,7 +110,7 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
             <h2 className="mb-4">{t('about.values.title')}</h2>
@@ -138,7 +138,7 @@ const About = () => {
       </section>
 
       {/* Our Approach */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 animate-fade-up">
@@ -212,7 +212,7 @@ const About = () => {
       </section>
 
       {/* Stats Section - Replacing Team Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
             <h2 className="mb-4">{t('about.title')}</h2>
@@ -227,7 +227,7 @@ const About = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
             <h2 className="mb-4">{t('about.expertise.title')}</h2>
@@ -251,7 +251,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container">
           <div className="bg-white rounded-3xl p-12 text-center relative overflow-hidden border border-gray-100 shadow-lg animate-scale-in">
             <div className="relative z-10 max-w-3xl mx-auto">

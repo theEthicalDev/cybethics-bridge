@@ -740,7 +740,7 @@ const translations: Record<Language, Record<string, string>> = {
       ' weiterhin optimal funktioniert und sich mit Euren Geschäftsanforderungen weiterentwickelt',
 
     'services.hero.title': 'Dienstleistungen',
-    'services.hero.subtitle': 'Wir bieten ethische Softwarelösungen, die auf Eure spezifischen Geschäftsanforderungen zugeschnitten sind',
+    'services.hero.subtitle': 'Bringt Euer Unternehmen mit den folgenden Dienstleistungen auf die nächste Stufe 🚀',
     'services.cta.title': 'Bereit, mit dem Projekt zu starten?',
     'services.cta.subtitle': 'Kontaktiert Uns uns noch heute, um Eure Anforderungen zu besprechen und wie wir Euch helfen können, Eure' +
       ' Geschäftsziele zu erreichen.',
@@ -786,6 +786,9 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.subtitle': 'Entdeckt einige unserer jüngsten Arbeiten und seht Ihr, wie wir Unternehmen wie dem Euren geholfen haben',
     'projects.viewall': 'Alle Projekte anzeigen',
     'projects.request': 'Ähnliches Projekt anfragen',
+    'projects.year': 'Jahr',
+    'projects.category': 'Kategorie',
+    'projects.client': 'Kunde',
     'projects.viewProject': 'Projekt ansehen',
 
     'projects.creditRequest.title': 'Kreditanfragen-Managementportal',

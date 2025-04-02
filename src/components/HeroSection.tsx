@@ -12,10 +12,10 @@ const CodeAnimation: React.FC = () => {
   const isMobile = useIsMobile();
   const codeSnippet = `
 function cybethics() {
-  const ethics = ["fairness", "empathy", "trust"];
   const cyber = ["code", "automation", "security"];
+  const ethics = ["fairness", "empathy", "trust"];
   ethics.map((ethic, i) => {
-    console.log(\`Cybethics = \${cyber[i]} & \${ethic}\`); 
+    console.log(\`We are about \${cyber[i]} & \${ethic}\`);
   });
 }
 `;
@@ -35,7 +35,7 @@ function cybethics() {
   }, []);
 
   return (
-    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden h-64`}>
+    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden md:h-56 h-48`}>
       <pre className="text-left overflow-x-hidden">
         <code className="text-primary/90 text-xs sm:text-base">
           {text}
@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden py-36 bg-white">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-36 pb-12 md:pb-20 bg-white">
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide">
@@ -96,7 +96,7 @@ const HeroSection: React.FC = () => {
                   </span>
                 </div>
                 <h1 className="mb-4 leading-tight text-balance">{t('hero.title')}</h1>
-                <p className="text-lg md:text-xl text-text/80 max-w-xl text-balance">
+                <p className="text-lg md:text-xl text-text/80 ">
                   {t('hero.subtitle')}
                 </p>
               </div>

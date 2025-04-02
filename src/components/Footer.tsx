@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+    <footer className="bg-gray-50 pt-6 md:pt-16 pb-8">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-12 border-b border-gray-200">
           <div className="space-y-4">
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-lg">Services</h4>
+            <h4 className="font-medium text-lg">{t('nav.services')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.software.title')}</Link>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-lg">Contact</h4>
+            <h4 className="font-medium text-lg">{t('nav.contact')}</h4>
             <address className="not-italic text-text/80">
               <p>Cybethics GmbH</p>
               <p>Switzerland</p>
