@@ -1,19 +1,18 @@
-
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation} from 'react-router-dom';
+import {useLanguage} from '@/contexts/LanguageContext';
 import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
+import {Button} from '@/components/ui/button';
+import {Menu, X} from 'lucide-react';
+import {useIsTablet} from '@/hooks/use-mobile';
 
 const Navbar: React.FC = () => {
   const { t } = useLanguage();
   const location = useLocation();
-  const isMobile = useIsMobile();
+  const isTablet = useIsTablet();
+  const [isTabletMenuOpen, setIsTabletMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +22,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     
     // Proper mobile menu handling
-    if (isMobileMenuOpen) {
+    if (isTabletMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -33,10 +32,10 @@ const Navbar: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.style.overflow = '';
     };
-  }, [isMobileMenuOpen]);
+  }, [isTabletMenuOpen]);
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    setIsTabletMenuOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -60,12 +59,12 @@ const Navbar: React.FC = () => {
     >
       <div className="container flex items-center justify-between">
         {/* Dynamically sized logo based on screen size */}
-        <div className={`${isMobile ? 'scale-75' : 'scale-125'} origin-left`}>
-          <Logo imgClass={isMobile ? 'h-8' : 'h-12'} className="z-50" />
+        <div className={`${isTablet ? 'scale-75' : 'scale-125'} origin-left`}>
+          <Logo imgClass={isTablet ? 'h-20' : 'h-16'} className="z-50" />
         </div>
         
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -86,10 +85,10 @@ const Navbar: React.FC = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden z-50"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden z-50"
+          onClick={() => setIsTabletMenuOpen(!isTabletMenuOpen)}
         >
-          {isMobileMenuOpen ? (
+          {isTabletMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
             <Menu className="h-6 w-6" />
@@ -98,8 +97,8 @@ const Navbar: React.FC = () => {
         
         {/* Mobile Menu - Updated to have consistent styling regardless of scroll position */}
         <div
-          className={`fixed inset-0 bg-white backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 md:hidden ${
-            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          className={`fixed inset-0 bg-white backdrop-blur-lg flex flex-col justify-center items-center transition-all duration-300 lg:hidden ${
+            isTabletMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
           style={{
             top: 0,

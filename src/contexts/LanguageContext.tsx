@@ -565,6 +565,9 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.solutions.security.benefits.4': 'Clear security policies ensure consistent implementation.',
     'faq.solutions.security.benefits.5': 'Ensures best security practices in code development.',
 
+    'notFound.title': 'Page Not Found',
+    'notFound.description': 'The page you are looking for does not exist or has been moved. Please check the URL or return to the homepage.',
+    'notFound.returnHome': 'Return to Homepage',
   },
   de: {
     'nav.home': 'Startseite',
@@ -1192,6 +1195,10 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.solutions.security.benefits.3': 'Regelmäßige Sicherheitsupdates minimieren Risiken.',
     'faq.solutions.security.benefits.4': 'Klare Sicherheitsrichtlinien sorgen für konsistente Implementierung.',
     'faq.solutions.security.benefits.5': 'Stellt sicher, dass der Code den besten Sicherheitspraktiken entspricht.',
+
+    'notFound.title': 'Seite nicht gefunden',
+    'notFound.description': 'Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.',
+    'notFound.returnHome': 'Zurück zur Startseite',
   }
 };
 

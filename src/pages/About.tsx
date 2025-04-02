@@ -61,7 +61,7 @@ const About = () => {
                 <div className="absolute inset-0 glass rounded-3xl border border-white/20 overflow-hidden">
                   <div className="h-full w-full flex items-center justify-center p-12">
                     <img 
-                      src="/lovable-uploads/cybethics.png"
+                      src="/media/cybethics.png"
                       alt={t('about.logoAlt')}
                       className="w-full h-auto"
                     />

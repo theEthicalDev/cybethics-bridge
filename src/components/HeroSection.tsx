@@ -58,7 +58,7 @@ const ContactPartner: React.FC = () => {
         </div>
 
         <Avatar className="h-36 w-36 border-2 border-primary/20 flex-shrink-0">
-          <AvatarImage src="/lovable-uploads/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic"/>
+          <AvatarImage src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic"/>
           <AvatarFallback>DK</AvatarFallback>
         </Avatar>
 
@@ -125,7 +125,7 @@ const HeroSection: React.FC = () => {
               <div className="flex flex-col gap-6">
                 <div className="h-64 items-center justify-center hidden lg:flex">
                   <img
-                    src="/lovable-uploads/cybethics.png"
+                    src="/media/cybethics.png"
                     alt="Cybethics Logo"
                     className="w-3/4 h-auto"
                   />
