@@ -1,13 +1,11 @@
-
 import React, {useEffect, useState} from 'react';
-import { useLocation } from 'react-router-dom';
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, HashRouter } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import { LoadingProvider } from "./contexts/LoadingContext";
+import {HashRouter, Route, Routes, useLocation} from 'react-router-dom';
+import {Toaster} from "@/components/ui/toaster";
+import {Toaster as Sonner} from "@/components/ui/sonner";
+import {TooltipProvider} from "@/components/ui/tooltip";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {LanguageProvider} from "./contexts/LanguageContext";
+import {LoadingProvider} from "./contexts/LoadingContext";
 import PageWrapper from "./components/PageWrapper";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -17,9 +15,12 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import LocalServices from "./pages/LocalServices.tsx";
+import Privacy from './pages/Privacy.tsx';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingSpinner from '@/components/LoadingSpinner.tsx';
+import Terms from '@/pages/Terms.tsx';
+import Imprint from '@/pages/Imprint.tsx';
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,9 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/location" element={<LocalServices />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/imprint" element={<Imprint />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

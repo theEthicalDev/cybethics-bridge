@@ -322,6 +322,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
+    'footer.imprint': 'Imprint',
     'footer.about': 'Crafting customized digital solutions with integrity, putting ethics at the core of the development approach',
 
     'stats.successfulProjects': 'Successful Projects',
@@ -948,6 +949,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.rights': 'Alle Rechte vorbehalten',
     'footer.privacy': 'Datenschutzerklärung',
     'footer.terms': 'Nutzungsbedingungen',
+    'footer.imprint': 'Impressum',
     'footer.about': 'Individuelle digitale Lösungen mit Integrität entwickeln und Ethik zum Kern unseres Entwicklungsansatzes machen',
 
     'stats.successfulProjects': 'Erfolgreiche Projekte',
@@ -1208,7 +1210,7 @@ const translations: Record<Language, Record<string, string>> = {
     'notFound.returnHome': 'Zurück zur Startseite',
 
     'local.hero.title': 'Wirtschaftsstandort Zentralschweiz: Software & Automatisierung',
-    'local.hero.subtitle': 'Professionelle Softwareentwicklung, Automatisierung, Prozessoptimierung & DevOps in Luzern, Zug und der Umgebung Zentralschweiz.',
+    'local.hero.subtitle': 'Professionelle Softwareentwicklung, Automatisierung, Prozessoptimierung & DevOps in Luzern, Zug und der Umgebung Zentralschweiz',
     'local.services.title': 'Unsere Dienstleistungen in der Zentralschweiz',
     'local.services.subtitle': 'Als Partner aus der Region bieten wir einzigartige Vorteile für Unternehmen in der Zentralschweiz.',
     'local.advantages.title': 'Vorteile eines lokalen IT-Partners',

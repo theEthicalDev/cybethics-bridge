@@ -95,6 +95,9 @@ const Footer: React.FC = () => {
             <Link to="/terms" className="text-sm text-text/60 hover:text-primary transition-colors">
               {t('footer.terms')}
             </Link>
+            <Link to="/imprint" className="text-sm text-text/60 hover:text-primary transition-colors">
+              {t('footer.imprint')}
+            </Link>
           </div>
         </div>
       </div>
