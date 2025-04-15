@@ -21,6 +21,7 @@ import Footer from "./components/Footer";
 import LoadingSpinner from '@/components/LoadingSpinner.tsx';
 import Terms from '@/pages/Terms.tsx';
 import Imprint from '@/pages/Imprint.tsx';
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -60,11 +61,11 @@ const AppContent = () => {
         </main>
       </PageWrapper>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
 
-// Using HashRouter instead of BrowserRouter for mobile compatibility
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
