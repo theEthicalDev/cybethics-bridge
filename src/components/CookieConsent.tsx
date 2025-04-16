@@ -64,7 +64,7 @@ const CookieConsent = () => {
   const t = translations[language];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t z-50">
+    <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t z-50 max-w-full overflow-hidden">
       <div className="container max-w-7xl mx-auto">
         <Alert>
           <Info className="h-4 w-4" />

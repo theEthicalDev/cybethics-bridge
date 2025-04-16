@@ -31,6 +31,14 @@ const Projects = () => {
   const handleTagClick = (tag: string) => {
     setSelectedTag(prevTag => prevTag === tag ? null : tag);
   };
+  
+  // Scroll to project detail section
+  const scrollToProject = (projectId: string) => {
+    const element = document.getElementById(`project-${projectId}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const categories = [
     {id: 'all', label: 'All Projects', icon: <Code className="mr-2 h-4 w-4"/>, color: 'from-primary to-purple-600'},
@@ -165,7 +173,7 @@ const Projects = () => {
                             </div>
                             <button
                               className="text-sm text-primary font-medium flex items-center group"
-                              onClick={() => window.open(`#project-${project.id}`, '_self')}
+                              onClick={() => scrollToProject(project.id)}
                             >
                               {t('faq.solutions.viewDetails')}
                               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
