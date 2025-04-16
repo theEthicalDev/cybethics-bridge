@@ -173,7 +173,7 @@ const Projects = () => {
                             </div>
                             <button
                               className="text-sm text-primary font-medium flex items-center group"
-                              onClick={() => scrollToProject(project.id)}
+                              onClick={() => scrollToProject(project.id.toString())}
                             >
                               {t('faq.solutions.viewDetails')}
                               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
