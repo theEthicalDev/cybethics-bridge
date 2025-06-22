@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -35,6 +34,9 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/projects" className="text-text/80 hover:text-primary transition-colors">{t('nav.projects')}</Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-text/80 hover:text-primary transition-colors">{t('nav.pricing')}</Link>
               </li>
               <li>
                 <Link to="/about" className="text-text/80 hover:text-primary transition-colors">{t('nav.about')}</Link>
