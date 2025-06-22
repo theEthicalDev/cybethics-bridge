@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,27 +10,175 @@ import { Link } from 'react-router-dom';
 const ProjectCalculator = () => {
   const { t } = useLanguage();
   
-  const [complexity, setComplexity] = useState([3]);
-  const [features, setFeatures] = useState({
-    database: false,
-    authentication: false,
-    payment: false,
+  const [projectSize, setProjectSize] = useState('medium');
+  const [appTypes, setAppTypes] = useState({
+    web: false,
+    ios: false,
+    android: false,
+    desktop: false,
     api: false,
-    mobile: false,
+  });
+  
+  const [features, setFeatures] = useState({
+    // Users & Accounts
+    email_signup: false,
+    facebook_signup: false,
+    twitter_signup: false,
+    google_signup: false,
+    linkedin_signup: false,
+    github_signup: false,
+    invitation_emails: false,
+    multitenant: false,
+    
+    // User Generated Content
+    dashboard: false,
+    activity_feed: false,
+    file_upload: false,
+    profiles: false,
+    transactional_emails: false,
+    tags: false,
+    ratings: false,
+    media_processing: false,
+    search: false,
+    
+    // Dates & Locations
+    calendar: false,
+    map_display: false,
+    custom_markers: false,
+    bookings: false,
+    
+    // Social & Engagement
+    messaging: false,
+    forums: false,
+    social_sharing: false,
+    facebook_graph: false,
+    
+    // Billing & eCommerce
+    subscriptions: false,
+    payment: false,
+    cart: false,
+    marketplace: false,
+    product_mgmt: false,
+    
+    // Admin, Feedback & Analytics
     cms: false,
+    user_admin: false,
+    moderation: false,
+    intercom: false,
+    usage: false,
+    crash: false,
+    performance: false,
+    multilingual: false,
+    
+    // External APIs
+    third_party: false,
+    own_api: false,
+    sms: false,
+    phone_masking: false,
   });
 
   const calculateEstimate = () => {
-    let basePrice = complexity[0] * 2000;
+    let basePrice = 0;
     
-    if (features.database) basePrice += 3000;
-    if (features.authentication) basePrice += 2500;
-    if (features.payment) basePrice += 4000;
-    if (features.api) basePrice += 3500;
-    if (features.mobile) basePrice += 5000;
-    if (features.cms) basePrice += 3000;
+    // Base price by project size
+    switch (projectSize) {
+      case 'small':
+        basePrice = 5000;
+        break;
+      case 'medium':
+        basePrice = 15000;
+        break;
+      case 'large':
+        basePrice = 35000;
+        break;
+    }
+    
+    // App type multipliers
+    let appMultiplier = 1;
+    const selectedApps = Object.values(appTypes).filter(Boolean).length;
+    if (selectedApps > 1) {
+      appMultiplier = 1 + (selectedApps - 1) * 0.5;
+    }
+    if (appTypes.ios) appMultiplier += 0.3;
+    if (appTypes.android) appMultiplier += 0.3;
+    if (appTypes.desktop) appMultiplier += 0.4;
+    if (appTypes.api) appMultiplier += 0.2;
+    
+    basePrice *= appMultiplier;
+    
+    // Feature additions
+    const featurePrices = {
+      // Users & Accounts
+      email_signup: 1500,
+      facebook_signup: 800,
+      twitter_signup: 800,
+      google_signup: 800,
+      linkedin_signup: 800,
+      github_signup: 800,
+      invitation_emails: 1200,
+      multitenant: 5000,
+      
+      // User Generated Content
+      dashboard: 3000,
+      activity_feed: 2500,
+      file_upload: 2000,
+      profiles: 2000,
+      transactional_emails: 1500,
+      tags: 1000,
+      ratings: 1800,
+      media_processing: 4000,
+      search: 3000,
+      
+      // Dates & Locations
+      calendar: 3500,
+      map_display: 2500,
+      custom_markers: 2000,
+      bookings: 4000,
+      
+      // Social & Engagement
+      messaging: 4500,
+      forums: 3500,
+      social_sharing: 1500,
+      facebook_graph: 1000,
+      
+      // Billing & eCommerce
+      subscriptions: 5000,
+      payment: 4000,
+      cart: 2500,
+      marketplace: 8000,
+      product_mgmt: 3500,
+      
+      // Admin, Feedback & Analytics
+      cms: 3000,
+      user_admin: 2500,
+      moderation: 3000,
+      intercom: 1200,
+      usage: 2000,
+      crash: 1500,
+      performance: 2000,
+      multilingual: 3500,
+      
+      // External APIs
+      third_party: 2500,
+      own_api: 3500,
+      sms: 1500,
+      phone_masking: 1800,
+    };
 
-    return basePrice;
+    Object.entries(features).forEach(([key, value]) => {
+      if (value) {
+        basePrice += featurePrices[key as keyof typeof featurePrices] || 0;
+      }
+    });
+
+    return Math.round(basePrice);
+  };
+
+  const handleAppTypeToggle = (type: string) => {
+    setAppTypes(prev => ({
+      ...prev,
+      [type]: !prev[type as keyof typeof prev]
+    }));
   };
 
   const handleFeatureToggle = (feature: string) => {
@@ -40,6 +187,37 @@ const ProjectCalculator = () => {
       [feature]: !prev[feature as keyof typeof prev]
     }));
   };
+
+  const featureSections = [
+    {
+      key: 'users_accounts',
+      features: ['email_signup', 'facebook_signup', 'twitter_signup', 'google_signup', 'linkedin_signup', 'github_signup', 'invitation_emails', 'multitenant']
+    },
+    {
+      key: 'user_content',
+      features: ['dashboard', 'activity_feed', 'file_upload', 'profiles', 'transactional_emails', 'tags', 'ratings', 'media_processing', 'search']
+    },
+    {
+      key: 'dates_locations',
+      features: ['calendar', 'map_display', 'custom_markers', 'bookings']
+    },
+    {
+      key: 'social_engagement',
+      features: ['messaging', 'forums', 'social_sharing', 'facebook_graph']
+    },
+    {
+      key: 'billing_ecommerce',
+      features: ['subscriptions', 'payment', 'cart', 'marketplace', 'product_mgmt']
+    },
+    {
+      key: 'admin_analytics',
+      features: ['cms', 'user_admin', 'moderation', 'intercom', 'usage', 'crash', 'performance', 'multilingual']
+    },
+    {
+      key: 'external_apis',
+      features: ['third_party', 'own_api', 'sms', 'phone_masking']
+    }
+  ];
 
   return (
     <section className="py-16 bg-gray-50">
@@ -58,38 +236,58 @@ const ProjectCalculator = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
+              {/* Project Size Selection */}
               <div>
-                <label className="block text-sm font-medium mb-4">
-                  {t('pricing.calculator.complexity')}: {complexity[0]}/10
-                </label>
-                <Slider
-                  value={complexity}
-                  onValueChange={setComplexity}
-                  max={10}
-                  min={1}
-                  step={1}
-                  className="w-full"
-                />
-                <div className="flex justify-between text-xs text-text/60 mt-2">
-                  <span>{t('pricing.calculator.simple')}</span>
-                  <span>{t('pricing.calculator.complex')}</span>
+                <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.project_size')}</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {['small', 'medium', 'large'].map((size) => (
+                    <div
+                      key={size}
+                      className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
+                        projectSize === size ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                      onClick={() => setProjectSize(size)}
+                    >
+                      <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
+                      <div className="text-sm text-text/70 mt-1">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
+              {/* App Types */}
               <div>
-                <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.features')}</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {Object.entries(features).map(([key, value]) => (
+                <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.app_types')}</h4>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                  {Object.entries(appTypes).map(([key, value]) => (
                     <div key={key} className="flex items-center justify-between p-3 border rounded-lg">
-                      <span className="text-sm">{t(`pricing.calculator.feature_${key}`)}</span>
+                      <span className="text-sm">{t(`pricing.calculator.app_type_${key}`)}</span>
                       <Switch
                         checked={value}
-                        onCheckedChange={() => handleFeatureToggle(key)}
+                        onCheckedChange={() => handleAppTypeToggle(key)}
                       />
                     </div>
                   ))}
                 </div>
               </div>
+
+              {/* Feature Sections */}
+              {featureSections.map((section) => (
+                <div key={section.key}>
+                  <h4 className="text-lg font-medium mb-4">{t(`pricing.calculator.${section.key}`)}</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {section.features.map((feature) => (
+                      <div key={feature} className="flex items-center justify-between p-3 border rounded-lg">
+                        <span className="text-sm">{t(`pricing.calculator.${section.key}_${feature}`)}</span>
+                        <Switch
+                          checked={features[feature as keyof typeof features]}
+                          onCheckedChange={() => handleFeatureToggle(feature)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
 
               <div className="bg-primary/5 p-6 rounded-lg">
                 <div className="text-center">
