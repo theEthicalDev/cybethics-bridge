@@ -22,6 +22,7 @@ import LoadingSpinner from '@/components/LoadingSpinner.tsx';
 import Terms from '@/pages/Terms.tsx';
 import Imprint from '@/pages/Imprint.tsx';
 import CookieConsent from "./components/CookieConsent";
+import Pricing from "./pages/Pricing";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const AppContent = () => {
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
