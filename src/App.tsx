@@ -69,25 +69,20 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <div>
   <QueryClientProvider client={queryClient}>
-    hello1
     <LanguageProvider>
       <TooltipProvider>
-          hello2
         <Toaster />
         <Sonner />
         <HashRouter>
           <ScrollToTop />
           <LoadingProvider>
-            hello3
-  {/*          <AppContent />*/}
+            <AppContent />
           </LoadingProvider>
         </HashRouter>
       </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>
-  </div>
 );
 
 export default App;
