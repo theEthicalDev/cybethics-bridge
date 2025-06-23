@@ -42,7 +42,7 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
       <PageWrapper>
         <main className="flex-grow">
@@ -69,20 +69,25 @@ const AppContent = () => {
 };
 
 const App = () => (
+  <div>
   <QueryClientProvider client={queryClient}>
+    hello1
     <LanguageProvider>
       <TooltipProvider>
+          hello2
         <Toaster />
         <Sonner />
         <HashRouter>
           <ScrollToTop />
           <LoadingProvider>
-            <AppContent />
+            hello3
+  {/*          <AppContent />*/}
           </LoadingProvider>
         </HashRouter>
       </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>
+  </div>
 );
 
 export default App;
