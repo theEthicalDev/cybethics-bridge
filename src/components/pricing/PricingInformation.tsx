@@ -10,7 +10,7 @@ const PricingInformation = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <div className="max-w-4xl mx-auto">
+        <div className="mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium mb-4">{t('pricing.information.title')}</h2>
             <p className="text-lg text-text/80">{t('pricing.information.subtitle')}</p>

@@ -835,6 +835,7 @@
     "calculator": {
       "title": "Project Calculator",
       "subtitle": "Get an initial cost estimate for your software project based on your specific requirements.",
+      "estimate": "Estimation",
       "project_calculator": "Interactive Project Calculator",
       "project_size": "Project Size",
       "project_size_pages": "Number of pages as a rough guideline",

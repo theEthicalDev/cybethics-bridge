@@ -11,20 +11,20 @@
   "pricing": {
     "badge": "Transparente Preisgestaltung",
     "title": "Faire und transparente Preise für Ihre digitalen Projekte",
-    "subtitle": "Erhalten Sie einen ersten Eindruck der Kosten für Ihr Softwareprojekt mit unserem interaktiven Kalkulator und wählen Sie das passende Wartungspaket.",
+    "subtitle": "Erhalten Sie einen ersten Eindruck der Kosten für Ihr Softwareprojekt mit unserem interaktiven Kalkulator und wählen Sie das passende Wartungspaket",
     "information": {
       "title": "Wie wir Software-Entwicklung kalkulieren",
-      "subtitle": "Verstehen Sie unseren transparenten Ansatz zur Projektbewertung und warum Wartung entscheidend ist.",
+      "subtitle": "Verstehen Sie unseren transparenten Ansatz zur Projektbewertung und warum Wartung entscheidend ist",
       "estimation": {
         "title": "Projektschätzung",
-        "description": "Unsere Kostenschätzungen basieren auf bewährten Methoden und jahrelanger Erfahrung in der Softwareentwicklung.",
+        "description": "Unsere Kostenschätzungen basieren auf bewährten Methoden und jahrelanger Erfahrung in der Softwareentwicklung",
         "complexity": "Projektgrösse und Komplexität der Anforderungen",
         "requirements": "Anzahl und Art der gewünschten Funktionen",
         "accuracy": "Genauigkeit steigt mit detaillierteren Anforderungen"
       },
       "maintenance": {
         "title": "Wartung & Support",
-        "description": "Nicht alle Projekte benötigen kontinuierliche Wartung, aber für geschäftskritische Anwendungen ist sie unerlässlich.",
+        "description": "Nicht alle Projekte benötigen kontinuierliche Wartung, aber für geschäftskritische Anwendungen ist sie unerlässlich",
         "when_needed": "Geschäftskritische Anwendungen mit regelmässigen Updates",
         "when_not_needed": "Einfache Websites oder einmalige Tools",
         "benefits": "Sicherheit, Performance und kontinuierliche Weiterentwicklung"
@@ -32,7 +32,8 @@
     },
     "calculator": {
       "title": "Projekt-Kalkulator",
-      "subtitle": "Erhalten Sie eine erste Kostenschätzung für Ihr Softwareprojekt basierend auf Ihren spezifischen Anforderungen.",
+      "subtitle": "Erhalten Sie eine erste Kostenschätzung für Ihr Softwareprojekt basierend auf Ihren spezifischen Anforderungen",
+      "estimate": "Schätzung",
       "project_calculator": "Interaktiver Projektkalkulator",
       "project_size": "Projektgrösse",
       "project_size_pages": "Anzahl Seiten als grobe Richtlinie",
