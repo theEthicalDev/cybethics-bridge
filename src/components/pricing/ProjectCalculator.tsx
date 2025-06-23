@@ -12,8 +12,8 @@ const ProjectCalculator = () => {
   const [appTypes, setAppTypes] = useState({
     web: false,
     ios: false,
-    android: false,
     desktop: false,
+    android: false,
   });
   
   const [features, setFeatures] = useState({
@@ -80,13 +80,13 @@ const ProjectCalculator = () => {
     // Base price by project size
     switch (projectSize) {
       case 'small':
-        basePrice = 5000;
+        basePrice = 3500;
         break;
       case 'medium':
-        basePrice = 15000;
+        basePrice = 12000;
         break;
       case 'large':
-        basePrice = 35000;
+        basePrice = 27000;
         break;
     }
 
