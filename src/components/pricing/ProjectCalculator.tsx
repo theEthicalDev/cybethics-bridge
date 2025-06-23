@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { Calculator } from 'lucide-react';
+import { Calculator, Pages } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProjectCalculator = () => {
@@ -228,84 +227,100 @@ const ProjectCalculator = () => {
             <p className="text-lg text-text/80">{t('pricing.calculator.subtitle')}</p>
           </div>
 
-          <Card className="border-0 shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calculator className="h-5 w-5 text-primary" />
-                {t('pricing.calculator.project_calculator')}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-8">
-              {/* Project Size Selection */}
-              <div>
-                <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.project_size')}</h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {['small', 'medium', 'large'].map((size) => (
-                    <div
-                      key={size}
-                      className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
-                        projectSize === size ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300'
-                      }`}
-                      onClick={() => setProjectSize(size)}
-                    >
-                      <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
-                      <div className="text-sm text-text/70 mt-1">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
-                    </div>
-                  ))}
+          <div className="relative">
+            {/* Sticky Total Estimate */}
+            <div className="fixed top-24 right-4 z-10 bg-white border-2 border-primary/20 rounded-lg p-4 shadow-lg min-w-[200px]">
+              <div className="text-center">
+                <div className="text-sm text-text/70 mb-1">{t('pricing.calculator.estimate')}</div>
+                <div className="text-2xl font-bold text-primary">
+                  CHF {calculateEstimate().toLocaleString()}
                 </div>
               </div>
+            </div>
 
-              {/* App Types */}
-              <div>
-                <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.app_types')}</h4>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  {Object.entries(appTypes).map(([key, value]) => (
-                    <div key={key} className="flex items-center justify-between p-3 border rounded-lg">
-                      <span className="text-sm">{t(`pricing.calculator.app_type_${key}`)}</span>
-                      <Switch
-                        checked={value}
-                        onCheckedChange={() => handleAppTypeToggle(key)}
-                      />
-                    </div>
-                  ))}
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calculator className="h-5 w-5 text-primary" />
+                  {t('pricing.calculator.project_calculator')}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-8">
+                {/* Project Size Selection */}
+                <div>
+                  <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.project_size')}</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {['small', 'medium', 'large'].map((size) => (
+                      <div
+                        key={size}
+                        className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
+                          projectSize === size ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                        onClick={() => setProjectSize(size)}
+                      >
+                        <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
+                        <div className="text-sm text-text/70 mt-1">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
+                        <div className="flex items-center gap-1 mt-2 text-xs text-primary/70">
+                          <Pages className="h-3 w-3" />
+                          <span>{t(`pricing.calculator.project_size_${size}_pages`)}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Feature Sections */}
-              {featureSections.map((section) => (
-                <div key={section.key}>
-                  <h4 className="text-lg font-medium mb-4">{t(`pricing.calculator.${section.key}`)}</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {section.features.map((feature) => (
-                      <div key={feature} className="flex items-center justify-between p-3 border rounded-lg">
-                        <span className="text-sm">{t(`pricing.calculator.${section.key}_${feature}`)}</span>
+                {/* App Types */}
+                <div>
+                  <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.app_types')}</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    {Object.entries(appTypes).map(([key, value]) => (
+                      <div key={key} className="flex items-center justify-between p-3 border rounded-lg">
+                        <span className="text-sm">{t(`pricing.calculator.app_type_${key}`)}</span>
                         <Switch
-                          checked={features[feature as keyof typeof features]}
-                          onCheckedChange={() => handleFeatureToggle(feature)}
+                          checked={value}
+                          onCheckedChange={() => handleAppTypeToggle(key)}
                         />
                       </div>
                     ))}
                   </div>
                 </div>
-              ))}
 
-              <div className="bg-primary/5 p-6 rounded-lg">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    CHF {calculateEstimate().toLocaleString()}
+                {/* Feature Sections */}
+                {featureSections.map((section) => (
+                  <div key={section.key}>
+                    <h4 className="text-lg font-medium mb-4">{t(`pricing.calculator.${section.key}`)}</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {section.features.map((feature) => (
+                        <div key={feature} className="flex items-center justify-between p-3 border rounded-lg">
+                          <span className="text-sm">{t(`pricing.calculator.${section.key}_${feature}`)}</span>
+                          <Switch
+                            checked={features[feature as keyof typeof features]}
+                            onCheckedChange={() => handleFeatureToggle(feature)}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-sm text-text/70 mb-4">
-                    <strong>{t('pricing.calculator.disclaimer_bold')}</strong> {t('pricing.calculator.disclaimer')}
-                  </p>
-                  <Link to="/contact">
-                    <Button className="bg-primary hover:bg-primary/90">
-                      {t('pricing.calculator.cta')}
-                    </Button>
-                  </Link>
+                ))}
+
+                <div className="bg-primary/5 p-6 rounded-lg">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      CHF {calculateEstimate().toLocaleString()}
+                    </div>
+                    <p className="text-sm text-text/70 mb-4">
+                      <strong>{t('pricing.calculator.disclaimer_bold')}</strong> {t('pricing.calculator.disclaimer')}
+                    </p>
+                    <Link to="/contact">
+                      <Button className="bg-primary hover:bg-primary/90">
+                        {t('pricing.calculator.cta')}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
