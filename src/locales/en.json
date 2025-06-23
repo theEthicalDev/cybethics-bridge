@@ -852,7 +852,6 @@
       "app_type_ios": "iOS",
       "app_type_android": "Android",
       "app_type_desktop": "Desktop",
-      "app_type_api": "API",
       "users_accounts": "Users & Accounts",
       "users_accounts_email_signup": "Email/Password Sign Up",
       "users_accounts_facebook_signup": "Facebook Sign Up",
