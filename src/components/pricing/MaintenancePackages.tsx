@@ -53,7 +53,7 @@ const MaintenancePackages = () => {
             {packages.map((pkg) => {
               const IconComponent = pkg.icon;
               return (
-                <Card key={pkg.id} className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${pkg.popular ? 'ring-2 ring-primary scale-105' : ''}`}>
+                <Card key={pkg.id} className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${pkg.popular ? 'ring-2 ring-primary scale-105' : ''} flex flex-col`}>
                   {pkg.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                       <Badge className="bg-primary text-white px-4 py-1.5 text-sm font-medium">
@@ -79,8 +79,8 @@ const MaintenancePackages = () => {
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4">
-                    <ul className="space-y-3">
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
+                    <ul className="space-y-3 flex-1">
                       {Array.from({ length: pkg.id === 'basic' ? 2 : pkg.id === 'secure' ? 5 : 6 }, (_, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <span className="text-green-500 font-bold text-lg">✓</span>
@@ -89,7 +89,7 @@ const MaintenancePackages = () => {
                       ))}
                     </ul>
                     
-                    <div className="pt-6">
+                    <div className="mt-auto pt-6">
                       <Link to="/contact">
                         <Button 
                           className={`w-full py-3 text-base font-medium ${

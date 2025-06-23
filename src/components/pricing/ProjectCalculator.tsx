@@ -1,15 +1,15 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
 import { Calculator, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProjectCalculator = () => {
   const { t } = useLanguage();
   
-  const [projectSize, setProjectSize] = useState('medium');
+  const [projectSize, setProjectSize] = useState('small');
   const [appTypes, setAppTypes] = useState({
     web: false,
     ios: false,
@@ -219,7 +219,7 @@ const ProjectCalculator = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="calculator-section">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -227,99 +227,121 @@ const ProjectCalculator = () => {
             <p className="text-lg text-text/80">{t('pricing.calculator.subtitle')}</p>
           </div>
 
-          <div className="relative">
-            {/* Sticky Total Estimate */}
-            <div className="fixed top-24 right-4 z-10 bg-white border-2 border-primary/20 rounded-lg p-4 shadow-lg min-w-[200px]">
-              <div className="text-center">
-                <div className="text-sm text-text/70 mb-1">{t('pricing.calculator.estimate')}</div>
-                <div className="text-2xl font-bold text-primary">
-                  CHF {calculateEstimate().toLocaleString()}
-                </div>
-              </div>
-            </div>
-
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calculator className="h-5 w-5 text-primary" />
-                  {t('pricing.calculator.project_calculator')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-8">
-                {/* Project Size Selection */}
-                <div>
-                  <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.project_size')}</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {['small', 'medium', 'large'].map((size) => (
-                      <div
-                        key={size}
-                        className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
-                          projectSize === size ? 'border-primary bg-primary/5' : 'border-gray-200 hover:border-gray-300'
-                        }`}
-                        onClick={() => setProjectSize(size)}
-                      >
-                        <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
-                        <div className="text-sm text-text/70 mt-1">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
-                        <div className="flex items-center gap-1 mt-2 text-xs text-primary/70">
-                          <FileText className="h-3 w-3" />
-                          <span>{t(`pricing.calculator.project_size_${size}_pages`)}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* App Types */}
-                <div>
-                  <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.app_types')}</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    {Object.entries(appTypes).map(([key, value]) => (
-                      <div key={key} className="flex items-center justify-between p-3 border rounded-lg">
-                        <span className="text-sm">{t(`pricing.calculator.app_type_${key}`)}</span>
-                        <Switch
-                          checked={value}
-                          onCheckedChange={() => handleAppTypeToggle(key)}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Feature Sections */}
-                {featureSections.map((section) => (
-                  <div key={section.key}>
-                    <h4 className="text-lg font-medium mb-4">{t(`pricing.calculator.${section.key}`)}</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {section.features.map((feature) => (
-                        <div key={feature} className="flex items-center justify-between p-3 border rounded-lg">
-                          <span className="text-sm">{t(`pricing.calculator.${section.key}_${feature}`)}</span>
-                          <Switch
-                            checked={features[feature as keyof typeof features]}
-                            onCheckedChange={() => handleFeatureToggle(feature)}
-                          />
+          <div className="flex gap-8 relative">
+            {/* Main Calculator */}
+            <div className="flex-1">
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Calculator className="h-5 w-5 text-primary" />
+                    {t('pricing.calculator.project_calculator')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Project Size Selection */}
+                  <div>
+                    <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.project_size')}</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {['small', 'medium', 'large'].map((size) => (
+                        <div
+                          key={size}
+                          className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md ${
+                            projectSize === size 
+                              ? 'border-primary bg-primary/10 shadow-md transform scale-105' 
+                              : 'border-gray-200 hover:border-gray-300'
+                          }`}
+                          onClick={() => setProjectSize(size)}
+                        >
+                          <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
+                          <div className="text-sm text-text/70 mt-1 mb-3">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
+                          <div className="flex items-center gap-1 text-xs text-primary/70 mt-auto">
+                            <FileText className="h-3 w-3" />
+                            <span>{t(`pricing.calculator.project_size_${size}_pages`)}</span>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
-                ))}
 
-                <div className="bg-primary/5 p-6 rounded-lg">
+                  {/* App Types */}
+                  <div>
+                    <h4 className="text-lg font-medium mb-4">{t('pricing.calculator.app_types')}</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                      {Object.entries(appTypes).map(([key, value]) => (
+                        <div 
+                          key={key} 
+                          className={`p-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md ${
+                            value 
+                              ? 'border-primary bg-primary/10 shadow-md' 
+                              : 'border-gray-200 hover:border-gray-300'
+                          }`}
+                          onClick={() => handleAppTypeToggle(key)}
+                        >
+                          <span className="text-sm font-medium">{t(`pricing.calculator.app_type_${key}`)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Feature Sections */}
+                  {featureSections.map((section) => (
+                    <div key={section.key}>
+                      <h4 className="text-lg font-medium mb-4">{t(`pricing.calculator.${section.key}`)}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {section.features.map((feature) => (
+                          <div 
+                            key={feature} 
+                            className={`p-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md ${
+                              features[feature as keyof typeof features]
+                                ? 'border-primary bg-primary/10 shadow-md'
+                                : 'border-gray-200 hover:border-gray-300'
+                            }`}
+                            onClick={() => handleFeatureToggle(feature)}
+                          >
+                            <span className="text-sm font-medium">{t(`pricing.calculator.${section.key}_${feature}`)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+
+                  <div className="bg-primary/5 p-6 rounded-lg">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        CHF {calculateEstimate().toLocaleString()}
+                      </div>
+                      <p className="text-sm text-text/70 mb-4">
+                        <strong>{t('pricing.calculator.disclaimer_bold')}</strong> {t('pricing.calculator.disclaimer')}
+                      </p>
+                      <Link to="/contact">
+                        <Button className="bg-primary hover:bg-primary/90">
+                          {t('pricing.calculator.cta')}
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sticky Total Estimate - Only visible within calculator section */}
+            <div className="w-64 relative">
+              <div className="sticky top-24">
+                <div className="bg-white border-2 border-primary/20 rounded-lg p-6 shadow-lg">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">
+                    <div className="text-sm text-text/70 mb-2">{t('pricing.calculator.estimate')}</div>
+                    <div className="text-3xl font-bold text-primary mb-4">
                       CHF {calculateEstimate().toLocaleString()}
                     </div>
-                    <p className="text-sm text-text/70 mb-4">
-                      <strong>{t('pricing.calculator.disclaimer_bold')}</strong> {t('pricing.calculator.disclaimer')}
-                    </p>
                     <Link to="/contact">
-                      <Button className="bg-primary hover:bg-primary/90">
+                      <Button className="w-full bg-primary hover:bg-primary/90">
                         {t('pricing.calculator.cta')}
                       </Button>
                     </Link>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
