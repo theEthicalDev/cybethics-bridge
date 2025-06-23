@@ -195,7 +195,7 @@ const DetailedServiceTabs = () => {
 
   return (
     <section className="bg-gray-50">
-      <div className="container pb-12">
+      <div className="container">
         {/*<div className="text-center max-w-2xl mx-auto mb-16">*/}
         {/*  <h2 className="mb-4">{t('services.detailSubtitle')}</h2>*/}
         {/*  <p className="text-lg text-text/80">*/}
