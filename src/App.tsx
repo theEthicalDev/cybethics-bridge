@@ -42,7 +42,7 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <PageWrapper>
         <main className="flex-grow">
