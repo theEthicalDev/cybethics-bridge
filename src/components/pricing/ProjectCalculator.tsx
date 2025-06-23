@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
-import { Calculator, Pages } from 'lucide-react';
+import { Calculator, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ProjectCalculator = () => {
@@ -261,7 +261,7 @@ const ProjectCalculator = () => {
                         <div className="font-medium">{t(`pricing.calculator.project_size_${size}`)}</div>
                         <div className="text-sm text-text/70 mt-1">{t(`pricing.calculator.project_size_${size}_desc`)}</div>
                         <div className="flex items-center gap-1 mt-2 text-xs text-primary/70">
-                          <Pages className="h-3 w-3" />
+                          <FileText className="h-3 w-3" />
                           <span>{t(`pricing.calculator.project_size_${size}_pages`)}</span>
                         </div>
                       </div>
