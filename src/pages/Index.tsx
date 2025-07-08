@@ -220,12 +220,11 @@ const Index = () => {
               <p className="text-sm text-text/60 mb-8">
                 {t('seo.softwareentwicklung.contact')}
                 <Link to="/services" className="text-primary hover:underline">{t('seo.softwareentwicklung.webDevelopment')}</Link>,
-                <Link to="/services" className="text-primary hover:underline ml-1">{t('seo.softwareentwicklung.api')}</Link>
-                <Link to="/services"
-                      className="text-primary hover:underline ml-1">{t('seo.softwareentwicklung.projectConsulting')}</Link> {t('seo.softwareentwicklung.or')}
-                <Link to="/service" className="text-primary hover:underline ml-1">{t('seo.softwareentwicklung.customSolutions')}</Link>.
-                {t('seo.softwareentwicklung.readMore1')} <Link to="/projects"
-                                                               className="text-primary hover:underline">{t('seo.softwareentwicklung.readMore2')}</Link>.
+                <Link to="/services" className="text-primary hover:underline ml-1"> {t('seo.softwareentwicklung.api')}</Link>,
+                <Link to="/services" className="text-primary hover:underline ml-1"> {t('seo.softwareentwicklung.projectConsulting')} </Link>
+                {t('seo.softwareentwicklung.or')}
+                <Link to="/service" className="text-primary hover:underline ml-1"> {t('seo.softwareentwicklung.customSolutions')}</Link>.
+                {t('seo.softwareentwicklung.readMore1')} <Link to="/projects" className="text-primary hover:underline">{t('seo.softwareentwicklung.readMore2')}</Link>.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button asChild variant="outline" size="sm">
@@ -256,11 +255,11 @@ const Index = () => {
                 {t('seo.automatisierung.info1')}
                 <Link to="/faq" className="text-primary hover:underline">{t('seo.automatisierung.faq')}</Link>
                 {t('seo.automatisierung.info2')}
-                <Link to="/pricing" className="text-primary hover:underline ml-1">{t('seo.automatisierung.freeConsulting')}</Link>.
+                <Link to="/contact" className="text-primary hover:underline ml-1">{t('seo.automatisierung.freeConsulting')}</Link>.
                 {t('seo.automatisierung.info3')}
                 <Link to="/about" className="text-primary hover:underline">{t('seo.automatisierung.team')}</Link>
                 {t('seo.automatisierung.info4')}
-                <Link to="/services" className="text-primary hover:underline ml-1">{t('seo.automatisierung.workingStyle')}</Link>.
+                <Link to="/about" className="text-primary hover:underline ml-1">{t('seo.automatisierung.workingStyle')}</Link>.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button asChild variant="outline" size="sm">

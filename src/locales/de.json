@@ -7,12 +7,14 @@
       "imageAlt": "Moderne Softwareentwicklung und Webapplikationen von Cybethics",
       "cta": "Softwareentwicklung erkunden",
       "contact": "Unsere Dienstleistungen umfassen",
+      "softwareDevelopment": "Softwareentwicklung",
       "webDevelopment": "Webentwicklung",
       "api": "API-Entwicklung",
       "projectConsulting": "Projektberatung",
       "customSolutions": "individuelle Lösungen",
       "readMore1": "Erfahrt mehr über unsere",
-      "readMore2": "erfolgreich umgesetzten Projekte"
+      "readMore2": "erfolgreich umgesetzten Projekte",
+      "or": "oder"
     },
     "automatisierung": {
       "title": "Geschäftsprozess-Automatisierung für mehr Effizienz",
@@ -22,11 +24,11 @@
       "cta": "Automatisierung entdecken",
       "info1": "Besuchen Sie unsere ",
       "faq": "FAQ-Seite",
-      "info2": " für häufige Fragen zur Automatisierung oder kontaktieren Sie uns für eine ",
+      "info2": "für häufige Fragen zur Automatisierung oder kontaktieren Sie uns für eine",
       "freeConsulting": "kostenlose Beratung",
-      "info3": ". Lesen Sie mehr ",
+      "info3": "Lesen Sie mehr",
       "team": "über unser Team",
-      "info4": " und unsere ",
+      "info4": "und unsere",
       "workingStyle": "Arbeitsweise"
     },
     "contact": {
