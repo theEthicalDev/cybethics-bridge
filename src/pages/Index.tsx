@@ -199,6 +199,84 @@ const Index = () => {
         </div>
       </section>
       
+      {/* SEO Content Section */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <img
+                src="/media/project-ai-backend.png"
+                alt={t('seo.softwareentwicklung.imageAlt')}
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-6">{t('seo.softwareentwicklung.title')}</h2>
+                <p className="text-lg text-text/80 mb-6">
+                {t('seo.softwareentwicklung.description')}
+              </p>
+              <p className="text-base text-text/70 mb-4">
+                {t('seo.softwareentwicklung.details')}
+              </p>
+              <p className="text-sm text-text/60 mb-8">
+                Unsere Dienstleistungen umfassen <Link to="/services" className="text-primary hover:underline">Webentwicklung</Link>, 
+                <Link to="/services" className="text-primary hover:underline ml-1">API-Entwicklung</Link>, 
+                <Link to="/pricing" className="text-primary hover:underline ml-1">Projektberatung</Link> und 
+                <Link to="/contact" className="text-primary hover:underline ml-1">individuelle Lösungen</Link>. 
+                Erfahren Sie mehr über unsere <Link to="/projects" className="text-primary hover:underline">erfolgreich umgesetzten Projekte</Link>.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/services">{t('seo.softwareentwicklung.cta')}</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/contact">{t('seo.contact.cta')}</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Automation Content Section */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-6">{t('seo.automatisierung.title')}</h2>
+              <p className="text-lg text-text/80 mb-6">
+                {t('seo.automatisierung.description')}
+              </p>
+              <p className="text-base text-text/70 mb-4">
+                {t('seo.automatisierung.details')}
+              </p>
+              <p className="text-sm text-text/60 mb-8">
+                Besuchen Sie unsere <Link to="/faq" className="text-primary hover:underline">FAQ-Seite</Link> für 
+                häufige Fragen zur Automatisierung oder kontaktieren Sie uns für eine 
+                <Link to="/pricing" className="text-primary hover:underline ml-1">kostenlose Beratung</Link>. 
+                Lesen Sie mehr <Link to="/about" className="text-primary hover:underline">über unser Team</Link> und unsere 
+                <Link to="/services" className="text-primary hover:underline ml-1">Arbeitsweise</Link>.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/services">{t('seo.automatisierung.cta')}</Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/projects">{t('seo.projects.cta')}</Link>
+                </Button>
+              </div>
+            </div>
+            <div>
+              <img
+                src="/media/project-powerautomate.png"
+                alt={t('seo.automatisierung.imageAlt')}
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Local Business Info Section */}
       <LocalBusinessInfo />
       

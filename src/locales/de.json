@@ -1,4 +1,26 @@
 {
+  "seo": {
+    "softwareentwicklung": {
+      "title": "Professionelle Softwareentwicklung in der Zentralschweiz",
+      "description": "Cybethics ist Ihr Partner für massgeschneiderte Softwareentwicklung in Luzern, Zug und der gesamten Zentralschweiz. Wir entwickeln moderne, skalierbare Webanwendungen und automatisieren Ihre Geschäftsprozesse.",
+      "details": "Unsere erfahrenen Entwickler nutzen bewährte Technologien und agile Methoden, um Ihnen Softwarelösungen zu liefern, die Ihr Unternehmen voranbringen. Von der Konzeption bis zur Wartung begleiten wir Sie durch den gesamten Entwicklungsprozess.",
+      "imageAlt": "Moderne Softwareentwicklung und Webapplikationen von Cybethics",
+      "cta": "Softwareentwicklung erkunden"
+    },
+    "automatisierung": {
+      "title": "Geschäftsprozess-Automatisierung für mehr Effizienz",
+      "description": "Steigern Sie die Effizienz Ihres Unternehmens mit intelligenter Automatisierung. Cybethics entwickelt maßgeschneiderte Automatisierungslösungen, die repetitive Aufgaben eliminieren und Ihre Mitarbeiter entlasten.",
+      "details": "Durch die Automatisierung von Workflows, Datenverarbeitung und Systemintegrationen können Sie Kosten senken, Fehler reduzieren und sich auf das Wesentliche konzentrieren. Unsere Automatisierungslösungen sind skalierbar und wachsen mit Ihrem Unternehmen mit.",
+      "imageAlt": "Workflow-Automatisierung und Prozessoptimierung",
+      "cta": "Automatisierung entdecken"
+    },
+    "contact": {
+      "cta": "Beratung anfragen"
+    },
+    "projects": {
+      "cta": "Projekte ansehen"
+    }
+  },
   "nav": {
     "home": "Startseite",
     "services": "Dienstleistungen",

@@ -1,4 +1,26 @@
 {
+  "seo": {
+    "softwareentwicklung": {
+      "title": "Professional Software Development in Central Switzerland",
+      "description": "Cybethics is your partner for custom software development in Lucerne, Zug and throughout Central Switzerland. We develop modern, scalable web applications and automate your business processes.",
+      "details": "Our experienced developers use proven technologies and agile methods to deliver software solutions that advance your business. From conception to maintenance, we guide you through the entire development process.",
+      "imageAlt": "Modern software development and web applications by Cybethics",
+      "cta": "Explore Software Development"
+    },
+    "automatisierung": {
+      "title": "Business Process Automation for Greater Efficiency",
+      "description": "Increase your company's efficiency with intelligent automation. Cybethics develops customized automation solutions that eliminate repetitive tasks and relieve your employees.",
+      "details": "By automating workflows, data processing and system integrations, you can reduce costs, minimize errors and focus on what matters most. Our automation solutions are scalable and grow with your business.",
+      "imageAlt": "Workflow automation and process optimization",
+      "cta": "Discover Automation"
+    },
+    "contact": {
+      "cta": "Request Consultation"
+    },
+    "projects": {
+      "cta": "View Projects"
+    }
+  },
   "nav": {
     "home": "Home",
     "services": "Services",
