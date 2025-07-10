@@ -14,7 +14,7 @@ const PricingHero = () => {
             <Calculator className="inline-block mr-2 h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary">{t('pricing.badge')}</span>
           </div>
-          <h1 className="mb-6">{t('pricing.title')}</h1>
+          <p className="mb-6 text-xl">{t('pricing.title')}</p>
           <p className="text-lg md:text-xl text-text/80 max-w-2xl mx-auto">
             {t('pricing.subtitle')}
           </p>

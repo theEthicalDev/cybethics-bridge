@@ -95,9 +95,9 @@ const HeroSection: React.FC = () => {
                     Cybethics
                   </span>
                 </div>
-                <h1 className="mb-4 leading-tight text-balance">
+                <p className="mb-4 leading-tight text-balance text-3xl">
                   {t('hero.title')}
-                </h1>
+                </p>
                 <p className="text-lg md:text-xl text-text/80 ">
                   {t('hero.subtitle')}
                 </p>
