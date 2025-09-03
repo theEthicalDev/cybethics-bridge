@@ -21,7 +21,6 @@ import Footer from "./components/Footer";
 import LoadingSpinner from '@/components/LoadingSpinner.tsx';
 import Terms from '@/pages/Terms.tsx';
 import Imprint from '@/pages/Imprint.tsx';
-import CookieConsent from "./components/CookieConsent";
 import Pricing from "./pages/Pricing";
 
 const queryClient = new QueryClient();
@@ -63,7 +62,6 @@ const AppContent = () => {
         </main>
       </PageWrapper>
       <Footer />
-      <CookieConsent />
     </div>
   );
 };
