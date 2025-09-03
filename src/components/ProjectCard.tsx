@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const { t } = useLanguage();
 
   return (
-    <Card className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fade-up flex flex-col" style={{ animationDelay: `${delay}ms` }}>
+    <Card className="overflow-hidden border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group animate-fade-up flex flex-col h-full" style={{ animationDelay: `${delay}ms` }}>
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}

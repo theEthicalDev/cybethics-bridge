@@ -201,7 +201,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="hover-lift animate-fade-up" style={{animationDelay: `${index * 150}ms`}}>
+              <div key={index} className="animate-fade-up" style={{animationDelay: `${index * 150}ms`}}>
                 <ProjectCard
                   title={t(project.title)}
                   description={t(project.description)}
