@@ -67,7 +67,7 @@ const ContactPartner: React.FC = () => {
 
   return (
     <div className="container relative z-20 -mb-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-10 bg-white/95 backdrop-blur-lg shadow-large rounded-2xl max-w-3xl mx-auto border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group" style={{transform: 'translateX(20px)'}}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-10 bg-white/95 backdrop-blur-lg shadow-large rounded-2xl max-w-3xl mx-auto border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group" style={{transform: 'translateY(-20px)'}}>
         {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-100/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
