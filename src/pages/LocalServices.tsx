@@ -150,7 +150,7 @@ const LocalServices = () => {
               {/*<p className="text-lg md:text-xl text-white/90 mb-8">*/}
               {/*  Kontaktieren Sie uns für eine unverbindliche Beratung zu Ihrem Projekt in der Zentralschweiz.*/}
               {/*</p>*/}
-              <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-medium text-white mb-6" no-transparent-fill>
                 {t('contact.title')}
               </h2>
               <p className="text-lg md:text-xl text-white/90 mb-8 text-balance">

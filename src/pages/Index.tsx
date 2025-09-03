@@ -145,7 +145,7 @@ const Index = () => {
           </header>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-4">
               {businessChallenges.map((challenge, index) => (
                 <div key={index} className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 group animate-fade-up border border-white/30" style={{animationDelay: `${index * 100}ms`}}>
                   <div className="flex items-start gap-4">

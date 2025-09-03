@@ -37,7 +37,7 @@ function cybethics() {
   return (
     <div className={`glass-card rounded-2xl shadow-large px-8 py-6 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden md:h-64 h-56 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group relative`}>
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" style={{transform: 'translateX(20px)'}}></div>
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">
