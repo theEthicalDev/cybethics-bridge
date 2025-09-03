@@ -35,12 +35,29 @@ function cybethics() {
   }, []);
 
   return (
-    <div className={`glass rounded-lg shadow-lg px-6 py-3 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden md:h-56 h-48`}>
-      <pre className="text-left overflow-x-hidden">
-        <code className="text-primary/90 text-xs sm:text-base">
-          {text}
-        </code>
-      </pre>
+    <div className={`glass-card rounded-2xl shadow-large px-8 py-6 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden md:h-64 h-56 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group relative`}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+      
+      <div className="relative z-10">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 rounded-full bg-red-400"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div className="w-3 h-3 rounded-full bg-green-400"></div>
+          </div>
+          <span className="text-xs text-primary/60 font-sans">cybethics.js</span>
+        </div>
+        
+        <pre className="text-left overflow-x-hidden">
+          <code className="text-primary/90 text-xs sm:text-sm leading-relaxed">
+            {text}
+          </code>
+        </pre>
+      </div>
+      
+      {/* Subtle glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl blur-xl"></div>
     </div>
   );
 };
@@ -50,27 +67,29 @@ const ContactPartner: React.FC = () => {
 
   return (
     <div className="container relative z-20 -mb-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-6 px-8 bg-white shadow-lg rounded-xl max-w-2xl mx-auto">
-        <div className="text-center md:text-left">
-          <h3 className="text-xl font-semibold text-primary pb-2">{t('contact.partner')}</h3>
-          <p className="text-xl font-medium">Djordje Karadzic</p>
-          <p className="text-md text-gray-400 mt-1">Cybethics</p>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-10 bg-white/95 backdrop-blur-lg shadow-large rounded-2xl max-w-3xl mx-auto border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-100/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        <div className="text-center md:text-left relative z-10">
+          <h3 className="text-2xl font-bold gradient-text mb-3">{t('contact.partner')}</h3>
+          <p className="text-xl font-semibold text-gray-800">Djordje Karadzic</p>
+          <p className="text-base text-primary/80 mt-2 font-medium">Cybethics</p>
         </div>
 
-        <Avatar className="h-36 w-36 border-2 border-primary/20 flex-shrink-0">
+        <Avatar className="h-40 w-40 border-4 border-primary/30 shadow-medium hover:shadow-large transition-all duration-300 hover:scale-105 flex-shrink-0 relative z-10">
           <AvatarImage src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic"/>
-          <AvatarFallback>DK</AvatarFallback>
+          <AvatarFallback className="text-2xl font-bold gradient-text">DK</AvatarFallback>
         </Avatar>
 
         <Button asChild
+                variant="glow"
                 size="lg"
-                className="group relative overflow-hidden rounded-full animate-pulse hover:animate-none"
-                style={{animationDuration: '10s'}}>
-          <Link to="/contact" className="flex items-center py-6 px-6 bg-primary hover:bg-primary/90">
-            <Calendar className="mr-2 h-4 w-4"/>
-            <span className="relative z-10">{t('contact.booking')}</span>
-            <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-purple-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                className="relative z-10 rounded-full hover:scale-105 transition-all duration-300 group/btn">
+          <Link to="/contact" className="flex items-center py-7 px-8">
+            <Calendar className="mr-3 h-5 w-5"/>
+            <span className="font-semibold">{t('contact.booking')}</span>
+            <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-2"/>
           </Link>
         </Button>
       </div>
@@ -84,72 +103,75 @@ const HeroSection: React.FC = () => {
 
   return (
     <>
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-36 pb-12 md:pb-20 bg-white">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-white via-primary/5 to-purple-50/30">
+        {/* Enhanced background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full bg-gradient-to-l from-purple-400/20 to-transparent blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-50"></div>
+        </div>
+        
         <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-slide">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10 animate-fade-up">
               <div>
-                <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+                <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
                   <span className="text-sm font-medium text-primary flex items-center">
-                    <Sparkles className="mr-2 h-4 w-4"/>
+                    <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
                     Cybethics
                   </span>
                 </div>
-                <p className="mb-4 leading-tight text-balance text-3xl">
+                <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
                   {t('hero.title')}
-                </p>
-                <p className="text-lg md:text-xl text-text/80 ">
+                </h1>
+                <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8">
                   {t('hero.subtitle')}
                 </p>
                 
-                {/* Location Badge */}
-                <div className="mt-4 inline-flex items-center py-2 px-4 bg-gray-50 rounded-full">
-                  <MapPin className="h-4 w-4 text-primary mr-2" />
-                  <span className="text-sm font-medium">Emmen | Luzern | Zentralschweiz</span>
+                {/* Enhanced Location Badge */}
+                <div className="mt-6 inline-flex items-center py-3 px-6 bg-white/80 backdrop-blur-sm rounded-full shadow-soft border border-white/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
+                  <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
+                  <span className="text-base font-medium gradient-text-subtle">Emmen | Luzern | Zentralschweiz</span>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
-                  <Link to="/services">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Button asChild variant="gradient" size="lg" className="rounded-full group">
+                  <Link to="/services" className="relative">
                     {t('hero.cta')}
-                    <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
+                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
                   </Link>
                 </Button>
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full group">
-                  <Link to="/contact">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
+                  <Link to="/contact" className="gradient-text-subtle">
                     {t('contact.booking')}
+                    <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110"/>
                   </Link>
                 </Button>
               </div>
-              {/*<div className="flex items-center space-x-4 pt-4">*/}
-              {/*  <Link to="/location" className="text-sm font-medium flex items-center text-primary/80 hover:text-primary group">*/}
-              {/*    <span>IT-Lösungen in der Zentralschweiz</span>*/}
-              {/*    <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>*/}
-              {/*  </Link>*/}
-              {/*</div>*/}
             </div>
 
-            {/* Only show this div on desktop */}
+            {/* Enhanced desktop view */}
             {!isMobile && (
-              <div className="flex flex-col gap-6">
-                <div className="h-64 items-center justify-center hidden lg:flex">
+              <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
+                <div className="relative h-72 items-center justify-center hidden lg:flex">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl"></div>
                   <img
                     src="/media/cybethics.png"
                     alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
-                    className="w-3/4 h-auto"
+                    className="relative w-3/4 h-auto hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
                   />
                 </div>
 
-                <div>
+                <div className="hover-lift">
                   <CodeAnimation/>
                 </div>
               </div>
             )}
 
-            {/* Show only code animation for mobile with proper spacing */}
+            {/* Enhanced mobile view */}
             {isMobile && (
-              <div className="mt-4">
+              <div className="mt-8 hover-lift">
                 <CodeAnimation/>
               </div>
             )}
@@ -157,7 +179,7 @@ const HeroSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Partner positioned between sections with more space */}
+      {/* Enhanced Contact Partner */}
       <ContactPartner/>
     </>
   );
