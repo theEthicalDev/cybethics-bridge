@@ -101,6 +101,10 @@
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
+    padding: 0.75rem 0;
+  }
+
+  h2:not([no-transparent-fill]) {
     -webkit-text-fill-color: transparent;
   }
 
