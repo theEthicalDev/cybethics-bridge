@@ -85,7 +85,7 @@ const ContactPartner: React.FC = () => {
         <Button asChild
                 variant="glow"
                 size="lg"
-                className="relative z-10 rounded-full hover:scale-105 transition-all duration-300 group/btn">
+                className="relative z-10 rounded-full hover:scale-105 transition-all group/btn">
           <Link to="/contact" className="flex items-center py-7 px-8">
             <Calendar className="mr-3 h-5 w-5"/>
             <span className="font-semibold">{t('contact.booking')}</span>
