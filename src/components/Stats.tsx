@@ -2,14 +2,11 @@
 import React from 'react';
 import AnimatedCounter from '@/components/AnimatedCounter.tsx';
 import {Award, BellRingIcon, ReceiptTextIcon, ScaleIcon} from 'lucide-react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const Stats: React.FC = () => {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
-  
   return (
-    <div ref={ref} className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <div className={`group transition-all duration-700 ${isVisible ? 'animate-slide-up opacity-100' : 'opacity-0'}`}>
+    <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="group">
         <AnimatedCounter
           value={25}
           label='stats.successfulProjects'
@@ -18,7 +15,7 @@ const Stats: React.FC = () => {
           suffix="+"
         />
       </div>
-      <div className={`group transition-all duration-700 ${isVisible ? 'animate-slide-up opacity-100' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+      <div className="group">
         <AnimatedCounter
           value={12}
           label='stats.yearsSoftwareExperience'
@@ -27,7 +24,7 @@ const Stats: React.FC = () => {
           suffix="+"
         />
       </div>
-      <div className={`group transition-all duration-700 ${isVisible ? 'animate-slide-up opacity-100' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
+      <div className="group">
         <AnimatedCounter
           value={100}
           label='stats.priceworthyImprovements'
@@ -36,7 +33,7 @@ const Stats: React.FC = () => {
           suffix="%"
         />
       </div>
-      <div className={`group transition-all duration-700 ${isVisible ? 'animate-slide-up opacity-100' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
+      <div className="group">
         <AnimatedCounter
           value={8}
           label='stats.possibilities'
