@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
@@ -6,6 +5,10 @@ import {Button} from '@/components/ui/button';
 import {Calendar, ChevronRight, Sparkles, MapPin} from 'lucide-react';
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {useIsMobile} from '@/hooks/use-mobile';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
+import ParticleBackground from '@/components/ParticleBackground';
+import AnimatedBlob from '@/components/AnimatedBlob';
+import MagneticButton from '@/components/MagneticButton';
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
@@ -100,20 +103,24 @@ const ContactPartner: React.FC = () => {
 const HeroSection: React.FC = () => {
   const {t} = useLanguage();
   const isMobile = useIsMobile();
+  const { ref: heroRef, isVisible: heroVisible } = useScrollReveal();
 
   return (
     <>
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-white via-primary/5 to-purple-50/30">
+      <section ref={heroRef} className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-white via-primary/5 to-purple-50/30">
+        <ParticleBackground />
+        
         {/* Enhanced background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full bg-gradient-to-l from-purple-400/20 to-transparent blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <AnimatedBlob className="top-1/4 -left-1/4" color="from-primary/20 to-primary/5" size={384} delay={0} />
+          <AnimatedBlob className="bottom-1/4 -right-1/4" color="from-purple-400/20 to-transparent" size={384} delay={2000} />
+          <AnimatedBlob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" color="from-accent/15 to-accent/5" size={300} delay={4000} />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-50"></div>
         </div>
         
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-10 animate-fade-up">
+            <div className={`space-y-10 transition-all duration-1000 ${heroVisible ? 'animate-slide-right opacity-100' : 'opacity-0'}`}>
               <div>
                 <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
                   <span className="text-sm font-medium text-primary flex items-center">
@@ -121,10 +128,10 @@ const HeroSection: React.FC = () => {
                     Cybethics
                   </span>
                 </div>
-                <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
+                <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold gradient-text animate-slide-up" style={{ animationDelay: '200ms' }}>
                   {t('hero.title')}
                 </h1>
-                <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8">
+                <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8 animate-slide-up" style={{ animationDelay: '400ms' }}>
                   {t('hero.subtitle')}
                 </p>
                 
@@ -135,27 +142,27 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button asChild variant="gradient" size="lg" className="rounded-full group">
+              <div className="flex flex-col sm:flex-row gap-6 animate-slide-up" style={{ animationDelay: '600ms' }}>
+                <MagneticButton asChild variant="gradient" size="lg" className="rounded-full group">
                   <Link to="/services" className="relative">
                     {t('hero.cta')}
                     <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
                   </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
+                </MagneticButton>
+                <MagneticButton asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
                   <Link to="/contact" className="gradient-text-subtle">
                     {t('contact.booking')}
                     <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110"/>
                   </Link>
-                </Button>
+                </MagneticButton>
               </div>
             </div>
 
             {/* Enhanced desktop view */}
             {!isMobile && (
-              <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
-                <div className="relative h-72 items-center justify-center hidden lg:flex">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl"></div>
+              <div className={`flex flex-col gap-8 transition-all duration-1000 ${heroVisible ? 'animate-slide-left opacity-100' : 'opacity-0'}`}>
+                <div className="relative h-72 items-center justify-center hidden lg:flex animate-perspective-tilt">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl animate-rotate-slow"></div>
                   <img
                     src="/media/cybethics.png"
                     alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
@@ -171,7 +178,7 @@ const HeroSection: React.FC = () => {
 
             {/* Enhanced mobile view */}
             {isMobile && (
-              <div className="mt-8 hover-lift">
+              <div className="mt-8 hover-lift animate-scale-in">
                 <CodeAnimation/>
               </div>
             )}
