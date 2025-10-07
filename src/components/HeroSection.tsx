@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
@@ -6,6 +5,10 @@ import {Button} from '@/components/ui/button';
 import {Calendar, ChevronRight, Sparkles, MapPin} from 'lucide-react';
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {useIsMobile} from '@/hooks/use-mobile';
+import MorphingBlob from '@/components/hero/MorphingBlob';
+import FloatingBubbles from '@/components/hero/FloatingBubbles';
+import LiquidTextReveal from '@/components/hero/LiquidTextReveal';
+import ParallaxLayer from '@/components/ParallaxLayer';
 
 const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
@@ -104,51 +107,117 @@ const HeroSection: React.FC = () => {
   return (
     <>
       <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-white via-primary/5 to-purple-50/30">
-        {/* Enhanced background elements */}
+        {/* Liquid Morphing Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full bg-gradient-to-l from-purple-400/20 to-transparent blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-50"></div>
+          <FloatingBubbles />
+          
+          {/* Layered Morphing Blobs with Parallax */}
+          <ParallaxLayer speed={0.2}>
+            <div className="absolute top-[10%] left-[5%]">
+              <MorphingBlob 
+                size={400} 
+                speed={1.2} 
+                color="hsl(var(--primary))" 
+                blur={60}
+                opacity={0.4}
+                delay={0}
+              />
+            </div>
+          </ParallaxLayer>
+          
+          <ParallaxLayer speed={0.35}>
+            <div className="absolute top-[20%] right-[10%]">
+              <MorphingBlob 
+                size={500} 
+                speed={0.8} 
+                color="hsl(220, 70%, 60%)" 
+                blur={80}
+                opacity={0.3}
+                delay={2}
+              />
+            </div>
+          </ParallaxLayer>
+          
+          <ParallaxLayer speed={0.15}>
+            <div className="absolute bottom-[15%] left-[15%]">
+              <MorphingBlob 
+                size={350} 
+                speed={1.5} 
+                color="hsl(var(--primary))" 
+                blur={50}
+                opacity={0.35}
+                delay={4}
+              />
+            </div>
+          </ParallaxLayer>
+          
+          <ParallaxLayer speed={0.25}>
+            <div className="absolute bottom-[25%] right-[20%]">
+              <MorphingBlob 
+                size={300} 
+                speed={1.0} 
+                color="hsl(var(--accent))" 
+                blur={40}
+                opacity={0.25}
+                delay={3}
+              />
+            </div>
+          </ParallaxLayer>
+
+          {/* Animated gradient waves at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary/10 via-primary/5 to-transparent animate-pulse-glow" />
         </div>
         
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-10 animate-fade-up">
+            <div className="space-y-10">
               <div>
-                <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
-                  <span className="text-sm font-medium text-primary flex items-center">
-                    <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
-                    Cybethics
-                  </span>
-                </div>
-                <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
-                  {t('hero.title')}
-                </h1>
-                <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8">
-                  {t('hero.subtitle')}
-                </p>
+                <LiquidTextReveal delay={200}>
+                  <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
+                    <span className="text-sm font-medium text-primary flex items-center">
+                      <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
+                      Cybethics
+                    </span>
+                  </div>
+                </LiquidTextReveal>
+                
+                <LiquidTextReveal delay={400}>
+                  <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
+                    {t('hero.title')}
+                  </h1>
+                </LiquidTextReveal>
+                
+                <LiquidTextReveal delay={600}>
+                  <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8">
+                    {t('hero.subtitle')}
+                  </p>
+                </LiquidTextReveal>
                 
                 {/* Enhanced Location Badge */}
-                <div className="mt-6 inline-flex items-center py-3 px-6 bg-white/80 backdrop-blur-sm rounded-full shadow-soft border border-white/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
-                  <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
-                  <span className="text-base font-medium gradient-text-subtle">Emmen | Luzern | Zentralschweiz</span>
-                </div>
+                <LiquidTextReveal delay={800}>
+                  <div className="mt-6 inline-flex items-center py-3 px-6 bg-white/80 backdrop-blur-sm rounded-full shadow-soft border border-white/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
+                    <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
+                    <span className="text-base font-medium gradient-text-subtle">Emmen | Luzern | Zentralschweiz</span>
+                  </div>
+                </LiquidTextReveal>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button asChild variant="gradient" size="lg" className="rounded-full group">
-                  <Link to="/services" className="relative">
-                    {t('hero.cta')}
-                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
-                  <Link to="/contact" className="gradient-text-subtle">
-                    {t('contact.booking')}
-                    <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110"/>
-                  </Link>
-                </Button>
-              </div>
+              <LiquidTextReveal delay={1000}>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Button asChild variant="gradient" size="lg" className="rounded-full group">
+                    <Link to="/services" className="relative">
+                      {t('hero.cta')}
+                      <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
+                    <Link to="/contact" className="gradient-text-subtle">
+                      {t('contact.booking')}
+                      <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110"/>
+                    </Link>
+                  </Button>
+                </div>
+              </LiquidTextReveal>
             </div>
 
             {/* Enhanced desktop view */}
