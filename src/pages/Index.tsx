@@ -10,7 +10,6 @@ import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
 import {useIsMobile} from '@/hooks/use-mobile';
 import Stats from '@/components/Stats';
 import LocalBusinessInfo from '@/components/LocalBusinessInfo';
-import ParallaxSection from '@/components/ParallaxSection';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
@@ -175,54 +174,52 @@ const Index = () => {
       </section>
 
       {/* Projects Section - Enhanced */}
-      <ParallaxSection speed={0.3}>
-        <section aria-labelledby="projects-heading" className="py-16 md:py-32 bg-white relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0">
-            <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-gradient-to-l from-primary/5 to-transparent blur-2xl"></div>
-          </div>
+      <section aria-labelledby="projects-heading" className="py-16 md:py-32 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-gradient-to-l from-primary/5 to-transparent blur-2xl"></div>
+        </div>
 
-          <div className="container relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20">
-              <div className="max-w-2xl animate-fade-up">
-                <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20">
-                  <span className="text-sm font-medium text-primary">Unsere Projekte</span>
-                </div>
-                <h2 id="projects-heading" className="mb-6 gradient-text">{t('projects.title')}</h2>
-                <p className="text-xl text-text-light leading-relaxed">
-                  {t('projects.subtitle')}
-                </p>
+        <div className="container relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20">
+            <div className="max-w-2xl animate-fade-up">
+              <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20">
+                <span className="text-sm font-medium text-primary">Unsere Projekte</span>
               </div>
-              <Button asChild variant="outline" size="lg" className="mt-6 md:mt-0 group rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 animate-fade-up" style={{animationDelay: '200ms'}}>
-                <Link to="/projects" className="flex items-center font-semibold gradient-text-subtle">
-                  {t('projects.viewall')}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-                </Link>
-              </Button>
+              <h2 id="projects-heading" className="mb-6 gradient-text">{t('projects.title')}</h2>
+              <p className="text-xl text-text-light leading-relaxed">
+                {t('projects.subtitle')}
+              </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <div key={index} className="animate-fade-up" style={{animationDelay: `${index * 150}ms`}}>
-                  <ProjectCard
-                    title={t(project.title)}
-                    description={t(project.description)}
-                    image={project.image}
-                    tags={project.tags}
-                    url={`/projects#project-${project.id}`}
-                    delay={0}
-                    requestButton={
-                      <Button asChild variant="gradient" size="sm" className="mt-6 w-full rounded-full">
-                        <Link to="/contact">{t('projects.request')}</Link>
-                      </Button>
-                    }
-                  />
-                </div>
-              ))}
-            </div>
+            <Button asChild variant="outline" size="lg" className="mt-6 md:mt-0 group rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 animate-fade-up" style={{animationDelay: '200ms'}}>
+              <Link to="/projects" className="flex items-center font-semibold gradient-text-subtle">
+                {t('projects.viewall')}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+              </Link>
+            </Button>
           </div>
-        </section>
-      </ParallaxSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div key={index} className="animate-fade-up" style={{animationDelay: `${index * 150}ms`}}>
+                <ProjectCard
+                  title={t(project.title)}
+                  description={t(project.description)}
+                  image={project.image}
+                  tags={project.tags}
+                  url={`/projects#project-${project.id}`}
+                  delay={0}
+                  requestButton={
+                    <Button asChild variant="gradient" size="sm" className="mt-6 w-full rounded-full">
+                      <Link to="/contact">{t('projects.request')}</Link>
+                    </Button>
+                  }
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SEO Content Section */}
       <section className="py-12 md:py-16">
@@ -349,108 +346,104 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <ParallaxSection speed={0.4}>
-        <section aria-labelledby="about-heading" className="py-12 md:py-24 bg-gray-50">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative order-2 lg:order-1">
-                {/* Stats Counter Section */}
-                <Stats></Stats>
+      <section aria-labelledby="about-heading" className="py-12 md:py-24 bg-gray-50">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              {/* Stats Counter Section */}
+              <Stats></Stats>
+            </div>
+
+            <div className="space-y-6 order-1 lg:order-2">
+              <div>
+                <h2 id="about-heading" className="mb-4">{t('about.title')}</h2>
+                <p className="text-lg text-text/80 mb-6">
+                  {t('about.intro')}
+                </p>
               </div>
 
-              <div className="space-y-6 order-1 lg:order-2">
-                <div>
-                  <h2 id="about-heading" className="mb-4">{t('about.title')}</h2>
-                  <p className="text-lg text-text/80 mb-6">
-                    {t('about.intro')}
-                  </p>
-                </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-medium">{t('about.values.title')}</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    <p>{t('about.values.fairness')}</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    <p>{t('about.values.empathy')}</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    <p>{t('about.values.ethics')}</p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    <p>{t('about.values.trust')}</p>
+                  </li>
+                </ul>
+              </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-xl font-medium">{t('about.values.title')}</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      <p>{t('about.values.fairness')}</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      <p>{t('about.values.empathy')}</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      <p>{t('about.values.ethics')}</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
-                      <p>{t('about.values.trust')}</p>
-                    </li>
-                  </ul>
-                </div>
+              <Button asChild className="bg-primary hover:bg-primary/90 text-white mt-4 group">
+                <Link to="/about">
+                  {t('nav.about')}
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <Button asChild className="bg-primary hover:bg-primary/90 text-white mt-4 group">
-                  <Link to="/about">
-                    {t('nav.about')}
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"/>
+      {/* CTA Section - Enhanced with stunning visuals */}
+      <section aria-labelledby="cta-heading" className="py-16 md:py-32 relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="relative bg-gradient-to-br from-primary via-primary-light to-purple-600 rounded-3xl p-16 md:p-20 text-white text-center overflow-hidden shadow-large hover:shadow-xl transition-all duration-500">
+            {/* Enhanced Background Elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+              <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-float"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-2xl animate-float-gentle" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
+                <div className="w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-gradient-shift"></div>
+              </div>
+            </div>
+
+            <div className="relative z-10 max-w-4xl mx-auto animate-fade-up">
+              <div className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-8 border border-white/30">
+                <span className="text-sm font-medium text-white">Bereit für Ihr Projekt?</span>
+              </div>
+              <h2 id="cta-heading" className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">{t('contact.title')}</h2>
+              <p className="text-xl md:text-2xl text-white/90 mb-12 text-balance leading-relaxed max-w-3xl mx-auto">{t('contact.subtitle')}</p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button asChild
+                        size="lg"
+                        variant="outline"
+                        className="bg-white text-primary hover:bg-white/90 hover:text-primary border-none rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <Link to="/contact" className="px-8 py-4 font-semibold">
+                    <Calendar className="mr-2 h-5 w-5"/>
+                    {t('contact.booking')}
+                  </Link>
+                </Button>
+                
+                <Button asChild
+                        size="lg"
+                        className="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 hover:border-white rounded-full hover:scale-105 transition-all duration-300">
+                  <Link to="/services" className="px-8 py-4 font-semibold">
+                    {t('hero.cta')}
+                    <ArrowRight className="ml-2 h-5 w-5"/>
                   </Link>
                 </Button>
               </div>
             </div>
+            
+            {/* Decorative elements */}
+            <div className="absolute -top-10 -right-10 w-20 h-20 border border-white/20 rounded-full animate-spin-slow"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 border border-white/10 rounded-full animate-spin-slow" style={{animationDirection: 'reverse'}}></div>
           </div>
-        </section>
-      </ParallaxSection>
-
-      {/* CTA Section - Enhanced with stunning visuals */}
-      <ParallaxSection speed={-0.2}>
-        <section aria-labelledby="cta-heading" className="py-16 md:py-32 relative overflow-hidden">
-          <div className="container relative z-10">
-            <div className="relative bg-gradient-to-br from-primary via-primary-light to-purple-600 rounded-3xl p-16 md:p-20 text-white text-center overflow-hidden shadow-large hover:shadow-xl transition-all duration-500">
-              {/* Enhanced Background Elements */}
-              <div className="absolute inset-0">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-float"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-2xl animate-float-gentle" style={{animationDelay: '2s'}}></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
-                  <div className="w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent animate-gradient-shift"></div>
-                </div>
-              </div>
-
-              <div className="relative z-10 max-w-4xl mx-auto animate-fade-up">
-                <div className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-8 border border-white/30">
-                  <span className="text-sm font-medium text-white">Bereit für Ihr Projekt?</span>
-                </div>
-                <h2 id="cta-heading" className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">{t('contact.title')}</h2>
-                <p className="text-xl md:text-2xl text-white/90 mb-12 text-balance leading-relaxed max-w-3xl mx-auto">{t('contact.subtitle')}</p>
-                
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                  <Button asChild
-                          size="lg"
-                          variant="outline"
-                          className="bg-white text-primary hover:bg-white/90 hover:text-primary border-none rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <Link to="/contact" className="px-8 py-4 font-semibold">
-                      <Calendar className="mr-2 h-5 w-5"/>
-                      {t('contact.booking')}
-                    </Link>
-                  </Button>
-                  
-                  <Button asChild
-                          size="lg"
-                          className="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 hover:border-white rounded-full hover:scale-105 transition-all duration-300">
-                    <Link to="/services" className="px-8 py-4 font-semibold">
-                      {t('hero.cta')}
-                      <ArrowRight className="ml-2 h-5 w-5"/>
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-10 -right-10 w-20 h-20 border border-white/20 rounded-full animate-spin-slow"></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 border border-white/10 rounded-full animate-spin-slow" style={{animationDirection: 'reverse'}}></div>
-            </div>
-          </div>
-        </section>
-      </ParallaxSection>
+        </div>
+      </section>
     </div>
   );
 };

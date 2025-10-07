@@ -6,8 +6,6 @@ import {TooltipProvider} from "@/components/ui/tooltip";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {LanguageProvider} from "./contexts/LanguageContext";
 import {LoadingProvider} from "./contexts/LoadingContext";
-import {TransitionProvider} from "./components/transitions/TransitionContext";
-import PageTransition from "./components/transitions/PageTransition";
 import PageWrapper from "./components/PageWrapper";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
@@ -46,26 +44,24 @@ const AppContent = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden md:overflow-x-visible">
       <Navbar />
-      <PageTransition>
-        <PageWrapper>
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/location" element={<LocalServices />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/imprint" element={<Imprint />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-        </PageWrapper>
-      </PageTransition>
+      <PageWrapper>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/location" element={<LocalServices />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/imprint" element={<Imprint />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </PageWrapper>
       <Footer />
       <CookieConsent />
     </div>
@@ -80,11 +76,9 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <TransitionProvider>
-            <LoadingProvider>
-              <AppContent />
-            </LoadingProvider>
-          </TransitionProvider>
+          <LoadingProvider>
+            <AppContent />
+          </LoadingProvider>
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>

@@ -184,9 +184,7 @@ export default {
 				'spin-slow': 'spin-slow 12s linear infinite',
 				'float': 'float 4s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s infinite',
-				'gradient-shift': 'gradient-shift 8s ease-in-out infinite',
-				'float-up': 'float 8s ease-in-out infinite',
-				'pulse-slow': 'pulse-glow 4s infinite ease-in-out'
+				'gradient-shift': 'gradient-shift 8s ease-in-out infinite'
 			},
 			transitionDuration: {
 				'2000': '2000ms',
