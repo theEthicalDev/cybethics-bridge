@@ -48,9 +48,53 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Ethical Software Solutions for Your Business",
-    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations with integrity",
-    "cta": "Explore Services"
+    "title": "[Your Business Technology Partner]",
+    "subtitle": "[Transform your operations through strategic Automation, Integration, and Development]",
+    "cta": "[Discover How]",
+    "badge": "[Business Technology Partnership]"
+  },
+  "aid": {
+    "badge": "[The AID Approach]",
+    "title": "[Automate. Integrate. Develop.]",
+    "subtitle": "[Three pillars working together to transform your business]",
+    "synergy": {
+      "title": "[The Power of AID Together]",
+      "subtitle": "[Why our integrated approach delivers better results]",
+      "description": "[Placeholder: Explain how automation, integration, and development work synergistically]",
+      "benefit1": "[Placeholder: Compound efficiency gains]",
+      "benefit2": "[Placeholder: Seamless ecosystem]",
+      "benefit3": "[Placeholder: Future-proof foundation]"
+    },
+    "automate": {
+      "title": "[Automate]",
+      "tagline": "[Free Your Team from Repetitive Work]",
+      "description": "[Placeholder: Transform manual processes into efficient, automated workflows]",
+      "benefit1": "[Placeholder: Reduce operational costs]",
+      "benefit2": "[Placeholder: Eliminate human error]",
+      "benefit3": "[Placeholder: Scale without growing headcount]",
+      "benefit4": "[Placeholder: Focus on strategic work]",
+      "cta": "[Explore Automation]"
+    },
+    "integrate": {
+      "title": "[Integrate]",
+      "tagline": "[Connect Your Business Ecosystem]",
+      "description": "[Placeholder: Break down silos and create seamless data flow]",
+      "benefit1": "[Placeholder: Unified data access]",
+      "benefit2": "[Placeholder: Real-time synchronization]",
+      "benefit3": "[Placeholder: Better decision-making]",
+      "benefit4": "[Placeholder: Eliminate duplicate work]",
+      "cta": "[Explore Integration]"
+    },
+    "develop": {
+      "title": "[Develop]",
+      "tagline": "[Build Solutions That Fit Perfectly]",
+      "description": "[Placeholder: Custom software tailored to your unique needs]",
+      "benefit1": "[Placeholder: Exact fit for your processes]",
+      "benefit2": "[Placeholder: Competitive advantage]",
+      "benefit3": "[Placeholder: Own your technology]",
+      "benefit4": "[Placeholder: Grow with your business]",
+      "cta": "[Explore Development]"
+    }
   },
   "identify": {
     "title": "Do You Recognize These Challenges?",
