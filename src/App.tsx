@@ -40,9 +40,25 @@ const ScrollToTop = () => {
   }
 }
 
+// Redirect .html URLs to their non-.html equivalents
+const HtmlRedirect = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    const path = location.pathname;
+    if (path.endsWith('.html')) {
+      const newPath = path.replace(/\.html$/, '') || '/';
+      window.location.replace(newPath);
+    }
+  }, [location.pathname]);
+
+  return null;
+}
+
 const AppContent = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden md:overflow-x-visible">
+      <HtmlRedirect />
       <Navbar />
       <PageWrapper>
         <main className="flex-grow">
@@ -63,7 +79,7 @@ const AppContent = () => {
         </main>
       </PageWrapper>
       <Footer />
-      <CookieConsent />
+      {/* <CookieConsent /> */}
     </div>
   );
 };
