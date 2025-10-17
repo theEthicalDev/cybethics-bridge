@@ -46,6 +46,14 @@ const HtmlRedirect = () => {
   
   useEffect(() => {
     const path = location.pathname;
+    
+    // Handle index.html specifically - redirect to homepage
+    if (path === '/index.html') {
+      window.location.replace('/');
+      return;
+    }
+    
+    // Handle all other .html URLs
     if (path.endsWith('.html')) {
       const newPath = path.replace(/\.html$/, '') || '/';
       window.location.replace(newPath);
