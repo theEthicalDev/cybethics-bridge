@@ -189,53 +189,9 @@
     }
   },
   "hero": {
-    "title": "[Euer Partner für Geschäftstechnologie]",
-    "subtitle": "[Transformiert Eure Abläufe durch strategische Automatisierung, Integration und Entwicklung]",
-    "cta": "[Entdecken]",
-    "badge": "[Technologie-Partnerschaft]"
-  },
-  "aid": {
-    "badge": "[Der AID-Ansatz]",
-    "title": "[Automatisieren. Integrieren. Entwickeln.]",
-    "subtitle": "[Drei Säulen, die zusammen Euer Geschäft transformieren]",
-    "synergy": {
-      "title": "[Die Kraft von AID zusammen]",
-      "subtitle": "[Warum unser integrierter Ansatz bessere Ergebnisse liefert]",
-      "description": "[Platzhalter: Erklärt, wie Automatisierung, Integration und Entwicklung synergetisch wirken]",
-      "benefit1": "[Platzhalter: Verstärkte Effizienzgewinne]",
-      "benefit2": "[Platzhalter: Nahtloses Ökosystem]",
-      "benefit3": "[Platzhalter: Zukunftssichere Grundlage]"
-    },
-    "automate": {
-      "title": "[Automatisieren]",
-      "tagline": "[Befreit Euer Team von repetitiver Arbeit]",
-      "description": "[Platzhalter: Verwandelt manuelle Prozesse in effiziente, automatisierte Workflows]",
-      "benefit1": "[Platzhalter: Senkt Betriebskosten]",
-      "benefit2": "[Platzhalter: Eliminiert menschliche Fehler]",
-      "benefit3": "[Platzhalter: Skaliert ohne Personalaufstockung]",
-      "benefit4": "[Platzhalter: Fokus auf strategische Arbeit]",
-      "cta": "[Automatisierung erkunden]"
-    },
-    "integrate": {
-      "title": "[Integrieren]",
-      "tagline": "[Vernetzt Euer Geschäfts-Ökosystem]",
-      "description": "[Platzhalter: Brecht Silos auf und schafft nahtlosen Datenfluss]",
-      "benefit1": "[Platzhalter: Vereinheitlichter Datenzugriff]",
-      "benefit2": "[Platzhalter: Echtzeit-Synchronisation]",
-      "benefit3": "[Platzhalter: Bessere Entscheidungsfindung]",
-      "benefit4": "[Platzhalter: Keine Doppelarbeit mehr]",
-      "cta": "[Integration erkunden]"
-    },
-    "develop": {
-      "title": "[Entwickeln]",
-      "tagline": "[Lösungen nach Mass entwickeln]",
-      "description": "[Platzhalter: Individuelle Software für Eure einzigartigen Anforderungen]",
-      "benefit1": "[Platzhalter: Perfekt auf Eure Prozesse abgestimmt]",
-      "benefit2": "[Platzhalter: Wettbewerbsvorteil]",
-      "benefit3": "[Platzhalter: Eigene Technologie]",
-      "benefit4": "[Platzhalter: Wächst mit Eurem Business]",
-      "cta": "[Entwicklung erkunden]"
-    }
+    "title": "Softwarelösungen für Euer Unternehmen",
+    "subtitle": "Wir Automatisieren Prozesse, Integrieren Systeme und Entwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
+    "cta": "Dienstleistungen erkunden"
   },
   "identify": {
     "title": "Erkennt Ihr diese Herausforderungen?",
