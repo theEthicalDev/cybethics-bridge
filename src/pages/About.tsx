@@ -4,7 +4,6 @@ import {useLanguage} from '@/contexts/LanguageContext';
 import {Card, CardContent} from '@/components/ui/card';
 import {CheckCircle} from 'lucide-react';
 import Stats from '@/components/Stats';
-import AIDPhilosophy from '@/components/aid/AIDPhilosophy';
 
 const About = () => {
   const { t } = useLanguage();
@@ -109,9 +108,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* AID Philosophy Section */}
-      <AIDPhilosophy />
 
       {/* Our Values */}
       <section className="py-12 md:py-16">

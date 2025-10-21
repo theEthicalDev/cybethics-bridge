@@ -48,67 +48,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Your Business Technology Partner",
-    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations",
-    "cta": "Explore Services",
-    "badge": "AID Framework"
-  },
-  "aid": {
-    "pillars": {
-      "badge": "Our AID Framework",
-      "title": "Automate. Integrate. Develop.",
-      "subtitle": "Three pillars that drive business transformation",
-      "automate": {
-        "title": "Automate",
-        "description": "Eliminate repetitive tasks and streamline workflows with intelligent automation solutions",
-        "example": "Process automation, scripting, workflow optimization"
-      },
-      "integrate": {
-        "title": "Integrate",
-        "description": "Connect your systems and data sources to create a unified, efficient ecosystem",
-        "example": "API development, system integration, data synchronization"
-      },
-      "develop": {
-        "title": "Develop",
-        "description": "Build custom software solutions tailored to your unique business requirements",
-        "example": "Web applications, custom software, DevOps solutions"
-      }
-    },
-    "synergy": {
-      "badge": "The Power of AID",
-      "title": "Where Technology Meets Business Value",
-      "subtitle": "Our AID framework isn't just about technology—it's about creating measurable business impact",
-      "benefit1": {
-        "title": "Efficiency Gains",
-        "description": "Reduce manual work by up to 80% through strategic automation"
-      },
-      "benefit2": {
-        "title": "Seamless Operations",
-        "description": "Eliminate data silos with integrated systems that work together"
-      },
-      "benefit3": {
-        "title": "Scalable Solutions",
-        "description": "Custom-built software that grows with your business needs"
-      },
-      "cta": "See How AID Works"
-    },
-    "philosophy": {
-      "badge": "Our Philosophy",
-      "title": "The AID Approach to Business Technology",
-      "subtitle": "We believe every business challenge can be solved through the right combination of automation, integration, and development",
-      "automate": {
-        "title": "Start with Automation",
-        "description": "Before building new systems, we identify what can be automated. Often, the best solution is the simplest one—eliminating unnecessary manual work."
-      },
-      "integrate": {
-        "title": "Connect What Exists",
-        "description": "Your existing tools have value. We integrate and optimize your current systems before suggesting new ones, maximizing your existing investments."
-      },
-      "develop": {
-        "title": "Build What's Missing",
-        "description": "Only after automation and integration do we develop custom solutions. This ensures we're building exactly what you need, nothing more, nothing less."
-      }
-    }
+    "title": "Ethical Software Solutions for Your Business",
+    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations with integrity",
+    "cta": "Explore Services"
   },
   "identify": {
     "title": "Do You Recognize These Challenges?",
@@ -337,49 +279,6 @@
       "excel": {
         "title": "You're pushing Excel beyond its limits and it's costing you",
         "description": "Using Excel as a database, workflow manager, or reporting tool creates versioning issues, manual errors, lack of collaboration, and security risks."
-      }
-    }
-  },
-  "common": {
-    "problems": {
-      "title": "Common Business Challenges We Solve",
-      "subtitle": "See how our AID Framework addresses these typical business pain points",
-      "automate": {
-        "title": "Automation Solutions",
-        "inefficiency": {
-          "title": "Manual processes slow down your team",
-          "description": "Repetitive data entry, report generation, and file management consume valuable time that could be spent on strategic activities."
-        },
-        "admin": {
-          "title": "Admin work overwhelms your employees",
-          "description": "Form filling, report creation, and file organization prevent your team from focusing on innovation and customer service."
-        }
-      },
-      "integrate": {
-        "title": "Integration Solutions",
-        "integration": {
-          "title": "Systems don't communicate with each other",
-          "description": "Disconnected applications create data silos, requiring manual data transfers and causing inconsistencies."
-        },
-        "insights": {
-          "title": "Difficult to get actionable insights from data",
-          "description": "Data scattered across multiple systems makes it hard to access real-time business intelligence for informed decisions."
-        }
-      },
-      "develop": {
-        "title": "Development Solutions",
-        "legacy": {
-          "title": "Outdated software limits your growth",
-          "description": "Legacy systems are expensive to maintain, hard to scale, and can't keep up with your evolving business needs."
-        },
-        "scalability": {
-          "title": "Infrastructure struggles with growth",
-          "description": "Your current systems can't handle increasing users, transactions, or data volume as your business expands."
-        }
-      },
-      "compliance": {
-        "title": "Security concerns and compliance risks",
-        "description": "Meeting regulatory requirements and protecting sensitive data from security threats is increasingly challenging."
       }
     }
   },

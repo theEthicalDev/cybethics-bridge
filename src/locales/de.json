@@ -189,67 +189,9 @@
     }
   },
   "hero": {
-    "title": "Ihr Business Technology Partner",
+    "title": "Softwarelösungen für Euer Unternehmen",
     "subtitle": "Wir Automatisieren Prozesse, Integrieren Systeme und Entwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
-    "cta": "Dienstleistungen erkunden",
-    "badge": "AID Framework"
-  },
-  "aid": {
-    "pillars": {
-      "badge": "Unser AID Framework",
-      "title": "Automatisieren. Integrieren. Entwickeln.",
-      "subtitle": "Drei Säulen, die Geschäftstransformation vorantreiben",
-      "automate": {
-        "title": "Automatisieren",
-        "description": "Eliminiert repetitive Aufgaben und optimiert Workflows mit intelligenten Automatisierungslösungen",
-        "example": "Prozessautomatisierung, Scripting, Workflow-Optimierung"
-      },
-      "integrate": {
-        "title": "Integrieren",
-        "description": "Verbindet Eure Systeme und Datenquellen zu einem einheitlichen, effizienten Ökosystem",
-        "example": "API-Entwicklung, Systemintegration, Datensynchronisation"
-      },
-      "develop": {
-        "title": "Entwickeln",
-        "description": "Erstellt massgeschneiderte Softwarelösungen für Eure einzigartigen Geschäftsanforderungen",
-        "example": "Webanwendungen, individuelle Software, DevOps-Lösungen"
-      }
-    },
-    "synergy": {
-      "badge": "Die Kraft von AID",
-      "title": "Wo Technologie auf Geschäftswert trifft",
-      "subtitle": "Unser AID-Framework geht nicht nur um Technologie—es geht um messbaren Geschäftsnutzen",
-      "benefit1": {
-        "title": "Effizienzgewinne",
-        "description": "Reduziert manuelle Arbeit um bis zu 80% durch strategische Automatisierung"
-      },
-      "benefit2": {
-        "title": "Nahtlose Abläufe",
-        "description": "Eliminiert Datensilos mit integrierten Systemen, die zusammenarbeiten"
-      },
-      "benefit3": {
-        "title": "Skalierbare Lösungen",
-        "description": "Massgeschneiderte Software, die mit Euren Geschäftsanforderungen wächst"
-      },
-      "cta": "Erfahrt, wie AID funktioniert"
-    },
-    "philosophy": {
-      "badge": "Unsere Philosophie",
-      "title": "Der AID-Ansatz für Business-Technologie",
-      "subtitle": "Wir glauben, dass jede Geschäftsherausforderung durch die richtige Kombination von Automatisierung, Integration und Entwicklung gelöst werden kann",
-      "automate": {
-        "title": "Mit Automatisierung beginnen",
-        "description": "Bevor wir neue Systeme bauen, identifizieren wir, was automatisiert werden kann. Oft ist die beste Lösung die einfachste—die Eliminierung unnötiger manueller Arbeit."
-      },
-      "integrate": {
-        "title": "Bestehendes verbinden",
-        "description": "Eure bestehenden Tools haben Wert. Wir integrieren und optimieren Eure aktuellen Systeme, bevor wir neue vorschlagen, und maximieren so Eure bestehenden Investitionen."
-      },
-      "develop": {
-        "title": "Fehlendes entwickeln",
-        "description": "Erst nach Automatisierung und Integration entwickeln wir massgeschneiderte Lösungen. Das stellt sicher, dass wir genau das bauen, was Ihr braucht, nicht mehr, nicht weniger."
-      }
-    }
+    "cta": "Dienstleistungen erkunden"
   },
   "identify": {
     "title": "Erkennt Ihr diese Herausforderungen?",
@@ -316,49 +258,6 @@
       "excel": {
         "title": "Ihr nutzt Excel über seine Grenzen hinaus und dies kostet euch",
         "description": "Die Verwendung von Excel als Datenbank, Workflow-Manager oder Berichtstool führt zu Versionsproblemen, manuellen Fehlern, mangelnder Zusammenarbeit und Sicherheitsrisiken."
-      }
-    }
-  },
-  "common": {
-    "problems": {
-      "title": "Häufige Geschäftsherausforderungen, die wir lösen",
-      "subtitle": "Seht, wie unser AID-Framework diese typischen Geschäftsprobleme angeht",
-      "automate": {
-        "title": "Automatisierungslösungen",
-        "inefficiency": {
-          "title": "Manuelle Prozesse bremsen Euer Team aus",
-          "description": "Repetitive Dateneingabe, Berichtserstellung und Dateiverwaltung verbrauchen wertvolle Zeit, die für strategische Aktivitäten genutzt werden könnte."
-        },
-        "admin": {
-          "title": "Verwaltungsarbeit überfordert Eure Mitarbeiter",
-          "description": "Formularausfüllung, Berichterstellung und Dateiorganisation hindern Euer Team daran, sich auf Innovation und Kundenservice zu konzentrieren."
-        }
-      },
-      "integrate": {
-        "title": "Integrationslösungen",
-        "integration": {
-          "title": "Systeme kommunizieren nicht miteinander",
-          "description": "Nicht verbundene Anwendungen schaffen Datensilos, erfordern manuelle Datenübertragungen und verursachen Inkonsistenzen."
-        },
-        "insights": {
-          "title": "Schwierig, umsetzbare Erkenntnisse aus Daten zu gewinnen",
-          "description": "Über mehrere Systeme verteilte Daten machen es schwer, auf Echtzeit-Business-Intelligence für fundierte Entscheidungen zuzugreifen."
-        }
-      },
-      "develop": {
-        "title": "Entwicklungslösungen",
-        "legacy": {
-          "title": "Veraltete Software begrenzt Euer Wachstum",
-          "description": "Legacy-Systeme sind teuer in der Wartung, schwer zu skalieren und können mit Euren sich entwickelnden Geschäftsanforderungen nicht Schritt halten."
-        },
-        "scalability": {
-          "title": "Infrastruktur kämpft mit Wachstum",
-          "description": "Eure aktuellen Systeme können nicht mit steigenden Benutzern, Transaktionen oder Datenvolumen Schritt halten, während Euer Unternehmen expandiert."
-        }
-      },
-      "compliance": {
-        "title": "Sicherheitsbedenken und Compliance-Risiken",
-        "description": "Die Einhaltung regulatorischer Anforderungen und der Schutz sensibler Daten vor Sicherheitsbedrohungen wird zunehmend herausfordernd."
       }
     }
   },
