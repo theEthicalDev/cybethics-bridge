@@ -47,36 +47,43 @@ const CommonProblems = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   
+  // Problems grouped by AID pillars
   const problems = [
     {
       icon: <ClipboardList className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.inefficiency.title',
       descriptionKey: 'common.problems.inefficiency.description',
-    },
-    {
-      icon: <WifiOff className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.integration.title',
-      descriptionKey: 'common.problems.integration.description',
+      aidPillar: 'AUTOMATE'
     },
     {
       icon: <Clock className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.legacy.title',
       descriptionKey: 'common.problems.legacy.description',
+      aidPillar: 'AUTOMATE'
+    },
+    {
+      icon: <WifiOff className="h-5 w-5 text-primary" />,
+      titleKey: 'common.problems.integration.title',
+      descriptionKey: 'common.problems.integration.description',
+      aidPillar: 'INTEGRATE'
     },
     {
       icon: <PieChart className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.insights.title',
       descriptionKey: 'common.problems.insights.description',
+      aidPillar: 'INTEGRATE'
     },
     {
       icon: <TrendingUp className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.scalability.title',
       descriptionKey: 'common.problems.scalability.description',
+      aidPillar: 'DEVELOP'
     },
     {
       icon: <ShieldAlert className="h-5 w-5 text-primary" />,
       titleKey: 'common.problems.compliance.title',
       descriptionKey: 'common.problems.compliance.description',
+      aidPillar: 'DEVELOP'
     },
   ];
 

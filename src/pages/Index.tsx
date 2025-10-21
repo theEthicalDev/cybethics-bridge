@@ -10,6 +10,8 @@ import VerticalProcessTimeline from '@/components/VerticalProcessTimeline';
 import {useIsMobile} from '@/hooks/use-mobile';
 import Stats from '@/components/Stats';
 import LocalBusinessInfo from '@/components/LocalBusinessInfo';
+import AIDPillars from '@/components/aid/AIDPillars';
+import AIDSynergy from '@/components/aid/AIDSynergy';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
@@ -307,29 +309,11 @@ const Index = () => {
       {/* Local Business Info Section */}
       <LocalBusinessInfo/>
 
-      {/* Services Section */}
-      <section aria-labelledby="services-heading" className="py-12 md:py-24 bg-gray-50">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 id="services-heading" className="mb-4">{t('services.title')}</h2>
-            <p className="text-lg text-text/80">
-              {t('services.subtitle')}
-            </p>
-          </div>
+      {/* AID Pillars Section - Replacing old services section */}
+      <AIDPillars />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                titleKey={service.titleKey}
-                descriptionKey={service.descriptionKey}
-                delay={index * 100}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* AID Synergy Section */}
+      <AIDSynergy />
 
       {/* Development Process Section */}
       <section aria-labelledby="process-heading" className="py-12 md:py-24 bg-white">

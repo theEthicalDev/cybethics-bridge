@@ -48,8 +48,8 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Ethical Software Solutions for Your Business",
-    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations with integrity",
+    "title": "Your Business Technology Partner",
+    "subtitle": "We **A**utomate processes, **I**ntegrate systems, and **D**evelop custom solutions to transform your business operations with integrity",
     "cta": "Explore Services"
   },
   "identify": {
@@ -244,7 +244,43 @@
       "title": "Ready to start your project?",
       "subtitle": "Get in touch today to discuss your requirements and how we can help you achieve your business goals"
     },
-    "more": "Learn More"
+    "more": "Learn More",
+    "aid": {
+      "title": "Transform Your Business with A.I.D.",
+      "subtitle": "Our comprehensive A.I.D. framework combines three powerful pillars to deliver exceptional business value",
+      "examples": "Examples",
+      "automate": {
+        "title": "Automate Your Processes",
+        "description": "Free your team from repetitive tasks with intelligent automation. From workflow automation to AI-powered solutions, we help you work smarter, not harder.",
+        "examples": "Process automation • AI integration • Scripting • Workflow engines"
+      },
+      "integrate": {
+        "title": "Integrate Your Systems",
+        "description": "Connect your disconnected tools and data sources. We build seamless integrations that make your systems work together as one unified ecosystem.",
+        "examples": "API development • System integration • Data synchronization • Third-party connections"
+      },
+      "develop": {
+        "title": "Develop Custom Solutions",
+        "description": "Get software that fits your unique business needs. We design and build tailored applications that grow with your business and give you a competitive edge.",
+        "examples": "Custom software • Web applications • Mobile apps • Enterprise solutions"
+      },
+      "synergy": {
+        "title": "The Power of A.I.D. Together",
+        "subtitle": "While each pillar delivers value independently, true transformation happens when you combine them",
+        "automate_integrate": {
+          "title": "Automate + Integrate",
+          "description": "Real-time data flow with automated actions. Your systems talk to each other and take action automatically."
+        },
+        "integrate_develop": {
+          "title": "Integrate + Develop",
+          "description": "Custom solutions that connect your entire tech stack. Purpose-built software that brings everything together."
+        },
+        "develop_automate": {
+          "title": "Develop + Automate",
+          "description": "Smart applications that learn and optimize themselves. Software that gets better as your business grows."
+        }
+      }
+    }
   },
   "business": {
     "questions": {
@@ -477,6 +513,29 @@
       "practical": "Practical",
       "collaborative": "Collaborative",
       "efficient": "Efficient"
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "description": "Our team has extensive experience in software development, automation, and integration technologies"
+    },
+    "aid": {
+      "philosophy": {
+        "title": "Our Philosophy: A.I.D.",
+        "subtitle": "Understanding why we focus on Automate, Integrate, and Develop as our core service pillars",
+        "focus": {
+          "title": "Strategic Focus",
+          "description": "We chose to focus deeply on three interconnected disciplines rather than spreading ourselves thin. This allows us to deliver exceptional quality and expertise in areas that truly transform businesses."
+        },
+        "evolution": {
+          "title": "Evolution of Our Approach",
+          "description": "We evolved from general software development to the A.I.D. framework by listening to our clients. They needed partners who could not just build software, but also connect systems and automate processes to maximize value."
+        },
+        "quality": {
+          "title": "Quality Over Quantity",
+          "description": "By concentrating on A.I.D., we develop deep expertise that allows us to solve complex challenges effectively. We believe in doing fewer things exceptionally well rather than many things adequately."
+        },
+        "conclusion": "The combination of Automation, Integration, and Development creates synergies that amplify results. When these three elements work together, businesses experience exponential improvements in efficiency, connectivity, and capability."
+      }
     }
   },
   "contact": {

@@ -189,8 +189,8 @@
     }
   },
   "hero": {
-    "title": "Softwarelösungen für Euer Unternehmen",
-    "subtitle": "Wir Automatisieren Prozesse, Integrieren Systeme und Entwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
+    "title": "Ihr Business Technology Partner",
+    "subtitle": "Wir **A**utomatisieren Prozesse, **I**ntegrieren Systeme und **E**ntwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
     "cta": "Dienstleistungen erkunden"
   },
   "identify": {
@@ -441,7 +441,43 @@
       "title": "Bereit, mit dem Projekt zu starten?",
       "subtitle": "Kontaktiert Uns uns noch heute, um Eure Anforderungen zu besprechen und wie wir Euch helfen können, Eure Geschäftsziele zu erreichen."
     },
-    "more": "Mehr erfahren"
+    "more": "Mehr erfahren",
+    "aid": {
+      "title": "Transformiert Euer Unternehmen mit A.I.D.",
+      "subtitle": "Unser umfassendes A.I.D.-Framework kombiniert drei leistungsstarke Säulen, um aussergewöhnlichen Geschäftswert zu liefern",
+      "examples": "Beispiele",
+      "automate": {
+        "title": "Automatisiert Eure Prozesse",
+        "description": "Befreit Euer Team von sich wiederholenden Aufgaben mit intelligenter Automatisierung. Von Workflow-Automatisierung bis hin zu KI-gestützten Lösungen – wir helfen Euch, intelligenter zu arbeiten, nicht härter.",
+        "examples": "Prozessautomatisierung • KI-Integration • Skripting • Workflow-Engines"
+      },
+      "integrate": {
+        "title": "Integriert Eure Systeme",
+        "description": "Verbindet Eure getrennten Tools und Datenquellen. Wir bauen nahtlose Integrationen, die Eure Systeme als ein einheitliches Ökosystem zusammenarbeiten lassen.",
+        "examples": "API-Entwicklung • Systemintegration • Datensynchronisation • Drittanbieterverbindungen"
+      },
+      "develop": {
+        "title": "Entwickelt massgeschneiderte Lösungen",
+        "description": "Erhaltet Software, die zu Euren einzigartigen Geschäftsanforderungen passt. Wir entwerfen und entwickeln massgeschneiderte Anwendungen, die mit Eurem Unternehmen wachsen und Euch einen Wettbewerbsvorteil verschaffen.",
+        "examples": "Massgeschneiderte Software • Webanwendungen • Mobile Apps • Unternehmenslösungen"
+      },
+      "synergy": {
+        "title": "Die Kraft von A.I.D. zusammen",
+        "subtitle": "Während jede Säule unabhängig Wert liefert, erfolgt die wahre Transformation, wenn Ihr sie kombiniert",
+        "automate_integrate": {
+          "title": "Automatisieren + Integrieren",
+          "description": "Echtzeit-Datenfluss mit automatisierten Aktionen. Eure Systeme kommunizieren miteinander und handeln automatisch."
+        },
+        "integrate_develop": {
+          "title": "Integrieren + Entwickeln",
+          "description": "Massgeschneiderte Lösungen, die Euren gesamten Tech-Stack verbinden. Zweckgebundene Software, die alles zusammenbringt."
+        },
+        "develop_automate": {
+          "title": "Entwickeln + Automatisieren",
+          "description": "Intelligente Anwendungen, die lernen und sich selbst optimieren. Software, die besser wird, wenn Euer Unternehmen wächst."
+        }
+      }
+    }
   },
   "detailed": {
     "services": {
@@ -640,8 +676,27 @@
       "efficient": "Effizient"
     },
     "expertise": {
-      "title": "Expertise",
+      "title": "Unsere Expertise",
       "description": "Unser Team verfügt über umfangreiche Erfahrung in der Softwareentwicklung, Automatisierung und Integrationstechnologien"
+    },
+    "aid": {
+      "philosophy": {
+        "title": "Unsere Philosophie: A.I.D.",
+        "subtitle": "Versteht, warum wir uns auf Automatisieren, Integrieren und Entwickeln als unsere Kernsäulen konzentrieren",
+        "focus": {
+          "title": "Strategischer Fokus",
+          "description": "Wir haben uns entschieden, uns tief auf drei miteinander verbundene Disziplinen zu konzentrieren, anstatt uns zu dünn zu verteilen. Dies ermöglicht es uns, außergewöhnliche Qualität und Expertise in Bereichen zu liefern, die Unternehmen wirklich transformieren."
+        },
+        "evolution": {
+          "title": "Evolution unseres Ansatzes",
+          "description": "Wir haben uns von der allgemeinen Softwareentwicklung zum A.I.D.-Framework entwickelt, indem wir unseren Kunden zugehört haben. Sie brauchten Partner, die nicht nur Software erstellen, sondern auch Systeme verbinden und Prozesse automatisieren konnten, um den Wert zu maximieren."
+        },
+        "quality": {
+          "title": "Qualität statt Quantität",
+          "description": "Durch die Konzentration auf A.I.D. entwickeln wir tiefe Expertise, die es uns ermöglicht, komplexe Herausforderungen effektiv zu lösen. Wir glauben daran, weniger Dinge außergewöhnlich gut zu machen, anstatt viele Dinge angemessen."
+        },
+        "conclusion": "Die Kombination aus Automatisierung, Integration und Entwicklung schafft Synergien, die Ergebnisse verstärken. Wenn diese drei Elemente zusammenarbeiten, erleben Unternehmen exponentielle Verbesserungen in Effizienz, Konnektivität und Fähigkeit."
+      }
     }
   },
   "contact": {
