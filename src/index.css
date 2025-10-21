@@ -52,6 +52,13 @@
     --gradient-primary-soft: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--primary-light) / 0.05));
     --gradient-radial: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.3));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--primary)));
+    --gradient-soft-light: linear-gradient(180deg, hsl(var(--primary) / 0.05), hsl(var(--primary-light) / 0.02));
+    
+    /* AID Pillar color accents - variations of primary purple */
+    --aid-automate: 272 76% 52%; /* Slightly brighter purple for automate */
+    --aid-integrate: 272 76% 42%; /* Slightly darker purple for integrate */
+    --aid-develop: 272 76% 37%; /* Darkest purple for develop */
     
     /* Enhanced shadows */
     --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);

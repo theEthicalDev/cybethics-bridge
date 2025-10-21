@@ -47,6 +47,58 @@
     "faq": "FAQ",
     "contact": "Kontakt"
   },
+  "hero": {
+    "badge": "Business Technology Partnerschaft",
+    "title": "Ihr Business Technology Partner",
+    "subtitle": "Transformieren Sie Ihre Abläufe durch strategische Automatisierung, Integration und Entwicklung—der AID-Ansatz",
+    "cta": "Entdecken Sie wie",
+    "secondaryCta": "Unsere Dienstleistungen",
+    "valueProposition": "Qualität vor Quantität. Tiefe vor Breite. Echte Wirkung statt schnelle Lösungen."
+  },
+  "aid": {
+    "badge": "Der AID-Ansatz",
+    "title": "Automatisieren. Integrieren. Entwickeln.",
+    "subtitle": "Drei Säulen arbeiten zusammen, um Ihr Unternehmen zu transformieren",
+    "synergy": {
+      "badge": "Warum AID funktioniert",
+      "title": "Die Kraft von AID zusammen",
+      "subtitle": "Warum unser integrierter Ansatz bessere Ergebnisse liefert",
+      "description": "Automatisierung wird 3x stärker, wenn Systeme integriert sind. Individuelle Entwicklung ermöglicht Automatisierung, die mit Standardlösungen unmöglich ist. Integration schafft die Grundlage für intelligente Automatisierung. Zusammen erzeugen diese Säulen Verbundeffekte, die echte Geschäftstransformation antreiben.",
+      "benefit1": "Verbundene Effizienzgewinne",
+      "benefit2": "Nahtloses Ökosystem",
+      "benefit3": "Zukunftssichere Grundlage"
+    },
+    "automate": {
+      "title": "Automatisieren",
+      "tagline": "Befreien Sie Ihr Team von wiederholenden Arbeiten",
+      "description": "Verwandeln Sie manuelle Prozesse in effiziente, automatisierte Workflows, die Ihr Team für strategische Arbeit freisetzen.",
+      "benefit1": "Betriebskosten deutlich senken",
+      "benefit2": "Menschliche Fehler eliminieren",
+      "benefit3": "Skalieren ohne Personalwachstum",
+      "benefit4": "Fokus auf strategische Arbeit",
+      "cta": "Automatisierung erkunden"
+    },
+    "integrate": {
+      "title": "Integrieren",
+      "tagline": "Verbinden Sie Ihr Business-Ökosystem",
+      "description": "Durchbrechen Sie Silos und schaffen Sie nahtlosen Datenfluss über all Ihre Geschäftssysteme.",
+      "benefit1": "Einheitlicher Datenzugriff",
+      "benefit2": "Echtzeit-Synchronisation",
+      "benefit3": "Bessere Entscheidungsfindung",
+      "benefit4": "Doppelarbeit eliminieren",
+      "cta": "Integration erkunden"
+    },
+    "develop": {
+      "title": "Entwickeln",
+      "tagline": "Bauen Sie Lösungen, die perfekt passen",
+      "description": "Massgeschneiderte Software, die genau auf Ihre individuellen Bedürfnisse zugeschnitten ist und Ihnen einen Wettbewerbsvorteil verschafft.",
+      "benefit1": "Exakt passend für Ihre Prozesse",
+      "benefit2": "Wettbewerbsvorteil",
+      "benefit3": "Eigene Technologie",
+      "benefit4": "Mit Ihrem Unternehmen wachsen",
+      "cta": "Entwicklung erkunden"
+    }
+  },
   "pricing": {
     "badge": "Transparente Preisgestaltung",
     "title": "Faire und transparente Preise für Ihre digitalen Projekte",
@@ -613,7 +665,15 @@
       "fairness": "Wir glauben an faire und transparente Preise, die auf dem tatsächlich gelieferten Wert basieren",
       "empathy": "Wir versetzen uns in Eure Lage, um Eure Geschäftsanforderungen wirklich zu verstehen",
       "ethics": "Wir halten in allem, was wir tun, die höchsten ethischen Standards ein",
-      "trust": "Wir bauen langfristige Beziehungen auf, die auf Vertrauen und gegenseitigem Respekt basieren"
+      "trust": "Wir bauen langfristige Beziehungen auf, die auf Vertrauen und gegenseitigem Respekt basieren",
+      "partnershipTitle": "Partnerschaft",
+      "partnership": "Wir arbeiten an Eurer Seite als echter Partner, nicht nur als Anbieter",
+      "qualityTitle": "Qualitätsfokus",
+      "quality": "Wir priorisieren Tiefe und Exzellenz über Geschwindigkeit und Quantität",
+      "impactTitle": "Geschäftsnutzen",
+      "impact": "Wir messen Erfolg an dem echten Wert, den wir für Euer Unternehmen schaffen",
+      "longTermTitle": "Langfristiges Denken",
+      "longTerm": "Wir bauen Lösungen und Beziehungen, die dauern und mit Euch wachsen"
     },
     "approach": {
       "title": "Unser Ansatz",
@@ -638,6 +698,31 @@
       "practical": "Praktisch",
       "collaborative": "Kollaborativ",
       "efficient": "Effizient"
+    },
+    "philosophy": {
+      "badge": "Unsere Geschäftsphilosophie",
+      "title": "Qualität, Tiefe und der AID-Ansatz",
+      "description": "Wir haben uns von traditioneller Softwareentwicklung zu einer Business-Technology-Partnerschaft entwickelt, die sich auf echte Wirkung konzentriert. Durch Automatisierung, Integration und Entwicklung helfen wir Unternehmen, Abläufe zu optimieren und messbare Verbesserungen zu erzielen.",
+      "quality": {
+        "title": "Qualität vor Quantität",
+        "description": "Wir fokussieren uns darauf, tiefgreifende, bedeutungsvolle Lösungen zu liefern, anstatt Projekte zu überstürzen. Jede Lösung wird mit Liebe zum Detail und langfristiger Nachhaltigkeit entwickelt."
+      },
+      "partnership": {
+        "title": "Echte Partnerschaft",
+        "description": "Wir liefern nicht nur Software—wir werden Euer Technologie-Partner. Wir verstehen Euer Unternehmen, Eure Herausforderungen und arbeiten an Eurer Seite, um Transformation voranzutreiben."
+      },
+      "impact": {
+        "title": "Messbarer Geschäftsnutzen",
+        "description": "Unser Erfolg misst sich an Eurem Erfolg. Wir fokussieren uns auf Lösungen, die greifbare Vorteile liefern: Kosteneinsparungen, Effizienzgewinne und Wettbewerbsvorteile."
+      },
+      "aid": {
+        "title": "Der AID-Vorteil",
+        "description": "Durch die Kombination von Automatisierung, Integration und Entwicklung erzeugen wir Verbundeffekte, die mehr Wert liefern als die isolierte Bewältigung von Herausforderungen."
+      },
+      "aidEmphasis": {
+        "title": "Zusammen transformiert AID Unternehmen",
+        "description": "Wenn Automatisierung auf Integration und massgeschneiderte Entwicklung trifft, geschieht Magie. Eure Systeme arbeiten harmonisch, Euer Team konzentriert sich auf das Wesentliche, und Euer Unternehmen gewinnt die Agilität, um in einem wettbewerbsintensiven Umfeld erfolgreich zu sein."
+      }
     },
     "expertise": {
       "title": "Expertise",
