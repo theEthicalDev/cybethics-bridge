@@ -77,6 +77,13 @@ const AIDPillars = () => {
                   {t(pillar.examplesKey)}
                 </div>
               </div>
+
+              <Button asChild variant="outline" size="lg" className="w-full rounded-full border-2 border-primary/30 hover:border-primary">
+                <Link to={`/services/${pillar.id}`}>
+                  {t('common.learnmore')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           ))}
         </div>
