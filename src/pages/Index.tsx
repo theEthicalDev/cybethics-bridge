@@ -11,36 +11,10 @@ import Stats from '@/components/Stats';
 import LocalBusinessInfo from '@/components/LocalBusinessInfo';
 import AIDPillars from '@/components/aid/AIDPillars';
 import AIDSynergy from '@/components/aid/AIDSynergy';
+import CommonProblems from '@/components/CommonProblems';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
-
-const BusinessChallenge = ({
-                             icon,
-                             title,
-                             description,
-                             index = 0
-                           }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  index?: number;
-}) => {
-  return (
-    <div
-      className="flex items-start gap-4 animate-fade-up"
-      style={{animationDelay: `${index * 100}ms`}}
-    >
-      <div className="flex-shrink-0 mt-1">
-        {icon}
-      </div>
-      <div>
-        <h3 className="text-lg font-medium">{title}</h3>
-        <p className="text-base text-text/80 mt-1">{description}</p>
-      </div>
-    </div>
-  );
-};
 
 const Index = () => {
   const {t} = useLanguage();
@@ -49,97 +23,14 @@ const Index = () => {
   // Get the first three projects from the projects list
   const projects = getProjects().slice(0, 3);
 
-  // Updated Business Challenges with new content
-  const businessChallenges = [
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.email.title',
-      description: 'business.challenge.email.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.data.title',
-      description: 'business.challenge.data.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.copy.title',
-      description: 'business.challenge.copy.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.gut.title',
-      description: 'business.challenge.gut.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.admin.title',
-      description: 'business.challenge.admin.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.systems.title',
-      description: 'business.challenge.systems.description',
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-primary"/>,
-      title: 'business.challenge.excel.title',
-      description: 'business.challenge.excel.description',
-    }
-  ];
 
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection/>
 
-      {/* Business Challenges Section - Enhanced with modern design */}
-      <section aria-labelledby="challenges-heading" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden" id="identify-challenges">
-        {/* Background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-gradient-to-l from-primary/10 to-transparent blur-3xl animate-float-gentle"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-gradient-to-r from-purple-400/10 to-transparent blur-3xl animate-float-gentle" style={{animationDelay: '1s'}}></div>
-        </div>
-
-        <div className="container relative z-10">
-          <header className="text-center max-w-4xl mx-auto mb-20 animate-fade-up">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20">
-              <span className="text-sm font-medium text-primary">Herausforderungen identifizieren</span>
-            </div>
-            <h2 id="challenges-heading" className="mb-6 gradient-text">{t('business.questions.title')}</h2>
-            <p className="text-xl text-text-light leading-relaxed">
-              {t('business.questions.subtitle')}
-            </p>
-          </header>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 gap-4">
-              {businessChallenges.map((challenge, index) => (
-                <div key={index} className="p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 group animate-fade-up border border-white/30" style={{animationDelay: `${index * 100}ms`}}>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 mt-1 p-2 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
-                      {challenge.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold gradient-text-subtle mb-2">{t(challenge.title)}</h3>
-                      <p className="text-base text-text/80 leading-relaxed">{t(challenge.description)}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center mt-16 animate-fade-up" style={{animationDelay: '800ms'}}>
-            <Button asChild variant="gradient" size="lg" className="rounded-full group">
-              <Link to="/faq">
-                {t('services.more')}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Common Problems Section - AID Framework */}
+      <CommonProblems />
 
       {/* Projects Section - Enhanced */}
       <section aria-labelledby="projects-heading" className="py-16 md:py-32 bg-white relative overflow-hidden">
