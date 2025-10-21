@@ -48,56 +48,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Business Technology Partnership",
-    "title": "Your Business Technology Partner",
-    "subtitle": "Transform your operations through strategic Automation, Integration, and Development—the AID approach",
-    "cta": "Discover How We Help",
-    "secondaryCta": "View Our Services",
-    "valueProposition": "Quality over quantity. Depth over breadth. Real impact over quick fixes."
-  },
-  "aid": {
-    "badge": "The AID Approach",
-    "title": "Automate. Integrate. Develop.",
-    "subtitle": "Three pillars working together to transform your business",
-    "synergy": {
-      "badge": "Why AID Works",
-      "title": "The Power of AID Together",
-      "subtitle": "Why our integrated approach delivers better results",
-      "description": "Automation becomes 3x more powerful when systems are integrated. Custom development enables automation impossible with off-the-shelf tools. Integration creates the foundation for intelligent automation. Together, these pillars create compound effects that drive real business transformation.",
-      "benefit1": "Compound efficiency gains",
-      "benefit2": "Seamless ecosystem",
-      "benefit3": "Future-proof foundation"
-    },
-    "automate": {
-      "title": "Automate",
-      "tagline": "Free Your Team from Repetitive Work",
-      "description": "Transform manual processes into efficient, automated workflows that free your team to focus on strategic work.",
-      "benefit1": "Reduce operational costs significantly",
-      "benefit2": "Eliminate human error",
-      "benefit3": "Scale without growing headcount",
-      "benefit4": "Focus on strategic work",
-      "cta": "Explore Automation"
-    },
-    "integrate": {
-      "title": "Integrate",
-      "tagline": "Connect Your Business Ecosystem",
-      "description": "Break down silos and create seamless data flow across all your business systems.",
-      "benefit1": "Unified data access",
-      "benefit2": "Real-time synchronization",
-      "benefit3": "Better decision-making",
-      "benefit4": "Eliminate duplicate work",
-      "cta": "Explore Integration"
-    },
-    "develop": {
-      "title": "Develop",
-      "tagline": "Build Solutions That Fit Perfectly",
-      "description": "Custom software tailored to your unique needs, giving you a competitive edge.",
-      "benefit1": "Exact fit for your processes",
-      "benefit2": "Competitive advantage",
-      "benefit3": "Own your technology",
-      "benefit4": "Grow with your business",
-      "cta": "Explore Development"
-    }
+    "title": "Ethical Software Solutions for Your Business",
+    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations with integrity",
+    "cta": "Explore Services"
   },
   "identify": {
     "title": "Do You Recognize These Challenges?",
@@ -499,15 +452,7 @@
       "ethicsTitle": "Ethics",
       "ethics": "We maintain the highest ethical standards in everything we do",
       "trustTitle": "Trust",
-      "trust": "We build long-term relationships based on trust and mutual respect",
-      "partnershipTitle": "Partnership",
-      "partnership": "We work alongside you as a true partner, not just a vendor",
-      "qualityTitle": "Quality Focus",
-      "quality": "We prioritize depth and excellence over speed and quantity",
-      "impactTitle": "Business Impact",
-      "impact": "We measure success by the real value we create for your business",
-      "longTermTitle": "Long-term Thinking",
-      "longTerm": "We build solutions and relationships that last and grow with you"
+      "trust": "We build long-term relationships based on trust and mutual respect"
     },
     "approach": {
       "title": "Approach",
@@ -532,35 +477,6 @@
       "practical": "Practical",
       "collaborative": "Collaborative",
       "efficient": "Efficient"
-    },
-    "philosophy": {
-      "badge": "Our Business Philosophy",
-      "title": "Quality, Depth, and the AID Approach",
-      "description": "We've evolved from traditional software development into a business technology partnership focused on real impact. Through Automation, Integration, and Development, we help businesses optimize operations and achieve measurable improvements.",
-      "quality": {
-        "title": "Quality Over Quantity",
-        "description": "We focus on delivering deep, meaningful solutions rather than rushing through projects. Every solution is crafted with attention to detail and long-term sustainability."
-      },
-      "partnership": {
-        "title": "True Partnership",
-        "description": "We don't just deliver software—we become your technology partner. We understand your business, your challenges, and work alongside you to drive transformation."
-      },
-      "impact": {
-        "title": "Measurable Business Impact",
-        "description": "Our success is measured by your success. We focus on solutions that deliver tangible benefits: cost savings, efficiency gains, and competitive advantages."
-      },
-      "aid": {
-        "title": "The AID Advantage",
-        "description": "By combining Automation, Integration, and Development, we create compound effects that deliver more value than addressing challenges in isolation."
-      },
-      "aidEmphasis": {
-        "title": "Together, AID transforms businesses",
-        "description": "When automation meets integration and custom development, magic happens. Your systems work in harmony, your team focuses on what matters, and your business gains the agility to thrive in a competitive landscape."
-      }
-    },
-    "expertise": {
-      "title": "Expertise",
-      "description": "Our team has extensive experience in software development, automation, and integration technologies"
     }
   },
   "contact": {
