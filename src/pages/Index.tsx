@@ -49,18 +49,36 @@ const Index = () => {
   // Get the first three projects from the projects list
   const projects = getProjects().slice(0, 3);
 
-  const aidPillars = [
+  const services = [
     {
-      pillar: 'automate' as const,
-      icon: <Cog className="h-12 w-12 text-aid-automate" />,
+      icon: <Code className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.software.title',
+      descriptionKey: 'services.software.description',
     },
     {
-      pillar: 'integrate' as const,
-      icon: <ServerCog className="h-12 w-12 text-aid-integrate" />,
+      icon: <Cog className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.automation.title',
+      descriptionKey: 'services.automation.description',
     },
     {
-      pillar: 'develop' as const,
-      icon: <Code className="h-12 w-12 text-aid-develop" />,
+      icon: <ServerCog className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.api.title',
+      descriptionKey: 'services.api.description',
+    },
+    {
+      icon: <Terminal className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.scripting.title',
+      descriptionKey: 'services.scripting.description',
+    },
+    {
+      icon: <GitBranch className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.cicd.title',
+      descriptionKey: 'services.cicd.description',
+    },
+    {
+      icon: <Monitor className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.offshoring.title',
+      descriptionKey: 'services.offshoring.description',
     }
   ];
 
@@ -290,38 +308,29 @@ const Index = () => {
       {/* Local Business Info Section */}
       <LocalBusinessInfo/>
 
-      {/* AID Pillars Section */}
-      <section aria-labelledby="aid-heading" className="py-16 md:py-32 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/5 to-transparent blur-3xl animate-float-gentle"></div>
-        </div>
-        
-        <div className="container relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-up">
-            <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20">
-              <span className="text-sm font-medium text-primary">{t('aid.badge')}</span>
-            </div>
-            <h2 id="aid-heading" className="mb-6 gradient-text">{t('aid.title')}</h2>
-            <p className="text-xl text-text-light leading-relaxed">
-              {t('aid.subtitle')}
+      {/* Services Section */}
+      <section aria-labelledby="services-heading" className="py-12 md:py-24 bg-gray-50">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 id="services-heading" className="mb-4">{t('services.title')}</h2>
+            <p className="text-lg text-text/80">
+              {t('services.subtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-            {aidPillars.map((item, index) => (
-              <AIDPillarCard
-                key={item.pillar}
-                pillar={item.pillar}
-                icon={item.icon}
-                delay={index * 150}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                titleKey={service.titleKey}
+                descriptionKey={service.descriptionKey}
+                delay={index * 100}
               />
             ))}
           </div>
         </div>
       </section>
-
-      {/* AID Synergy Section */}
-      <AIDSynergy />
 
       {/* Development Process Section */}
       <section aria-labelledby="process-heading" className="py-12 md:py-24 bg-white">

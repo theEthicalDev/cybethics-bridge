@@ -240,6 +240,11 @@
       "contact_individual": "Individuelles Angebot anfragen"
     }
   },
+  "hero": {
+    "title": "Softwarelösungen für Euer Unternehmen",
+    "subtitle": "Wir Automatisieren Prozesse, Integrieren Systeme und Entwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
+    "cta": "Dienstleistungen erkunden"
+  },
   "identify": {
     "title": "Erkennt Ihr diese Herausforderungen?",
     "subtitle": "Viele Unternehmen stehen vor ähnlichen Herausforderungen. Prüft, ob Ihnen etwas davon bekannt vorkommt:",
