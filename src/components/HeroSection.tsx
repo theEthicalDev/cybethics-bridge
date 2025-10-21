@@ -118,7 +118,7 @@ const HeroSection: React.FC = () => {
                 <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
                   <span className="text-sm font-medium text-primary flex items-center">
                     <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
-                    Cybethics
+                    {t('hero.badge')}
                   </span>
                 </div>
                 <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">

@@ -51,10 +51,13 @@ const Footer: React.FC = () => {
             <h4 className="font-medium text-lg">{t('nav.services')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.software.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors font-semibold gradient-text-subtle">{t('services.automation.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.automation.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors font-semibold gradient-text-subtle">{t('services.integration.title')}</Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors font-semibold gradient-text-subtle">{t('services.software.title')}</Link>
               </li>
               <li>
                 <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.scripting.title')}</Link>
@@ -64,9 +67,6 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.api.title')}</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.takeover.title')}</Link>
               </li>
             </ul>
           </div>

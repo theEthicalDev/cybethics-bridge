@@ -159,37 +159,6 @@ const DetailedServiceTabs = () => {
         }
       ],
       technologies: ["GitHub Actions", "Jenkins", "GitLab CI", "Docker", "Kubernetes", "Terraform", "Ansible", "AWS/Azure DevOps"]
-    },
-    {
-      id: "offshoring",
-      title: t('services.offshoring.title'),
-      description: t('services.offshoring.description'),
-      icon: <Monitor className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
-      benefits: [
-        t('services.offshoring.benefit1'),
-        t('services.offshoring.benefit2'),
-        t('services.offshoring.benefit3'),
-        t('services.offshoring.benefit4')
-      ],
-      process: [
-        {
-          title: t('services.offshoring.process1.title'),
-          description: t('services.offshoring.process1.description')
-        },
-        {
-          title: t('services.offshoring.process2.title'),
-          description: t('services.offshoring.process2.description')
-        },
-        {
-          title: t('services.offshoring.process3.title'),
-          description: t('services.offshoring.process3.description')
-        },
-        {
-          title: t('services.offshoring.process4.title'),
-          description: t('services.offshoring.process4.description')
-        }
-      ],
-      technologies: ["Backup", "PC", "Monitoring", "Security", "VPN", "Email", "Printing", "Support", "Disaster Recovery"]
     }
   ];
 
@@ -233,13 +202,6 @@ const DetailedServiceTabs = () => {
             >
               <GitBranch className="mr-2 h-4 w-4" />
               {t('services.cicd.title')}
-            </TabsTrigger>
-            <TabsTrigger
-              value="offshoring"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Monitor className="mr-2 h-4 w-4" />
-              {t('services.offshoring.title')}
             </TabsTrigger>
           </TabsList>
           </div>
