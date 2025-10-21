@@ -49,11 +49,37 @@ const Index = () => {
   // Get the first three projects from the projects list
   const projects = getProjects().slice(0, 3);
 
-  // AID Pillars for the new structure
-  const aidPillars = [
-    { pillar: 'automate' as const, icon: <Cog className="h-8 w-8 text-primary-light" /> },
-    { pillar: 'integrate' as const, icon: <ServerCog className="h-8 w-8 text-primary" /> },
-    { pillar: 'develop' as const, icon: <Code className="h-8 w-8 text-primary-dark" /> },
+  const services = [
+    {
+      icon: <Code className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.software.title',
+      descriptionKey: 'services.software.description',
+    },
+    {
+      icon: <Cog className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.automation.title',
+      descriptionKey: 'services.automation.description',
+    },
+    {
+      icon: <ServerCog className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.api.title',
+      descriptionKey: 'services.api.description',
+    },
+    {
+      icon: <Terminal className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.scripting.title',
+      descriptionKey: 'services.scripting.description',
+    },
+    {
+      icon: <GitBranch className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.cicd.title',
+      descriptionKey: 'services.cicd.description',
+    },
+    {
+      icon: <Monitor className="h-6 w-6 text-primary"/>,
+      titleKey: 'services.offshoring.title',
+      descriptionKey: 'services.offshoring.description',
+    }
   ];
 
   // Updated Business Challenges with new content
@@ -282,34 +308,29 @@ const Index = () => {
       {/* Local Business Info Section */}
       <LocalBusinessInfo/>
 
-      {/* AID Pillars Section */}
-      <section aria-labelledby="aid-heading" className="py-12 md:py-24 bg-white">
+      {/* Services Section */}
+      <section aria-labelledby="services-heading" className="py-12 md:py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
-            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <span className="text-sm font-medium text-primary">{t('aid.badge')}</span>
-            </div>
-            <h2 id="aid-heading" className="mb-6">{t('aid.title')}</h2>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 id="services-heading" className="mb-4">{t('services.title')}</h2>
             <p className="text-lg text-text/80">
-              {t('aid.subtitle')}
+              {t('services.subtitle')}
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {aidPillars.map((item, index) => (
-              <AIDPillarCard 
-                key={item.pillar}
-                pillar={item.pillar}
-                icon={item.icon}
-                delay={index * 150}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                titleKey={service.titleKey}
+                descriptionKey={service.descriptionKey}
+                delay={index * 100}
               />
             ))}
           </div>
         </div>
       </section>
-
-      {/* AID Synergy Section */}
-      <AIDSynergy />
 
       {/* Development Process Section */}
       <section aria-labelledby="process-heading" className="py-12 md:py-24 bg-white">
