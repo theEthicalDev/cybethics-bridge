@@ -47,37 +47,50 @@ const CommonProblems = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   
-  const problems = [
-    {
-      icon: <ClipboardList className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.inefficiency.title',
-      descriptionKey: 'common.problems.inefficiency.description',
-    },
-    {
-      icon: <WifiOff className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.integration.title',
-      descriptionKey: 'common.problems.integration.description',
-    },
-    {
-      icon: <Clock className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.legacy.title',
-      descriptionKey: 'common.problems.legacy.description',
-    },
-    {
-      icon: <PieChart className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.insights.title',
-      descriptionKey: 'common.problems.insights.description',
-    },
-    {
-      icon: <TrendingUp className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.scalability.title',
-      descriptionKey: 'common.problems.scalability.description',
-    },
-    {
-      icon: <ShieldAlert className="h-5 w-5 text-primary" />,
-      titleKey: 'common.problems.compliance.title',
-      descriptionKey: 'common.problems.compliance.description',
-    },
+  // Problems grouped by AID pillar
+  const problemsByPillar = {
+    automate: [
+      {
+        icon: <ClipboardList className="h-5 w-5 text-aid-automate" />,
+        titleKey: 'common.problems.inefficiency.title',
+        descriptionKey: 'common.problems.inefficiency.description',
+      },
+      {
+        icon: <Clock className="h-5 w-5 text-aid-automate" />,
+        titleKey: 'common.problems.legacy.title',
+        descriptionKey: 'common.problems.legacy.description',
+      },
+    ],
+    integrate: [
+      {
+        icon: <WifiOff className="h-5 w-5 text-aid-integrate" />,
+        titleKey: 'common.problems.integration.title',
+        descriptionKey: 'common.problems.integration.description',
+      },
+      {
+        icon: <ShieldAlert className="h-5 w-5 text-aid-integrate" />,
+        titleKey: 'common.problems.compliance.title',
+        descriptionKey: 'common.problems.compliance.description',
+      },
+    ],
+    develop: [
+      {
+        icon: <PieChart className="h-5 w-5 text-aid-develop" />,
+        titleKey: 'common.problems.insights.title',
+        descriptionKey: 'common.problems.insights.description',
+      },
+      {
+        icon: <TrendingUp className="h-5 w-5 text-aid-develop" />,
+        titleKey: 'common.problems.scalability.title',
+        descriptionKey: 'common.problems.scalability.description',
+      },
+    ],
+  };
+
+  const allProblems = [
+    ...problemsByPillar.automate,
+    ...problemsByPillar.integrate,
+    ...problemsByPillar.develop,
   ];
 
   return (
@@ -91,7 +104,7 @@ const CommonProblems = () => {
         </div>
         
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${isMobile ? 'max-w-full overflow-hidden' : ''}`}>
-          {problems.map((problem, index) => (
+          {allProblems.map((problem, index) => (
             <ProblemCard
               key={index}
               icon={problem.icon}

@@ -51,22 +51,22 @@ const Footer: React.FC = () => {
             <h4 className="font-medium text-lg">{t('nav.services')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.software.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-aid-automate transition-colors font-medium">{t('aid.automate.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.automation.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-aid-integrate transition-colors font-medium">{t('aid.integrate.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.scripting.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-aid-develop transition-colors font-medium">{t('aid.develop.title')}</Link>
+              </li>
+              <li className="pt-2 border-t border-gray-200">
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors text-sm">{t('services.api.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.cicd.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors text-sm">{t('services.scripting.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.api.title')}</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.takeover.title')}</Link>
+                <Link to="/services" className="text-text/80 hover:text-primary transition-colors text-sm">{t('services.takeover.title')}</Link>
               </li>
             </ul>
           </div>

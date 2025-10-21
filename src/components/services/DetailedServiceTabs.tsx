@@ -37,46 +37,15 @@ const DetailedServiceTabs = () => {
 
   const serviceDetails: ServiceDetail[] = [
     {
-      id: "software",
-      title: t('services.software.title'),
-      description: t('services.software.description'),
-      icon: <Code className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
+      id: "automate",
+      title: t('aid.automate.title'),
+      description: t('aid.automate.description'),
+      icon: <Cog className="h-6 w-6 md:h-12 md:w-12 text-aid-automate" />,
       benefits: [
-        t('services.software.benefit1'),
-        t('services.software.benefit2'),
-        t('services.software.benefit3'),
-        t('services.software.benefit4')
-      ],
-      process: [
-        {
-          title: t('services.software.process1.title'),
-          description: t('services.software.process1.description')
-        },
-        {
-          title: t('services.software.process2.title'),
-          description: t('services.software.process2.description')
-        },
-        {
-          title: t('services.software.process3.title'),
-          description: t('services.software.process3.description')
-        },
-        {
-          title: t('services.software.process4.title'),
-          description: t('services.software.process4.description')
-        }
-      ],
-      technologies: ["Angular", "Spring Boot", "Java", "Python", "React", "PostgreSQL", "Docker", "Kubernetes", "Jenkins"]
-    },
-    {
-      id: "automation",
-      title: t('services.automation.title'),
-      description: t('services.automation.description'),
-      icon: <Cog className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
-      benefits: [
-        t('services.automation.benefit1'),
-        t('services.automation.benefit2'),
-        t('services.automation.benefit3'),
-        t('services.automation.benefit4')
+        t('aid.automate.benefit1'),
+        t('aid.automate.benefit2'),
+        t('aid.automate.benefit3'),
+        t('aid.automate.benefit4')
       ],
       process: [
         {
@@ -96,18 +65,18 @@ const DetailedServiceTabs = () => {
           description: t('services.automation.process4.description')
         }
       ],
-      technologies: ["Workflow Engines", "Middleware", "Integration platforms", "Scripting", "API"],
+      technologies: ["Workflow Engines", "PowerAutomate", "Zapier", "Scripting", "Python", "AI Automation"],
     },
     {
-      id: "integration",
-      title: t('services.integration.title'),
-      description: t('services.integration.description'),
-      icon: <Network className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
+      id: "integrate",
+      title: t('aid.integrate.title'),
+      description: t('aid.integrate.description'),
+      icon: <Network className="h-6 w-6 md:h-12 md:w-12 text-aid-integrate" />,
       benefits: [
-        t('services.integration.benefit1'),
-        t('services.integration.benefit2'),
-        t('services.integration.benefit3'),
-        t('services.integration.benefit4')
+        t('aid.integrate.benefit1'),
+        t('aid.integrate.benefit2'),
+        t('aid.integrate.benefit3'),
+        t('aid.integrate.benefit4')
       ],
       process: [
         {
@@ -127,69 +96,38 @@ const DetailedServiceTabs = () => {
           description: t('services.integration.process4.description')
         }
       ],
-      technologies: ["Development", "API", "Integration", "Middleware", "Data", "Batch"]
+      technologies: ["REST API", "GraphQL", "Middleware", "Data Sync", "Webhooks", "Event-Driven"]
     },
     {
-      id: "cicd",
-      title: t('services.cicd.title'),
-      description: t('services.cicd.description'),
-      icon: <GitBranch className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
+      id: "develop",
+      title: t('aid.develop.title'),
+      description: t('aid.develop.description'),
+      icon: <Code className="h-6 w-6 md:h-12 md:w-12 text-aid-develop" />,
       benefits: [
-        t('services.cicd.benefit1'),
-        t('services.cicd.benefit2'),
-        t('services.cicd.benefit3'),
-        t('services.cicd.benefit4')
+        t('aid.develop.benefit1'),
+        t('aid.develop.benefit2'),
+        t('aid.develop.benefit3'),
+        t('aid.develop.benefit4')
       ],
       process: [
         {
-          title: t('services.cicd.process1.title'),
-          description: t('services.cicd.process1.description')
+          title: t('services.software.process1.title'),
+          description: t('services.software.process1.description')
         },
         {
-          title: t('services.cicd.process2.title'),
-          description: t('services.cicd.process2.description')
+          title: t('services.software.process2.title'),
+          description: t('services.software.process2.description')
         },
         {
-          title: t('services.cicd.process3.title'),
-          description: t('services.cicd.process3.description')
+          title: t('services.software.process3.title'),
+          description: t('services.software.process3.description')
         },
         {
-          title: t('services.cicd.process4.title'),
-          description: t('services.cicd.process4.description')
+          title: t('services.software.process4.title'),
+          description: t('services.software.process4.description')
         }
       ],
-      technologies: ["GitHub Actions", "Jenkins", "GitLab CI", "Docker", "Kubernetes", "Terraform", "Ansible", "AWS/Azure DevOps"]
-    },
-    {
-      id: "offshoring",
-      title: t('services.offshoring.title'),
-      description: t('services.offshoring.description'),
-      icon: <Monitor className="h-6 w-6 md:h-12 md:w-12 text-primary" />,
-      benefits: [
-        t('services.offshoring.benefit1'),
-        t('services.offshoring.benefit2'),
-        t('services.offshoring.benefit3'),
-        t('services.offshoring.benefit4')
-      ],
-      process: [
-        {
-          title: t('services.offshoring.process1.title'),
-          description: t('services.offshoring.process1.description')
-        },
-        {
-          title: t('services.offshoring.process2.title'),
-          description: t('services.offshoring.process2.description')
-        },
-        {
-          title: t('services.offshoring.process3.title'),
-          description: t('services.offshoring.process3.description')
-        },
-        {
-          title: t('services.offshoring.process4.title'),
-          description: t('services.offshoring.process4.description')
-        }
-      ],
-      technologies: ["Backup", "PC", "Monitoring", "Security", "VPN", "Email", "Printing", "Support", "Disaster Recovery"]
+      technologies: ["Angular", "Spring Boot", "React", "Node.js", "PostgreSQL", "Docker", "CI/CD", "DevOps"]
     }
   ];
 
@@ -203,43 +141,29 @@ const DetailedServiceTabs = () => {
         {/*  </p>*/}
         {/*</div>*/}
 
-        <Tabs defaultValue="software" className="w-full">
+        <Tabs defaultValue="automate" className="w-full">
           <div className="overflow-x-auto scroll-smooth" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
             <TabsList className="w-max mx-auto mb-12 bg-white p-1 rounded-full flex justify-between">
               <TabsTrigger
-                value="software"
-                className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Code className="mr-2 h-4 w-4" />
-              {t('services.software.title')}
-            </TabsTrigger>
-            <TabsTrigger
-              value="automation"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+                value="automate"
+                className="flex items-center data-[state=active]:bg-aid-automate data-[state=active]:text-white rounded-full px-4 py-2"
             >
               <Cog className="mr-2 h-4 w-4" />
-              {t('services.automation.title')}
+              {t('aid.automate.title')}
             </TabsTrigger>
             <TabsTrigger
-              value="integration"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+              value="integrate"
+              className="flex items-center data-[state=active]:bg-aid-integrate data-[state=active]:text-white rounded-full px-4 py-2"
             >
               <Network className="mr-2 h-4 w-4" />
-              {t('services.integration.title')}
+              {t('aid.integrate.title')}
             </TabsTrigger>
             <TabsTrigger
-              value="cicd"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
+              value="develop"
+              className="flex items-center data-[state=active]:bg-aid-develop data-[state=active]:text-white rounded-full px-4 py-2"
             >
-              <GitBranch className="mr-2 h-4 w-4" />
-              {t('services.cicd.title')}
-            </TabsTrigger>
-            <TabsTrigger
-              value="offshoring"
-              className="flex items-center data-[state=active]:bg-primary data-[state=active]:text-white rounded-full px-4 py-2"
-            >
-              <Monitor className="mr-2 h-4 w-4" />
-              {t('services.offshoring.title')}
+              <Code className="mr-2 h-4 w-4" />
+              {t('aid.develop.title')}
             </TabsTrigger>
           </TabsList>
           </div>
