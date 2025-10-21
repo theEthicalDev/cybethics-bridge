@@ -9,6 +9,9 @@ import {LoadingProvider} from "./contexts/LoadingContext";
 import PageWrapper from "./components/PageWrapper";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
+import Automate from "./pages/services/Automate";
+import Integrate from "./pages/services/Integrate";
+import Develop from "./pages/services/Develop";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -73,6 +76,9 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/automate" element={<Automate />} />
+            <Route path="/services/integrate" element={<Integrate />} />
+            <Route path="/services/develop" element={<Develop />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />

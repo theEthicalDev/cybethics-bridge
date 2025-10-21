@@ -12,6 +12,7 @@ import Stats from '@/components/Stats';
 import LocalBusinessInfo from '@/components/LocalBusinessInfo';
 import AIDPillars from '@/components/aid/AIDPillars';
 import AIDSynergy from '@/components/aid/AIDSynergy';
+import AIDBentoGrid from '@/components/aid/AIDBentoGrid';
 
 // Import the project data directly
 import {getProjects} from '@/utils/projectData';
@@ -126,6 +127,21 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection/>
+
+      {/* AID Pillars Section - Moved up for prominence */}
+      <AIDPillars />
+
+      {/* AID Synergy Section */}
+      <AIDSynergy />
+
+      {/* Automate Bento Grid */}
+      <AIDBentoGrid category="automate" />
+
+      {/* Integrate Bento Grid */}
+      <AIDBentoGrid category="integrate" />
+
+      {/* Develop Bento Grid */}
+      <AIDBentoGrid category="develop" />
 
       {/* Business Challenges Section - Enhanced with modern design */}
       <section aria-labelledby="challenges-heading" className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-gray-50 via-white to-purple-50/30 relative overflow-hidden" id="identify-challenges">
@@ -308,12 +324,6 @@ const Index = () => {
 
       {/* Local Business Info Section */}
       <LocalBusinessInfo/>
-
-      {/* AID Pillars Section - Replacing old services section */}
-      <AIDPillars />
-
-      {/* AID Synergy Section */}
-      <AIDSynergy />
 
       {/* Development Process Section */}
       <section aria-labelledby="process-heading" className="py-12 md:py-24 bg-white">
