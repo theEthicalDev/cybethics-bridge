@@ -51,22 +51,13 @@ const Footer: React.FC = () => {
             <h4 className="font-medium text-lg">{t('nav.services')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.software.title')}</Link>
+                <Link to="/services/automatisierung" className="text-text/80 hover:text-primary transition-colors">{t('aid.framework.automate.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.automation.title')}</Link>
+                <Link to="/services/integration" className="text-text/80 hover:text-primary transition-colors">{t('aid.framework.integrate.title')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.scripting.title')}</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.cicd.title')}</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.api.title')}</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-text/80 hover:text-primary transition-colors">{t('services.takeover.title')}</Link>
+                <Link to="/services/entwicklung" className="text-text/80 hover:text-primary transition-colors">{t('aid.framework.develop.title')}</Link>
               </li>
             </ul>
           </div>

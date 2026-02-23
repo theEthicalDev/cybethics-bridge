@@ -189,9 +189,88 @@
     }
   },
   "hero": {
-    "title": "Softwarelösungen für Euer Unternehmen",
-    "subtitle": "Wir Automatisieren Prozesse, Integrieren Systeme und Entwickeln massgeschneiderte Lösungen, um Eure Geschäftsabläufe zu transformieren",
-    "cta": "Dienstleistungen erkunden"
+    "title": "Digitale Systeme. Strategisch gedacht.",
+    "subtitle": "Strategischer Partner für digitale Systemarchitektur: Automatisierung von Geschäftsprozessen, Integration bestehender Software und Entwicklung massgeschneiderter Erweiterungen.",
+    "badge": ".automate .integrate .develop",
+    "cta": "Systemanalyse anfragen",
+    "ctaSecondary": "Unser Ansatz"
+  },
+  "aid": {
+    "problem": {
+      "title": "Die Realität in vielen Unternehmen",
+      "subtitle": "Fragmentierte IT-Landschaften, manuelle Prozesse und wachsende Komplexität bremsen Unternehmen aus.",
+      "disconnected": {
+        "title": "Isolierte Systeme",
+        "description": "Verschiedene Abteilungen arbeiten mit separaten Tools, die keine Daten austauschen. Informationssilos entstehen, Doppelarbeit wird zur Norm."
+      },
+      "manual": {
+        "title": "Manuelle Prozesse",
+        "description": "Wiederkehrende Aufgaben binden wertvolle Ressourcen. Mitarbeitende verbringen Stunden mit Dateneingabe, Abstimmung und Berichtserstellung."
+      },
+      "complexity": {
+        "title": "Wachsende Komplexität",
+        "description": "Mit jedem neuen Tool steigt die Komplexität. Ohne klare Architektur wird die IT-Landschaft zum Flickenteppich."
+      }
+    },
+    "framework": {
+      "title": "A.I.D. — Unser Ansatz",
+      "subtitle": "Drei Säulen für nachhaltige digitale Infrastruktur.",
+      "automate": {
+        "title": "Automatisierung",
+        "letter": "A",
+        "description": "Repetitive Geschäftsprozesse identifizieren und systematisch automatisieren — von Workflows über Datenverarbeitung bis hin zu KI-gestützten Abläufen.",
+        "outcomes": "Weniger manuelle Arbeit, weniger Fehler, mehr Kapazität für strategische Aufgaben.",
+        "link": "Mehr erfahren"
+      },
+      "integrate": {
+        "title": "Integration",
+        "letter": "I",
+        "description": "Bestehende Systeme über Schnittstellen verbinden und einen durchgängigen Datenfluss sicherstellen — von ERP über CRM bis zu Branchenlösungen.",
+        "outcomes": "Keine Datensilos, konsistente Information, operative Transparenz.",
+        "link": "Mehr erfahren"
+      },
+      "develop": {
+        "title": "Entwicklung",
+        "letter": "D",
+        "description": "Massgeschneiderte Software, Webanwendungen und Tools entwickeln, wo Standardlösungen nicht ausreichen — robust, skalierbar, wartbar.",
+        "outcomes": "Passgenaue Lösungen, Wettbewerbsvorteil, volle Kontrolle.",
+        "link": "Mehr erfahren"
+      }
+    },
+    "approach": {
+      "title": "Strukturiert. Transparent. Nachhaltig.",
+      "subtitle": "Unser Vorgehen stellt sicher, dass jede Lösung auf einem soliden Fundament steht.",
+      "step1": {
+        "title": "Systemanalyse",
+        "description": "Wir analysieren Ihre bestehende IT-Landschaft, Prozesse und Herausforderungen."
+      },
+      "step2": {
+        "title": "Konzept",
+        "description": "Basierend auf der Analyse entwickeln wir ein klares Lösungskonzept mit Architektur, Meilensteinen und Budgetrahmen."
+      },
+      "step3": {
+        "title": "Umsetzung",
+        "description": "Schrittweise Implementierung mit regelmässigen Abstimmungen und Qualitätssicherung."
+      },
+      "step4": {
+        "title": "Betrieb & Weiterentwicklung",
+        "description": "Kontinuierliche Betreuung, Monitoring und gezielte Weiterentwicklung Ihrer digitalen Infrastruktur."
+      }
+    },
+    "target": {
+      "title": "Für wen wir arbeiten",
+      "subtitle": "Wir arbeiten mit Unternehmen, die ihre digitale Infrastruktur professionell aufstellen möchten.",
+      "description": "Unsere Kunden sind typischerweise KMU mit 10 bis 200 Mitarbeitenden, die vor der Herausforderung stehen, gewachsene IT-Strukturen zu konsolidieren, Prozesse zu automatisieren oder bestehende Systeme intelligent zu verknüpfen.",
+      "trait1": "Unternehmen mit fragmentierter IT-Landschaft",
+      "trait2": "Betriebe, die manuelle Prozesse reduzieren möchten",
+      "trait3": "Organisationen, die ihre Systeme besser vernetzen wollen",
+      "trait4": "Entscheider, die einen langfristigen Technologiepartner suchen"
+    },
+    "cta": {
+      "title": "Bereit für eine Systemanalyse?",
+      "subtitle": "Lassen Sie uns gemeinsam herausfinden, wo Automatisierung, Integration und gezielte Entwicklung den grössten Hebel bieten.",
+      "button": "Systemanalyse anfragen"
+    }
   },
   "identify": {
     "title": "Erkennt Ihr diese Herausforderungen?",
@@ -434,12 +513,12 @@
       }
     },
     "hero": {
-      "title": "Dienstleistungen",
-      "subtitle": "Bringt Euer Unternehmen mit den folgenden Dienstleistungen auf die nächste Stufe 🚀"
+      "title": "Unsere Dienstleistungen",
+      "subtitle": "Drei Säulen für Ihre digitale Infrastruktur: Automatisierung, Integration und Entwicklung — strategisch gedacht und nachhaltig umgesetzt."
     },
     "cta": {
-      "title": "Bereit, mit dem Projekt zu starten?",
-      "subtitle": "Kontaktiert Uns uns noch heute, um Eure Anforderungen zu besprechen und wie wir Euch helfen können, Eure Geschäftsziele zu erreichen."
+      "title": "Bereit für den nächsten Schritt?",
+      "subtitle": "Vereinbaren Sie eine unverbindliche Systemanalyse und erfahren Sie, wie wir Ihre digitale Infrastruktur stärken können."
     },
     "more": "Mehr erfahren"
   },
@@ -642,6 +721,13 @@
     "expertise": {
       "title": "Expertise",
       "description": "Unser Team verfügt über umfangreiche Erfahrung in der Softwareentwicklung, Automatisierung und Integrationstechnologien"
+    },
+    "aid": {
+      "title": "Unser Ansatz: A.I.D.",
+      "description": "Wir kombinieren Automatisierung, Integration und Entwicklung zu einem ganzheitlichen Ansatz für Ihre digitale Infrastruktur. Dieser dreiteilige Rahmen stellt sicher, dass jede Lösung strategisch durchdacht und nachhaltig umgesetzt wird.",
+      "automate": "Automatisierung von Geschäftsprozessen für mehr Effizienz und weniger Fehler",
+      "integrate": "Integration bestehender Systeme für durchgängigen Datenfluss und Transparenz",
+      "develop": "Entwicklung massgeschneiderter Software für spezifische Anforderungen"
     }
   },
   "contact": {
@@ -659,7 +745,7 @@
     "privacy": "Datenschutzerklärung",
     "terms": "Nutzungsbedingungen",
     "imprint": "Impressum",
-    "about": "Individuelle digitale Lösungen mit Integrität entwickeln und Ethik zum Kern unseres Entwicklungsansatzes machen"
+    "about": "Strategischer Partner für digitale Systemarchitektur: Automatisierung, Integration und Entwicklung für nachhaltige Unternehmenslösungen"
   },
   "stats": {
     "successfulProjects": "Erfolgreiche Projekte",
@@ -1018,6 +1104,98 @@
       "title": "Unsere Tätigkeitsgebiete",
       "de": "Verfügbar in der gesamten Deutschschweiz",
       "remote": "Remote Arbeit weltweit"
+    }
+  },
+  "servicePage": {
+    "automate": {
+      "title": "Automatisierung",
+      "subtitle": "Geschäftsprozesse systematisch automatisieren",
+      "heroDescription": "Wir identifizieren repetitive Prozesse und automatisieren sie zuverlässig — damit Ihr Team sich auf das Wesentliche konzentrieren kann.",
+      "whatWeDo": "Was wir automatisieren",
+      "items": {
+        "workflow": { "title": "Workflow-Automatisierung", "description": "Genehmigungs-, Benachrichtigungs- und Eskalationsprozesse vollständig automatisieren." },
+        "data": { "title": "Datenverarbeitung", "description": "Automatische Erfassung, Transformation und Verteilung von Daten zwischen Systemen." },
+        "reporting": { "title": "Reporting & Monitoring", "description": "Automatisierte Berichte, Dashboards und Echtzeit-Benachrichtigungen bei kritischen Ereignissen." },
+        "ai": { "title": "KI-gestützte Prozesse", "description": "Intelligente Automatisierung mit Machine Learning für Klassifikation und Entscheidungsunterstützung." }
+      },
+      "benefitsTitle": "Ihr Nutzen",
+      "benefits": {
+        "efficiency": { "title": "Höhere Effizienz", "description": "Bis zu 80% weniger manuelle Arbeit in automatisierten Prozessen." },
+        "errors": { "title": "Weniger Fehler", "description": "Automatisierte Abläufe eliminieren menschliche Fehlerquellen." },
+        "costs": { "title": "Kostensenkung", "description": "Reduzierung von Betriebskosten durch optimierte Ressourcennutzung." },
+        "scalability": { "title": "Skalierbarkeit", "description": "Automatisierte Prozesse wachsen mit Ihrem Unternehmen." }
+      },
+      "processTitle": "Unser Vorgehen",
+      "process": {
+        "step1": { "title": "Prozessanalyse", "description": "Systematische Aufnahme und Bewertung Ihrer aktuellen Workflows." },
+        "step2": { "title": "Lösungsdesign", "description": "Konzeption einer massgeschneiderten Automatisierungsstrategie." },
+        "step3": { "title": "Implementierung", "description": "Schrittweise Umsetzung mit minimaler Unterbrechung Ihres Betriebs." },
+        "step4": { "title": "Optimierung", "description": "Kontinuierliche Messung und Verbesserung der automatisierten Abläufe." }
+      },
+      "technologies": "PowerAutomate, Zapier, Python, Custom Scripts, API-basierte Automatisierung",
+      "technologiesTitle": "Technologien",
+      "challengesTitle": "Typische Herausforderungen",
+      "projectsTitle": "Referenzprojekte"
+    },
+    "integrate": {
+      "title": "Integration",
+      "subtitle": "Systeme verbinden, Daten vereinheitlichen",
+      "heroDescription": "Wir schaffen nahtlose Verbindungen zwischen Ihren bestehenden Systemen — für durchgängigen Datenfluss und operative Transparenz.",
+      "whatWeDo": "Was wir integrieren",
+      "items": {
+        "api": { "title": "API-Entwicklung", "description": "Robuste Schnittstellen für die Kommunikation zwischen Ihren Systemen und Drittanbietern." },
+        "erp": { "title": "ERP-Integration", "description": "Nahtlose Anbindung von ERP-Systemen an Webshops, CRM und weitere Anwendungen." },
+        "sync": { "title": "Datensynchronisation", "description": "Automatischer Abgleich von Daten zwischen verschiedenen Plattformen in Echtzeit." },
+        "middleware": { "title": "Middleware-Entwicklung", "description": "Massgeschneiderte Middleware als Brücke zwischen nicht kompatiblen Systemen." }
+      },
+      "benefitsTitle": "Ihr Nutzen",
+      "benefits": {
+        "dataflow": { "title": "Durchgängiger Datenfluss", "description": "Keine manuellen Datenübertragungen mehr zwischen Systemen." },
+        "silos": { "title": "Keine Datensilos", "description": "Alle relevanten Informationen zentral und konsistent verfügbar." },
+        "intelligence": { "title": "Operative Intelligenz", "description": "Bessere Entscheidungen durch systemübergreifende Datenverfügbarkeit." },
+        "efficiency": { "title": "Effizienzsteigerung", "description": "Weniger Doppelarbeit und manuelle Abstimmung zwischen Teams." }
+      },
+      "processTitle": "Unser Vorgehen",
+      "process": {
+        "step1": { "title": "Systembewertung", "description": "Analyse Ihrer bestehenden Systeme und Integrationsanforderungen." },
+        "step2": { "title": "Integrationsstrategie", "description": "Entwicklung einer umfassenden Integrationsstrategie und -architektur." },
+        "step3": { "title": "Implementierung", "description": "Umsetzung der Integration mit geeigneten Technologien und Protokollen." },
+        "step4": { "title": "Testen & Monitoring", "description": "Umfassende Tests und laufendes Monitoring der integrierten Systeme." }
+      },
+      "technologies": "REST APIs, Spring Boot, Middleware, Webhooks, SFTP, OAuth, JSON/XML",
+      "technologiesTitle": "Technologien",
+      "challengesTitle": "Typische Herausforderungen",
+      "projectsTitle": "Referenzprojekte"
+    },
+    "develop": {
+      "title": "Entwicklung",
+      "subtitle": "Massgeschneiderte Software für Ihre Anforderungen",
+      "heroDescription": "Wo Standardlösungen nicht ausreichen, entwickeln wir passgenaue Software — robust, skalierbar und auf Ihre Geschäftsprozesse zugeschnitten.",
+      "whatWeDo": "Was wir entwickeln",
+      "items": {
+        "web": { "title": "Webanwendungen", "description": "Moderne, responsive Webanwendungen mit intuitiver Benutzerführung." },
+        "backend": { "title": "Backend-Systeme", "description": "Skalierbare Backend-Architekturen für komplexe Geschäftslogik und Datenverarbeitung." },
+        "tools": { "title": "Interne Tools", "description": "Massgeschneiderte Werkzeuge für spezifische Betriebsabläufe und Workflows." },
+        "devops": { "title": "DevOps & CI/CD", "description": "Automatisierte Build-, Test- und Deployment-Pipelines für zuverlässige Softwarebereitstellung." }
+      },
+      "benefitsTitle": "Ihr Nutzen",
+      "benefits": {
+        "tailored": { "title": "Passgenaue Lösungen", "description": "Software, die exakt auf Ihre Geschäftsprozesse zugeschnitten ist." },
+        "competitive": { "title": "Wettbewerbsvorteil", "description": "Individuelle Tools, die Ihnen einen Vorsprung verschaffen." },
+        "ownership": { "title": "Volle Kontrolle", "description": "Vollständiges Eigentum am Quellcode und der Architektur." },
+        "scalable": { "title": "Skalierbarkeit", "description": "Architektur, die mit Ihrem Unternehmen wächst." }
+      },
+      "processTitle": "Unser Vorgehen",
+      "process": {
+        "step1": { "title": "Anforderungsanalyse", "description": "Detaillierte Erfassung Ihrer Anforderungen und Geschäftsziele." },
+        "step2": { "title": "Architektur & Design", "description": "Entwurf einer robusten Architektur und benutzerfreundlichen Oberfläche." },
+        "step3": { "title": "Entwicklung & Testing", "description": "Agile Entwicklung mit kontinuierlichem Testing und regelmässigen Reviews." },
+        "step4": { "title": "Deployment & Support", "description": "Reibungslose Bereitstellung und langfristiger Support." }
+      },
+      "technologies": "Spring Boot, Angular, React, Java, Docker, Kubernetes, GitHub Actions, Jenkins",
+      "technologiesTitle": "Technologien",
+      "challengesTitle": "Typische Herausforderungen",
+      "projectsTitle": "Referenzprojekte"
     }
   }
 }

@@ -109,6 +109,26 @@ const About = () => {
         </div>
       </section>
 
+      {/* AID Philosophy */}
+      <section className="py-12 md:py-16">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
+            <h2 className="mb-6">{t('about.aid.title')}</h2>
+            <p className="text-lg text-text/80 mb-8">{t('about.aid.description')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {['automate', 'integrate', 'develop'].map((key, index) => (
+              <div key={key} className="p-6 rounded-2xl bg-white shadow-sm border border-gray-100 text-center animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary text-xl font-bold">{key[0].toUpperCase()}</span>
+                </div>
+                <p className="text-text/80">{t(`about.aid.${key}`)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Values */}
       <section className="py-12 md:py-16">
         <div className="container">

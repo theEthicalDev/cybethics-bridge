@@ -23,6 +23,9 @@ import Terms from '@/pages/Terms.tsx';
 import Imprint from '@/pages/Imprint.tsx';
 import CookieConsent from "./components/CookieConsent";
 import Pricing from "./pages/Pricing";
+import Automate from "./pages/services/Automate";
+import Integrate from "./pages/services/Integrate";
+import Develop from "./pages/services/Develop";
 
 const queryClient = new QueryClient();
 
@@ -73,6 +76,9 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/automatisierung" element={<Automate />} />
+            <Route path="/services/integration" element={<Integrate />} />
+            <Route path="/services/entwicklung" element={<Develop />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />

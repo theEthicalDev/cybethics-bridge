@@ -11,12 +11,12 @@ const CodeAnimation: React.FC = () => {
   const [text, setText] = useState("");
   const isMobile = useIsMobile();
   const codeSnippet = `
-function cybethics() {
-  const cyber = ["code", "automation", "security"];
-  const ethics = ["fairness", "empathy", "trust"];
-  ethics.map((ethic, i) => {
-    console.log(\`We are about \${cyber[i]} & \${ethic}\`);
-  });
+function aid() {
+  const automate = optimizeProcesses();
+  const integrate = connectSystems();
+  const develop = buildSolutions();
+  
+  return { automate, integrate, develop };
 }
 `;
   useEffect(() => {
@@ -116,9 +116,9 @@ const HeroSection: React.FC = () => {
             <div className="space-y-10 animate-fade-up">
               <div>
                 <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
-                  <span className="text-sm font-medium text-primary flex items-center">
+                  <span className="text-sm font-medium text-primary flex items-center font-mono tracking-wider">
                     <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
-                    Cybethics
+                    {t('hero.badge')}
                   </span>
                 </div>
                 <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
@@ -137,16 +137,16 @@ const HeroSection: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-6">
                 <Button asChild variant="gradient" size="lg" className="rounded-full group">
-                  <Link to="/services" className="relative">
+                  <Link to="/contact" className="relative">
                     {t('hero.cta')}
                     <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
-                  <Link to="/contact" className="gradient-text-subtle">
-                    {t('contact.booking')}
-                    <Calendar className="ml-2 h-5 w-5 transition-transform group-hover:scale-110"/>
-                  </Link>
+                <Button variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group cursor-pointer" onClick={() => document.getElementById('aid-framework')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <span className="gradient-text-subtle flex items-center">
+                    {t('hero.ctaSecondary')}
+                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+                  </span>
                 </Button>
               </div>
             </div>

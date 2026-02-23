@@ -48,9 +48,88 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Ethical Software Solutions for Your Business",
-    "subtitle": "We Automate processes, Integrate systems, and Develop custom solutions to transform your business operations with integrity",
-    "cta": "Explore Services"
+    "title": "Digital Systems. Strategically Designed.",
+    "subtitle": "Your strategic partner for digital system architecture: Automation of business processes, Integration of existing software, and Development of custom extensions.",
+    "badge": ".automate .integrate .develop",
+    "cta": "Request System Analysis",
+    "ctaSecondary": "Our Approach"
+  },
+  "aid": {
+    "problem": {
+      "title": "The Reality in Many Companies",
+      "subtitle": "Fragmented IT landscapes, manual processes, and growing complexity are holding businesses back.",
+      "disconnected": {
+        "title": "Isolated Systems",
+        "description": "Different departments work with separate tools that don't share data. Information silos emerge, and duplicate work becomes the norm."
+      },
+      "manual": {
+        "title": "Manual Processes",
+        "description": "Recurring tasks consume valuable resources. Employees spend hours on data entry, coordination, and report generation."
+      },
+      "complexity": {
+        "title": "Growing Complexity",
+        "description": "With each new tool, complexity increases. Without clear architecture, the IT landscape becomes a patchwork."
+      }
+    },
+    "framework": {
+      "title": "A.I.D. — Our Approach",
+      "subtitle": "Three pillars for sustainable digital infrastructure.",
+      "automate": {
+        "title": "Automation",
+        "letter": "A",
+        "description": "Identify and systematically automate repetitive business processes — from workflows to data processing to AI-assisted operations.",
+        "outcomes": "Less manual work, fewer errors, more capacity for strategic tasks.",
+        "link": "Learn more"
+      },
+      "integrate": {
+        "title": "Integration",
+        "letter": "I",
+        "description": "Connect existing systems via interfaces and ensure seamless data flow — from ERP to CRM to industry solutions.",
+        "outcomes": "No data silos, consistent information, operational transparency.",
+        "link": "Learn more"
+      },
+      "develop": {
+        "title": "Development",
+        "letter": "D",
+        "description": "Build custom software, web applications, and tools where standard solutions fall short — robust, scalable, maintainable.",
+        "outcomes": "Tailored solutions, competitive advantage, full control.",
+        "link": "Learn more"
+      }
+    },
+    "approach": {
+      "title": "Structured. Transparent. Sustainable.",
+      "subtitle": "Our methodology ensures every solution is built on a solid foundation.",
+      "step1": {
+        "title": "System Analysis",
+        "description": "We analyze your existing IT landscape, processes, and challenges."
+      },
+      "step2": {
+        "title": "Concept",
+        "description": "Based on the analysis, we develop a clear solution concept with architecture, milestones, and budget framework."
+      },
+      "step3": {
+        "title": "Implementation",
+        "description": "Step-by-step implementation with regular check-ins and quality assurance."
+      },
+      "step4": {
+        "title": "Operations & Evolution",
+        "description": "Continuous support, monitoring, and targeted development of your digital infrastructure."
+      }
+    },
+    "target": {
+      "title": "Who We Work With",
+      "subtitle": "We work with companies that want to professionally establish their digital infrastructure.",
+      "description": "Our clients are typically SMEs with 10 to 200 employees facing the challenge of consolidating grown IT structures, automating processes, or intelligently connecting existing systems.",
+      "trait1": "Companies with fragmented IT landscape",
+      "trait2": "Businesses looking to reduce manual processes",
+      "trait3": "Organizations wanting to better connect their systems",
+      "trait4": "Decision-makers seeking a long-term technology partner"
+    },
+    "cta": {
+      "title": "Ready for a System Analysis?",
+      "subtitle": "Let's find out together where automation, integration, and targeted development can create the greatest leverage for your business.",
+      "button": "Request System Analysis"
+    }
   },
   "identify": {
     "title": "Do You Recognize These Challenges?",
@@ -237,12 +316,12 @@
       }
     },
     "hero": {
-      "title": "Services",
-      "subtitle": "We provide ethical software solutions tailored to your specific business needs"
+      "title": "Our Services",
+      "subtitle": "Three pillars for your digital infrastructure: Automation, Integration, and Development — strategically designed and sustainably implemented."
     },
     "cta": {
-      "title": "Ready to start your project?",
-      "subtitle": "Get in touch today to discuss your requirements and how we can help you achieve your business goals"
+      "title": "Ready for the Next Step?",
+      "subtitle": "Schedule a no-obligation system analysis and discover how we can strengthen your digital infrastructure."
     },
     "more": "Learn More"
   },
@@ -477,6 +556,17 @@
       "practical": "Practical",
       "collaborative": "Collaborative",
       "efficient": "Efficient"
+    },
+    "expertise": {
+      "title": "Expertise",
+      "description": "Our team brings extensive experience in software development, automation, and integration technologies."
+    },
+    "aid": {
+      "title": "Our Approach: A.I.D.",
+      "description": "We combine Automation, Integration, and Development into a holistic approach for your digital infrastructure. This three-pillar framework ensures every solution is strategically designed and sustainably implemented.",
+      "automate": "Automation of business processes for greater efficiency and fewer errors",
+      "integrate": "Integration of existing systems for seamless data flow and transparency",
+      "develop": "Development of custom software for specific requirements"
     }
   },
   "contact": {
@@ -494,7 +584,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "imprint": "Imprint",
-    "about": "Crafting customized digital solutions with integrity, putting ethics at the core of the development approach"
+    "about": "Strategic partner for digital system architecture: Automation, Integration, and Development for sustainable business solutions"
   },
   "stats": {
     "successfulProjects": "Successful Projects",
@@ -990,6 +1080,98 @@
       "choose_plan": "Choose Plan",
       "contact_us": "Contact Us",
       "contact_individual": "Request Individual Offer"
+    }
+  },
+  "servicePage": {
+    "automate": {
+      "title": "Automation",
+      "subtitle": "Systematically Automate Business Processes",
+      "heroDescription": "We identify repetitive processes and reliably automate them — so your team can focus on what matters.",
+      "whatWeDo": "What We Automate",
+      "items": {
+        "workflow": { "title": "Workflow Automation", "description": "Fully automate approval, notification, and escalation processes." },
+        "data": { "title": "Data Processing", "description": "Automatic capture, transformation, and distribution of data between systems." },
+        "reporting": { "title": "Reporting & Monitoring", "description": "Automated reports, dashboards, and real-time alerts for critical events." },
+        "ai": { "title": "AI-Assisted Processes", "description": "Intelligent automation with machine learning for classification and decision support." }
+      },
+      "benefitsTitle": "Your Benefits",
+      "benefits": {
+        "efficiency": { "title": "Higher Efficiency", "description": "Up to 80% less manual work in automated processes." },
+        "errors": { "title": "Fewer Errors", "description": "Automated workflows eliminate human error sources." },
+        "costs": { "title": "Cost Reduction", "description": "Reduced operating costs through optimized resource utilization." },
+        "scalability": { "title": "Scalability", "description": "Automated processes grow with your business." }
+      },
+      "processTitle": "Our Approach",
+      "process": {
+        "step1": { "title": "Process Analysis", "description": "Systematic capture and evaluation of your current workflows." },
+        "step2": { "title": "Solution Design", "description": "Design of a customized automation strategy." },
+        "step3": { "title": "Implementation", "description": "Step-by-step implementation with minimal disruption to your operations." },
+        "step4": { "title": "Optimization", "description": "Continuous measurement and improvement of automated workflows." }
+      },
+      "technologies": "PowerAutomate, Zapier, Python, Custom Scripts, API-based Automation",
+      "technologiesTitle": "Technologies",
+      "challengesTitle": "Typical Challenges",
+      "projectsTitle": "Reference Projects"
+    },
+    "integrate": {
+      "title": "Integration",
+      "subtitle": "Connect Systems, Unify Data",
+      "heroDescription": "We create seamless connections between your existing systems — for end-to-end data flow and operational transparency.",
+      "whatWeDo": "What We Integrate",
+      "items": {
+        "api": { "title": "API Development", "description": "Robust interfaces for communication between your systems and third parties." },
+        "erp": { "title": "ERP Integration", "description": "Seamless connection of ERP systems to webshops, CRM, and other applications." },
+        "sync": { "title": "Data Synchronization", "description": "Automatic real-time data synchronization between different platforms." },
+        "middleware": { "title": "Middleware Development", "description": "Custom middleware as a bridge between incompatible systems." }
+      },
+      "benefitsTitle": "Your Benefits",
+      "benefits": {
+        "dataflow": { "title": "End-to-End Data Flow", "description": "No more manual data transfers between systems." },
+        "silos": { "title": "No Data Silos", "description": "All relevant information centrally and consistently available." },
+        "intelligence": { "title": "Operational Intelligence", "description": "Better decisions through cross-system data availability." },
+        "efficiency": { "title": "Efficiency Gains", "description": "Less duplicate work and manual coordination between teams." }
+      },
+      "processTitle": "Our Approach",
+      "process": {
+        "step1": { "title": "System Assessment", "description": "Analysis of your existing systems and integration requirements." },
+        "step2": { "title": "Integration Strategy", "description": "Development of a comprehensive integration strategy and architecture." },
+        "step3": { "title": "Implementation", "description": "Implementation of the integration with appropriate technologies and protocols." },
+        "step4": { "title": "Testing & Monitoring", "description": "Comprehensive testing and ongoing monitoring of integrated systems." }
+      },
+      "technologies": "REST APIs, Spring Boot, Middleware, Webhooks, SFTP, OAuth, JSON/XML",
+      "technologiesTitle": "Technologies",
+      "challengesTitle": "Typical Challenges",
+      "projectsTitle": "Reference Projects"
+    },
+    "develop": {
+      "title": "Development",
+      "subtitle": "Custom Software for Your Requirements",
+      "heroDescription": "Where standard solutions fall short, we build tailored software — robust, scalable, and aligned with your business processes.",
+      "whatWeDo": "What We Develop",
+      "items": {
+        "web": { "title": "Web Applications", "description": "Modern, responsive web applications with intuitive user interfaces." },
+        "backend": { "title": "Backend Systems", "description": "Scalable backend architectures for complex business logic and data processing." },
+        "tools": { "title": "Internal Tools", "description": "Custom tools for specific operational workflows and processes." },
+        "devops": { "title": "DevOps & CI/CD", "description": "Automated build, test, and deployment pipelines for reliable software delivery." }
+      },
+      "benefitsTitle": "Your Benefits",
+      "benefits": {
+        "tailored": { "title": "Tailored Solutions", "description": "Software precisely aligned with your business processes." },
+        "competitive": { "title": "Competitive Advantage", "description": "Custom tools that give you an edge over the competition." },
+        "ownership": { "title": "Full Control", "description": "Complete ownership of source code and architecture." },
+        "scalable": { "title": "Scalability", "description": "Architecture that grows with your business." }
+      },
+      "processTitle": "Our Approach",
+      "process": {
+        "step1": { "title": "Requirements Analysis", "description": "Detailed capture of your requirements and business goals." },
+        "step2": { "title": "Architecture & Design", "description": "Design of a robust architecture and user-friendly interface." },
+        "step3": { "title": "Development & Testing", "description": "Agile development with continuous testing and regular reviews." },
+        "step4": { "title": "Deployment & Support", "description": "Smooth deployment and long-term support." }
+      },
+      "technologies": "Spring Boot, Angular, React, Java, Docker, Kubernetes, GitHub Actions, Jenkins",
+      "technologiesTitle": "Technologies",
+      "challengesTitle": "Typical Challenges",
+      "projectsTitle": "Reference Projects"
     }
   }
 }
