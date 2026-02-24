@@ -1,63 +1,104 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import {Link} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Button} from '@/components/ui/button';
-import {Calendar, ChevronRight, Sparkles, MapPin} from 'lucide-react';
+import {Calendar, ChevronRight, Sparkles, MapPin, Cog, Network, Code} from 'lucide-react';
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {useIsMobile} from '@/hooks/use-mobile';
 
-const CodeAnimation: React.FC = () => {
-  const [text, setText] = useState("");
+const AIDVisual: React.FC = () => {
+  const {t} = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
   const isMobile = useIsMobile();
-  const codeSnippet = `
-function aid() {
-  const automate = optimizeProcesses();
-  const integrate = connectSystems();
-  const develop = buildSolutions();
-  
-  return { automate, integrate, develop };
-}
-`;
+
+  const pillars = [
+    { letter: 'A', key: 'automate', icon: Cog, color: 'from-blue-500 to-blue-600', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/30', textColor: 'text-blue-600' },
+    { letter: 'I', key: 'integrate', icon: Network, color: 'from-emerald-500 to-emerald-600', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/30', textColor: 'text-emerald-600' },
+    { letter: 'D', key: 'develop', icon: Code, color: 'from-violet-500 to-violet-600', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500/30', textColor: 'text-violet-600' },
+  ];
+
   useEffect(() => {
-    let currentText = "";
-    let currentIndex = 0;
     const interval = setInterval(() => {
-      if (currentIndex < codeSnippet.length) {
-        currentText += codeSnippet[currentIndex];
-        setText(currentText);
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 15);
+      setActiveIndex((prev) => (prev + 1) % 3);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className={`glass-card rounded-2xl shadow-large px-8 py-6 font-mono text-sm ${isMobile ? 'w-[100%] ' : ''} overflow-hidden md:h-64 h-56 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group relative`}>
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-      
-      <div className="relative z-10">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-400"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-            <div className="w-3 h-3 rounded-full bg-green-400"></div>
-          </div>
-          <span className="text-xs text-primary/60 font-sans">cybethics.js</span>
-        </div>
+    <div className="relative w-full">
+      {/* Main visual container */}
+      <div className="glass-card rounded-2xl shadow-large p-6 md:p-8 overflow-hidden hover:shadow-xl transition-all duration-500 group relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
         
-        <pre className="text-left overflow-x-hidden">
-          <code className="text-primary/90 text-xs sm:text-sm leading-relaxed">
-            {text}
-          </code>
-        </pre>
+        <div className="relative z-10 space-y-5">
+          {/* AID Letters row */}
+          <div className="flex items-center justify-center gap-3 md:gap-4 mb-2">
+            {pillars.map((pillar, index) => {
+              const Icon = pillar.icon;
+              const isActive = activeIndex === index;
+              return (
+                <div
+                  key={pillar.letter}
+                  className={`relative flex flex-col items-center transition-all duration-700 cursor-pointer ${isActive ? 'scale-110' : 'scale-95 opacity-60'}`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center transition-all duration-700 ${isActive ? `bg-gradient-to-br ${pillar.color} shadow-lg` : `${pillar.bgColor} border ${pillar.borderColor}`}`}>
+                    <span className={`text-2xl md:text-3xl font-bold transition-colors duration-500 ${isActive ? 'text-white' : pillar.textColor}`}>{pillar.letter}</span>
+                  </div>
+                  {isActive && (
+                    <div className="absolute -bottom-1 w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Connecting lines animation */}
+          <div className="flex items-center justify-center gap-0 -mt-3 mb-2">
+            <div className={`h-0.5 flex-1 max-w-16 transition-all duration-700 ${activeIndex >= 0 ? 'bg-gradient-to-r from-blue-500/50 to-emerald-500/50' : 'bg-border/30'}`}></div>
+            <div className="w-2 h-2 rounded-full bg-primary/40"></div>
+            <div className={`h-0.5 flex-1 max-w-16 transition-all duration-700 ${activeIndex >= 1 ? 'bg-gradient-to-r from-emerald-500/50 to-violet-500/50' : 'bg-border/30'}`}></div>
+          </div>
+
+          {/* Active pillar content */}
+          <div className="min-h-[100px] md:min-h-[120px] flex flex-col items-center justify-center text-center transition-all duration-500">
+            {pillars.map((pillar, index) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={pillar.key}
+                  className={`transition-all duration-500 absolute ${activeIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+                >
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Icon className={`h-5 w-5 ${pillar.textColor}`} />
+                    <h3 className={`text-lg md:text-xl font-bold ${pillar.textColor}`}>
+                      {t(`aid.framework.${pillar.key}.title`)}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
+                    {t(`aid.framework.${pillar.key}.outcomes`)}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Progress dots */}
+          <div className="flex items-center justify-center gap-2 pt-2">
+            {pillars.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`rounded-full transition-all duration-500 ${activeIndex === index ? 'w-8 h-2 bg-primary' : 'w-2 h-2 bg-primary/30 hover:bg-primary/50'}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Subtle glow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl blur-xl"></div>
       </div>
-      
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl blur-xl"></div>
     </div>
   );
 };
@@ -68,7 +109,6 @@ const ContactPartner: React.FC = () => {
   return (
     <div className="container relative z-20 -mb-16">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-10 bg-white/95 backdrop-blur-lg shadow-large rounded-2xl max-w-3xl mx-auto border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group" style={{transform: 'translateY(-20px)'}}>
-        {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-100/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         <div className="text-center md:text-left relative z-10">
@@ -151,7 +191,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Enhanced desktop view */}
+            {/* Desktop view */}
             {!isMobile && (
               <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
                 <div className="relative h-72 items-center justify-center hidden lg:flex">
@@ -164,22 +204,21 @@ const HeroSection: React.FC = () => {
                 </div>
 
                 <div className="hover-lift">
-                  <CodeAnimation/>
+                  <AIDVisual />
                 </div>
               </div>
             )}
 
-            {/* Enhanced mobile view */}
+            {/* Mobile view */}
             {isMobile && (
               <div className="mt-8 hover-lift">
-                <CodeAnimation/>
+                <AIDVisual />
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* Enhanced Contact Partner */}
       <ContactPartner/>
     </>
   );

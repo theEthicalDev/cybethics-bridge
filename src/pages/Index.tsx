@@ -10,6 +10,7 @@ import AIDProblemStatement from '@/components/aid/AIDProblemStatement';
 import AIDFramework from '@/components/aid/AIDFramework';
 import AIDApproach from '@/components/aid/AIDApproach';
 import AIDTargetClients from '@/components/aid/AIDTargetClients';
+import AIDConviction from '@/components/aid/AIDConviction';
 import { getProjects } from '@/utils/projectData';
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <AIDProblemStatement />
       <AIDFramework />
       <AIDApproach />
+      <AIDConviction />
       <AIDTargetClients />
 
       {/* Projects Section */}
