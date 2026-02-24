@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import ProjectCard from '@/components/ProjectCard';
 import { getProjects } from '@/utils/projectData';
 
-const items = ['api', 'erp', 'sync', 'middleware'];
+const items = ['api', 'erp', 'sync', 'tools'];
 const benefitKeys = ['dataflow', 'silos', 'intelligence', 'efficiency'];
 const benefitIcons = [GitMerge, Database, Brain, Workflow];
 const processSteps = ['step1', 'step2', 'step3', 'step4'];
@@ -131,8 +131,23 @@ const Integrate = () => {
         </div>
       </section>
 
+      {/* Partner Tools */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4">{t('servicePage.integrate.partnersTitle')}</h3>
+            <p className="text-muted-foreground leading-relaxed">{t('servicePage.integrate.partnersDescription')}</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {t('servicePage.integrate.technologies').split(', ').map((tech) => (
+              <span key={tech} className="px-4 py-2 rounded-full bg-card border border-border/50 text-sm font-medium shadow-soft">{tech}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Technologies */}
-      <section className="py-12 bg-muted/30">
+      <section className="py-12">
         <div className="container text-center">
           <h3 className="text-lg font-semibold mb-4">{t('servicePage.integrate.technologiesTitle')}</h3>
           <div className="flex flex-wrap justify-center gap-3">

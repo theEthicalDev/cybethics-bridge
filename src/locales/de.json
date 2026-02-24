@@ -225,7 +225,7 @@
       "integrate": {
         "title": "Integration",
         "letter": "I",
-        "description": "Bestehende Systeme über Schnittstellen verbinden und einen durchgängigen Datenfluss sicherstellen — von ERP über CRM bis zu Branchenlösungen.",
+        "description": "Bestehende Systeme verbinden, passende Softwaretools einführen und einen durchgängigen Datenfluss sicherstellen — von ERP über CRM bis zu Branchenlösungen und Partnertools.",
         "outcomes": "Keine Datensilos, konsistente Information, operative Transparenz.",
         "link": "Mehr erfahren"
       },
@@ -270,6 +270,23 @@
       "title": "Bereit für eine Systemanalyse?",
       "subtitle": "Lassen Sie uns gemeinsam herausfinden, wo Automatisierung, Integration und gezielte Entwicklung den grössten Hebel bieten.",
       "button": "Systemanalyse anfragen"
+    },
+    "conviction": {
+      "title": "Wir übernehmen. Sie fokussieren.",
+      "subtitle": "Technische Komplexität gehört nicht auf Ihren Schreibtisch. Wir nehmen Ihnen die digitale Last ab — strukturiert, zuverlässig und langfristig.",
+      "takeover": {
+        "title": "Komplette Übernahme",
+        "description": "Wir übernehmen die Verantwortung für Ihre digitale Infrastruktur — von der Analyse über die Umsetzung bis zum laufenden Betrieb. Sie müssen sich um nichts kümmern."
+      },
+      "partnership": {
+        "title": "Langfristige Partnerschaft",
+        "description": "Kein einmaliges Projekt, sondern ein verlässlicher Technologiepartner an Ihrer Seite. Wir denken mit, planen voraus und handeln proaktiv."
+      },
+      "results": {
+        "title": "Messbare Ergebnisse",
+        "description": "Weniger manuelle Arbeit, weniger Fehler, schnellere Prozesse. Unsere Lösungen liefern konkrete, messbare Verbesserungen für Ihr Unternehmen."
+      },
+      "promise": "Wir lösen Ihre IT-Herausforderungen, damit Sie sich auf Ihr Kerngeschäft konzentrieren können."
     }
   },
   "identify": {
@@ -1146,8 +1163,10 @@
         "api": { "title": "API-Entwicklung", "description": "Robuste Schnittstellen für die Kommunikation zwischen Ihren Systemen und Drittanbietern." },
         "erp": { "title": "ERP-Integration", "description": "Nahtlose Anbindung von ERP-Systemen an Webshops, CRM und weitere Anwendungen." },
         "sync": { "title": "Datensynchronisation", "description": "Automatischer Abgleich von Daten zwischen verschiedenen Plattformen in Echtzeit." },
-        "middleware": { "title": "Middleware-Entwicklung", "description": "Massgeschneiderte Middleware als Brücke zwischen nicht kompatiblen Systemen." }
+        "tools": { "title": "Softwaretool-Integration", "description": "Evaluierung und Einführung passender Softwaretools für Ihre Geschäftsprozesse — von Projektmanagement bis CRM." }
       },
+      "partnersTitle": "Partnertools & Technologien",
+      "partnersDescription": "Wir arbeiten mit bewährten Softwarelösungen und integrieren diese nahtlos in Ihre bestehende Infrastruktur. Details zu unseren Partnertools folgen in Kürze.",
       "benefitsTitle": "Ihr Nutzen",
       "benefits": {
         "dataflow": { "title": "Durchgängiger Datenfluss", "description": "Keine manuellen Datenübertragungen mehr zwischen Systemen." },

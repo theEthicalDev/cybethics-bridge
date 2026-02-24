@@ -84,7 +84,7 @@
       "integrate": {
         "title": "Integration",
         "letter": "I",
-        "description": "Connect existing systems via interfaces and ensure seamless data flow — from ERP to CRM to industry solutions.",
+        "description": "Connect existing systems, introduce suitable software tools, and ensure seamless data flow — from ERP to CRM to industry solutions and partner tools.",
         "outcomes": "No data silos, consistent information, operational transparency.",
         "link": "Learn more"
       },
@@ -129,6 +129,23 @@
       "title": "Ready for a System Analysis?",
       "subtitle": "Let's find out together where automation, integration, and targeted development can create the greatest leverage for your business.",
       "button": "Request System Analysis"
+    },
+    "conviction": {
+      "title": "We Take Over. You Focus.",
+      "subtitle": "Technical complexity doesn't belong on your desk. We take the digital burden off your shoulders — structured, reliable, and long-term.",
+      "takeover": {
+        "title": "Complete Takeover",
+        "description": "We take responsibility for your digital infrastructure — from analysis through implementation to ongoing operations. You don't have to worry about anything."
+      },
+      "partnership": {
+        "title": "Long-Term Partnership",
+        "description": "Not a one-time project, but a reliable technology partner at your side. We think ahead, plan proactively, and act decisively."
+      },
+      "results": {
+        "title": "Measurable Results",
+        "description": "Less manual work, fewer errors, faster processes. Our solutions deliver concrete, measurable improvements for your business."
+      },
+      "promise": "We solve your IT challenges so you can focus on your core business."
     }
   },
   "identify": {
@@ -1122,8 +1139,10 @@
         "api": { "title": "API Development", "description": "Robust interfaces for communication between your systems and third parties." },
         "erp": { "title": "ERP Integration", "description": "Seamless connection of ERP systems to webshops, CRM, and other applications." },
         "sync": { "title": "Data Synchronization", "description": "Automatic real-time data synchronization between different platforms." },
-        "middleware": { "title": "Middleware Development", "description": "Custom middleware as a bridge between incompatible systems." }
+        "tools": { "title": "Software Tool Integration", "description": "Evaluation and implementation of suitable software tools for your business processes — from project management to CRM." }
       },
+      "partnersTitle": "Partner Tools & Technologies",
+      "partnersDescription": "We work with proven software solutions and seamlessly integrate them into your existing infrastructure. Details about our partner tools coming soon.",
       "benefitsTitle": "Your Benefits",
       "benefits": {
         "dataflow": { "title": "End-to-End Data Flow", "description": "No more manual data transfers between systems." },
