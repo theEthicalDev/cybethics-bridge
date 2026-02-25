@@ -11,6 +11,9 @@ import AIDFramework from '@/components/aid/AIDFramework';
 import AIDApproach from '@/components/aid/AIDApproach';
 import AIDTargetClients from '@/components/aid/AIDTargetClients';
 import AIDConviction from '@/components/aid/AIDConviction';
+import AIDClientJourney from '@/components/aid/AIDClientJourney';
+import AIDScope from '@/components/aid/AIDScope';
+import ContactPartner from '@/components/ContactPartner';
 import { getProjects } from '@/utils/projectData';
 
 const Index = () => {
@@ -23,7 +26,10 @@ const Index = () => {
       <AIDProblemStatement />
       <AIDFramework />
       <AIDApproach />
+      <AIDClientJourney />
       <AIDConviction />
+      <ContactPartner />
+      <AIDScope />
       <AIDTargetClients />
 
       {/* Projects Section */}
@@ -112,16 +118,16 @@ const Index = () => {
               <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
             <div className="relative z-10 max-w-4xl mx-auto animate-fade-up">
-              <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold text-white mb-8">{t('aid.cta.title')}</h2>
-              <p className="text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto">{t('aid.cta.subtitle')}</p>
+              <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold text-primary-foreground mb-8">{t('aid.cta.title')}</h2>
+              <p className="text-xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">{t('aid.cta.subtitle')}</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-none rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+                <Button asChild size="lg" variant="outline" className="bg-background text-primary hover:bg-background/90 border-none rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
                   <Link to="/contact" className="px-8 py-4 font-semibold">
                     <Calendar className="mr-2 h-5 w-5" />
                     {t('aid.cta.button')}
                   </Link>
                 </Button>
-                <Button asChild size="lg" className="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 hover:border-white rounded-full hover:scale-105 transition-all duration-300">
+                <Button asChild size="lg" className="bg-transparent text-primary-foreground border-2 border-primary-foreground/30 hover:bg-primary-foreground/10 hover:border-primary-foreground rounded-full hover:scale-105 transition-all duration-300">
                   <Link to="/services" className="px-8 py-4 font-semibold">
                     {t('nav.services')}
                     <ArrowRight className="ml-2 h-5 w-5" />

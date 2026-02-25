@@ -1,13 +1,19 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Shield, Handshake, TrendingUp, ArrowRight } from 'lucide-react';
+import { Shield, Handshake, TrendingUp, ArrowRight, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const reasons = [
   { key: 'takeover', icon: Shield },
   { key: 'partnership', icon: Handshake },
   { key: 'results', icon: TrendingUp },
+];
+
+const scenarios = [
+  { key: '1' },
+  { key: '2' },
+  { key: '3' },
 ];
 
 const AIDConviction: React.FC = () => {
@@ -25,7 +31,7 @@ const AIDConviction: React.FC = () => {
           <p className="text-lg text-muted-foreground leading-relaxed">{t('aid.conviction.subtitle')}</p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
@@ -44,7 +50,36 @@ const AIDConviction: React.FC = () => {
           })}
         </div>
 
-        <div className="text-center animate-fade-up" style={{ animationDelay: '450ms' }}>
+        {/* Before/After Scenarios */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <h3 className="text-xl font-semibold text-center mb-8 animate-fade-up">{t('aid.conviction.scenariosTitle')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {scenarios.map((scenario, index) => (
+              <div
+                key={scenario.key}
+                className="rounded-2xl border border-border/50 overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: `${(index + 3) * 100}ms` }}
+              >
+                {/* Before */}
+                <div className="p-5 bg-destructive/5 border-b border-border/50">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-destructive/70 mb-2 block">{t('aid.conviction.before')}</span>
+                  <p className="text-sm font-medium text-foreground">{t(`aid.conviction.scenarios.${scenario.key}.before`)}</p>
+                </div>
+                {/* Arrow */}
+                <div className="flex items-center justify-center py-2 bg-card">
+                  <ArrowDown className="h-5 w-5 text-primary" />
+                </div>
+                {/* After */}
+                <div className="p-5 bg-primary/5">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary/70 mb-2 block">{t('aid.conviction.after')}</span>
+                  <p className="text-sm font-medium text-foreground">{t(`aid.conviction.scenarios.${scenario.key}.after`)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center animate-fade-up" style={{ animationDelay: '600ms' }}>
           <p className="text-lg font-medium text-foreground/90 mb-6 max-w-2xl mx-auto">{t('aid.conviction.promise')}</p>
           <Button asChild variant="gradient" size="lg" className="rounded-full group">
             <Link to="/contact">
