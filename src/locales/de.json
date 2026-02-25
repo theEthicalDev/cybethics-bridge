@@ -2,8 +2,8 @@
   "seo": {
     "softwareentwicklung": {
       "title": "Professionelle Softwareentwicklung und Automatisierung",
-      "description": "Cybethics ist Ihr Partner für massgeschneiderte Softwareentwicklung in Luzern, Zug und der gesamten Zentralschweiz. Wir entwickeln moderne, skalierbare Webanwendungen und automatisieren Ihre Geschäftsprozesse.",
-      "details": "Unsere erfahrenen Entwickler nutzen bewährte Technologien und agile Methoden, um Ihnen Softwarelösungen zu liefern, die Ihr Unternehmen voranbringen. Von der Konzeption bis zur Wartung begleiten wir Sie durch den gesamten Entwicklungsprozess.",
+      "description": "Cybethics ist Euer Partner für massgeschneiderte Softwareentwicklung in Luzern, Zug und der gesamten Zentralschweiz. Wir entwickeln moderne, skalierbare Webanwendungen und automatisieren Eure Geschäftsprozesse.",
+      "details": "Unsere erfahrenen Entwickler nutzen bewährte Technologien und agile Methoden, um Euch Softwarelösungen zu liefern, die Euer Unternehmen voranbringen. Von der Konzeption bis zur Wartung begleiten wir Euch durch den gesamten Entwicklungsprozess.",
       "imageAlt": "Moderne Softwareentwicklung und Webapplikationen von Cybethics",
       "cta": "Softwareentwicklung erkunden",
       "contact": "Unsere Dienstleistungen umfassen",
@@ -18,13 +18,13 @@
     },
     "automatisierung": {
       "title": "Geschäftsprozess-Automatisierung für mehr Effizienz",
-      "description": "Steigern Sie die Effizienz Ihres Unternehmens mit intelligenter Automatisierung. Cybethics entwickelt maßgeschneiderte Automatisierungslösungen, die repetitive Aufgaben eliminieren und Ihre Mitarbeiter entlasten.",
-      "details": "Durch die Automatisierung von Workflows, Datenverarbeitung und Systemintegrationen können Sie Kosten senken, Fehler reduzieren und sich auf das Wesentliche konzentrieren. Unsere Automatisierungslösungen sind skalierbar und wachsen mit Ihrem Unternehmen mit.",
+      "description": "Steigert die Effizienz Eures Unternehmens mit intelligenter Automatisierung. Cybethics entwickelt maßgeschneiderte Automatisierungslösungen, die repetitive Aufgaben eliminieren und Eure Mitarbeitenden entlasten.",
+      "details": "Durch die Automatisierung von Workflows, Datenverarbeitung und Systemintegrationen könnt Ihr Kosten senken, Fehler reduzieren und Euch auf das Wesentliche konzentrieren. Unsere Automatisierungslösungen sind skalierbar und wachsen mit Eurem Unternehmen mit.",
       "imageAlt": "Workflow-Automatisierung und Prozessoptimierung",
       "cta": "Automatisierung entdecken",
-      "info1": "Besuchen Sie unsere ",
+      "info1": "Besucht unsere ",
       "faq": "FAQ-Seite",
-      "info2": "für häufige Fragen zur Automatisierung oder kontaktieren Sie uns für eine",
+      "info2": "für häufige Fragen zur Automatisierung oder kontaktiert uns für eine",
       "freeConsulting": "kostenlose Beratung",
       "info3": "Lesen Sie mehr",
       "team": "über unser Team",
@@ -49,11 +49,11 @@
   },
   "pricing": {
     "badge": "Transparente Preisgestaltung",
-    "title": "Faire und transparente Preise für Ihre digitalen Projekte",
-    "subtitle": "Erhalten Sie einen ersten Eindruck der Kosten für Ihr Softwareprojekt mit unserem interaktiven Kalkulator und wählen Sie das passende Wartungspaket",
+    "title": "Faire und transparente Preise für Eure digitalen Projekte",
+    "subtitle": "Erhaltet einen ersten Eindruck der Kosten für Euer Softwareprojekt mit unserem interaktiven Kalkulator und wählt das passende Wartungspaket",
     "information": {
       "title": "Wie wir Software-Entwicklung kalkulieren",
-      "subtitle": "Verstehen Sie unseren transparenten Ansatz zur Projektbewertung und warum Wartung entscheidend ist",
+      "subtitle": "Versteht unseren transparenten Ansatz zur Projektbewertung und warum Wartung entscheidend ist",
       "estimation": {
         "title": "Projektschätzung",
         "description": "Unsere Kostenschätzungen basieren auf bewährten Methoden und jahrelanger Erfahrung in der Softwareentwicklung",
@@ -71,7 +71,7 @@
     },
     "calculator": {
       "title": "Projekt-Kalkulator",
-      "subtitle": "Erhalten Sie eine erste Kostenschätzung für Ihr Softwareprojekt basierend auf Ihren spezifischen Anforderungen",
+      "subtitle": "Erhaltet eine erste Kostenschätzung für Euer Softwareprojekt basierend auf Euren spezifischen Anforderungen",
       "estimate": "Schätzung",
       "project_calculator": "Interaktiver Projektkalkulator",
       "project_size": "Projektgrösse",
@@ -145,9 +145,9 @@
     },
     "maintenance": {
       "title": "Wartungspakete für langfristigen Erfolg",
-      "subtitle": "Halten Sie Ihre Software sicher, aktuell und leistungsfähig mit unseren professionellen Wartungspaketen.",
+      "subtitle": "Haltet Eure Software sicher, aktuell und leistungsfähig mit unseren professionellen Wartungspaketen.",
       "explanation": "Warum Wartung wichtig ist",
-      "explanation_text": "Software-Wartung ist wie die regelmässige Wartung Ihres Autos - sie hält alles reibungslos am Laufen, schützt vor Sicherheitsrisiken und sorgt für optimale Performance. Ohne regelmässige Updates können Sicherheitslücken entstehen und die Performance nachlassen.",
+      "explanation_text": "Software-Wartung ist wie die regelmässige Wartung Eures Autos - sie hält alles reibungslos am Laufen, schützt vor Sicherheitsrisiken und sorgt für optimale Performance. Ohne regelmässige Updates können Sicherheitslücken entstehen und die Performance nachlassen.",
       "popular": "Beliebt",
       "basic": {
         "title": "Basic",
@@ -181,7 +181,7 @@
       },
       "individual": {
         "title": "Individuell",
-        "description": "Benötigen Sie ein massgeschneidertes Wartungspaket? Lassen Sie uns gemeinsam die beste Lösung für Ihre spezifischen Anforderungen finden."
+        "description": "Benötigt Ihr ein massgeschneidertes Wartungspaket? Lass uns gemeinsam die beste Lösung für Eure spezifischen Anforderungen finden."
       },
       "choose_plan": "Paket wählen",
       "contact_us": "Kontakt aufnehmen",
@@ -242,7 +242,7 @@
       "subtitle": "Unser Vorgehen stellt sicher, dass jede Lösung auf einem soliden Fundament steht.",
       "step1": {
         "title": "Systemanalyse",
-        "description": "Wir analysieren Ihre bestehende IT-Landschaft, Prozesse und Herausforderungen."
+        "description": "Wir analysieren Eure bestehende IT-Landschaft, Prozesse und Herausforderungen."
       },
       "step2": {
         "title": "Konzept",
@@ -254,7 +254,7 @@
       },
       "step4": {
         "title": "Betrieb & Weiterentwicklung",
-        "description": "Kontinuierliche Betreuung, Monitoring und gezielte Weiterentwicklung Ihrer digitalen Infrastruktur."
+        "description": "Kontinuierliche Betreuung, Monitoring und gezielte Weiterentwicklung Eurer digitalen Infrastruktur."
       }
     },
     "target": {
@@ -268,30 +268,102 @@
     },
     "cta": {
       "title": "Bereit für eine Systemanalyse?",
-      "subtitle": "Lassen Sie uns gemeinsam herausfinden, wo Automatisierung, Integration und gezielte Entwicklung den grössten Hebel bieten.",
+      "subtitle": "Lass uns gemeinsam herausfinden, wo Automatisierung, Integration und gezielte Entwicklung den grössten Hebel bieten.",
       "button": "Systemanalyse anfragen"
     },
     "conviction": {
-      "title": "Wir übernehmen. Sie fokussieren.",
-      "subtitle": "Technische Komplexität gehört nicht auf Ihren Schreibtisch. Wir nehmen Ihnen die digitale Last ab — strukturiert, zuverlässig und langfristig.",
+      "title": "Wir übernehmen. Ihr fokussiert.",
+      "subtitle": "Technische Komplexität gehört nicht auf Euren Schreibtisch. Wir nehmen Euch die digitale Last ab — strukturiert, zuverlässig und langfristig.",
       "takeover": {
         "title": "Komplette Übernahme",
-        "description": "Wir übernehmen die Verantwortung für Ihre digitale Infrastruktur — von der Analyse über die Umsetzung bis zum laufenden Betrieb. Sie müssen sich um nichts kümmern."
+        "description": "Wir übernehmen die Verantwortung für Eure digitale Infrastruktur — von der Analyse über die Umsetzung bis zum laufenden Betrieb. Ihr müsst Euch um nichts kümmern."
       },
       "partnership": {
         "title": "Langfristige Partnerschaft",
-        "description": "Kein einmaliges Projekt, sondern ein verlässlicher Technologiepartner an Ihrer Seite. Wir denken mit, planen voraus und handeln proaktiv."
+        "description": "Kein einmaliges Projekt, sondern ein verlässlicher Technologiepartner an Eurer Seite. Wir denken mit, planen voraus und handeln proaktiv."
       },
       "results": {
         "title": "Messbare Ergebnisse",
-        "description": "Weniger manuelle Arbeit, weniger Fehler, schnellere Prozesse. Unsere Lösungen liefern konkrete, messbare Verbesserungen für Ihr Unternehmen."
+        "description": "Weniger manuelle Arbeit, weniger Fehler, schnellere Prozesse. Unsere Lösungen liefern konkrete, messbare Verbesserungen für Euer Unternehmen."
       },
-      "promise": "Wir lösen Ihre IT-Herausforderungen, damit Sie sich auf Ihr Kerngeschäft konzentrieren können."
+      "promise": "Wir lösen Eure IT-Herausforderungen, damit Ihr Euch auf Euer Kerngeschäft konzentrieren könnt.",
+      "scenariosTitle": "Konkrete Ergebnisse",
+      "before": "Vorher",
+      "after": "Nachher",
+      "scenarios": {
+        "1": {
+          "before": "Manuelle Auftragsbearbeitung (3h/Tag)",
+          "after": "Automatisierter Workflow (5 Min/Tag)"
+        },
+        "2": {
+          "before": "5 Systeme ohne Verbindung",
+          "after": "1 integrierte Plattform"
+        },
+        "3": {
+          "before": "Excel-Reporting am Monatsende",
+          "after": "Echtzeit-Dashboard"
+        }
+      }
+    },
+    "journey": {
+      "title": "Euer Weg mit uns",
+      "subtitle": "Ihr beschreibt. Wir übernehmen.",
+      "youLabel": "Ihr",
+      "weLabel": "Wir übernehmen",
+      "step1": {
+        "you": "Ihr beschreibt Eure Herausforderung",
+        "we": "Wir analysieren Eure IT-Landschaft, dokumentieren Prozesse und priorisieren Handlungsfelder."
+      },
+      "step2": {
+        "you": "Ihr gebt Feedback zum Konzept",
+        "we": "Wir entwerfen die Architektur, planen Meilensteine und definieren den Budgetrahmen."
+      },
+      "step3": {
+        "you": "Ihr testet und bestätigt",
+        "we": "Wir implementieren, testen, iterieren und deployen — mit regelmässigen Abstimmungen."
+      },
+      "step4": {
+        "you": "Ihr fokussiert Euch auf Euer Geschäft",
+        "we": "Wir monitoren, warten, optimieren und entwickeln Eure Systeme laufend weiter."
+      }
+    },
+    "scope": {
+      "title": "Was wir für Euch übernehmen",
+      "subtitle": "Alles aus einer Hand — von der Analyse bis zum laufenden Betrieb.",
+      "youOnly": "Ihr müsst nur: Eure Ziele beschreiben und Feedback geben.",
+      "analysis": {
+        "title": "Analyse",
+        "item1": "IT-Landschaft erfassen und bewerten",
+        "item2": "Prozesse dokumentieren und visualisieren",
+        "item3": "Optimierungspotenziale identifizieren",
+        "item4": "Passende Tools evaluieren"
+      },
+      "implementation": {
+        "title": "Umsetzung",
+        "item1": "Architektur und Design",
+        "item2": "Entwicklung und Integration",
+        "item3": "Testing und Qualitätssicherung",
+        "item4": "Schrittweise Einführung"
+      },
+      "operations": {
+        "title": "Betrieb",
+        "item1": "Hosting und Infrastruktur",
+        "item2": "Monitoring und Alerting",
+        "item3": "Regelmässige Backups",
+        "item4": "Sicherheitsupdates"
+      },
+      "support": {
+        "title": "Support",
+        "item1": "Fehlerbehebung und Bugfixes",
+        "item2": "Feature-Requests und Weiterentwicklung",
+        "item3": "Beratung und Sparring",
+        "item4": "Schulung und Onboarding"
+      }
     }
   },
   "identify": {
     "title": "Erkennt Ihr diese Herausforderungen?",
-    "subtitle": "Viele Unternehmen stehen vor ähnlichen Herausforderungen. Prüft, ob Ihnen etwas davon bekannt vorkommt:",
+    "subtitle": "Viele Unternehmen stehen vor ähnlichen Herausforderungen. Prüft, ob Euch etwas davon bekannt vorkommt:",
     "manual": {
       "question": "Verbringt Ihr zu viel Zeit mit sich wiederholenden Aufgaben?",
       "description": "Manuelle Dateneingabe, Berichtserstellung und andere repetitive Aufgaben verbrauchen wertvolle Mitarbeiterzeit, die besser für strategische Aktivitäten genutzt werden könnte."
@@ -531,11 +603,11 @@
     },
     "hero": {
       "title": "Unsere Dienstleistungen",
-      "subtitle": "Drei Säulen für Ihre digitale Infrastruktur: Automatisierung, Integration und Entwicklung — strategisch gedacht und nachhaltig umgesetzt."
+      "subtitle": "Drei Säulen für Eure digitale Infrastruktur: Automatisierung, Integration und Entwicklung — strategisch gedacht und nachhaltig umgesetzt."
     },
     "cta": {
       "title": "Bereit für den nächsten Schritt?",
-      "subtitle": "Vereinbaren Sie eine unverbindliche Systemanalyse und erfahren Sie, wie wir Ihre digitale Infrastruktur stärken können."
+      "subtitle": "Vereinbart eine unverbindliche Systemanalyse und erfahrt, wie wir Eure digitale Infrastruktur stärken können."
     },
     "more": "Mehr erfahren"
   },
@@ -573,7 +645,7 @@
       },
       "offshoring": {
         "title": "IT-Übernahme",
-        "description": "Wir helfen Ihnen, Offshore-Entwicklungsteams aufzubauen und zu verwalten, die Eure IT-Fähigkeiten erweitern und gleichzeitig Kosten senken und Zugang zu globalen Talentpools verschaffen.",
+        "description": "Wir helfen Euch, Offshore-Entwicklungsteams aufzubauen und zu verwalten, die Eure IT-Fähigkeiten erweitern und gleichzeitig Kosten senken und Zugang zu globalen Talentpools verschaffen.",
         "benefits": "Erhebliche Kosteneinsparungen, Zugang zu spezialisierten Fähigkeiten, Geschäftskontinuität, Skalierbarkeit und Fokus auf Kerngeschäftsaktivitäten.",
         "process": "Wir identifizieren Eure Offshoring-Bedürfnisse, beschaffen und überprüfen qualifizierte Fachkräfte, verwalten den Übergangsprozess, etablieren Kommunikationsprotokolle und bieten laufende Managementunterstützung."
       }
@@ -741,7 +813,7 @@
     },
     "aid": {
       "title": "Unser Ansatz: A.I.D.",
-      "description": "Wir kombinieren Automatisierung, Integration und Entwicklung zu einem ganzheitlichen Ansatz für Ihre digitale Infrastruktur. Dieser dreiteilige Rahmen stellt sicher, dass jede Lösung strategisch durchdacht und nachhaltig umgesetzt wird.",
+      "description": "Wir kombinieren Automatisierung, Integration und Entwicklung zu einem ganzheitlichen Ansatz für Eure digitale Infrastruktur. Dieser dreiteilige Rahmen stellt sicher, dass jede Lösung strategisch durchdacht und nachhaltig umgesetzt wird.",
       "automate": "Automatisierung von Geschäftsprozessen für mehr Effizienz und weniger Fehler",
       "integrate": "Integration bestehender Systeme für durchgängigen Datenfluss und Transparenz",
       "develop": "Entwicklung massgeschneiderter Software für spezifische Anforderungen"
@@ -1086,7 +1158,7 @@
   },
   "notFound": {
     "title": "Seite nicht gefunden",
-    "description": "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+    "description": "Die von Euch gesuchte Seite existiert nicht oder wurde verschoben. Bitte überprüft die URL oder kehrt zur Startseite zurück.",
     "returnHome": "Zurück zur Startseite"
   },
   "local": {
@@ -1115,7 +1187,7 @@
       }
     },
     "description": "Als lokaler Partner für Softwareentwicklung, Automatisierung und DevOps in der Zentralschweiz bieten wir massgeschneiderte Lösungen für Unternehmen in Luzern, Zug, Zürich, Schwyz und Umgebung.",
-    "description2": "Unsere Nähe zu Ihnen ermöglicht schnelle Reaktionszeiten und ein tiefes Verständnis der lokalen Geschäftsanforderungen.",
+    "description2": "Unsere Nähe zu Euch ermöglicht schnelle Reaktionszeiten und ein tiefes Verständnis der lokalen Geschäftsanforderungen.",
     "title": "Software Entwicklung in der Zentralschweiz",
     "areas": {
       "title": "Unsere Tätigkeitsgebiete",
@@ -1135,18 +1207,18 @@
         "reporting": { "title": "Reporting & Monitoring", "description": "Automatisierte Berichte, Dashboards und Echtzeit-Benachrichtigungen bei kritischen Ereignissen." },
         "ai": { "title": "KI-gestützte Prozesse", "description": "Intelligente Automatisierung mit Machine Learning für Klassifikation und Entscheidungsunterstützung." }
       },
-      "benefitsTitle": "Ihr Nutzen",
+      "benefitsTitle": "Euer Nutzen",
       "benefits": {
         "efficiency": { "title": "Höhere Effizienz", "description": "Bis zu 80% weniger manuelle Arbeit in automatisierten Prozessen." },
         "errors": { "title": "Weniger Fehler", "description": "Automatisierte Abläufe eliminieren menschliche Fehlerquellen." },
         "costs": { "title": "Kostensenkung", "description": "Reduzierung von Betriebskosten durch optimierte Ressourcennutzung." },
-        "scalability": { "title": "Skalierbarkeit", "description": "Automatisierte Prozesse wachsen mit Ihrem Unternehmen." }
+        "scalability": { "title": "Skalierbarkeit", "description": "Automatisierte Prozesse wachsen mit Eurem Unternehmen." }
       },
       "processTitle": "Unser Vorgehen",
       "process": {
-        "step1": { "title": "Prozessanalyse", "description": "Systematische Aufnahme und Bewertung Ihrer aktuellen Workflows." },
+        "step1": { "title": "Prozessanalyse", "description": "Systematische Aufnahme und Bewertung Eurer aktuellen Workflows." },
         "step2": { "title": "Lösungsdesign", "description": "Konzeption einer massgeschneiderten Automatisierungsstrategie." },
-        "step3": { "title": "Implementierung", "description": "Schrittweise Umsetzung mit minimaler Unterbrechung Ihres Betriebs." },
+        "step3": { "title": "Implementierung", "description": "Schrittweise Umsetzung mit minimaler Unterbrechung Eures Betriebs." },
         "step4": { "title": "Optimierung", "description": "Kontinuierliche Messung und Verbesserung der automatisierten Abläufe." }
       },
       "technologies": "PowerAutomate, Zapier, Python, Custom Scripts, API-basierte Automatisierung",
@@ -1157,17 +1229,17 @@
     "integrate": {
       "title": "Integration",
       "subtitle": "Systeme verbinden, Daten vereinheitlichen",
-      "heroDescription": "Wir schaffen nahtlose Verbindungen zwischen Ihren bestehenden Systemen — für durchgängigen Datenfluss und operative Transparenz.",
+      "heroDescription": "Wir schaffen nahtlose Verbindungen zwischen Euren bestehenden Systemen — für durchgängigen Datenfluss und operative Transparenz.",
       "whatWeDo": "Was wir integrieren",
       "items": {
-        "api": { "title": "API-Entwicklung", "description": "Robuste Schnittstellen für die Kommunikation zwischen Ihren Systemen und Drittanbietern." },
+        "api": { "title": "API-Entwicklung", "description": "Robuste Schnittstellen für die Kommunikation zwischen Euren Systemen und Drittanbietern." },
         "erp": { "title": "ERP-Integration", "description": "Nahtlose Anbindung von ERP-Systemen an Webshops, CRM und weitere Anwendungen." },
         "sync": { "title": "Datensynchronisation", "description": "Automatischer Abgleich von Daten zwischen verschiedenen Plattformen in Echtzeit." },
-        "tools": { "title": "Softwaretool-Integration", "description": "Evaluierung und Einführung passender Softwaretools für Ihre Geschäftsprozesse — von Projektmanagement bis CRM." }
+        "tools": { "title": "Softwaretool-Integration", "description": "Evaluierung und Einführung passender Softwaretools für Eure Geschäftsprozesse — von Projektmanagement bis CRM." }
       },
       "partnersTitle": "Partnertools & Technologien",
-      "partnersDescription": "Wir arbeiten mit bewährten Softwarelösungen und integrieren diese nahtlos in Ihre bestehende Infrastruktur. Details zu unseren Partnertools folgen in Kürze.",
-      "benefitsTitle": "Ihr Nutzen",
+      "partnersDescription": "Wir arbeiten mit bewährten Softwarelösungen und integrieren diese nahtlos in Eure bestehende Infrastruktur. Details zu unseren Partnertools folgen in Kürze.",
+      "benefitsTitle": "Euer Nutzen",
       "benefits": {
         "dataflow": { "title": "Durchgängiger Datenfluss", "description": "Keine manuellen Datenübertragungen mehr zwischen Systemen." },
         "silos": { "title": "Keine Datensilos", "description": "Alle relevanten Informationen zentral und konsistent verfügbar." },
@@ -1176,7 +1248,7 @@
       },
       "processTitle": "Unser Vorgehen",
       "process": {
-        "step1": { "title": "Systembewertung", "description": "Analyse Ihrer bestehenden Systeme und Integrationsanforderungen." },
+        "step1": { "title": "Systembewertung", "description": "Analyse Eurer bestehenden Systeme und Integrationsanforderungen." },
         "step2": { "title": "Integrationsstrategie", "description": "Entwicklung einer umfassenden Integrationsstrategie und -architektur." },
         "step3": { "title": "Implementierung", "description": "Umsetzung der Integration mit geeigneten Technologien und Protokollen." },
         "step4": { "title": "Testen & Monitoring", "description": "Umfassende Tests und laufendes Monitoring der integrierten Systeme." }
@@ -1188,8 +1260,8 @@
     },
     "develop": {
       "title": "Entwicklung",
-      "subtitle": "Massgeschneiderte Software für Ihre Anforderungen",
-      "heroDescription": "Wo Standardlösungen nicht ausreichen, entwickeln wir passgenaue Software — robust, skalierbar und auf Ihre Geschäftsprozesse zugeschnitten.",
+      "subtitle": "Massgeschneiderte Software für Eure Anforderungen",
+      "heroDescription": "Wo Standardlösungen nicht ausreichen, entwickeln wir passgenaue Software — robust, skalierbar und auf Eure Geschäftsprozesse zugeschnitten.",
       "whatWeDo": "Was wir entwickeln",
       "items": {
         "web": { "title": "Webanwendungen", "description": "Moderne, responsive Webanwendungen mit intuitiver Benutzerführung." },
@@ -1197,16 +1269,16 @@
         "tools": { "title": "Interne Tools", "description": "Massgeschneiderte Werkzeuge für spezifische Betriebsabläufe und Workflows." },
         "devops": { "title": "DevOps & CI/CD", "description": "Automatisierte Build-, Test- und Deployment-Pipelines für zuverlässige Softwarebereitstellung." }
       },
-      "benefitsTitle": "Ihr Nutzen",
+      "benefitsTitle": "Euer Nutzen",
       "benefits": {
-        "tailored": { "title": "Passgenaue Lösungen", "description": "Software, die exakt auf Ihre Geschäftsprozesse zugeschnitten ist." },
-        "competitive": { "title": "Wettbewerbsvorteil", "description": "Individuelle Tools, die Ihnen einen Vorsprung verschaffen." },
+        "tailored": { "title": "Passgenaue Lösungen", "description": "Software, die exakt auf Eure Geschäftsprozesse zugeschnitten ist." },
+        "competitive": { "title": "Wettbewerbsvorteil", "description": "Individuelle Tools, die Euch einen Vorsprung verschaffen." },
         "ownership": { "title": "Volle Kontrolle", "description": "Vollständiges Eigentum am Quellcode und der Architektur." },
-        "scalable": { "title": "Skalierbarkeit", "description": "Architektur, die mit Ihrem Unternehmen wächst." }
+        "scalable": { "title": "Skalierbarkeit", "description": "Architektur, die mit Eurem Unternehmen wächst." }
       },
       "processTitle": "Unser Vorgehen",
       "process": {
-        "step1": { "title": "Anforderungsanalyse", "description": "Detaillierte Erfassung Ihrer Anforderungen und Geschäftsziele." },
+        "step1": { "title": "Anforderungsanalyse", "description": "Detaillierte Erfassung Eurer Anforderungen und Geschäftsziele." },
         "step2": { "title": "Architektur & Design", "description": "Entwurf einer robusten Architektur und benutzerfreundlichen Oberfläche." },
         "step3": { "title": "Entwicklung & Testing", "description": "Agile Entwicklung mit kontinuierlichem Testing und regelmässigen Reviews." },
         "step4": { "title": "Deployment & Support", "description": "Reibungslose Bereitstellung und langfristiger Support." }

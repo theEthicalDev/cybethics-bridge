@@ -103,124 +103,88 @@ const AIDVisual: React.FC = () => {
   );
 };
 
-const ContactPartner: React.FC = () => {
-  const {t} = useLanguage();
 
-  return (
-    <div className="container relative z-20 -mb-16">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 px-10 bg-white/95 backdrop-blur-lg shadow-large rounded-2xl max-w-3xl mx-auto border border-white/30 hover:shadow-xl transition-all duration-500 hover:scale-[1.02] group" style={{transform: 'translateY(-20px)'}}>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-100/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
-        <div className="text-center md:text-left relative z-10">
-          <h3 className="text-2xl font-bold gradient-text mb-3">{t('contact.partner')}</h3>
-          <p className="text-xl font-semibold text-gray-800">Djordje Karadzic</p>
-          <p className="text-base text-primary/80 mt-2 font-medium">Cybethics</p>
-        </div>
-
-        <Avatar className="h-40 w-40 border-4 border-primary/30 shadow-medium hover:shadow-large transition-all duration-300 hover:scale-105 flex-shrink-0 relative z-10">
-          <AvatarImage src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png" alt="Djordje Karadzic"/>
-          <AvatarFallback className="text-2xl font-bold gradient-text">DK</AvatarFallback>
-        </Avatar>
-
-        <Button asChild
-                variant="glow"
-                size="lg"
-                className="relative z-10 rounded-full hover:scale-105 transition-all group/btn">
-          <Link to="/contact" className="flex items-center py-7 px-8">
-            <Calendar className="mr-3 h-5 w-5"/>
-            <span className="font-semibold">{t('contact.booking')}</span>
-            <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover/btn:translate-x-2"/>
-          </Link>
-        </Button>
-      </div>
-    </div>
-  );
-};
 
 const HeroSection: React.FC = () => {
   const {t} = useLanguage();
   const isMobile = useIsMobile();
 
   return (
-    <>
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-white via-primary/5 to-purple-50/30">
-        {/* Enhanced background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full bg-gradient-to-l from-purple-400/20 to-transparent blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-50"></div>
-        </div>
-        
-        <div className="container relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-10 animate-fade-up">
-              <div>
-                <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
-                  <span className="text-sm font-medium text-primary flex items-center font-mono tracking-wider">
-                    <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
-                    {t('hero.badge')}
-                  </span>
-                </div>
-                <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
-                  {t('hero.title')}
-                </h1>
-                <p className="text-xl md:text-2xl text-text-light leading-relaxed mb-8">
-                  {t('hero.subtitle')}
-                </p>
-                
-                {/* Enhanced Location Badge */}
-                <div className="mt-6 inline-flex items-center py-3 px-6 bg-white/80 backdrop-blur-sm rounded-full shadow-soft border border-white/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
-                  <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
-                  <span className="text-base font-medium gradient-text-subtle">Emmen | Luzern | Zentralschweiz</span>
-                </div>
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-background via-primary/5 to-muted/30">
+      {/* Enhanced background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 rounded-full bg-gradient-to-l from-primary/10 to-transparent blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial opacity-50"></div>
+      </div>
+      
+      <div className="container relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-10 animate-fade-up">
+            <div>
+              <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-8 backdrop-blur-sm border border-primary/20 hover:scale-105 transition-transform duration-300">
+                <span className="text-sm font-medium text-primary flex items-center font-mono tracking-wider">
+                  <Sparkles className="mr-2 h-4 w-4 animate-pulse-subtle"/>
+                  {t('hero.badge')}
+                </span>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Button asChild variant="gradient" size="lg" className="rounded-full group">
-                  <Link to="/contact" className="relative">
-                    {t('hero.cta')}
-                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group cursor-pointer" onClick={() => document.getElementById('aid-framework')?.scrollIntoView({ behavior: 'smooth' })}>
-                  <span className="gradient-text-subtle flex items-center">
-                    {t('hero.ctaSecondary')}
-                    <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
-                  </span>
-                </Button>
+              <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
+                {t('hero.title')}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+                {t('hero.subtitle')}
+              </p>
+              
+              {/* Enhanced Location Badge */}
+              <div className="mt-6 inline-flex items-center py-3 px-6 bg-card/80 backdrop-blur-sm rounded-full shadow-soft border border-border/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
+                <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
+                <span className="text-base font-medium text-foreground/80">Emmen | Luzern | Zentralschweiz</span>
               </div>
             </div>
 
-            {/* Desktop view */}
-            {!isMobile && (
-              <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
-                <div className="relative h-72 items-center justify-center hidden lg:flex">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl"></div>
-                  <img
-                    src="/media/cybethics.png"
-                    alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
-                    className="relative w-3/4 h-auto hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
-                  />
-                </div>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Button asChild variant="gradient" size="lg" className="rounded-full group">
+                <Link to="/contact" className="relative">
+                  {t('hero.cta')}
+                  <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group cursor-pointer" onClick={() => document.getElementById('aid-framework')?.scrollIntoView({ behavior: 'smooth' })}>
+                <span className="text-foreground/80 flex items-center">
+                  {t('hero.ctaSecondary')}
+                  <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"/>
+                </span>
+              </Button>
+            </div>
+          </div>
 
-                <div className="hover-lift">
-                  <AIDVisual />
-                </div>
+          {/* Desktop view */}
+          {!isMobile && (
+            <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
+              <div className="relative h-72 items-center justify-center hidden lg:flex">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl"></div>
+                <img
+                  src="/media/cybethics.png"
+                  alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
+                  className="relative w-3/4 h-auto hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
+                />
               </div>
-            )}
 
-            {/* Mobile view */}
-            {isMobile && (
-              <div className="mt-8 hover-lift">
+              <div className="hover-lift">
                 <AIDVisual />
               </div>
-            )}
-          </div>
-        </div>
-      </section>
+            </div>
+          )}
 
-      <ContactPartner/>
-    </>
+          {/* Mobile view */}
+          {isMobile && (
+            <div className="mt-8 hover-lift">
+              <AIDVisual />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

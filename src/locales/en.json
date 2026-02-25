@@ -145,7 +145,79 @@
         "title": "Measurable Results",
         "description": "Less manual work, fewer errors, faster processes. Our solutions deliver concrete, measurable improvements for your business."
       },
-      "promise": "We solve your IT challenges so you can focus on your core business."
+      "promise": "We solve your IT challenges so you can focus on your core business.",
+      "scenariosTitle": "Concrete Results",
+      "before": "Before",
+      "after": "After",
+      "scenarios": {
+        "1": {
+          "before": "Manual order processing (3h/day)",
+          "after": "Automated workflow (5 min/day)"
+        },
+        "2": {
+          "before": "5 disconnected systems",
+          "after": "1 integrated platform"
+        },
+        "3": {
+          "before": "Excel reporting at month-end",
+          "after": "Real-time dashboard"
+        }
+      }
+    },
+    "journey": {
+      "title": "Your Journey With Us",
+      "subtitle": "You describe. We take over.",
+      "youLabel": "You",
+      "weLabel": "We handle",
+      "step1": {
+        "you": "You describe your challenge",
+        "we": "We analyze your IT landscape, document processes, and prioritize action areas."
+      },
+      "step2": {
+        "you": "You give feedback on the concept",
+        "we": "We design the architecture, plan milestones, and define the budget framework."
+      },
+      "step3": {
+        "you": "You test and confirm",
+        "we": "We implement, test, iterate, and deploy — with regular check-ins."
+      },
+      "step4": {
+        "you": "You focus on your business",
+        "we": "We monitor, maintain, optimize, and continuously evolve your systems."
+      }
+    },
+    "scope": {
+      "title": "What We Handle For You",
+      "subtitle": "Everything from a single source — from analysis to ongoing operations.",
+      "youOnly": "You only need to: describe your goals and give feedback.",
+      "analysis": {
+        "title": "Analysis",
+        "item1": "Map and assess IT landscape",
+        "item2": "Document and visualize processes",
+        "item3": "Identify optimization potential",
+        "item4": "Evaluate suitable tools"
+      },
+      "implementation": {
+        "title": "Implementation",
+        "item1": "Architecture and design",
+        "item2": "Development and integration",
+        "item3": "Testing and quality assurance",
+        "item4": "Step-by-step rollout"
+      },
+      "operations": {
+        "title": "Operations",
+        "item1": "Hosting and infrastructure",
+        "item2": "Monitoring and alerting",
+        "item3": "Regular backups",
+        "item4": "Security updates"
+      },
+      "support": {
+        "title": "Support",
+        "item1": "Bug fixes and troubleshooting",
+        "item2": "Feature requests and evolution",
+        "item3": "Consulting and sparring",
+        "item4": "Training and onboarding"
+      }
     }
   },
   "identify": {
