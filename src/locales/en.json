@@ -1264,5 +1264,68 @@
       "challengesTitle": "Typical Challenges",
       "projectsTitle": "Reference Projects"
     }
+  },
+  "homepage": {
+    "stats": {
+      "title": "Our Results in Numbers",
+      "subtitle": "Concrete results from our work with SMEs in Central Switzerland.",
+      "automatedProcesses": "Automated Processes",
+      "integratedSystems": "Integrated Systems",
+      "efficiencyGain": "Average Efficiency Gain"
+    },
+    "quiz": {
+      "badge": "Quick Check",
+      "title": "How Digital Is Your Business?",
+      "subtitle": "3 quick questions — and you'll know where you stand.",
+      "step": "Question",
+      "restart": "Start Over",
+      "q1": {
+        "question": "How much time does your team spend daily on recurring manual tasks?",
+        "a1": "Barely any — most processes are automated",
+        "a2": "Less than 1 hour per day",
+        "a3": "1–3 hours per day",
+        "a4": "More than 3 hours per day"
+      },
+      "q2": {
+        "question": "How well are your systems connected to each other?",
+        "a1": "Everything is seamlessly connected",
+        "a2": "Most systems are integrated, with small gaps",
+        "a3": "Some systems are connected, but a lot is done manually",
+        "a4": "Our systems mostly work in isolation"
+      },
+      "q3": {
+        "question": "How do you make operational decisions?",
+        "a1": "Based on real-time dashboards and data",
+        "a2": "We have reports, but not in real-time",
+        "a3": "We mainly use Excel and manual evaluations",
+        "a4": "Often based on experience and gut feeling"
+      },
+      "result": {
+        "low": {
+          "title": "Well Positioned!",
+          "description": "Your business is already using digital tools effectively. Still, there are often hidden optimization opportunities — we'd love to find them for you.",
+          "cta": "Discover Potential"
+        },
+        "medium": {
+          "title": "Good Foundation, But There's More",
+          "description": "You've already digitized quite a bit, but there are clear areas where automation and integration can significantly move you forward.",
+          "cta": "Discuss Optimization"
+        },
+        "high": {
+          "title": "Significant Optimization Potential Identified",
+          "description": "There are significant opportunities to automate your processes, connect systems, and enable data-driven decisions. We can help.",
+          "cta": "Request System Analysis"
+        }
+      }
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Questions We Often Get Asked",
+      "subtitle": "The most important answers at a glance — for everything else, visit our FAQ page.",
+      "viewAll": "View All FAQ"
+    },
+    "stickyCta": {
+      "short": "Inquire"
+    }
   }
 }

@@ -14,6 +14,10 @@ import AIDConviction from '@/components/aid/AIDConviction';
 import AIDClientJourney from '@/components/aid/AIDClientJourney';
 import AIDScope from '@/components/aid/AIDScope';
 import ContactPartner from '@/components/ContactPartner';
+import HomepageStats from '@/components/HomepageStats';
+import ProblemFinder from '@/components/ProblemFinder';
+import HomepageFAQ from '@/components/HomepageFAQ';
+import StickyCTA from '@/components/StickyCTA';
 import { getProjects } from '@/utils/projectData';
 
 const Index = () => {
@@ -22,7 +26,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <StickyCTA />
       <HeroSection />
+      <HomepageStats />
       <AIDProblemStatement />
       <AIDFramework />
       <AIDApproach />
@@ -30,7 +36,9 @@ const Index = () => {
       <AIDConviction />
       <ContactPartner />
       <AIDScope />
+      <ProblemFinder />
       <AIDTargetClients />
+      <HomepageFAQ />
 
       {/* Projects Section */}
       <section aria-labelledby="projects-heading" className="py-16 md:py-32 bg-background relative overflow-hidden">
