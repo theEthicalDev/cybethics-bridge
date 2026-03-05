@@ -1288,5 +1288,68 @@
       "challengesTitle": "Typische Herausforderungen",
       "projectsTitle": "Referenzprojekte"
     }
+  },
+  "homepage": {
+    "stats": {
+      "title": "Unsere Ergebnisse in Zahlen",
+      "subtitle": "Konkrete Ergebnisse aus unserer Arbeit mit KMU in der Zentralschweiz.",
+      "automatedProcesses": "Automatisierte Prozesse",
+      "integratedSystems": "Integrierte Systeme",
+      "efficiencyGain": "Durchschnittliche Effizienzsteigerung"
+    },
+    "quiz": {
+      "badge": "Schnellcheck",
+      "title": "Wie digital ist Euer Unternehmen?",
+      "subtitle": "3 kurze Fragen — und Ihr wisst, wo Ihr steht.",
+      "step": "Frage",
+      "restart": "Nochmal starten",
+      "q1": {
+        "question": "Wie viel Zeit verbringt Euer Team täglich mit wiederkehrenden manuellen Aufgaben?",
+        "a1": "Kaum — die meisten Abläufe sind automatisiert",
+        "a2": "Weniger als 1 Stunde pro Tag",
+        "a3": "1–3 Stunden pro Tag",
+        "a4": "Mehr als 3 Stunden pro Tag"
+      },
+      "q2": {
+        "question": "Wie gut sind Eure Systeme miteinander vernetzt?",
+        "a1": "Alles ist nahtlos verbunden",
+        "a2": "Die meisten Systeme sind integriert, mit kleinen Lücken",
+        "a3": "Einige Systeme sind verbunden, aber vieles läuft manuell",
+        "a4": "Unsere Systeme arbeiten grösstenteils isoliert"
+      },
+      "q3": {
+        "question": "Wie trefft Ihr operative Entscheidungen?",
+        "a1": "Basierend auf Echtzeit-Dashboards und Daten",
+        "a2": "Wir haben Berichte, aber nicht in Echtzeit",
+        "a3": "Wir nutzen hauptsächlich Excel und manuelle Auswertungen",
+        "a4": "Häufig auf Basis von Erfahrung und Bauchgefühl"
+      },
+      "result": {
+        "low": {
+          "title": "Gut aufgestellt!",
+          "description": "Euer Unternehmen nutzt digitale Tools bereits effektiv. Trotzdem gibt es oft versteckte Optimierungspotenziale — wir finden sie gerne für Euch.",
+          "cta": "Potenziale entdecken"
+        },
+        "medium": {
+          "title": "Gutes Fundament, aber da geht noch mehr",
+          "description": "Ihr habt bereits einiges digitalisiert, aber es gibt klare Bereiche, in denen Automatisierung und Integration Euch deutlich voranbringen können.",
+          "cta": "Optimierung besprechen"
+        },
+        "high": {
+          "title": "Grosses Optimierungspotenzial erkannt",
+          "description": "Es gibt signifikante Möglichkeiten, Eure Prozesse zu automatisieren, Systeme zu verbinden und datenbasierte Entscheidungen zu ermöglichen. Wir helfen Euch dabei.",
+          "cta": "Systemanalyse anfragen"
+        }
+      }
+    },
+    "faq": {
+      "badge": "Häufige Fragen",
+      "title": "Fragen, die uns oft gestellt werden",
+      "subtitle": "Die wichtigsten Antworten auf einen Blick — für alles Weitere besucht unsere FAQ-Seite.",
+      "viewAll": "Alle FAQ ansehen"
+    },
+    "stickyCta": {
+      "short": "Anfragen"
+    }
   }
 }
