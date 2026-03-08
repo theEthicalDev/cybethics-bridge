@@ -1269,6 +1269,10 @@
     }
   },
   "homepage": {
+    "trust": {
+      "gdpr": "GDPR Compliant",
+      "hosting": "100% Swiss Hosting"
+    },
     "stats": {
       "title": "Our Results in Numbers",
       "subtitle": "Concrete results from our work with SMEs in Central Switzerland.",

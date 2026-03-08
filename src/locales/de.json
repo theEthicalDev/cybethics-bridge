@@ -1293,6 +1293,10 @@
     }
   },
   "homepage": {
+    "trust": {
+      "gdpr": "DSGVO-konform",
+      "hosting": "100% Schweizer Hosting"
+    },
     "stats": {
       "title": "Unsere Ergebnisse in Zahlen",
       "subtitle": "Konkrete Ergebnisse aus unserer Arbeit mit KMU in der Zentralschweiz.",
