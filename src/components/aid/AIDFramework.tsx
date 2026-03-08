@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Cog, Network, Code, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import useScrollReveal from '@/hooks/useScrollReveal';
 
 const pillars = [
   { key: 'automate', icon: Cog, path: '/services/automatisierung', color: 'from-blue-500/10 to-blue-600/5', accent: 'text-blue-600', accentBg: 'bg-blue-500/10' },
@@ -12,6 +13,7 @@ const pillars = [
 
 const AIDFramework: React.FC = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
   return (
     <section id="aid-framework" className="py-16 md:py-32 bg-background relative overflow-hidden">
@@ -19,9 +21,9 @@ const AIDFramework: React.FC = () => {
         <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-primary/5 blur-2xl"></div>
       </div>
 
-      <div className="container relative z-10">
-        <header className="text-center max-w-3xl mx-auto mb-20 animate-fade-up">
-          <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-8 border border-primary/20">
+      <div className="container relative z-10" ref={ref}>
+        <header className={`text-center max-w-3xl mx-auto mb-20 scroll-reveal ${isVisible ? 'visible' : ''}`}>
+          <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-8 border border-primary/20 badge-shimmer">
             <span className="text-sm font-medium text-primary">A.I.D.</span>
           </div>
           <h2 className="mb-6 text-3xl md:text-4xl font-bold">{t('aid.framework.title')}</h2>
@@ -34,8 +36,7 @@ const AIDFramework: React.FC = () => {
             return (
               <div
                 key={pillar.key}
-                className={`group relative p-8 rounded-2xl bg-gradient-to-br ${pillar.color} border border-border/50 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2 animate-fade-up`}
-                style={{ animationDelay: `${index * 150}ms` }}
+                className={`card-shine group relative p-8 rounded-2xl bg-gradient-to-br ${pillar.color} border border-border/50 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2 scroll-reveal scroll-reveal-delay-${index + 1} ${isVisible ? 'visible' : ''}`}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`w-14 h-14 rounded-2xl ${pillar.accentBg} flex items-center justify-center`}>

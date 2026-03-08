@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Search, FileText, Wrench, BarChart3 } from 'lucide-react';
+import useScrollReveal from '@/hooks/useScrollReveal';
 
 const steps = [
   { key: 'step1', icon: Search },
@@ -11,18 +12,18 @@ const steps = [
 
 const AIDApproach: React.FC = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
   return (
     <section className="py-16 md:py-32 bg-muted/30 relative overflow-hidden">
-      <div className="container relative z-10">
-        <header className="text-center max-w-3xl mx-auto mb-20 animate-fade-up">
+      <div className="container relative z-10" ref={ref}>
+        <header className={`text-center max-w-3xl mx-auto mb-20 scroll-reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="mb-6 text-3xl md:text-4xl font-bold">{t('aid.approach.title')}</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">{t('aid.approach.subtitle')}</p>
         </header>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block"></div>
 
             <div className="space-y-12">
@@ -31,8 +32,7 @@ const AIDApproach: React.FC = () => {
                 return (
                   <div
                     key={step.key}
-                    className="flex items-start gap-8 animate-fade-up"
-                    style={{ animationDelay: `${index * 150}ms` }}
+                    className={`flex items-start gap-8 scroll-reveal scroll-reveal-delay-${index + 1} ${isVisible ? 'visible' : ''}`}
                   >
                     <div className="relative z-10 flex-shrink-0 w-16 h-16 rounded-2xl bg-primary/10 border-2 border-primary/20 flex items-center justify-center">
                       <Icon className="h-7 w-7 text-primary" />
