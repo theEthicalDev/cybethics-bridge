@@ -22,7 +22,7 @@ const AIDClientJourney: React.FC = () => {
 
       <div className="container relative z-10" ref={ref}>
         <header className={`text-center max-w-3xl mx-auto mb-16 scroll-reveal ${isVisible ? 'visible' : ''}`}>
-          <h2 className="mb-6 text-3xl md:text-4xl font-bold">{t('aid.journey.title')}</h2>
+          <h2 className="mb-6 text-3xl md:text-4xl font-bold">{t('aid.approach.title')}</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">{t('aid.journey.subtitle')}</p>
         </header>
 
