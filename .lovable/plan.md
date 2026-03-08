@@ -1,139 +1,75 @@
 
 
-## Improvements: "Du/Ihr" Form, Contact Person Placement, and New Conviction Sections
+## Homepage Improvements Plan
 
-Three changes bundled together: tone adjustment across all German translations, repositioning the contact person card, and adding the new "we take over" sections.
+### 1. Revert Navbar Active Link Style
+**File:** `src/components/Navbar.tsx`
 
----
-
-### 1. Switch All German Text to "Du/Ihr" Form
-
-**File:** `src/locales/de.json`
-
-Systematic replacement of formal "Sie" address with informal "Du/Ihr" throughout the entire file. This affects hundreds of strings. Examples:
-
-| Current (Sie) | New (Du/Ihr) |
-|---|---|
-| "Ihre digitale Infrastruktur" | "Eure digitale Infrastruktur" |
-| "Wir nehmen Ihnen die digitale Last ab" | "Wir nehmen Euch die digitale Last ab" |
-| "Sie müssen sich um nichts kümmern" | "Ihr müsst Euch um nichts kümmern" |
-| "Lassen Sie uns gemeinsam herausfinden" | "Lass uns gemeinsam herausfinden" |
-| "damit Sie sich auf Ihr Kerngeschäft konzentrieren können" | "damit Ihr Euch auf Euer Kerngeschäft konzentrieren könnt" |
-| "Bereit für eine Systemanalyse?" | stays the same (no pronoun) |
-
-Rules applied:
-- "Sie" (subject) becomes "Ihr" or "Du" depending on context
-- "Ihnen" becomes "Euch" or "Dir"
-- "Ihr/Ihre/Ihrem/Ihren" (possessive) becomes "Euer/Eure/Eurem/Euren" or "Dein/Deine"
-- Verb conjugation adjusts accordingly ("können" stays, but "Sie können" becomes "Ihr könnt")
-- Tone remains professional, not slangy -- just less formal
-
-This covers all sections: `seo`, `hero`, `aid`, `pricing`, `services`, `contact`, `about`, `footer`, `identify`, `business`, `servicePage`, etc.
-
-**File:** `src/locales/en.json` -- English uses "you/your" universally, so no changes needed for formality. Only update if any content references "Sie" indirectly.
+Revert the active link indicator from the dot-below style back to the previous underline/text-color style. The old style used a simple `text-primary` color change without the `after:` dot pseudo-element.
 
 ---
 
-### 2. Move Contact Person (Djordje Karadzic) Further Down
+### 2. Tech Banner with Icons (TrustBadges)
+**File:** `src/components/TrustBadges.tsx`
 
-**File:** `src/components/HeroSection.tsx`
+Replace the plain text tech names in the sliding marquee with Lucide icons where available, and small styled SVG/icon pairs for the rest. Use icons from lucide-react (e.g., `Github` for GitHub) and for tools without Lucide icons (Proton, JetBrains, Shopware, etc.), use a small generic icon paired with the name, or a simple styled text+icon combo. This gives the banner visual weight.
 
-- Remove `<ContactPartner />` from the HeroSection component
-- Export `ContactPartner` so it can be used elsewhere
+Mapping:
+- GitHub → `Github` icon from lucide-react
+- Java, Spring Boot, Angular, PostgreSQL, etc. → Use a `Code2`/`Database`/`Globe` generic icon + name label
+- The marquee keeps sliding, but each item is now icon + label
 
+---
+
+### 3. Restructure Homepage Flow
 **File:** `src/pages/Index.tsx`
 
-- Import `ContactPartner` from HeroSection (or extract to its own file)
-- Place it after AIDConviction and before AIDTargetClients -- this positions the personal contact as a trust anchor after the "we take over" messaging, right before describing target clients
-- The card appears as a natural bridge: "We handle everything" → "Here's who you'll work with" → "Are you our ideal client?"
-
----
-
-### 3. New Component: Client Journey ("Euer Weg mit uns")
+Major reordering:
+- **Remove** `HomepageStats` ("Unsere Ergebnisse in Zahlen") entirely from the page
+- **Move Projects section** up — place it right after `TrustBadges` (before AID content) so visitors see work examples early
+- **Move ProblemFinder quiz** — place it between `AIDFramework` and `AIDApproach` ("Strukturiert, Transparent, Nachhaltig")
+- **Merge AIDApproach title into AIDClientJourney** — remove AIDApproach's subtitle and vertical timeline list, keep only its section title ("Strukturiert, Transparent, Nachhaltig") as a header above the AIDClientJourney horizontal 01-04 cards. Then remove AIDApproach as a separate component.
 
 **File:** `src/components/aid/AIDClientJourney.tsx`
-
-A section that contrasts what the client does (minimal) vs. what we handle (comprehensive):
-
-- 4 steps with two columns each:
-  - Step 1: "Ihr beschreibt Eure Herausforderung" / We: analyze, document, prioritize
-  - Step 2: "Ihr gebt Feedback zum Konzept" / We: design architecture, plan milestones, define budget
-  - Step 3: "Ihr testet und bestätigt" / We: implement, test, iterate, deploy
-  - Step 4: "Ihr fokussiert Euch auf Euer Geschäft" / We: monitor, maintain, optimize, evolve
-- Visual emphasis: client column is slim/simple, our column is detailed/extensive
-- All text via `t('aid.journey.*')` keys
+- Add the AIDApproach title (`aid.approach.title`) as the heading for this merged section
+- Keep the existing 4-card horizontal layout (01, 02, 03, 04)
 
 ---
 
-### 4. New Component: Scope Checklist ("Was wir für Euch übernehmen")
+### 4. Avatar on Sticky CTA Button
+**File:** `src/components/StickyCTA.tsx`
 
-**File:** `src/components/aid/AIDScope.tsx`
-
-A comprehensive visual checklist organized by category:
-
-- 4 categories with 3-4 items each:
-  - Analyse: IT landscape mapping, process documentation, optimization potential, tool evaluation
-  - Umsetzung: Architecture, development, integration, testing
-  - Betrieb: Hosting, monitoring, backups, security updates
-  - Support: Bug fixes, feature requests, consulting, training
-- Highlight callout: "Ihr müsst nur: Eure Ziele beschreiben und Feedback geben."
-- Checkmark icons, clean grid layout
-- All text via `t('aid.scope.*')` keys
+Add a small rounded avatar image (using the existing `/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png`) to the left of the Calendar icon in the sticky button. Use a 24x24 or 28x28 rounded-full image with a subtle border, creating a personal touch.
 
 ---
 
-### 5. Enhance AIDConviction with Before/After Scenarios
-
-**File:** `src/components/aid/AIDConviction.tsx`
-
-Add a transformation row below the existing 3 cards:
-
-- 3 mini before/after scenarios:
-  - "Manuelle Auftragsbearbeitung (3h/Tag)" → "Automatisierter Workflow (5 Min/Tag)"
-  - "5 Systeme ohne Verbindung" → "1 integrierte Plattform"
-  - "Excel-Reporting am Monatsende" → "Echtzeit-Dashboard"
-- Arrow/transformation visual between before and after
-- All text via `t('aid.conviction.scenarios.*')` keys
+### 5. Projects Section Earlier
+Already covered in point 3 — the Projects section moves from near the bottom to right after TrustBadges, ensuring visitors see concrete work examples within the first couple of scrolls.
 
 ---
 
-### 6. Updated Homepage Flow
-
-**File:** `src/pages/Index.tsx`
-
-New section order:
-1. HeroSection (without ContactPartner)
-2. AIDProblemStatement
-3. AIDFramework
-4. AIDApproach
-5. **AIDClientJourney** (new)
-6. AIDConviction (enhanced with scenarios)
-7. **ContactPartner** (moved here -- personal trust anchor)
-8. **AIDScope** (new)
-9. AIDTargetClients
-10. Projects
-11. About/Stats
-12. CTA
-
----
-
-### 7. Translation Keys Added
-
-**Files:** `src/locales/de.json`, `src/locales/en.json`
-
-New keys (German in "Du/Ihr" form):
+### New Homepage Flow
 
 ```text
-aid.journey.title = "Euer Weg mit uns"
-aid.journey.subtitle = "Ihr beschreibt. Wir übernehmen."
-aid.journey.step1-4 with .you and .we subkeys
-
-aid.scope.title = "Was wir für Euch übernehmen"
-aid.scope.subtitle = "Alles aus einer Hand — von der Analyse bis zum laufenden Betrieb."
-aid.scope.categories (analysis, implementation, operations, support) with items
-aid.scope.youOnly = "Ihr müsst nur: Eure Ziele beschreiben und Feedback geben."
-
-aid.conviction.scenarios.1-3 with .before and .after subkeys
+StickyCTA (floating)
+HeroSection
+TrustBadges (badges + tech marquee with icons)
+Projects Section (moved up)
+SectionDivider
+AIDProblemStatement
+AIDFramework
+ProblemFinder (quiz — moved here)
+SectionDivider
+AIDClientJourney (merged: AIDApproach title + journey cards)
+SectionDivider
+AIDConviction
+SectionDivider
+ContactPartner
+AIDScope
+AIDTargetClients
+HomepageFAQ
+About Section
+CTA Section
 ```
 
 ---
@@ -142,11 +78,9 @@ aid.conviction.scenarios.1-3 with .before and .after subkeys
 
 | File | Action |
 |---|---|
-| `src/locales/de.json` | Sie→Du/Ihr conversion + new journey/scope/scenario keys |
-| `src/locales/en.json` | New journey/scope/scenario keys |
-| `src/components/HeroSection.tsx` | Remove ContactPartner from render, export it |
-| `src/components/aid/AIDClientJourney.tsx` | Create -- client perspective journey |
-| `src/components/aid/AIDScope.tsx` | Create -- takeover checklist |
-| `src/components/aid/AIDConviction.tsx` | Modify -- add before/after scenarios |
-| `src/pages/Index.tsx` | New flow with ContactPartner moved + new sections |
+| `src/components/Navbar.tsx` | Revert active link to old underline style |
+| `src/components/TrustBadges.tsx` | Add icons to tech marquee items |
+| `src/pages/Index.tsx` | Remove HomepageStats, move Projects up, move ProblemFinder, remove AIDApproach |
+| `src/components/aid/AIDClientJourney.tsx` | Merge AIDApproach title as section heading |
+| `src/components/StickyCTA.tsx` | Add small avatar to sticky button |
 
