@@ -19,6 +19,7 @@ import ProblemFinder from '@/components/ProblemFinder';
 import HomepageFAQ from '@/components/HomepageFAQ';
 import StickyCTA from '@/components/StickyCTA';
 import SectionDivider from '@/components/SectionDivider';
+import TrustBadges from '@/components/TrustBadges';
 import useScrollReveal from '@/hooks/useScrollReveal';
 import { getProjects } from '@/utils/projectData';
 
@@ -33,6 +34,7 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       <StickyCTA />
       <HeroSection />
+      <TrustBadges />
       <SectionDivider variant="wave" fillColor="hsl(var(--muted) / 0.3)" />
       <HomepageStats />
       <SectionDivider variant="curve" fillColor="hsl(var(--background))" flip />

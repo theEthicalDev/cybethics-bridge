@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   };
   
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/20 pt-8 md:pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/20 pt-8 md:pt-20 pb-8 relative overflow-hidden border-t-2 border-primary/30">
       {/* Decorative blur orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/6 w-64 h-64 rounded-full bg-primary/10 blur-3xl"></div>
@@ -98,10 +98,19 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-white/40 mb-4 md:mb-0">
-            &copy; {currentYear} Cybethics. {t('footer.rights')}.
-          </p>
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <p className="text-sm text-white/40">
+              &copy; {currentYear} Cybethics GmbH. {t('footer.rights')}.
+            </p>
+            <span className="text-xs text-white/25">CHE-255.079.072</span>
+            <span className="flex items-center gap-1.5 text-xs text-white/40 border border-white/10 rounded-full px-3 py-1">
+              <span className="w-3 h-2 bg-red-500 rounded-sm relative flex items-center justify-center">
+                <span className="text-white text-[6px] font-bold leading-none">+</span>
+              </span>
+              Swiss Made
+            </span>
+          </div>
           <div className="flex space-x-6">
             <Link to="/privacy" className="text-sm text-white/40 hover:text-white/80 transition-colors">
               {t('footer.privacy')}

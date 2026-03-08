@@ -55,8 +55,8 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3 glass shadow-sm' : 'py-5 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'py-3 glass shadow-sm border-b border-border/50 backdrop-blur-xl' : 'py-5 bg-transparent'
       }`}
     >
       <div className="container flex items-center justify-between">
@@ -71,11 +71,11 @@ const Navbar: React.FC = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`relative text-sm font-medium transition-colors flex items-center ${
+              className={`relative text-sm font-medium transition-colors flex items-center pb-1 ${
                 isActive(link.path)
-                  ? 'text-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary'
+                  ? 'text-primary after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-primary'
                   : 'text-text hover:text-primary'
-              } link-underline`}
+              }`}
             >
               {link.label}
               {link.icon}

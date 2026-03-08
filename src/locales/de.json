@@ -824,7 +824,9 @@
     "subtitle": "Bereit, Euer Projekt zu besprechen? Vereinbaret eine unverbindliche Beratung mit uns",
     "booking": "Beratungstermin buchen",
     "start": "Projekt starten",
-    "partner": "Deine Ansprechperson"
+    "partner": "Deine Ansprechperson",
+    "role": "Geschäftsführer & Technischer Berater",
+    "philosophy": "Technologie soll vereinfachen, nicht verkomplizieren."
   },
   "error": [
     "Seite nicht gefunden"
@@ -1291,6 +1293,10 @@
     }
   },
   "homepage": {
+    "trust": {
+      "gdpr": "DSGVO-konform",
+      "hosting": "100% Schweizer Hosting"
+    },
     "stats": {
       "title": "Unsere Ergebnisse in Zahlen",
       "subtitle": "Konkrete Ergebnisse aus unserer Arbeit mit KMU in der Zentralschweiz.",

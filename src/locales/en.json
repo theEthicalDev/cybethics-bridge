@@ -663,7 +663,9 @@
     "subtitle": "Ready to discuss your project? Schedule a no-obligation consultation with us",
     "booking": "Book a Consultation",
     "start": "Start Your Project",
-    "partner": "Your Contact Partner"
+    "partner": "Your Contact Partner",
+    "role": "CEO & Technical Advisor",
+    "philosophy": "Technology should simplify, not complicate."
   },
   "error": [
     "Page not found"
@@ -1267,6 +1269,10 @@
     }
   },
   "homepage": {
+    "trust": {
+      "gdpr": "GDPR Compliant",
+      "hosting": "100% Swiss Hosting"
+    },
     "stats": {
       "title": "Our Results in Numbers",
       "subtitle": "Concrete results from our work with SMEs in Central Switzerland.",
