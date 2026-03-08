@@ -99,12 +99,6 @@ const Footer: React.FC = () => {
               &copy; {currentYear} Cybethics GmbH. {t('footer.rights')}.
             </p>
             <span className="text-xs text-white/25">CHE-255.079.072</span>
-            <span className="flex items-center gap-1.5 text-xs text-white/40 border border-white/10 rounded-full px-3 py-1">
-              <span className="w-3 h-2 bg-red-500 rounded-sm relative flex items-center justify-center">
-                <span className="text-white text-[6px] font-bold leading-none">+</span>
-              </span>
-              Swiss Made
-            </span>
           </div>
           <div className="flex space-x-6">
             <Link to="/privacy" className="text-sm text-white/40 hover:text-white/80 transition-colors">

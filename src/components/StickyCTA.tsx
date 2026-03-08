@@ -25,12 +25,12 @@ const StickyCTA: React.FC = () => {
     >
       <Link to="/contact" className="flex items-center group">
         {/* Avatar circle - larger, overlapping like a key head */}
-        <div className="relative z-10 -mr-3">
-          <div className="w-14 h-14 rounded-full bg-primary/90 shadow-large flex items-center justify-center border-2 border-primary-foreground/20 group-hover:shadow-glow transition-all">
+        <div className="relative z-10 -mr-5">
+          <div className="w-16 h-16 rounded-full bg-primary/70 shadow-large flex items-center justify-center border-2 border-primary-foreground/20 group-hover:shadow-glow transition-all">
             <img
               src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png"
               alt="Djordje Karadzic"
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-14 h-14 rounded-full object-cover"
             />
           </div>
         </div>
@@ -38,7 +38,7 @@ const StickyCTA: React.FC = () => {
         <Button
           variant="gradient"
           size="lg"
-          className="rounded-full shadow-large hover:shadow-glow pl-6 pr-6 h-11"
+          className="rounded-full shadow-large hover:shadow-glow pl-8 pr-6 h-11"
           asChild
         >
           <span className="flex items-center gap-2">

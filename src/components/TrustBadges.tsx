@@ -51,7 +51,7 @@ const TrustBadges: React.FC = () => {
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="h-6 w-6 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-8 w-8 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 />
                 <span className="text-sm font-medium text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 tracking-wide uppercase">
                   {item.name}
