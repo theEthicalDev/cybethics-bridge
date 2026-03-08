@@ -64,7 +64,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           alt={title}
           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        {tags[0] && (
+          <span className="absolute top-3 left-3 text-xs font-medium px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm text-foreground border border-border/30">
+            {tags[0]}
+          </span>
+        )}
       </div>
       <CardHeader className="pb-2">
         <CardTitle className="text-lg font-medium">{title}</CardTitle>
@@ -73,11 +78,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow content-center">
-        <div className="flex flex-wrap gap-2 mb-3">
-          {tags.map((tag, index) => (
-            <Badge key={index} variant="outline" className={`font-normal ${tagColor || getTagColor(tag)}`}>
+        <div className="flex flex-wrap gap-3 mb-3">
+          {tags.slice(1).map((tag, index) => (
+            <span key={index} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>
               {tag}
-            </Badge>
+            </span>
           ))}
         </div>
       </CardContent>
