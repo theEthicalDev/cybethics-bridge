@@ -1,21 +1,20 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Shield, Server, ShieldCheck, Github, Database, Code2, Globe, Cpu, Layers, Box, Terminal, Hexagon, Component } from 'lucide-react';
+import { Shield, Server, ShieldCheck } from 'lucide-react';
 import useScrollReveal from '@/hooks/useScrollReveal';
 
-const techLogos: { name: string; icon: React.ElementType }[] = [
-  { name: 'Proton', icon: Shield },
-  { name: 'GitHub', icon: Github },
-  { name: 'Microsoft', icon: Layers },
-  { name: 'JetBrains', icon: Hexagon },
-  { name: 'Java', icon: Cpu },
-  { name: 'Spring Boot', icon: Terminal },
-  { name: 'Lovable', icon: Box },
-  { name: 'IntelliJ', icon: Code2 },
-  { name: 'Shopware', icon: Globe },
-  { name: 'Directus', icon: Database },
-  { name: 'Angular', icon: Component },
-  { name: 'PostgreSQL', icon: Database },
+const techLogos: { name: string; logo: string }[] = [
+  { name: 'GitHub', logo: '/media/tech/github.svg' },
+  { name: 'Microsoft', logo: '/media/tech/microsoft.svg' },
+  { name: 'JetBrains', logo: '/media/tech/jetbrains.svg' },
+  { name: 'Java', logo: '/media/tech/java.svg' },
+  { name: 'Spring Boot', logo: '/media/tech/spring.svg' },
+  { name: 'Lovable', logo: '/media/tech/lovable.ico' },
+  { name: 'IntelliJ', logo: '/media/tech/intellij.svg' },
+  { name: 'Shopware', logo: '/media/tech/shopware.svg' },
+  { name: 'Directus', logo: '/media/tech/directus.svg' },
+  { name: 'Angular', logo: '/media/tech/angular.svg' },
+  { name: 'PostgreSQL', logo: '/media/tech/postgresql.svg' },
 ];
 
 const TrustBadges: React.FC = () => {
@@ -41,23 +40,24 @@ const TrustBadges: React.FC = () => {
           </div>
         </div>
 
-        {/* Sliding tech banner with icons */}
+        {/* Sliding tech banner with real logos */}
         <div className={`overflow-hidden scroll-reveal scroll-reveal-delay-1 ${isVisible ? 'visible' : ''}`}>
           <div className="flex animate-marquee whitespace-nowrap">
-            {[...techLogos, ...techLogos].map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={i}
-                  className="flex-shrink-0 mx-6 md:mx-10 flex items-center gap-2"
-                >
-                  <Icon className="h-4 w-4 text-muted-foreground/50" />
-                  <span className="text-sm font-medium text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 tracking-wide uppercase">
-                    {item.name}
-                  </span>
-                </div>
-              );
-            })}
+            {[...techLogos, ...techLogos].map((item, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 mx-6 md:mx-10 flex items-center gap-2.5"
+              >
+                <img
+                  src={item.logo}
+                  alt={item.name}
+                  className="h-6 w-6 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <span className="text-sm font-medium text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 tracking-wide uppercase">
+                  {item.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
