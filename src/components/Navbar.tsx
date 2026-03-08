@@ -71,10 +71,10 @@ const Navbar: React.FC = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors flex items-center ${
+              className={`text-sm font-medium transition-colors flex items-center link-underline ${
                 isActive(link.path)
                   ? 'text-primary'
-                  : 'text-text hover:text-primary'
+                  : 'text-foreground hover:text-primary'
               }`}
             >
               {link.label}

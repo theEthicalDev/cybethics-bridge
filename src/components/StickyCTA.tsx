@@ -10,7 +10,6 @@ const StickyCTA: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling past ~80vh (hero section)
       setVisible(window.scrollY > window.innerHeight * 0.8);
     };
 
@@ -24,23 +23,31 @@ const StickyCTA: React.FC = () => {
         visible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
       }`}
     >
-      <Button
-        asChild
-        variant="gradient"
-        size="lg"
-        className="rounded-full shadow-large hover:shadow-glow group"
-      >
-        <Link to="/contact" className="flex items-center gap-2 px-6">
-          <img
-            src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png"
-            alt="Djordje Karadzic"
-            className="h-7 w-7 rounded-full border-2 border-primary-foreground/30 object-cover"
-          />
-          <Calendar className="h-5 w-5" />
-          <span className="hidden sm:inline">{t('hero.cta')}</span>
-          <span className="sm:hidden">{t('homepage.stickyCta.short')}</span>
-        </Link>
-      </Button>
+      <Link to="/contact" className="flex items-center group">
+        {/* Avatar circle - larger, overlapping like a key head */}
+        <div className="relative z-10 -mr-3">
+          <div className="w-14 h-14 rounded-full bg-primary/90 shadow-large flex items-center justify-center border-2 border-primary-foreground/20 group-hover:shadow-glow transition-all">
+            <img
+              src="/media/d5a54318-571b-4628-9628-92d6e9cb11bc.png"
+              alt="Djordje Karadzic"
+              className="w-12 h-12 rounded-full object-cover"
+            />
+          </div>
+        </div>
+        {/* Button body - the key shaft */}
+        <Button
+          variant="gradient"
+          size="lg"
+          className="rounded-full shadow-large hover:shadow-glow pl-6 pr-6 h-11"
+          asChild
+        >
+          <span className="flex items-center gap-2">
+            <Calendar className="h-5 w-5" />
+            <span className="hidden sm:inline">{t('hero.cta')}</span>
+            <span className="sm:hidden">{t('homepage.stickyCta.short')}</span>
+          </span>
+        </Button>
+      </Link>
     </div>
   );
 };

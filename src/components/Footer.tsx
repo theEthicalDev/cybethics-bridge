@@ -14,12 +14,7 @@ const Footer: React.FC = () => {
   };
   
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-primary/20 pt-8 md:pt-20 pb-8 relative overflow-hidden border-t-2 border-primary/30">
-      {/* Decorative blur orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-1/6 w-64 h-64 rounded-full bg-primary/10 blur-3xl"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-48 h-48 rounded-full bg-primary/5 blur-3xl"></div>
-      </div>
+    <footer className="bg-gray-900 pt-8 md:pt-20 pb-8 relative overflow-hidden border-t border-border/30">
 
       <div className="container relative z-10">
         {/* Back to top */}
