@@ -1,140 +1,110 @@
 
 
-## Improvements: "Du/Ihr" Form, Contact Person Placement, and New Conviction Sections
+## Visual Appearance Improvements
 
-Three changes bundled together: tone adjustment across all German translations, repositioning the contact person card, and adding the new "we take over" sections.
-
----
-
-### 1. Switch All German Text to "Du/Ihr" Form
-
-**File:** `src/locales/de.json`
-
-Systematic replacement of formal "Sie" address with informal "Du/Ihr" throughout the entire file. This affects hundreds of strings. Examples:
-
-| Current (Sie) | New (Du/Ihr) |
-|---|---|
-| "Ihre digitale Infrastruktur" | "Eure digitale Infrastruktur" |
-| "Wir nehmen Ihnen die digitale Last ab" | "Wir nehmen Euch die digitale Last ab" |
-| "Sie müssen sich um nichts kümmern" | "Ihr müsst Euch um nichts kümmern" |
-| "Lassen Sie uns gemeinsam herausfinden" | "Lass uns gemeinsam herausfinden" |
-| "damit Sie sich auf Ihr Kerngeschäft konzentrieren können" | "damit Ihr Euch auf Euer Kerngeschäft konzentrieren könnt" |
-| "Bereit für eine Systemanalyse?" | stays the same (no pronoun) |
-
-Rules applied:
-- "Sie" (subject) becomes "Ihr" or "Du" depending on context
-- "Ihnen" becomes "Euch" or "Dir"
-- "Ihr/Ihre/Ihrem/Ihren" (possessive) becomes "Euer/Eure/Eurem/Euren" or "Dein/Deine"
-- Verb conjugation adjusts accordingly ("können" stays, but "Sie können" becomes "Ihr könnt")
-- Tone remains professional, not slangy -- just less formal
-
-This covers all sections: `seo`, `hero`, `aid`, `pricing`, `services`, `contact`, `about`, `footer`, `identify`, `business`, `servicePage`, etc.
-
-**File:** `src/locales/en.json` -- English uses "you/your" universally, so no changes needed for formality. Only update if any content references "Sie" indirectly.
+After reviewing all homepage sections and components, here are targeted improvements to elevate the visual quality without changing content or structure.
 
 ---
 
-### 2. Move Contact Person (Djordje Karadzic) Further Down
+### 1. Scroll-Reveal Animations (Replace Static fade-up)
 
-**File:** `src/components/HeroSection.tsx`
+**New hook:** `src/hooks/useScrollReveal.tsx`
 
-- Remove `<ContactPartner />` from the HeroSection component
-- Export `ContactPartner` so it can be used elsewhere
+Currently all `animate-fade-up` classes fire on page load, meaning sections below the fold animate before anyone sees them. Create an Intersection Observer hook that triggers animations only when elements scroll into view.
 
-**File:** `src/pages/Index.tsx`
-
-- Import `ContactPartner` from HeroSection (or extract to its own file)
-- Place it after AIDConviction and before AIDTargetClients -- this positions the personal contact as a trust anchor after the "we take over" messaging, right before describing target clients
-- The card appears as a natural bridge: "We handle everything" → "Here's who you'll work with" → "Are you our ideal client?"
+- Hook returns a ref and `isVisible` boolean
+- Threshold: 0.15 (triggers when 15% visible)
+- Apply across all section components (AIDProblemStatement, AIDFramework, AIDApproach, AIDClientJourney, AIDConviction, AIDScope, AIDTargetClients, HomepageStats, ProblemFinder, HomepageFAQ, Projects section)
 
 ---
 
-### 3. New Component: Client Journey ("Euer Weg mit uns")
+### 2. Curved Section Dividers
 
-**File:** `src/components/aid/AIDClientJourney.tsx`
+**New component:** `src/components/SectionDivider.tsx`
 
-A section that contrasts what the client does (minimal) vs. what we handle (comprehensive):
+Add subtle SVG wave/curve shapes between key sections to break the flat rectangular feel:
 
-- 4 steps with two columns each:
-  - Step 1: "Ihr beschreibt Eure Herausforderung" / We: analyze, document, prioritize
-  - Step 2: "Ihr gebt Feedback zum Konzept" / We: design architecture, plan milestones, define budget
-  - Step 3: "Ihr testet und bestätigt" / We: implement, test, iterate, deploy
-  - Step 4: "Ihr fokussiert Euch auf Euer Geschäft" / We: monitor, maintain, optimize, evolve
-- Visual emphasis: client column is slim/simple, our column is detailed/extensive
-- All text via `t('aid.journey.*')` keys
+- A reusable component with `variant` prop: `wave`, `curve`, `slant`
+- Renders an SVG that spans full width, height ~40-60px
+- Color matches the next section's background
+- Place between: Hero→Stats, Stats→Problem, Framework→Approach, Conviction→Contact
 
 ---
 
-### 4. New Component: Scope Checklist ("Was wir für Euch übernehmen")
+### 3. Card Hover Shine Effect
 
-**File:** `src/components/aid/AIDScope.tsx`
+**CSS addition in `src/index.css`**
 
-A comprehensive visual checklist organized by category:
+Add a subtle light-sweep effect on card hover using a pseudo-element with a diagonal gradient that translates across:
 
-- 4 categories with 3-4 items each:
-  - Analyse: IT landscape mapping, process documentation, optimization potential, tool evaluation
-  - Umsetzung: Architecture, development, integration, testing
-  - Betrieb: Hosting, monitoring, backups, security updates
-  - Support: Bug fixes, feature requests, consulting, training
-- Highlight callout: "Ihr müsst nur: Eure Ziele beschreiben und Feedback geben."
-- Checkmark icons, clean grid layout
-- All text via `t('aid.scope.*')` keys
-
----
-
-### 5. Enhance AIDConviction with Before/After Scenarios
-
-**File:** `src/components/aid/AIDConviction.tsx`
-
-Add a transformation row below the existing 3 cards:
-
-- 3 mini before/after scenarios:
-  - "Manuelle Auftragsbearbeitung (3h/Tag)" → "Automatisierter Workflow (5 Min/Tag)"
-  - "5 Systeme ohne Verbindung" → "1 integrierte Plattform"
-  - "Excel-Reporting am Monatsende" → "Echtzeit-Dashboard"
-- Arrow/transformation visual between before and after
-- All text via `t('aid.conviction.scenarios.*')` keys
-
----
-
-### 6. Updated Homepage Flow
-
-**File:** `src/pages/Index.tsx`
-
-New section order:
-1. HeroSection (without ContactPartner)
-2. AIDProblemStatement
-3. AIDFramework
-4. AIDApproach
-5. **AIDClientJourney** (new)
-6. AIDConviction (enhanced with scenarios)
-7. **ContactPartner** (moved here -- personal trust anchor)
-8. **AIDScope** (new)
-9. AIDTargetClients
-10. Projects
-11. About/Stats
-12. CTA
-
----
-
-### 7. Translation Keys Added
-
-**Files:** `src/locales/de.json`, `src/locales/en.json`
-
-New keys (German in "Du/Ihr" form):
-
-```text
-aid.journey.title = "Euer Weg mit uns"
-aid.journey.subtitle = "Ihr beschreibt. Wir übernehmen."
-aid.journey.step1-4 with .you and .we subkeys
-
-aid.scope.title = "Was wir für Euch übernehmen"
-aid.scope.subtitle = "Alles aus einer Hand — von der Analyse bis zum laufenden Betrieb."
-aid.scope.categories (analysis, implementation, operations, support) with items
-aid.scope.youOnly = "Ihr müsst nur: Eure Ziele beschreiben und Feedback geben."
-
-aid.conviction.scenarios.1-3 with .before and .after subkeys
+```css
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.3) 45%, rgba(255,255,255,0.1) 50%, transparent 55%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.card-shine:hover::after {
+  transform: translateX(100%);
+}
 ```
+
+Apply `.card-shine` to cards in: AIDFramework pillars, AIDConviction reasons, AIDScope categories, AIDClientJourney steps, HomepageStats items.
+
+---
+
+### 4. Enhanced Footer
+
+**File:** `src/components/Footer.tsx`
+
+Upgrade from plain `bg-gray-50` to a richer design:
+
+- Gradient background: `bg-gradient-to-br from-gray-900 via-gray-800 to-primary/20` with light text
+- Add subtle decorative blur orbs (consistent with rest of site)
+- Slightly larger spacing, better link hover states with underline animation
+- Add a small "Back to top" button
+
+---
+
+### 5. Improved Section Badges
+
+**Multiple component files**
+
+Currently section badges are plain `bg-primary/10 rounded-full` pills. Enhance them with:
+
+- A subtle left border accent or a small icon dot
+- Slight shimmer animation on the badge background
+- More visual weight to establish section identity
+
+Apply to: AIDFramework, ProblemFinder, HomepageFAQ, AIDTargetClients
+
+---
+
+### 6. Background Texture Overlay
+
+**File:** `src/index.css`
+
+Add a very subtle noise/grain texture overlay to the page background for depth:
+
+```css
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,..."); /* tiny noise pattern */
+  pointer-events: none;
+  z-index: 0;
+}
+```
+
+This adds tactile richness without affecting readability.
 
 ---
 
@@ -142,11 +112,19 @@ aid.conviction.scenarios.1-3 with .before and .after subkeys
 
 | File | Action |
 |---|---|
-| `src/locales/de.json` | Sie→Du/Ihr conversion + new journey/scope/scenario keys |
-| `src/locales/en.json` | New journey/scope/scenario keys |
-| `src/components/HeroSection.tsx` | Remove ContactPartner from render, export it |
-| `src/components/aid/AIDClientJourney.tsx` | Create -- client perspective journey |
-| `src/components/aid/AIDScope.tsx` | Create -- takeover checklist |
-| `src/components/aid/AIDConviction.tsx` | Modify -- add before/after scenarios |
-| `src/pages/Index.tsx` | New flow with ContactPartner moved + new sections |
+| `src/hooks/useScrollReveal.tsx` | Create -- Intersection Observer hook |
+| `src/components/SectionDivider.tsx` | Create -- curved SVG dividers |
+| `src/index.css` | Add card-shine effect + body noise texture |
+| `src/components/Footer.tsx` | Redesign with dark gradient + back-to-top |
+| `src/pages/Index.tsx` | Add SectionDividers between key sections |
+| `src/components/aid/AIDProblemStatement.tsx` | Use scroll-reveal + card-shine |
+| `src/components/aid/AIDFramework.tsx` | Use scroll-reveal + card-shine + enhanced badge |
+| `src/components/aid/AIDApproach.tsx` | Use scroll-reveal |
+| `src/components/aid/AIDClientJourney.tsx` | Use scroll-reveal + card-shine |
+| `src/components/aid/AIDConviction.tsx` | Use scroll-reveal + card-shine |
+| `src/components/aid/AIDScope.tsx` | Use scroll-reveal + card-shine |
+| `src/components/aid/AIDTargetClients.tsx` | Use scroll-reveal + enhanced badge |
+| `src/components/HomepageStats.tsx` | Use scroll-reveal + card-shine |
+| `src/components/ProblemFinder.tsx` | Use scroll-reveal + enhanced badge |
+| `src/components/HomepageFAQ.tsx` | Use scroll-reveal + enhanced badge |
 
