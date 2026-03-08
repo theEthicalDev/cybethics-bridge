@@ -8,13 +8,11 @@ import ProjectCard from '@/components/ProjectCard';
 import Stats from '@/components/Stats';
 import AIDProblemStatement from '@/components/aid/AIDProblemStatement';
 import AIDFramework from '@/components/aid/AIDFramework';
-import AIDApproach from '@/components/aid/AIDApproach';
 import AIDTargetClients from '@/components/aid/AIDTargetClients';
 import AIDConviction from '@/components/aid/AIDConviction';
 import AIDClientJourney from '@/components/aid/AIDClientJourney';
 import AIDScope from '@/components/aid/AIDScope';
 import ContactPartner from '@/components/ContactPartner';
-import HomepageStats from '@/components/HomepageStats';
 import ProblemFinder from '@/components/ProblemFinder';
 import HomepageFAQ from '@/components/HomepageFAQ';
 import StickyCTA from '@/components/StickyCTA';
@@ -35,24 +33,8 @@ const Index = () => {
       <StickyCTA />
       <HeroSection />
       <TrustBadges />
-      <SectionDivider variant="wave" fillColor="hsl(var(--muted) / 0.3)" />
-      <HomepageStats />
-      <SectionDivider variant="curve" fillColor="hsl(var(--background))" flip />
-      <AIDProblemStatement />
-      <AIDFramework />
-      <SectionDivider variant="slant" fillColor="hsl(var(--muted) / 0.3)" />
-      <AIDApproach />
-      <AIDClientJourney />
-      <SectionDivider variant="wave" fillColor="hsl(var(--background))" flip />
-      <AIDConviction />
-      <SectionDivider variant="curve" fillColor="hsl(var(--background))" />
-      <ContactPartner />
-      <AIDScope />
-      <ProblemFinder />
-      <AIDTargetClients />
-      <HomepageFAQ />
 
-      {/* Projects Section */}
+      {/* Projects Section — early visibility */}
       <section aria-labelledby="projects-heading" className="py-16 md:py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-primary/5 blur-2xl"></div>
@@ -94,6 +76,20 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <SectionDivider variant="wave" fillColor="hsl(var(--muted) / 0.3)" />
+      <AIDProblemStatement />
+      <AIDFramework />
+      <ProblemFinder />
+      <SectionDivider variant="slant" fillColor="hsl(var(--muted) / 0.3)" />
+      <AIDClientJourney />
+      <SectionDivider variant="wave" fillColor="hsl(var(--background))" flip />
+      <AIDConviction />
+      <SectionDivider variant="curve" fillColor="hsl(var(--background))" />
+      <ContactPartner />
+      <AIDScope />
+      <AIDTargetClients />
+      <HomepageFAQ />
 
       {/* About Section */}
       <section aria-labelledby="about-heading" className="py-12 md:py-24 bg-muted/30">
