@@ -3,6 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, RotateCcw } from 'lucide-react';
+import useScrollReveal from '@/hooks/useScrollReveal';
 
 interface Question {
   questionKey: string;
@@ -11,6 +12,7 @@ interface Question {
 
 const ProblemFinder: React.FC = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
@@ -76,20 +78,19 @@ const ProblemFinder: React.FC = () => {
       <div className="absolute inset-0">
         <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/5 blur-3xl"></div>
       </div>
-      <div className="container relative z-10">
+      <div className="container relative z-10" ref={ref}>
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10 animate-fade-up">
-            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-6 border border-primary/20">
+          <div className={`text-center mb-10 scroll-reveal ${isVisible ? 'visible' : ''}`}>
+            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-6 border border-primary/20 badge-shimmer">
               <span className="text-sm font-medium text-primary">{t('homepage.quiz.badge')}</span>
             </div>
             <h2 className="mb-4">{t('homepage.quiz.title')}</h2>
             <p className="text-lg text-muted-foreground">{t('homepage.quiz.subtitle')}</p>
           </div>
 
-          <div className="glass-card rounded-2xl p-8 md:p-12 shadow-medium">
+          <div className={`glass-card rounded-2xl p-8 md:p-12 shadow-medium scroll-reveal scroll-reveal-delay-1 ${isVisible ? 'visible' : ''}`}>
             {!showResult ? (
               <div className="space-y-8 animate-fade-in">
-                {/* Progress */}
                 <div className="flex items-center gap-2 mb-6">
                   {questions.map((_, i) => (
                     <div

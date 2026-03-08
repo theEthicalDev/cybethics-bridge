@@ -18,22 +18,32 @@ import HomepageStats from '@/components/HomepageStats';
 import ProblemFinder from '@/components/ProblemFinder';
 import HomepageFAQ from '@/components/HomepageFAQ';
 import StickyCTA from '@/components/StickyCTA';
+import SectionDivider from '@/components/SectionDivider';
+import useScrollReveal from '@/hooks/useScrollReveal';
 import { getProjects } from '@/utils/projectData';
 
 const Index = () => {
   const { t } = useLanguage();
   const projects = getProjects().slice(0, 3);
+  const { ref: projectsRef, isVisible: projectsVisible } = useScrollReveal();
+  const { ref: aboutRef, isVisible: aboutVisible } = useScrollReveal();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal();
 
   return (
     <div className="min-h-screen overflow-x-hidden">
       <StickyCTA />
       <HeroSection />
+      <SectionDivider variant="wave" fillColor="hsl(var(--muted) / 0.3)" />
       <HomepageStats />
+      <SectionDivider variant="curve" fillColor="hsl(var(--background))" flip />
       <AIDProblemStatement />
       <AIDFramework />
+      <SectionDivider variant="slant" fillColor="hsl(var(--muted) / 0.3)" />
       <AIDApproach />
       <AIDClientJourney />
+      <SectionDivider variant="wave" fillColor="hsl(var(--background))" flip />
       <AIDConviction />
+      <SectionDivider variant="curve" fillColor="hsl(var(--background))" />
       <ContactPartner />
       <AIDScope />
       <ProblemFinder />
@@ -45,16 +55,16 @@ const Index = () => {
         <div className="absolute inset-0">
           <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-primary/5 blur-2xl"></div>
         </div>
-        <div className="container relative z-10">
+        <div className="container relative z-10" ref={projectsRef}>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20">
-            <div className="max-w-2xl animate-fade-up">
-              <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-8 border border-primary/20">
+            <div className={`max-w-2xl scroll-reveal ${projectsVisible ? 'visible' : ''}`}>
+              <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-8 border border-primary/20 badge-shimmer">
                 <span className="text-sm font-medium text-primary">{t('projects.title')}</span>
               </div>
               <h2 id="projects-heading" className="mb-6">{t('projects.title')}</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">{t('projects.subtitle')}</p>
             </div>
-            <Button asChild variant="outline" size="lg" className="mt-6 md:mt-0 group rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 animate-fade-up" style={{ animationDelay: '200ms' }}>
+            <Button asChild variant="outline" size="lg" className={`mt-6 md:mt-0 group rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 scroll-reveal scroll-reveal-delay-1 ${projectsVisible ? 'visible' : ''}`}>
               <Link to="/projects" className="flex items-center font-semibold">
                 {t('projects.viewall')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -63,7 +73,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 150}ms` }}>
+              <div key={index} className={`scroll-reveal scroll-reveal-delay-${index + 1} ${projectsVisible ? 'visible' : ''}`}>
                 <ProjectCard
                   title={t(project.title)}
                   description={t(project.description)}
@@ -85,12 +95,12 @@ const Index = () => {
 
       {/* About Section */}
       <section aria-labelledby="about-heading" className="py-12 md:py-24 bg-muted/30">
-        <div className="container">
+        <div className="container" ref={aboutRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
+            <div className={`relative order-2 lg:order-1 scroll-reveal ${aboutVisible ? 'visible' : ''}`}>
               <Stats />
             </div>
-            <div className="space-y-6 order-1 lg:order-2">
+            <div className={`space-y-6 order-1 lg:order-2 scroll-reveal scroll-reveal-delay-1 ${aboutVisible ? 'visible' : ''}`}>
               <div>
                 <h2 id="about-heading" className="mb-4">{t('about.title')}</h2>
                 <p className="text-lg text-muted-foreground mb-6">{t('about.intro')}</p>
@@ -119,13 +129,13 @@ const Index = () => {
 
       {/* CTA Section */}
       <section aria-labelledby="cta-heading" className="py-16 md:py-32 relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="relative bg-gradient-to-br from-primary via-primary to-primary/80 rounded-3xl p-16 md:p-20 text-primary-foreground text-center overflow-hidden shadow-large">
+        <div className="container relative z-10" ref={ctaRef}>
+          <div className={`relative bg-gradient-to-br from-primary via-primary to-primary/80 rounded-3xl p-16 md:p-20 text-primary-foreground text-center overflow-hidden shadow-large scroll-reveal ${ctaVisible ? 'visible' : ''}`}>
             <div className="absolute inset-0">
               <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-float"></div>
               <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
-            <div className="relative z-10 max-w-4xl mx-auto animate-fade-up">
+            <div className="relative z-10 max-w-4xl mx-auto">
               <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold text-primary-foreground mb-8">{t('aid.cta.title')}</h2>
               <p className="text-xl text-primary-foreground/90 mb-12 leading-relaxed max-w-3xl mx-auto">{t('aid.cta.subtitle')}</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

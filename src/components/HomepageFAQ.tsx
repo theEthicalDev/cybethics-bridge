@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import useScrollReveal from '@/hooks/useScrollReveal';
 
 const HomepageFAQ: React.FC = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
-  // Reuse the top 5 FAQ keys from the FAQ page
   const faqs = [
     { question: 'faq.process.question', answer: 'faq.process.answer' },
     { question: 'faq.pricing.question', answer: 'faq.pricing.answer' },
@@ -22,10 +23,10 @@ const HomepageFAQ: React.FC = () => {
       <div className="absolute inset-0">
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
       </div>
-      <div className="container relative z-10">
+      <div className="container relative z-10" ref={ref}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-fade-up">
-            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-6 border border-primary/20">
+          <div className={`text-center mb-12 scroll-reveal ${isVisible ? 'visible' : ''}`}>
+            <div className="inline-block px-6 py-3 bg-primary/10 rounded-full mb-6 border border-primary/20 badge-shimmer">
               <span className="text-sm font-medium text-primary">{t('homepage.faq.badge')}</span>
             </div>
             <h2 className="mb-4">{t('homepage.faq.title')}</h2>
@@ -37,7 +38,7 @@ const HomepageFAQ: React.FC = () => {
               <AccordionItem
                 key={index}
                 value={`faq-${index}`}
-                className="glass-card rounded-xl px-6 border-none shadow-soft data-[state=open]:shadow-medium transition-all duration-300"
+                className={`glass-card rounded-xl px-6 border-none shadow-soft data-[state=open]:shadow-medium transition-all duration-300 scroll-reveal scroll-reveal-delay-${Math.min(index + 1, 4)} ${isVisible ? 'visible' : ''}`}
               >
                 <AccordionTrigger className="text-left text-base md:text-lg font-medium hover:no-underline py-5">
                   {t(faq.question)}
@@ -49,7 +50,7 @@ const HomepageFAQ: React.FC = () => {
             ))}
           </Accordion>
 
-          <div className="text-center mt-10 animate-fade-up">
+          <div className={`text-center mt-10 scroll-reveal scroll-reveal-delay-4 ${isVisible ? 'visible' : ''}`}>
             <Button asChild variant="outline" size="lg" className="rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/5 group">
               <Link to="/faq" className="flex items-center font-semibold">
                 {t('homepage.faq.viewAll')}

@@ -2,9 +2,11 @@ import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import { Zap, Link2, Code2, TrendingUp } from 'lucide-react';
+import useScrollReveal from '@/hooks/useScrollReveal';
 
 const HomepageStats: React.FC = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
   const stats = [
     { value: 50, suffix: '+', label: 'homepage.stats.automatedProcesses', icon: <Zap className="h-7 w-7 mx-auto text-primary" />, delay: 0 },
@@ -19,14 +21,14 @@ const HomepageStats: React.FC = () => {
         <div className="absolute top-1/2 left-1/4 w-48 h-48 rounded-full bg-primary/5 blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/3 w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
       </div>
-      <div className="container relative z-10">
-        <div className="text-center mb-10 animate-fade-up">
+      <div className="container relative z-10" ref={ref}>
+        <div className={`text-center mb-10 scroll-reveal ${isVisible ? 'visible' : ''}`}>
           <h2 className="mb-3">{t('homepage.stats.title')}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t('homepage.stats.subtitle')}</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
-            <div key={index} className="glass-card rounded-2xl p-2 hover-lift group">
+            <div key={index} className={`card-shine glass-card rounded-2xl p-2 hover-lift group scroll-reveal scroll-reveal-delay-${index + 1} ${isVisible ? 'visible' : ''}`}>
               <AnimatedCounter
                 value={stat.value}
                 label={stat.label}
