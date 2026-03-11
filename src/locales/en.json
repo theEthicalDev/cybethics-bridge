@@ -41,6 +41,14 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "servicesMenu": {
+      "websites": "Website Packages",
+      "automation": "Automation",
+      "integration": "Integration",
+      "development": "Development",
+      "maintenance": "Maintenance & Support",
+      "all": "All Services"
+    },
     "projects": "Projects",
     "pricing": "Pricing",
     "about": "About",

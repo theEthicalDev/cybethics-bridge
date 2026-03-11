@@ -7,7 +7,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs';
 import {ArrowRight, ExternalLink, Code, Cog, Network, Terminal, GitBranch, Smartphone, Monitor} from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import {getProjects} from '@/utils/projectData.ts';
-import path from 'path';
+
 import {Link} from 'react-router-dom';
 
 const Projects = () => {
