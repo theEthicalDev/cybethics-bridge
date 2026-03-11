@@ -41,6 +41,14 @@
   "nav": {
     "home": "Startseite",
     "services": "Dienstleistungen",
+    "servicesMenu": {
+      "websites": "Webseiten-Pakete",
+      "automation": "Automatisierung",
+      "integration": "Integration",
+      "development": "Entwicklung",
+      "maintenance": "Wartung & Support",
+      "all": "Alle Dienstleistungen"
+    },
     "projects": "Projekte",
     "pricing": "Preise",
     "about": "Über uns",
