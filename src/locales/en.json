@@ -1342,5 +1342,56 @@
     "stickyCta": {
       "short": "Inquire"
     }
+  },
+  "websitePackages": {
+    "badge": "Website Packages",
+    "title": "Professional Website at a Fixed Price",
+    "subtitle": "Simple, modern websites for your business — no hidden costs. No code, no complexity, just online.",
+    "popular": "Most Popular",
+    "cta": "Request Package",
+    "starter": {
+      "title": "Starter",
+      "description": "Perfect for solo entrepreneurs and small businesses",
+      "price": "CHF 990",
+      "priceNote": "One-time",
+      "feature_1": "Up to 3 pages (e.g. Home, About, Contact)",
+      "feature_2": "Modern, responsive design",
+      "feature_3": "Contact form",
+      "feature_4": "Basic SEO optimization",
+      "feature_5": "Hosting setup included"
+    },
+    "business": {
+      "title": "Business",
+      "description": "For SMEs that want a professional presence",
+      "price": "CHF 2,490",
+      "priceNote": "One-time",
+      "feature_1": "Up to 7 pages",
+      "feature_2": "Custom design tailored to your brand",
+      "feature_3": "Contact form with email integration",
+      "feature_4": "Google Maps integration",
+      "feature_5": "SEO optimization & analytics",
+      "feature_6": "Social media linking",
+      "feature_7": "Cookie banner & privacy compliance"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "For businesses with the highest standards",
+      "price": "CHF 4,990",
+      "priceNote": "One-time",
+      "feature_1": "Up to 15 pages",
+      "feature_2": "Bespoke premium design",
+      "feature_3": "Animations & interactive elements",
+      "feature_4": "Blog / news section",
+      "feature_5": "Multilingual support (DE/EN)",
+      "feature_6": "Advanced SEO strategy",
+      "feature_7": "Performance optimization",
+      "feature_8": "Cookie banner & GDPR compliant",
+      "feature_9": "3 months support included"
+    },
+    "info": {
+      "title": "Need more than a simple website?",
+      "description": "For web applications with login, database or custom logic, we offer tailored software development.",
+      "cta": "Get a free consultation"
+    }
   }
 }
