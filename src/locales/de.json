@@ -1366,5 +1366,56 @@
     "stickyCta": {
       "short": "Anfragen"
     }
+  },
+  "websitePackages": {
+    "badge": "Webseiten-Pakete",
+    "title": "Professionelle Webseite zum Festpreis",
+    "subtitle": "Einfache, moderne Webseiten für Euer Unternehmen — ohne versteckte Kosten. Kein Code, keine Komplexität, einfach online.",
+    "popular": "Beliebteste Wahl",
+    "cta": "Paket anfragen",
+    "starter": {
+      "title": "Starter",
+      "description": "Perfekt für Einzelunternehmer und kleine Betriebe",
+      "price": "CHF 990",
+      "priceNote": "Einmalig",
+      "feature_1": "Bis zu 3 Seiten (z.B. Start, Über uns, Kontakt)",
+      "feature_2": "Modernes, responsives Design",
+      "feature_3": "Kontaktformular",
+      "feature_4": "SEO-Grundoptimierung",
+      "feature_5": "Hosting-Setup inklusive"
+    },
+    "business": {
+      "title": "Business",
+      "description": "Für KMU, die professionell auftreten wollen",
+      "price": "CHF 2'490",
+      "priceNote": "Einmalig",
+      "feature_1": "Bis zu 7 Seiten",
+      "feature_2": "Individuelles Design nach Euren Wünschen",
+      "feature_3": "Kontaktformular mit E-Mail-Integration",
+      "feature_4": "Google Maps Einbindung",
+      "feature_5": "SEO-Optimierung & Analytics",
+      "feature_6": "Social-Media-Verknüpfung",
+      "feature_7": "Cookie-Banner & Datenschutz"
+    },
+    "premium": {
+      "title": "Premium",
+      "description": "Für Unternehmen mit höchsten Ansprüchen",
+      "price": "CHF 4'990",
+      "priceNote": "Einmalig",
+      "feature_1": "Bis zu 15 Seiten",
+      "feature_2": "Massgeschneidertes Premium-Design",
+      "feature_3": "Animationen & Interaktive Elemente",
+      "feature_4": "Blog / News-Bereich",
+      "feature_5": "Mehrsprachigkeit (DE/EN)",
+      "feature_6": "Erweiterte SEO-Strategie",
+      "feature_7": "Performance-Optimierung",
+      "feature_8": "Cookie-Banner & DSGVO-konform",
+      "feature_9": "3 Monate Support inklusive"
+    },
+    "info": {
+      "title": "Braucht Ihr mehr als eine einfache Webseite?",
+      "description": "Für Webanwendungen mit Login, Datenbank oder individueller Logik bieten wir massgeschneiderte Softwareentwicklung an.",
+      "cta": "Unverbindlich beraten lassen"
+    }
   }
 }

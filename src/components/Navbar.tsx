@@ -16,11 +16,10 @@ const Navbar: React.FC = () => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   const serviceSubItems = [
-    { path: '/pricing', label: t('nav.servicesMenu.websites'), icon: <Globe className="h-4 w-4" /> },
+    { path: '/pricing/websites', label: t('nav.servicesMenu.websites'), icon: <Globe className="h-4 w-4" /> },
     { path: '/services/automatisierung', label: t('nav.servicesMenu.automation'), icon: <Cog className="h-4 w-4" /> },
     { path: '/services/integration', label: t('nav.servicesMenu.integration'), icon: <Network className="h-4 w-4" /> },
     { path: '/services/entwicklung', label: t('nav.servicesMenu.development'), icon: <Code className="h-4 w-4" /> },
-    { path: '/pricing', label: t('nav.servicesMenu.maintenance'), icon: <Wrench className="h-4 w-4" /> },
     { path: '/services', label: t('nav.servicesMenu.all'), icon: <LayoutGrid className="h-4 w-4" /> },
   ];
 
