@@ -27,6 +27,7 @@ import Pricing from "./pages/Pricing";
 import Automate from "./pages/services/Automate";
 import Integrate from "./pages/services/Integrate";
 import Develop from "./pages/services/Develop";
+import WebsitePackages from "./pages/WebsitePackages";
 
 const queryClient = new QueryClient();
 
