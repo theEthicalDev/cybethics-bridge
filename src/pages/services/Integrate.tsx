@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Network, ArrowRight, CheckCircle2, GitMerge, Database, Brain, Workflow } from 'lucide-react';
@@ -20,6 +21,13 @@ const Integrate = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Systemintegration – Tools & APIs verbinden | Cybethics"
+        titleEn="System Integration – Connect Tools & APIs | Cybethics"
+        descriptionDe="Bestehende Systeme intelligent verbinden: APIs, ERP, CRM und Datenbanken nahtlos integrieren für KMU in der Zentralschweiz."
+        descriptionEn="Intelligently connect existing systems: seamlessly integrate APIs, ERP, CRM and databases for SMEs in Central Switzerland."
+        path="/services/integration"
+      />
       {/* Hero */}
       <section className="pt-12 pb-12 md:py-24 bg-gradient-to-br from-emerald-50/50 via-background to-muted/30">
         <div className="container">

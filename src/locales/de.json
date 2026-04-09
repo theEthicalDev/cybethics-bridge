@@ -197,8 +197,8 @@
     }
   },
   "hero": {
-    "title": "Digitale Systeme. Strategisch gedacht.",
-    "subtitle": "Strategischer Partner für digitale Systemarchitektur: Automatisierung von Geschäftsprozessen, Integration bestehender Software und Entwicklung massgeschneiderter Erweiterungen.",
+    "title": "Digitalisierung. Strategisch gedacht.",
+    "subtitle": "Euer Partner für Digitalisierung in der Zentralschweiz: Automatisierung von Geschäftsprozessen, Integration bestehender Systeme und Entwicklung massgeschneiderter Software.",
     "badge": ".automate .integrate .develop",
     "cta": "Systemanalyse anfragen",
     "ctaSecondary": "Unser Ansatz"
@@ -221,8 +221,8 @@
       }
     },
     "framework": {
-      "title": "A.I.D. — Unser Ansatz",
-      "subtitle": "Drei Säulen für nachhaltige digitale Infrastruktur.",
+      "title": "A.I.D. — Unser Digitalisierungsansatz",
+      "subtitle": "Drei Säulen für nachhaltige Digitalisierung Eures Unternehmens.",
       "automate": {
         "title": "Automatisierung",
         "letter": "A",

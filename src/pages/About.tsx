@@ -1,5 +1,6 @@
 
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Card, CardContent} from '@/components/ui/card';
 import {CheckCircle} from 'lucide-react';
@@ -42,6 +43,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Über uns – Digitalisierungspartner Zentralschweiz | Cybethics"
+        titleEn="About Us – Digitalization Partner Central Switzerland | Cybethics"
+        descriptionDe="Lernt das Team hinter Cybethics kennen. Euer Partner für Digitalisierung, Automatisierung und Integration in Luzern und der Zentralschweiz."
+        descriptionEn="Meet the team behind Cybethics. Your partner for digitalization, automation and integration in Lucerne and Central Switzerland."
+        path="/about"
+      />
       {/* Hero Section */}
       <section className="pt-12 pb-6 md:py-24">
         <div className="container">

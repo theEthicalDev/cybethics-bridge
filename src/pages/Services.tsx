@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Cog, Network, Code, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -42,6 +43,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Dienstleistungen – Digitalisierung für KMU | Cybethics"
+        titleEn="Services – Digitalization for SMEs | Cybethics"
+        descriptionDe="Automatisierung, Integration und Softwareentwicklung — drei Säulen für die Digitalisierung Eures Unternehmens in der Zentralschweiz."
+        descriptionEn="Automation, integration and software development — three pillars for digitalizing your business in Central Switzerland."
+        path="/services"
+      />
       {/* Hero */}
       <section className="pt-12 pb-12 md:py-24 bg-gradient-to-b from-background to-muted/30">
         <div className="container">

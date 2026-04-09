@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Code, ArrowRight, CheckCircle2, Target, Trophy, Shield, Scaling } from 'lucide-react';
@@ -20,6 +21,13 @@ const Develop = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Softwareentwicklung – Massgeschneiderte Lösungen | Cybethics"
+        titleEn="Software Development – Tailored Solutions | Cybethics"
+        descriptionDe="Massgeschneiderte Softwareentwicklung: Web-Apps, Backend-Systeme und DevOps für KMU in Luzern und der Zentralschweiz."
+        descriptionEn="Tailored software development: web apps, backend systems and DevOps for SMEs in Lucerne and Central Switzerland."
+        path="/services/entwicklung"
+      />
       {/* Hero */}
       <section className="pt-12 pb-12 md:py-24 bg-gradient-to-br from-violet-50/50 via-background to-muted/30">
         <div className="container">

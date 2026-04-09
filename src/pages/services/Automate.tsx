@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Cog, ArrowRight, CheckCircle2, Zap, TrendingDown, Scale, BarChart3 } from 'lucide-react';
@@ -20,6 +21,13 @@ const Automate = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Prozessautomatisierung – Digitale Workflows | Cybethics Luzern"
+        titleEn="Process Automation – Digital Workflows | Cybethics Lucerne"
+        descriptionDe="Geschäftsprozesse automatisieren: Workflows, Datenverarbeitung und KI-gestützte Abläufe für KMU in der Zentralschweiz."
+        descriptionEn="Automate business processes: workflows, data processing and AI-driven operations for SMEs in Central Switzerland."
+        path="/services/automatisierung"
+      />
       {/* Hero */}
       <section className="pt-12 pb-12 md:py-24 bg-gradient-to-br from-blue-50/50 via-background to-muted/30">
         <div className="container">

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -30,6 +31,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <SEOHelmet
+        titleDe="Cybethics – Digitalisierung, Automatisierung & Integration in der Zentralschweiz"
+        titleEn="Cybethics – Digitalization, Automation & Integration in Central Switzerland"
+        descriptionDe="Euer Partner für Digitalisierung, Automatisierung und Systemintegration in Luzern, Zug und der Zentralschweiz. Massgeschneiderte Lösungen für KMU."
+        descriptionEn="Your partner for digitalization, automation and system integration in Lucerne, Zug and Central Switzerland. Tailored solutions for SMEs."
+        path="/"
+      />
       <StickyCTA />
       <HeroSection />
       <TrustBadges />
