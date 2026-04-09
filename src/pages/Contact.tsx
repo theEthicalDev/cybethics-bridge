@@ -37,6 +37,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16 mt-24">
+      <SEOHelmet
+        titleDe="Kontakt – Digitalisierungspartner Zentralschweiz | Cybethics"
+        titleEn="Contact – Digitalization Partner Central Switzerland | Cybethics"
+        descriptionDe="Kontaktiert Cybethics für eine kostenlose Erstberatung zur Digitalisierung Eures Unternehmens in Luzern, Zug oder der Zentralschweiz."
+        descriptionEn="Contact Cybethics for a free initial consultation on digitalizing your business in Lucerne, Zug or Central Switzerland."
+        path="/contact"
+      />
       {/* Hero Section */}
       <section className="py-12 md:py-24 bg-gray-100">
         <div className="container">

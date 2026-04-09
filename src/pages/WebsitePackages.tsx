@@ -47,6 +47,13 @@ const WebsitePackages = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <SEOHelmet
+        titleDe="Webseiten-Pakete – Professionelle Websites | Cybethics"
+        titleEn="Website Packages – Professional Websites | Cybethics"
+        descriptionDe="Professionelle Webseiten für KMU: Starter, Business und Premium Pakete. Responsive Design, SEO-optimiert und schnell."
+        descriptionEn="Professional websites for SMEs: Starter, Business and Premium packages. Responsive design, SEO-optimized and fast."
+        path="/pricing/websites"
+      />
       {/* Hero */}
       <section className="pt-12 pb-12 md:py-24 bg-gradient-to-br from-primary/5 via-background to-muted/30">
         <div className="container">

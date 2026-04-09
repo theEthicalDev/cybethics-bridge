@@ -46,6 +46,13 @@ const LocalServices = () => {
 
   return (
     <div className="min-h-screen pt-24">
+      <SEOHelmet
+        titleDe="Digitalisierung Zentralschweiz – Luzern, Zug, Schwyz | Cybethics"
+        titleEn="Digitalization Central Switzerland – Lucerne, Zug, Schwyz | Cybethics"
+        descriptionDe="Professionelle Digitalisierung, Automatisierung und Softwareentwicklung in Luzern, Zug und der Zentralschweiz. Euer lokaler Partner."
+        descriptionEn="Professional digitalization, automation and software development in Lucerne, Zug and Central Switzerland. Your local partner."
+        path="/location"
+      />
       {/* Hero Section */}
       <section className="py-12 md:py-24">
         <div className="container">

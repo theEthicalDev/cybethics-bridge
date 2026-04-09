@@ -290,6 +290,13 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-24">
+      <SEOHelmet
+        titleDe="FAQ – Häufige Fragen zur Digitalisierung | Cybethics"
+        titleEn="FAQ – Common Questions About Digitalization | Cybethics"
+        descriptionDe="Antworten auf häufige Fragen zu Digitalisierung, Automatisierung und Softwareentwicklung für KMU in der Zentralschweiz."
+        descriptionEn="Answers to common questions about digitalization, automation and software development for SMEs in Central Switzerland."
+        path="/faq"
+      />
       {/* Hero Section */}
       <section className="py-16 bg-white">
         <div className="container">

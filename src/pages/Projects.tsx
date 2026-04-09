@@ -52,6 +52,13 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen pt-24 md:pb-16">
+      <SEOHelmet
+        titleDe="Referenzprojekte – Digitalisierung in der Praxis | Cybethics"
+        titleEn="Projects – Digitalization in Practice | Cybethics"
+        descriptionDe="Entdeckt unsere Referenzprojekte: Automatisierung, Systemintegration und Softwareentwicklung für KMU in der Zentralschweiz."
+        descriptionEn="Discover our reference projects: automation, system integration and software development for SMEs in Central Switzerland."
+        path="/projects"
+      />
       {/* Hero Section */}
       <section className="py-12 md:py-24">
         <div className="container">
