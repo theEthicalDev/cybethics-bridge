@@ -1,70 +1,128 @@
-## Plan: Animation Fixes, Badge Shimmer Pause, and Navbar Submenus
 
-### 1. Faster Marquee Animation + Seamless Loop
 
-**File:** `src/index.css`
+## SEO Optimization Plan — Ranking for "Digitalisierung Zentralschweiz"
 
-- Reduce marquee duration from `22.5s` to `15s`
-- The current implementation already duplicates items (`[...techLogos, ...techLogos]`) and uses `translateX(-50%)` which creates a seamless loop. No structural change needed — just the speed.
+### Current State
 
-### 2. Badge Shimmer with Pause
+- **SPA problem**: The site is a client-side React SPA hosted on GitHub Pages. Google can render JS but it's slower and less reliable than server-rendered HTML. The `<noscript>` fallback helps but is minimal.
+- **No per-page meta tags**: Every page serves the same `<title>` and `<meta description>` from `index.html`. Google sees identical metadata for all routes.
+- **Sitemap is incomplete**: Missing `/services/automation`, `/services/integration`, `/services/development`, `/pricing/websites`.
+- **Structured data is outdated**: Still says "Softwareentwicklung" instead of "Digitalisierung", missing `Service` schema entries.
+- **No keyword targeting for "Digitalisierung"**: The word doesn't appear in title, description, keywords, or structured data.
+- **No canonical URLs**: Risk of duplicate content indexing.
+- **No `hreflang` tags**: Site supports DE/EN but Google doesn't know about it.
 
-**File:** `src/index.css`
+---
 
-Change the `badge-shimmer` keyframes so the shimmer only runs during the first ~30% of the animation cycle, then holds idle for the remaining ~70%. Increase the total duration to `12s`:
+### Short-Term (Implementable Now)
 
-```css
-@keyframes badge-shimmer {
-  0% { transform: translateX(-100%); }
-  15% { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
-}
-.badge-shimmer::before {
-  animation: badge-shimmer 12s ease-in-out infinite;
-}
+#### 1. Per-Page `<title>` and `<meta>` via React Helmet
+
+Install `react-helmet-async` and add unique title/description to every page. Target keywords:
+
+| Page | Title (DE) |
+|------|-----------|
+| Home | `Cybethics – Digitalisierung, Automatisierung & Integration in der Zentralschweiz` |
+| Services | `Dienstleistungen – Digitalisierung für KMU | Cybethics` |
+| Automation | `Prozessautomatisierung – Digitale Workflows | Cybethics Luzern` |
+| Integration | `Systemintegration – Tools & APIs verbinden | Cybethics` |
+| Development | `Softwareentwicklung – Massgeschneiderte Lösungen | Cybethics` |
+| Projects | `Referenzprojekte – Digitalisierung in der Praxis | Cybethics` |
+| Contact | `Kontakt – Digitalisierungspartner Zentralschweiz | Cybethics` |
+
+Each page also gets a unique `<meta name="description">` with local keywords (Luzern, Zug, Zentralschweiz, KMU, Digitalisierung).
+
+#### 2. Update Structured Data (index.html)
+
+- Change `@type` to `["ProfessionalService", "ITService"]`
+- Update `knowsAbout` to include `"Digitalisierung"`, `"Systemintegration"`, `"Prozessdigitalisierung"`
+- Add `sameAs` array (LinkedIn, GitHub, etc.)
+- Add `hasOfferCatalog` with the 3 AID service types
+- Add `priceRange` field
+
+#### 3. Expand Sitemap
+
+Add all new routes with `<lastmod>` dates:
+- `/services/automation`, `/services/integration`, `/services/development`
+- `/pricing/websites`
+
+#### 4. Add Canonical + Hreflang Tags
+
+Via React Helmet on each page:
+```html
+<link rel="canonical" href="https://cybethics.com/services" />
+<link rel="alternate" hreflang="de" href="https://cybethics.com/services" />
+<link rel="alternate" hreflang="en" href="https://cybethics.com/en/services" />
 ```
 
-This creates a natural pause of between each shimmer sweep.
+#### 5. Keyword Optimization in Visible Content
 
-### 3. Navbar with Dropdown Submenus
+Ensure "Digitalisierung" appears naturally in:
+- Hero section heading and subheading
+- AID section descriptions
+- Footer tagline
+- Alt-text on images
 
-**File:** `src/components/Navbar.tsx`
+Update `de.json` translation keys accordingly.
 
-Replace the flat "Dienstleistungen" link with a hover dropdown that contains submenu items. Structure:
+#### 6. Performance Quick Wins
 
-```text
-Dienstleistungen ▾
-├── Webseiten-Pakete        → /pricing/websites  (new)
-├── Automatisierung         → /services/automation
-├── Integration             → /services/integration
-├── Entwicklung             → /services/development
-├── Wartung & Support       → /pricing  (existing)
-└── Alle Dienstleistungen   → /services
-```
+- Add `loading="lazy"` to all below-fold images
+- Add `<link rel="preload">` for the hero font and critical CSS
+- Remove duplicate `<meta name="theme-color">` in index.html
 
-Implementation:
+---
 
-- Use a simple CSS hover dropdown (no Radix popover needed — keeps it lightweight)
-- Desktop: dropdown appears on hover with fade-in animation, positioned below the nav item
-- Mobile: expand/collapse accordion-style in the mobile menu
-- Each submenu item has a small icon and label
+### Long-Term (Strategic)
 
-**Files:** `src/locales/de.json`, `src/locales/en.json`
+#### 7. Blog / Knowledge Section
 
-- Add translation keys for submenu labels: `nav.services.websites`, `nav.services.automation`, `nav.services.integration`, `nav.services.development`, `nav.services.maintenance`, `nav.services.all`
+The single most impactful long-term SEO move. Create a `/blog` or `/wissen` section with articles like:
+- "Digitalisierung für KMU in der Zentralschweiz — Wo anfangen?"
+- "5 Prozesse die jedes Unternehmen automatisieren sollte"
+- "API-Integration: Was es kostet und was es bringt"
 
-**File:** `src/App.tsx`
+Each article = a new indexable page targeting long-tail keywords.
 
-- Add route for `/pricing/websites` (new page, or redirect to pricing with anchor)
+#### 8. Google Business Profile
 
-**Suggestion for website packages page:** Since you want to offer simple website packages at cheap prices, I'd recommend creating a dedicated `/pricing/websites` page with 3 tiers (e.g., "Starter", "Business", "Premium") — but that's a separate task. For now, the navbar structure will link to it as a placeholder pointing to `/pricing`.
+Not a code change, but critical: create/optimize a Google Business Profile for "Cybethics, Emmen" with the service categories "IT-Dienstleister", "Softwareentwicklung", "Digitalisierung". Link it to cybethics.com.
 
-### Files Summary
+#### 9. Pre-rendering / SSG
 
+Since this is a GitHub Pages SPA, consider adding a pre-render step (e.g., `vite-plugin-prerender` or `react-snap`) that generates static HTML for each route at build time. This gives Google fully rendered HTML without relying on JS execution.
 
-| File                        | Action                                                         |
-| --------------------------- | -------------------------------------------------------------- |
-| `src/index.css`             | Faster marquee (15s), badge-shimmer with pause (8s)            |
-| `src/components/Navbar.tsx` | Add hover dropdown under "Dienstleistungen" with submenu items |
-| `src/locales/de.json`       | Add submenu translation keys                                   |
-| `src/locales/en.json`       | Add submenu translation keys                                   |
+#### 10. Backlinks Strategy
+
+- Get listed on Swiss IT directories (swissICT, topsoft, etc.)
+- Partner pages linking to cybethics.com
+- Local business directories (local.ch, search.ch)
+
+---
+
+### Implementation Priority
+
+| Priority | Task | Impact |
+|----------|------|--------|
+| 1 | React Helmet per-page titles + descriptions | High |
+| 2 | "Digitalisierung" keyword in content + meta | High |
+| 3 | Updated structured data | Medium |
+| 4 | Expanded sitemap | Medium |
+| 5 | Canonical + hreflang | Medium |
+| 6 | Performance fixes | Medium |
+| 7 | Blog section (long-term) | Very High |
+| 8 | Google Business Profile (external) | Very High |
+| 9 | Pre-rendering at build time | High |
+
+### Files Changed (Short-Term)
+
+| File | Change |
+|------|--------|
+| `package.json` | Add `react-helmet-async` |
+| `src/App.tsx` | Wrap with `HelmetProvider` |
+| Every page in `src/pages/` | Add `<Helmet>` with unique title, description, canonical |
+| `index.html` | Updated structured data, remove duplicate meta, add hreflang |
+| `public/sitemap.xml` | Add missing routes + lastmod |
+| `src/locales/de.json` | Add "Digitalisierung" to key content strings |
+| `src/locales/en.json` | English equivalents |
+
