@@ -1,5 +1,6 @@
 
 import React, {useState} from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Badge} from '@/components/ui/badge';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';

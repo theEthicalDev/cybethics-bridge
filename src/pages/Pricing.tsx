@@ -1,5 +1,6 @@
 
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PricingHero from '@/components/pricing/PricingHero';
 import PricingInformation from '@/components/pricing/PricingInformation';

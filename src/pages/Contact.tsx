@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Card} from '@/components/ui/card';
 import {Mail, MapPin, Phone} from 'lucide-react';

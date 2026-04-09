@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {
   ClipboardListIcon,

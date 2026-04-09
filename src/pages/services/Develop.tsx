@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Code, ArrowRight, CheckCircle2, Target, Trophy, Shield, Scaling } from 'lucide-react';

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Globe, Check, ArrowRight, Sparkles, Rocket, Crown } from 'lucide-react';

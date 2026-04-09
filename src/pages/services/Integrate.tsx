@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Network, ArrowRight, CheckCircle2, GitMerge, Database, Brain, Workflow } from 'lucide-react';

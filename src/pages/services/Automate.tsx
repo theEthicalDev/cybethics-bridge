@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Cog, ArrowRight, CheckCircle2, Zap, TrendingDown, Scale, BarChart3 } from 'lucide-react';

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import SEOHelmet from '@/components/SEOHelmet';
 import {useLanguage} from '@/contexts/LanguageContext';
 import {Card, CardContent} from '@/components/ui/card';
 import {CheckCircle} from 'lucide-react';
