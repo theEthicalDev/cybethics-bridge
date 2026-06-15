@@ -95,19 +95,19 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-white/80">
               &copy; {currentYear} Cybethics GmbH. {t('footer.rights')}.
             </p>
-            <span className="text-xs text-white/25">CHE-255.079.072</span>
+            <span className="text-xs text-white/70">CHE-255.079.072</span>
           </div>
           <div className="flex space-x-6">
-            <Link to="/privacy" className="text-sm text-white/40 hover:text-white/80 transition-colors">
+            <Link to="/privacy" className="text-sm text-white/80 hover:text-white transition-colors">
               {t('footer.privacy')}
             </Link>
-            <Link to="/terms" className="text-sm text-white/40 hover:text-white/80 transition-colors">
+            <Link to="/terms" className="text-sm text-white/80 hover:text-white transition-colors">
               {t('footer.terms')}
             </Link>
-            <Link to="/imprint" className="text-sm text-white/40 hover:text-white/80 transition-colors">
+            <Link to="/imprint" className="text-sm text-white/80 hover:text-white transition-colors">
               {t('footer.imprint')}
             </Link>
           </div>
