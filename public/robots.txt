@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://cybethics.com/sitemap.xml
+Sitemap: https://cybethics-bridge.lovable.app/sitemap.xml
