@@ -60,7 +60,27 @@
     "subtitle": "Your strategic partner for digital system architecture: Automation of business processes, Integration of existing software, and Development of custom extensions.",
     "badge": ".automate .integrate .develop",
     "cta": "Request System Analysis",
-    "ctaSecondary": "Our Approach"
+    "ctaSecondary": "Our Approach",
+    "rotate1": "Automation",
+    "rotate2": "Integration",
+    "rotate3": "Development",
+    "trustStrip": {
+      "swiss": "Swiss-hosted",
+      "gdpr": "GDPR-compliant",
+      "leadTime": "Reply < 48h"
+    },
+    "roi": {
+      "badge": "Savings Calculator",
+      "title": "What is manual work costing you?",
+      "subtitle": "Calculate in seconds how much time and money automation frees up.",
+      "employees": "Employees",
+      "hours": "Manual work hours / week / person",
+      "rate": "Hourly rate (CHF)",
+      "savedHoursLabel": "Hours saved / year",
+      "savedMoneyLabel": "Annual savings potential",
+      "footnote": "Assumption: 70% of manual tasks are automatable. 48 working weeks/year.",
+      "cta": "Discuss these numbers"
+    }
   },
   "aid": {
     "problem": {
