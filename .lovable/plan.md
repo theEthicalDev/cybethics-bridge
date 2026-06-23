@@ -1,128 +1,66 @@
+## Plan — Knock visitors off their feet
 
+Three workstreams, all in frontend/presentation code. Tone: push bolder while staying inside the existing Soft UI / warm gradient / German-language brand. Strict i18n preserved (de.json/en.json).
 
-## SEO Optimization Plan — Ranking for "Digitalisierung Zentralschweiz"
+### 1. Hero impact (bolder)
 
-### Current State
+**`src/components/HeroSection.tsx` + `src/components/AIDVisual` area**
+- Oversized editorial headline: split into 2–3 lines, mix display weight with an italic serif accent on a single keyword ("Automatisierung", "Integration", "Entwicklung") that rotates every 3s with a smooth crossfade.
+- Animated sub-eyebrow: "Digitalisierung für KMU in der Zentralschweiz" with a typewriter or shimmer reveal.
+- Replace static AID visual area with a layered parallax composition: liquid gradient blob (already in design system) + subtle grain + 3 floating glass cards labeled A / I / D that drift on mouse-move (CSS transform, no heavy libs).
+- Dual CTA stack: primary "Kostenloses Erstgespräch" → Calendly/contact, secondary "Problem Finder starten" → quiz. Both with hover micro-interaction (arrow slide + glow).
+- Trust strip directly under hero: "CH-gehostet · DSGVO-konform · Lead-Time < 48h" with small icons.
 
-- **SPA problem**: The site is a client-side React SPA hosted on GitHub Pages. Google can render JS but it's slower and less reliable than server-rendered HTML. The `<noscript>` fallback helps but is minimal.
-- **No per-page meta tags**: Every page serves the same `<title>` and `<meta description>` from `index.html`. Google sees identical metadata for all routes.
-- **Sitemap is incomplete**: Missing `/services/automation`, `/services/integration`, `/services/development`, `/pricing/websites`.
-- **Structured data is outdated**: Still says "Softwareentwicklung" instead of "Digitalisierung", missing `Service` schema entries.
-- **No keyword targeting for "Digitalisierung"**: The word doesn't appear in title, description, keywords, or structured data.
-- **No canonical URLs**: Risk of duplicate content indexing.
-- **No `hreflang` tags**: Site supports DE/EN but Google doesn't know about it.
+### 2. Interactive wow moments
 
----
+**New: `src/components/ROICalculator.tsx`** (insert between AID and Projects on Index)
+- 3 sliders: Mitarbeiter, Stunden/Woche manueller Arbeit, Stundensatz CHF.
+- Live computes monthly + yearly savings via automation, animated counter, CTA "Diese Zahlen besprechen →".
+- Pure client-side, no backend.
 
-### Short-Term (Implementable Now)
+**New: `src/components/AutomationShowcase.tsx`** (before CTA section)
+- "Vorher / Nachher" interactive slider (draggable divider) on a sample workflow diagram (manual email chain ↔ automated flow). SVG-based.
 
-#### 1. Per-Page `<title>` and `<meta>` via React Helmet
+**Upgrade `StickyCTA.tsx`**
+- Add a 2-second pulse glow on first scroll past hero to draw eye, then settle.
 
-Install `react-helmet-async` and add unique title/description to every page. Target keywords:
+**Scroll storytelling on AID section**
+- Each pillar (A/I/D) snap-reveals with staggered fade + slight scale as it enters viewport (extend existing `useScrollReveal`).
 
-| Page | Title (DE) |
-|------|-----------|
-| Home | `Cybethics – Digitalisierung, Automatisierung & Integration in der Zentralschweiz` |
-| Services | `Dienstleistungen – Digitalisierung für KMU | Cybethics` |
-| Automation | `Prozessautomatisierung – Digitale Workflows | Cybethics Luzern` |
-| Integration | `Systemintegration – Tools & APIs verbinden | Cybethics` |
-| Development | `Softwareentwicklung – Massgeschneiderte Lösungen | Cybethics` |
-| Projects | `Referenzprojekte – Digitalisierung in der Praxis | Cybethics` |
-| Contact | `Kontakt – Digitalisierungspartner Zentralschweiz | Cybethics` |
+### 3. Performance & polish
 
-Each page also gets a unique `<meta name="description">` with local keywords (Luzern, Zug, Zentralschweiz, KMU, Digitalisierung).
+- Add `vite-imagetools`; convert hero/project images to AVIF + WebP with fallback. Add `<link rel="preload" as="image" fetchpriority="high">` for the LCP hero image in `index.html`.
+- Lazy-load below-the-fold sections (Projects, FAQ, ContactPartner) via `React.lazy` + Suspense with skeleton.
+- Replace any remaining `tracking` defaults: tighten hero display type (`tracking-tight`), loosen eyebrows (`tracking-widest uppercase text-xs`).
+- Add subtle noise/grain overlay (SVG data-URI, ~3% opacity) on hero + CTA sections for premium texture.
+- Smooth scroll + reduced-motion respect (`@media (prefers-reduced-motion)`).
+- Audit `Navbar` scroll state: add backdrop-blur + border fade-in once user scrolls > 40px (if not already).
+- Compress/replace any oversize PNGs in `public/media/` with WebP.
 
-#### 2. Update Structured Data (index.html)
-
-- Change `@type` to `["ProfessionalService", "ITService"]`
-- Update `knowsAbout` to include `"Digitalisierung"`, `"Systemintegration"`, `"Prozessdigitalisierung"`
-- Add `sameAs` array (LinkedIn, GitHub, etc.)
-- Add `hasOfferCatalog` with the 3 AID service types
-- Add `priceRange` field
-
-#### 3. Expand Sitemap
-
-Add all new routes with `<lastmod>` dates:
-- `/services/automation`, `/services/integration`, `/services/development`
-- `/pricing/websites`
-
-#### 4. Add Canonical + Hreflang Tags
-
-Via React Helmet on each page:
-```html
-<link rel="canonical" href="https://cybethics.com/services" />
-<link rel="alternate" hreflang="de" href="https://cybethics.com/services" />
-<link rel="alternate" hreflang="en" href="https://cybethics.com/en/services" />
-```
-
-#### 5. Keyword Optimization in Visible Content
-
-Ensure "Digitalisierung" appears naturally in:
-- Hero section heading and subheading
-- AID section descriptions
-- Footer tagline
-- Alt-text on images
-
-Update `de.json` translation keys accordingly.
-
-#### 6. Performance Quick Wins
-
-- Add `loading="lazy"` to all below-fold images
-- Add `<link rel="preload">` for the hero font and critical CSS
-- Remove duplicate `<meta name="theme-color">` in index.html
-
----
-
-### Long-Term (Strategic)
-
-#### 7. Blog / Knowledge Section
-
-The single most impactful long-term SEO move. Create a `/blog` or `/wissen` section with articles like:
-- "Digitalisierung für KMU in der Zentralschweiz — Wo anfangen?"
-- "5 Prozesse die jedes Unternehmen automatisieren sollte"
-- "API-Integration: Was es kostet und was es bringt"
-
-Each article = a new indexable page targeting long-tail keywords.
-
-#### 8. Google Business Profile
-
-Not a code change, but critical: create/optimize a Google Business Profile for "Cybethics, Emmen" with the service categories "IT-Dienstleister", "Softwareentwicklung", "Digitalisierung". Link it to cybethics.com.
-
-#### 9. Pre-rendering / SSG
-
-Since this is a GitHub Pages SPA, consider adding a pre-render step (e.g., `vite-plugin-prerender` or `react-snap`) that generates static HTML for each route at build time. This gives Google fully rendered HTML without relying on JS execution.
-
-#### 10. Backlinks Strategy
-
-- Get listed on Swiss IT directories (swissICT, topsoft, etc.)
-- Partner pages linking to cybethics.com
-- Local business directories (local.ch, search.ch)
-
----
-
-### Implementation Priority
-
-| Priority | Task | Impact |
-|----------|------|--------|
-| 1 | React Helmet per-page titles + descriptions | High |
-| 2 | "Digitalisierung" keyword in content + meta | High |
-| 3 | Updated structured data | Medium |
-| 4 | Expanded sitemap | Medium |
-| 5 | Canonical + hreflang | Medium |
-| 6 | Performance fixes | Medium |
-| 7 | Blog section (long-term) | Very High |
-| 8 | Google Business Profile (external) | Very High |
-| 9 | Pre-rendering at build time | High |
-
-### Files Changed (Short-Term)
+### Files touched
 
 | File | Change |
 |------|--------|
-| `package.json` | Add `react-helmet-async` |
-| `src/App.tsx` | Wrap with `HelmetProvider` |
-| Every page in `src/pages/` | Add `<Helmet>` with unique title, description, canonical |
-| `index.html` | Updated structured data, remove duplicate meta, add hreflang |
-| `public/sitemap.xml` | Add missing routes + lastmod |
-| `src/locales/de.json` | Add "Digitalisierung" to key content strings |
-| `src/locales/en.json` | English equivalents |
+| `src/components/HeroSection.tsx` | Bolder headline, rotating word, dual CTA, parallax AID cards |
+| `src/components/AIDVisual` (existing) | Tighten composition, mouse-parallax |
+| `src/components/StickyCTA.tsx` | First-scroll pulse |
+| `src/components/ROICalculator.tsx` | NEW — interactive savings calculator |
+| `src/components/AutomationShowcase.tsx` | NEW — before/after slider |
+| `src/pages/Index.tsx` | Wire new sections in sequence, lazy-load below-fold |
+| `src/locales/de.json` / `en.json` | All new strings (rotating words, ROI labels, showcase copy, CTA pulse aria) |
+| `index.html` | LCP preload, preconnect tuning |
+| `vite.config.ts` + `package.json` | Add `vite-imagetools` |
+| `src/index.css` | Grain overlay utility, reduced-motion guards, scroll-glow keyframe |
 
+### Out of scope
+
+- No backend changes, no new pages, no nav changes (pricing routes stay hidden per project memory).
+- No "Swiss Made" badge, no HomepageStats re-add.
+- Keep current section order from homepage-layout memory; new sections inserted at the marked positions only.
+
+### Success signal
+
+- Hero feels alive within 1s of load (rotating word + parallax).
+- Two clear conversion paths visible without scrolling on desktop.
+- ROI calculator and before/after slider give visitors a tactile "this works" moment.
+- Lighthouse performance stays ≥ 90 after additions (lazy-loading + image formats offset new motion).
