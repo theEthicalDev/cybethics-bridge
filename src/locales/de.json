@@ -201,7 +201,27 @@
     "subtitle": "Euer Partner für Digitalisierung in der Zentralschweiz: Automatisierung von Geschäftsprozessen, Integration bestehender Systeme und Entwicklung massgeschneiderter Software.",
     "badge": ".automate .integrate .develop",
     "cta": "Systemanalyse anfragen",
-    "ctaSecondary": "Unser Ansatz"
+    "ctaSecondary": "Unser Ansatz",
+    "rotate1": "Automatisierung",
+    "rotate2": "Integration",
+    "rotate3": "Entwicklung",
+    "trustStrip": {
+      "swiss": "CH-gehostet",
+      "gdpr": "DSGVO-konform",
+      "leadTime": "Antwort < 48h"
+    },
+    "roi": {
+      "badge": "Spar-Rechner",
+      "title": "Was kostet Euch manuelle Arbeit?",
+      "subtitle": "Berechnet in Sekunden, wie viel Zeit und Geld Ihr durch Automatisierung freisetzt.",
+      "employees": "Mitarbeitende",
+      "hours": "Stunden manuelle Arbeit / Woche / Person",
+      "rate": "Stundensatz (CHF)",
+      "savedHoursLabel": "Eingesparte Stunden / Jahr",
+      "savedMoneyLabel": "Einsparpotenzial / Jahr",
+      "footnote": "Annahme: 70% der manuellen Aufgaben sind automatisierbar. 48 Arbeitswochen/Jahr.",
+      "cta": "Diese Zahlen besprechen"
+    }
   },
   "aid": {
     "problem": {

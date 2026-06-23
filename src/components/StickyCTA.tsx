@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -7,10 +7,18 @@ import { Calendar } from 'lucide-react';
 const StickyCTA: React.FC = () => {
   const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
+  const [pulsed, setPulsed] = useState(false);
+  const hasPulsedRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > window.innerHeight * 0.8);
+      const shouldShow = window.scrollY > window.innerHeight * 0.8;
+      setVisible(shouldShow);
+      if (shouldShow && !hasPulsedRef.current) {
+        hasPulsedRef.current = true;
+        setPulsed(true);
+        setTimeout(() => setPulsed(false), 2400);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -21,7 +29,7 @@ const StickyCTA: React.FC = () => {
     <div
       className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
-      }`}
+      } ${pulsed ? 'animate-glow-pulse rounded-full' : ''}`}
     >
       <Link to="/contact" className="flex items-center group">
         {/* Avatar circle - larger, overlapping like a key head */}

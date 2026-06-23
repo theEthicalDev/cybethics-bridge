@@ -105,12 +105,30 @@ const AIDVisual: React.FC = () => {
 
 
 
+const ROTATING_KEYS = ['hero.rotate1', 'hero.rotate2', 'hero.rotate3'];
+
 const HeroSection: React.FC = () => {
   const {t} = useLanguage();
   const isMobile = useIsMobile();
+  const [rotateIdx, setRotateIdx] = useState(0);
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const visualRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => setRotateIdx((i) => (i + 1) % ROTATING_KEYS.length), 2600);
+    return () => clearInterval(id);
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!visualRef.current) return;
+    const rect = visualRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    setParallax({ x, y });
+  };
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-background via-primary/5 to-muted/30">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-32 pb-16 md:pb-24 bg-gradient-to-br from-background via-primary/5 to-muted/30">
       {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-3xl animate-float"></div>
@@ -128,21 +146,45 @@ const HeroSection: React.FC = () => {
                   {t('hero.badge')}
                 </span>
               </div>
-              <h1 className="mb-6 leading-tight text-balance text-4xl sm:text-6xl font-bold">
+              <h1 className="mb-6 leading-[1.05] text-balance text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
                 {t('hero.title')}
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+
+              {/* Rotating value-prop line */}
+              <div className="text-2xl md:text-3xl font-heading font-medium text-foreground/80 mb-6 min-h-[2.5rem] flex items-baseline flex-wrap gap-x-3">
+                <span>→</span>
+                <span className="relative inline-block overflow-hidden align-baseline">
+                  {ROTATING_KEYS.map((k, i) => (
+                    <span
+                      key={k}
+                      className={`inline-block transition-all duration-500 ${i === rotateIdx ? 'opacity-100 translate-y-0 relative' : 'opacity-0 -translate-y-4 absolute inset-0 pointer-events-none'}`}
+                      style={{ fontStyle: 'italic' }}
+                    >
+                      <span className="gradient-text">{t(k)}</span>
+                    </span>
+                  ))}
+                </span>
+              </div>
+
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 {t('hero.subtitle')}
               </p>
               
-              {/* Enhanced Location Badge */}
-              <div className="mt-6 inline-flex items-center py-3 px-6 bg-card/80 backdrop-blur-sm rounded-full shadow-soft border border-border/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
-                <MapPin className="h-5 w-5 text-primary mr-3 animate-bounce-gentle" />
-                <span className="text-base font-medium text-foreground/80">Emmen | Luzern | Zentralschweiz</span>
+              {/* Trust strip */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-6 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />{t('hero.trustStrip.swiss')}</span>
+                <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />{t('hero.trustStrip.gdpr')}</span>
+                <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />{t('hero.trustStrip.leadTime')}</span>
+              </div>
+
+              {/* Location Badge */}
+              <div className="mt-2 inline-flex items-center py-2.5 px-5 bg-card/80 backdrop-blur-sm rounded-full shadow-soft border border-border/30 hover:shadow-medium transition-all duration-300 hover:scale-105">
+                <MapPin className="h-4 w-4 text-primary mr-2 animate-bounce-gentle" />
+                <span className="text-sm font-medium text-foreground/80">Emmen · Luzern · Zentralschweiz</span>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild variant="gradient" size="lg" className="rounded-full group">
                 <Link to="/contact" className="relative">
                   {t('hero.cta')}
@@ -160,17 +202,28 @@ const HeroSection: React.FC = () => {
 
           {/* Desktop view */}
           {!isMobile && (
-            <div className="flex flex-col gap-8 animate-fade-up" style={{animationDelay: '300ms'}}>
+            <div
+              ref={visualRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={() => setParallax({ x: 0, y: 0 })}
+              className="flex flex-col gap-8 animate-fade-up"
+              style={{animationDelay: '300ms'}}
+            >
               <div className="relative h-72 items-center justify-center hidden lg:flex">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-2xl"></div>
                 <img
                   src="/media/cybethics.png"
                   alt="Cybethics - Softwareentwicklung und Automatisierung in der Zentralschweiz"
+                  fetchPriority="high"
                   className="relative w-3/4 h-auto hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
+                  style={{ transform: `translate3d(${parallax.x * -8}px, ${parallax.y * -8}px, 0)`, transition: 'transform 0.3s ease-out' }}
                 />
               </div>
 
-              <div className="hover-lift">
+              <div
+                className="hover-lift"
+                style={{ transform: `translate3d(${parallax.x * 6}px, ${parallax.y * 6}px, 0)`, transition: 'transform 0.3s ease-out' }}
+              >
                 <AIDVisual />
               </div>
             </div>

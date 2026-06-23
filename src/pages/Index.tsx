@@ -19,6 +19,7 @@ import HomepageFAQ from '@/components/HomepageFAQ';
 import StickyCTA from '@/components/StickyCTA';
 import SectionDivider from '@/components/SectionDivider';
 import TrustBadges from '@/components/TrustBadges';
+import ROICalculator from '@/components/ROICalculator';
 import useScrollReveal from '@/hooks/useScrollReveal';
 import { getProjects } from '@/utils/projectData';
 
@@ -88,6 +89,7 @@ const Index = () => {
       <SectionDivider variant="wave" fillColor="hsl(var(--muted) / 0.3)" />
       <AIDProblemStatement />
       <AIDFramework />
+      <ROICalculator />
       <ProblemFinder />
       <SectionDivider variant="slant" fillColor="hsl(var(--muted) / 0.3)" />
       <AIDClientJourney />
