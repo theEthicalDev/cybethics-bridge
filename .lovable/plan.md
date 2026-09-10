@@ -1,66 +1,48 @@
-## Plan — Knock visitors off their feet
+# Hero-Bereich: deutlich mutiger, mit Hell/Dunkel-Umschalter
 
-Three workstreams, all in frontend/presentation code. Tone: push bolder while staying inside the existing Soft UI / warm gradient / German-language brand. Strict i18n preserved (de.json/en.json).
+Fokus liegt ausschliesslich auf dem obersten Bildschirmbereich der Startseite. Inhalte (Titel, Untertitel, Buttons, Vertrauenszeile, Ortsangabe, AID-Grafik) bleiben erhalten — die Wirkung wird stark aufgewertet.
 
-### 1. Hero impact (bolder)
+## 1. Mutigere Bildsprache
 
-**`src/components/HeroSection.tsx` + `src/components/AIDVisual` area**
-- Oversized editorial headline: split into 2–3 lines, mix display weight with an italic serif accent on a single keyword ("Automatisierung", "Integration", "Entwicklung") that rotates every 3s with a smooth crossfade.
-- Animated sub-eyebrow: "Digitalisierung für KMU in der Zentralschweiz" with a typewriter or shimmer reveal.
-- Replace static AID visual area with a layered parallax composition: liquid gradient blob (already in design system) + subtle grain + 3 floating glass cards labeled A / I / D that drift on mouse-move (CSS transform, no heavy libs).
-- Dual CTA stack: primary "Kostenloses Erstgespräch" → Calendly/contact, secondary "Problem Finder starten" → quiz. Both with hover micro-interaction (arrow slide + glow).
-- Trust strip directly under hero: "CH-gehostet · DSGVO-konform · Lead-Time < 48h" with small icons.
+- Dunkle, tiefe Hintergrundfläche mit weichem Farbverlauf statt der aktuellen fast weissen Fläche, damit der Einstieg sofort hochwertig und technisch wirkt.
+- Feines Raster im Hintergrund, das zum Rand hin ausblendet, plus zwei langsam wandernde Lichtflächen in der Markenfarbe.
+- Sanfter Übergang nach unten, damit der helle Bereich darunter nicht hart abbricht.
 
-### 2. Interactive wow moments
+## 2. Grössere, klarere Typografie
 
-**New: `src/components/ROICalculator.tsx`** (insert between AID and Projects on Index)
-- 3 sliders: Mitarbeiter, Stunden/Woche manueller Arbeit, Stundensatz CHF.
-- Live computes monthly + yearly savings via automation, animated counter, CTA "Diese Zahlen besprechen →".
-- Pure client-side, no backend.
+- Überschrift deutlich grösser und enger gesetzt, mit klarer Betonung eines Schlüsselworts.
+- Die rotierende Zeile bekommt eine ruhigere Ein-/Ausblendung und mehr Gewicht statt des kleinen Pfeils.
+- Untertitel etwas kürzer wirkend durch grössere Zeilenabstände und begrenzte Breite.
 
-**New: `src/components/AutomationShowcase.tsx`** (before CTA section)
-- "Vorher / Nachher" interactive slider (draggable divider) on a sample workflow diagram (manual email chain ↔ automated flow). SVG-based.
+## 3. Ruhigere, hochwertigere Elemente
 
-**Upgrade `StickyCTA.tsx`**
-- Add a 2-second pulse glow on first scroll past hero to draw eye, then settle.
+- Badge oben, Vertrauenspunkte und Ortsangabe werden zu einer einheitlichen, dezenten Elementfamilie (gleiche Rundung, gleiche Randstärke, gleiche Transparenz) statt drei unterschiedlicher Stile.
+- Hauptbutton mit weichem Leuchten und spürbarem, aber ruhigem Hover.
 
-**Scroll storytelling on AID section**
-- Each pillar (A/I/D) snap-reveals with staggered fade + slight scale as it enters viewport (extend existing `useScrollReveal`).
+## 4. Bewegung mit Mass
 
-### 3. Performance & polish
+- Gestaffeltes Einblenden von oben nach unten beim Laden.
+- Die AID-Grafik behält den Maus-Parallax, bekommt aber Glaseffekt-Optik, die in Hell und Dunkel funktioniert.
+- Alle Animationen respektieren die Systemeinstellung „Bewegung reduzieren".
 
-- Add `vite-imagetools`; convert hero/project images to AVIF + WebP with fallback. Add `<link rel="preload" as="image" fetchpriority="high">` for the LCP hero image in `index.html`.
-- Lazy-load below-the-fold sections (Projects, FAQ, ContactPartner) via `React.lazy` + Suspense with skeleton.
-- Replace any remaining `tracking` defaults: tighten hero display type (`tracking-tight`), loosen eyebrows (`tracking-widest uppercase text-xs`).
-- Add subtle noise/grain overlay (SVG data-URI, ~3% opacity) on hero + CTA sections for premium texture.
-- Smooth scroll + reduced-motion respect (`@media (prefers-reduced-motion)`).
-- Audit `Navbar` scroll state: add backdrop-blur + border fade-in once user scrolls > 40px (if not already).
-- Compress/replace any oversize PNGs in `public/media/` with WebP.
+## 5. Hell/Dunkel umschaltbar
 
-### Files touched
+- Neuer Umschalter in der Navigationsleiste (Desktop und Mobil), Sonne/Mond-Symbol.
+- Auswahl wird gespeichert; beim ersten Besuch richtet sich die Seite nach der Systemeinstellung.
+- Kein Aufblitzen beim Laden dank kleinem Startskript.
+- Wichtig: Der Umschalter wirkt auf die ganze Seite. In diesem Schritt wird nur der obere Bereich gestalterisch überarbeitet; die restlichen Abschnitte erhalten korrekte dunkle Farbwerte, damit nichts unleserlich wird, aber keine Neugestaltung.
 
-| File | Change |
-|------|--------|
-| `src/components/HeroSection.tsx` | Bolder headline, rotating word, dual CTA, parallax AID cards |
-| `src/components/AIDVisual` (existing) | Tighten composition, mouse-parallax |
-| `src/components/StickyCTA.tsx` | First-scroll pulse |
-| `src/components/ROICalculator.tsx` | NEW — interactive savings calculator |
-| `src/components/AutomationShowcase.tsx` | NEW — before/after slider |
-| `src/pages/Index.tsx` | Wire new sections in sequence, lazy-load below-fold |
-| `src/locales/de.json` / `en.json` | All new strings (rotating words, ROI labels, showcase copy, CTA pulse aria) |
-| `index.html` | LCP preload, preconnect tuning |
-| `vite.config.ts` + `package.json` | Add `vite-imagetools` |
-| `src/index.css` | Grain overlay utility, reduced-motion guards, scroll-glow keyframe |
+## Technische Umsetzung
 
-### Out of scope
+| Datei | Änderung |
+|---|---|
+| `src/index.css` | `.dark`-Farbtokens ergänzen (background, foreground, card, muted, border, glass, shadows); Utilities für Raster-Hintergrund, Aurora-Verlauf, `prefers-reduced-motion`-Schutz |
+| `src/components/HeroSection.tsx` | Neuer Aufbau: Aurora/Grid-Hintergrund, grössere Typo-Skala, vereinheitlichte Chip-Elemente, gestaffelte Einblendung, Glas-Variante der AID-Karte |
+| `src/components/ThemeProvider.tsx` (neu) | Theme-Zustand über `class` auf `<html>`, gespeichert in `localStorage`, Fallback auf Systemeinstellung |
+| `src/components/ThemeToggle.tsx` (neu) | Sonne/Mond-Button |
+| `src/components/Navbar.tsx` | Umschalter in Desktop- und Mobilnavigation einbinden; Navbar-Farben auf semantische Tokens umstellen |
+| `src/App.tsx` / `src/main.tsx` | `ThemeProvider` einhängen |
+| `index.html` | Kleines Inline-Skript gegen Theme-Aufblitzen |
+| `src/locales/de.json`, `en.json` | Keys für Umschalter-Beschriftung; ggf. neue Hero-Betonungszeile |
 
-- No backend changes, no new pages, no nav changes (pricing routes stay hidden per project memory).
-- No "Swiss Made" badge, no HomepageStats re-add.
-- Keep current section order from homepage-layout memory; new sections inserted at the marked positions only.
-
-### Success signal
-
-- Hero feels alive within 1s of load (rotating word + parallax).
-- Two clear conversion paths visible without scrolling on desktop.
-- ROI calculator and before/after slider give visitors a tactile "this works" moment.
-- Lighthouse performance stays ≥ 90 after additions (lazy-loading + image formats offset new motion).
+Bestehende Marken- und Layoutregeln bleiben unangetastet: kein „Swiss Made", keine hartcodierten Farben, alle Texte über die Übersetzungsdateien.
