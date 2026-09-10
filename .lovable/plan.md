@@ -23,6 +23,10 @@ Fokus liegt ausschliesslich auf dem obersten Bildschirmbereich der Startseite. I
 
 - Gestaffeltes Einblenden von oben nach unten beim Laden.
 - Die AID-Grafik behält den Maus-Parallax, bekommt aber Glaseffekt-Optik, die in Hell und Dunkel funktioniert.
+- Deutlich mehr Bewegung: Überschrift läuft wortweise gestaffelt ein, ein Lichtstreifen wandert einmalig über den Titel, die rotierende Zeile wechselt mit weichem Kippeffekt.
+- Die Hintergrund-Lichtflächen bewegen sich dauerhaft langsam, das Raster driftet kaum merklich, und die Vertrauenspunkte pulsieren nacheinander.
+- Buttons mit Magnet-Effekt zur Maus, leuchtendem Rand-Sweep beim Hover und leichtem Nachfedern beim Klick.
+- Die AID-Karte schwebt leicht, ihre Kacheln wechseln mit fliessendem Übergang, und ein dezenter Hinweis nach unten animiert am unteren Rand.
 - Alle Animationen respektieren die Systemeinstellung „Bewegung reduzieren".
 
 ## 5. Hell/Dunkel umschaltbar
