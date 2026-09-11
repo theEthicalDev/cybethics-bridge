@@ -170,11 +170,11 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Headline, word by word */}
-            <h1 className="title-sweep relative mb-0 leading-[0.98] text-balance text-5xl sm:text-7xl lg:text-[5.2rem] font-bold tracking-tighter">
+            <h1 className="hero-title title-sweep relative mb-0 leading-[0.98] text-balance text-5xl sm:text-7xl lg:text-[5.2rem] font-bold tracking-tighter">
               {titleWords.map((word, i) => (
                 <span
                   key={`${word}-${i}`}
-                  className="hero-word mr-[0.25em]"
+                  className={`hero-word mr-[0.25em] ${i === titleWords.length - 1 ? 'hero-accent' : ''}`}
                   style={{ animationDelay: `${250 + i * 110}ms` }}
                 >
                   {word}

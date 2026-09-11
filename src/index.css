@@ -519,6 +519,21 @@
     opacity: 0.035;
   }
 
+  /* Hero headline: solid, readable (overrides global gradient h1) */
+  .hero-title {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: hsl(var(--foreground));
+    text-shadow: none;
+    padding: 0;
+  }
+  .hero-title .hero-accent {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   /* ---------- Hero: bold background layers ---------- */
   .hero-aurora {
     background:
