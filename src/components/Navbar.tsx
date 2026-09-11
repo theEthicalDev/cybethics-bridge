@@ -3,6 +3,7 @@ import {Link, useLocation} from 'react-router-dom';
 import {useLanguage} from '@/contexts/LanguageContext';
 import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 import {Button} from '@/components/ui/button';
 import {Menu, X, MapPin, ChevronDown, Globe, Cog, Network, Code, Wrench, LayoutGrid} from 'lucide-react';
 import {useIsTablet} from '@/hooks/use-mobile';
@@ -127,6 +128,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <LanguageSwitcher />
+          <ThemeToggle />
         </nav>
         
         {/* Mobile Menu Button */}
@@ -201,6 +203,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <LanguageSwitcher className="mt-6" />
+            <ThemeToggle className="mt-2" />
           </nav>
         </div>
       </div>

@@ -15,6 +15,15 @@
     <meta property="og:type" content="website" />
     
     <meta name="google-site-verification" content="s9fwO0DaqeL5sa0c5xapmQ6A26vs84yHStqM6wF2ac4"/>
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem('theme');
+          var d = s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (d) { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@cybethics" />

@@ -38,6 +38,10 @@
       "cta": "Projekte ansehen"
     }
   },
+  "theme": {
+    "toDark": "Dunkelmodus aktivieren",
+    "toLight": "Hellmodus aktivieren"
+  },
   "nav": {
     "home": "Startseite",
     "services": "Dienstleistungen",
