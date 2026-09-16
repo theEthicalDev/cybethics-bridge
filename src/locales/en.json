@@ -73,6 +73,13 @@
       "gdpr": "GDPR-compliant",
       "leadTime": "Reply < 48h"
     },
+    "system": {
+      "status": "System status",
+      "active": "Ready for change",
+      "focus": "Focus",
+      "region": "Emmen · Lucerne · Central Switzerland",
+      "aidLabel": "AID service areas"
+    },
     "roi": {
       "badge": "Savings Calculator",
       "title": "What is manual work costing you?",

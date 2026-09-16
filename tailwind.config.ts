@@ -73,8 +73,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				heading: ['Outfit', 'sans-serif'],
+				sans: ['Plus Jakarta Sans', 'sans-serif'],
+				heading: ['Syne', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

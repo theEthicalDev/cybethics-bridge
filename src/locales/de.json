@@ -214,6 +214,13 @@
       "gdpr": "DSGVO-konform",
       "leadTime": "Antwort < 48h"
     },
+    "system": {
+      "status": "Systemstatus",
+      "active": "Bereit für Veränderung",
+      "focus": "Fokus",
+      "region": "Emmen · Luzern · Zentralschweiz",
+      "aidLabel": "AID-Leistungsbereiche"
+    },
     "roi": {
       "badge": "Spar-Rechner",
       "title": "Was kostet Euch manuelle Arbeit?",
